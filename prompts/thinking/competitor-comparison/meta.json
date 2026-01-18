@@ -1,0 +1,35 @@
+{
+    "slug": "competitor-comparison",
+    "title": "Competitor Comparison",
+    "shortDescription": "Compare two competitors to identify gaps.",
+    "surface": "thinking",
+    "pmStage": "Product Discovery",
+    "complexity": "Intermediate",
+    "outputType": "Comparison Table",
+    "tags": [
+        "competition",
+        "market-analysis",
+        "differentiation"
+    ],
+    "jobsToBeDone": [
+        "Benchmark against competitors",
+        "Find differentiation opportunities"
+    ],
+    "inputs": [
+        {
+            "key": "competitor_a",
+            "label": "Competitor A",
+            "example": "Slack"
+        },
+        {
+            "key": "competitor_b",
+            "label": "Competitor B",
+            "example": "Microsoft Teams"
+        },
+        {
+            "key": "our_product",
+            "label": "Our Product",
+            "example": "RocketChat"
+        }
+    ]
+}

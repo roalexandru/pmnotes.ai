@@ -1,0 +1,25 @@
+{
+    "slug": "website-mockup",
+    "title": "Website Mockup (HTML/CSS)",
+    "shortDescription": "Generate HTML/CSS for a landing page.",
+    "surface": "builder",
+    "pmStage": "Prototyping",
+    "complexity": "Intermediate",
+    "outputType": "Code (HTML/CSS)",
+    "tags": [
+        "html",
+        "css",
+        "prototype"
+    ],
+    "jobsToBeDone": [
+        "Create quick landing page",
+        "Visualize web layout"
+    ],
+    "inputs": [
+        {
+            "key": "product_type",
+            "label": "Product Type",
+            "example": "SaaS CRM"
+        }
+    ]
+}

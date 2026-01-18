@@ -1,0 +1,30 @@
+{
+    "slug": "metric-calculation",
+    "title": "Metric Calculation",
+    "shortDescription": "Calculate basic statistics from a dataset.",
+    "surface": "executor",
+    "pmStage": "Data Analysis",
+    "complexity": "Beginner",
+    "outputType": "Executed Code (Analysis)",
+    "tags": [
+        "python",
+        "analysis",
+        "statistics"
+    ],
+    "jobsToBeDone": [
+        "Calculate averages",
+        "Analyze daily active users"
+    ],
+    "inputs": [
+        {
+            "key": "data_list",
+            "label": "Data List",
+            "example": "[120, 135, 150, 160, 155, 180, 200]"
+        },
+        {
+            "key": "metrics_to_calculate",
+            "label": "Metrics",
+            "example": "average, median, maximum"
+        }
+    ]
+}

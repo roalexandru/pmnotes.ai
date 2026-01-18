@@ -1,0 +1,30 @@
+{
+    "slug": "slack-bot",
+    "title": "Slack Bot Pseudocode",
+    "shortDescription": "Outline pseudocode for a Slack bot.",
+    "surface": "builder",
+    "pmStage": "Prototyping",
+    "complexity": "Intermediate",
+    "outputType": "Pseudocode",
+    "tags": [
+        "slack",
+        "bot",
+        "pseudocode"
+    ],
+    "jobsToBeDone": [
+        "Design bot logic",
+        "Integrate with Slack API"
+    ],
+    "inputs": [
+        {
+            "key": "command",
+            "label": "Command",
+            "example": "/status"
+        },
+        {
+            "key": "response_message",
+            "label": "Response Message",
+            "example": "All systems operational"
+        }
+    ]
+}

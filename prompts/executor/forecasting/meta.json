@@ -1,0 +1,35 @@
+{
+    "slug": "forecasting",
+    "title": "Forecasting Simulation",
+    "shortDescription": "Project future growth based on rates.",
+    "surface": "executor",
+    "pmStage": "Planning",
+    "complexity": "Advanced",
+    "outputType": "Executed Code (Projection)",
+    "tags": [
+        "python",
+        "forecasting",
+        "growth"
+    ],
+    "jobsToBeDone": [
+        "Forecast user growth",
+        "Model churn impact"
+    ],
+    "inputs": [
+        {
+            "key": "starting_users",
+            "label": "Starting Users",
+            "example": "1000"
+        },
+        {
+            "key": "growth_rate",
+            "label": "Monthly Growth Rate",
+            "example": "8%"
+        },
+        {
+            "key": "churn_rate",
+            "label": "Monthly Churn Rate",
+            "example": "5%"
+        }
+    ]
+}

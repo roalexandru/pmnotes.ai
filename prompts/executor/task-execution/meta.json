@@ -1,0 +1,25 @@
+{
+    "slug": "task-execution",
+    "title": "Automation Task Execution",
+    "shortDescription": "Execute automated tasks based on conditions.",
+    "surface": "executor",
+    "pmStage": "Productivity",
+    "complexity": "Intermediate",
+    "outputType": "Executed Code (Automation)",
+    "tags": [
+        "python",
+        "automation",
+        "tasks"
+    ],
+    "jobsToBeDone": [
+        "Check due dates",
+        "Trigger reminders"
+    ],
+    "inputs": [
+        {
+            "key": "task_data",
+            "label": "Task Data",
+            "example": "Sample list defined in code"
+        }
+    ]
+}

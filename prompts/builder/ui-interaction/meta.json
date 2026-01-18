@@ -1,0 +1,30 @@
+{
+    "slug": "ui-interaction",
+    "title": "UI Interaction (HTML/JS)",
+    "shortDescription": "Create a modal dialog interaction.",
+    "surface": "builder",
+    "pmStage": "Prototyping",
+    "complexity": "Intermediate",
+    "outputType": "Code (HTML/JS)",
+    "tags": [
+        "html",
+        "javascript",
+        "ui"
+    ],
+    "jobsToBeDone": [
+        "Prototype UI interactions",
+        "Create modal dialogs"
+    ],
+    "inputs": [
+        {
+            "key": "trigger_button_text",
+            "label": "Trigger Button Text",
+            "example": "Subscribe"
+        },
+        {
+            "key": "modal_message",
+            "label": "Modal Message",
+            "example": "Are you sure you want to subscribe?"
+        }
+    ]
+}

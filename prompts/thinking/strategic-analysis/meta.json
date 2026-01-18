@@ -1,0 +1,30 @@
+{
+    "slug": "strategic-analysis",
+    "title": "Strategic Analysis",
+    "shortDescription": "Analyze market trends and competitive landscape.",
+    "surface": "thinking",
+    "pmStage": "Product Discovery",
+    "complexity": "Advanced",
+    "outputType": "Strategic Report",
+    "tags": [
+        "strategy",
+        "market-analysis",
+        "discovery"
+    ],
+    "jobsToBeDone": [
+        "Analyze generic market trends",
+        "Identify blue ocean opportunities"
+    ],
+    "inputs": [
+        {
+            "key": "market_domain",
+            "label": "Market / Domain",
+            "example": "Generative AI for Legal Tech"
+        },
+        {
+            "key": "competitors",
+            "label": "Main Competitors",
+            "example": "LexisNexis, Casetext"
+        }
+    ]
+}

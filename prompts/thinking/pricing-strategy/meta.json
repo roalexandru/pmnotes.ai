@@ -1,0 +1,25 @@
+{
+    "slug": "pricing-strategy",
+    "title": "Pricing Strategy",
+    "shortDescription": "Analyze pricing models and recommend a strategy.",
+    "surface": "thinking",
+    "pmStage": "Go-to-Market",
+    "complexity": "Advanced",
+    "outputType": "Strategic Analysis",
+    "tags": [
+        "pricing",
+        "monetization",
+        "strategy"
+    ],
+    "jobsToBeDone": [
+        "Evaluate pricing models",
+        "Compare freemium vs subscription"
+    ],
+    "inputs": [
+        {
+            "key": "product_type",
+            "label": "Product Type",
+            "example": "SaaS productivity tool"
+        }
+    ]
+}

@@ -1,0 +1,30 @@
+{
+    "slug": "prd-outline",
+    "title": "PRD Outline",
+    "shortDescription": "Generate a PRD outline for a new product.",
+    "surface": "thinking",
+    "pmStage": "Product Definition",
+    "complexity": "Intermediate",
+    "outputType": "Markdown Outline",
+    "tags": [
+        "prd",
+        "requirements",
+        "scoping"
+    ],
+    "jobsToBeDone": [
+        "Draft initial PRD structure",
+        "Define key features and success metrics"
+    ],
+    "inputs": [
+        {
+            "key": "product_type",
+            "label": "Product Type",
+            "example": "Mobile Fitness App"
+        },
+        {
+            "key": "target_segment",
+            "label": "Target User Segment",
+            "example": "Busy professionals working from home"
+        }
+    ]
+}

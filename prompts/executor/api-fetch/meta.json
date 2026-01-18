@@ -1,0 +1,30 @@
+{
+    "slug": "api-fetch",
+    "title": "API Data Fetching",
+    "shortDescription": "Fetch and parse data from a public API.",
+    "surface": "executor",
+    "pmStage": "Data Gathering",
+    "complexity": "Intermediate",
+    "outputType": "Executed Code (Data)",
+    "tags": [
+        "python",
+        "api",
+        "requests"
+    ],
+    "jobsToBeDone": [
+        "Test API endpoints",
+        "Retrieve live data"
+    ],
+    "inputs": [
+        {
+            "key": "api_url",
+            "label": "API URL",
+            "example": "https://jsonplaceholder.typicode.com/todos"
+        },
+        {
+            "key": "task_description",
+            "label": "Task Description",
+            "example": "print out the titles of the first 5 TODO items"
+        }
+    ]
+}

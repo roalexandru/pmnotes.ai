@@ -1,0 +1,30 @@
+{
+    "slug": "roadmap-planning",
+    "title": "Roadmap Planning",
+    "shortDescription": "Outline a high-level product roadmap.",
+    "surface": "thinking",
+    "pmStage": "Product Planning",
+    "complexity": "Advanced",
+    "outputType": "Roadmap Schedule",
+    "tags": [
+        "roadmap",
+        "planning",
+        "strategy"
+    ],
+    "jobsToBeDone": [
+        "Plan quarterly milestones",
+        "Communicate product vision"
+    ],
+    "inputs": [
+        {
+            "key": "product_name",
+            "label": "Product Name",
+            "example": "DevOps Dashboard"
+        },
+        {
+            "key": "goals",
+            "label": "Strategic Goals",
+            "example": "Increase adoption, reduce churn, launch mobile app"
+        }
+    ]
+}

@@ -1,0 +1,25 @@
+{
+    "slug": "release-manager",
+    "title": "Release Manager",
+    "shortDescription": "Autonomously checks git logs, changes files, and drafts release notes.",
+    "surface": "executor",
+    "pmStage": "Delivery",
+    "complexity": "Advanced",
+    "outputType": "Release Package",
+    "tags": [
+        "release",
+        "git",
+        "automation"
+    ],
+    "jobsToBeDone": [
+        "Automate release notes creation",
+        "Update version numbers"
+    ],
+    "inputs": [
+        {
+            "key": "version",
+            "label": "Target Version",
+            "example": "v1.2.0"
+        }
+    ]
+}

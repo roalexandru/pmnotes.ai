@@ -1,0 +1,26 @@
+{
+    "slug": "feature-prioritization",
+    "title": "Feature Prioritization",
+    "shortDescription": "Prioritize features using a framework like RICE or MoSCoW.",
+    "surface": "thinking",
+    "pmStage": "Product Planning",
+    "complexity": "Intermediate",
+    "outputType": "Prioritized List",
+    "tags": [
+        "prioritization",
+        "roadmap",
+        "RICE",
+        "MoSCoW"
+    ],
+    "jobsToBeDone": [
+        "Rank feature backlog",
+        "Justify roadmap decisions"
+    ],
+    "inputs": [
+        {
+            "key": "feature_list",
+            "label": "Feature List",
+            "example": "Dark mode, Offline support, Social login, Export to PDF"
+        }
+    ]
+}

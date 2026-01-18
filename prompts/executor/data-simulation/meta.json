@@ -1,0 +1,30 @@
+{
+    "slug": "data-simulation",
+    "title": "Data Simulation & Analysis",
+    "shortDescription": "Simulate data points and perform analysis.",
+    "surface": "executor",
+    "pmStage": "Data Analysis",
+    "complexity": "Intermediate",
+    "outputType": "Executed Code (Simulation)",
+    "tags": [
+        "python",
+        "simulation",
+        "analysis"
+    ],
+    "jobsToBeDone": [
+        "Simulate user growth",
+        "Calculate moving averages"
+    ],
+    "inputs": [
+        {
+            "key": "simulation_parameters",
+            "label": "Simulation Parameters",
+            "example": "30 days, mean of 100 sign-ups"
+        },
+        {
+            "key": "analysis_task",
+            "label": "Analysis Task",
+            "example": "calculate 7-day moving average"
+        }
+    ]
+}

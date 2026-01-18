@@ -1,0 +1,30 @@
+{
+    "slug": "mobile-model",
+    "title": "Mobile Data Model (Swift)",
+    "shortDescription": "Define a Swift struct for a mobile app.",
+    "surface": "builder",
+    "pmStage": "Prototyping",
+    "complexity": "Intermediate",
+    "outputType": "Code (Swift)",
+    "tags": [
+        "swift",
+        "ios",
+        "mobile"
+    ],
+    "jobsToBeDone": [
+        "Model mobile data",
+        "Create iOS structs"
+    ],
+    "inputs": [
+        {
+            "key": "struct_name",
+            "label": "Struct Name",
+            "example": "UserProfile"
+        },
+        {
+            "key": "properties",
+            "label": "Properties",
+            "example": "name: String, email: String, signupDate: Date"
+        }
+    ]
+}

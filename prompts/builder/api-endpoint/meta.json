@@ -1,0 +1,30 @@
+{
+    "slug": "api-endpoint",
+    "title": "Basic API Endpoint (Node.js)",
+    "shortDescription": "Create a REST API endpoint in Node.js.",
+    "surface": "builder",
+    "pmStage": "Prototyping",
+    "complexity": "Intermediate",
+    "outputType": "Code (Node.js)",
+    "tags": [
+        "node",
+        "express",
+        "api"
+    ],
+    "jobsToBeDone": [
+        "Mock backend logic",
+        "Create sample API"
+    ],
+    "inputs": [
+        {
+            "key": "resource_name",
+            "label": "Resource Name",
+            "example": "tasks"
+        },
+        {
+            "key": "fields",
+            "label": "Fields",
+            "example": "id, title, status"
+        }
+    ]
+}

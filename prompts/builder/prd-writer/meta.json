@@ -1,0 +1,30 @@
+{
+    "slug": "prd-writer",
+    "title": "PRD Writer",
+    "shortDescription": "Generate a comprehensive Product Requirements Document.",
+    "surface": "builder",
+    "pmStage": "Product Definition",
+    "complexity": "Intermediate",
+    "outputType": "Markdown Document",
+    "tags": [
+        "prd",
+        "requirements",
+        "definition"
+    ],
+    "jobsToBeDone": [
+        "Draft a PRD from rough notes",
+        "Standardize requirements format"
+    ],
+    "inputs": [
+        {
+            "key": "feature_name",
+            "label": "Feature Name",
+            "example": "User Authentication"
+        },
+        {
+            "key": "context_files",
+            "label": "Context Files",
+            "example": "@package.json @README.md"
+        }
+    ]
+}

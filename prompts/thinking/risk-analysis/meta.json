@@ -1,0 +1,25 @@
+{
+    "slug": "risk-analysis",
+    "title": "Risk & Mitigation Analysis",
+    "shortDescription": "Identify potential risks and mitigation strategies.",
+    "surface": "thinking",
+    "pmStage": "Product Planning",
+    "complexity": "Intermediate",
+    "outputType": "Risk Register",
+    "tags": [
+        "risk-management",
+        "pre-mortem",
+        "planning"
+    ],
+    "jobsToBeDone": [
+        "Anticipate project risks",
+        "Plan mitigation strategies"
+    ],
+    "inputs": [
+        {
+            "key": "feature_or_product",
+            "label": "Feature/Product",
+            "example": "AI-based Chatbot"
+        }
+    ]
+}

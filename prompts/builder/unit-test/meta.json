@@ -1,0 +1,30 @@
+{
+    "slug": "unit-test",
+    "title": "Unit Test Example (Python)",
+    "shortDescription": "Write a unit test for a Python function.",
+    "surface": "builder",
+    "pmStage": "Testing",
+    "complexity": "Intermediate",
+    "outputType": "Code (Python)",
+    "tags": [
+        "python",
+        "testing",
+        "unittest"
+    ],
+    "jobsToBeDone": [
+        "Ensure code quality",
+        "Write test cases"
+    ],
+    "inputs": [
+        {
+            "key": "function_name",
+            "label": "Function Name",
+            "example": "calculate_tier"
+        },
+        {
+            "key": "cases",
+            "label": "Test Cases",
+            "example": "Free, Pro, Enterprise"
+        }
+    ]
+}

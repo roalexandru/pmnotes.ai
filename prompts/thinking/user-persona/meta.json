@@ -1,0 +1,30 @@
+{
+    "slug": "user-persona",
+    "title": "User Persona Brainstorm",
+    "shortDescription": "Create a detailed user persona based on target audience.",
+    "surface": "thinking",
+    "pmStage": "Product Discovery",
+    "complexity": "Beginner",
+    "outputType": "Persona Profile",
+    "tags": [
+        "user-research",
+        "persona",
+        "empathy"
+    ],
+    "jobsToBeDone": [
+        "Visualize target user",
+        "Understand user pain points"
+    ],
+    "inputs": [
+        {
+            "key": "product_name",
+            "label": "Product Name",
+            "example": "TaskMaster"
+        },
+        {
+            "key": "target_user_description",
+            "label": "Target User Description",
+            "example": "Freelance graphic designers managing multiple clients"
+        }
+    ]
+}

@@ -1,0 +1,25 @@
+{
+    "slug": "automation-script",
+    "title": "Automation Script (Python)",
+    "shortDescription": "Create a Python script for task reminders.",
+    "surface": "builder",
+    "pmStage": "Productivity",
+    "complexity": "Intermediate",
+    "outputType": "Code (Python)",
+    "tags": [
+        "python",
+        "automation",
+        "productivity"
+    ],
+    "jobsToBeDone": [
+        "Automate repetitive tasks",
+        "Send reminders"
+    ],
+    "inputs": [
+        {
+            "key": "task_list",
+            "label": "Task List Source",
+            "example": "List of dictionaries with task_name and due_date"
+        }
+    ]
+}

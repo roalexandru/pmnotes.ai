@@ -1,0 +1,30 @@
+{
+    "slug": "data-cleaning",
+    "title": "Data Cleaning",
+    "shortDescription": "Clean missing values in a dataset.",
+    "surface": "executor",
+    "pmStage": "Data Preparation",
+    "complexity": "Intermediate",
+    "outputType": "Executed Code (Pandas)",
+    "tags": [
+        "python",
+        "pandas",
+        "data-cleaning"
+    ],
+    "jobsToBeDone": [
+        "Prepare data for analysis",
+        "Handle missing values"
+    ],
+    "inputs": [
+        {
+            "key": "csv_path",
+            "label": "CSV File Path",
+            "example": "user_data.csv"
+        },
+        {
+            "key": "column_to_fix",
+            "label": "Column to Fix",
+            "example": "age"
+        }
+    ]
+}

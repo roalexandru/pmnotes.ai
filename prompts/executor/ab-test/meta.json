@@ -1,0 +1,30 @@
+{
+    "slug": "ab-test",
+    "title": "A/B Test Significance",
+    "shortDescription": "Calculate statistical significance of A/B test.",
+    "surface": "executor",
+    "pmStage": "Experimentation",
+    "complexity": "Advanced",
+    "outputType": "Executed Code (Statistics)",
+    "tags": [
+        "python",
+        "statistics",
+        "ab-testing"
+    ],
+    "jobsToBeDone": [
+        "Analyze experiment results",
+        "Calculate p-values"
+    ],
+    "inputs": [
+        {
+            "key": "group_a_data",
+            "label": "Group A Data",
+            "example": "200 conversions out of 2000 users"
+        },
+        {
+            "key": "group_b_data",
+            "label": "Group B Data",
+            "example": "250 conversions out of 2100 users"
+        }
+    ]
+}

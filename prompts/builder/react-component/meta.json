@@ -1,0 +1,30 @@
+{
+    "slug": "react-component",
+    "title": "Prototype Feature Component (React)",
+    "shortDescription": "Create a functional React component.",
+    "surface": "builder",
+    "pmStage": "Prototyping",
+    "complexity": "Intermediate",
+    "outputType": "Code (React)",
+    "tags": [
+        "react",
+        "frontend",
+        "component"
+    ],
+    "jobsToBeDone": [
+        "Build UI components",
+        "Prototype frontend features"
+    ],
+    "inputs": [
+        {
+            "key": "component_name",
+            "label": "Component Name",
+            "example": "FeatureList"
+        },
+        {
+            "key": "props_description",
+            "label": "Props Description",
+            "example": "an array of feature objects with name and description"
+        }
+    ]
+}

@@ -1,0 +1,30 @@
+{
+    "slug": "db-schema",
+    "title": "Database Schema (SQL)",
+    "shortDescription": "Draft a SQL schema for a database.",
+    "surface": "builder",
+    "pmStage": "Technical Design",
+    "complexity": "Advanced",
+    "outputType": "Code (SQL)",
+    "tags": [
+        "sql",
+        "database",
+        "schema"
+    ],
+    "jobsToBeDone": [
+        "Design data models",
+        "Create database tables"
+    ],
+    "inputs": [
+        {
+            "key": "app_type",
+            "label": "Application Type",
+            "example": "bug-tracking system"
+        },
+        {
+            "key": "tables_list",
+            "label": "Tables List",
+            "example": "Users, Bugs, Comments"
+        }
+    ]
+}

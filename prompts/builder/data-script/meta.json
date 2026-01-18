@@ -1,0 +1,30 @@
+{
+    "slug": "data-script",
+    "title": "Data Processing Script (Python)",
+    "shortDescription": "Write a Python script to process CSV data.",
+    "surface": "builder",
+    "pmStage": "Data Analysis",
+    "complexity": "Intermediate",
+    "outputType": "Code (Python)",
+    "tags": [
+        "python",
+        "csv",
+        "data-processing"
+    ],
+    "jobsToBeDone": [
+        "Analyze CSV files",
+        "Extract insights from data"
+    ],
+    "inputs": [
+        {
+            "key": "column_name",
+            "label": "Target Column",
+            "example": "issue_type"
+        },
+        {
+            "key": "csv_columns",
+            "label": "CSV Columns",
+            "example": "ticket_id, issue_type, message"
+        }
+    ]
+}

@@ -1,0 +1,25 @@
+{
+    "slug": "market-analysis",
+    "title": "Market Analysis",
+    "shortDescription": "Analyze current trends, market size, and competitors.",
+    "surface": "thinking",
+    "pmStage": "Product Discovery",
+    "complexity": "Intermediate",
+    "outputType": "Market Report",
+    "tags": [
+        "market-research",
+        "competitors",
+        "swot"
+    ],
+    "jobsToBeDone": [
+        "Understand market trends",
+        "Analyze competitor strengths and weaknesses"
+    ],
+    "inputs": [
+        {
+            "key": "industry",
+            "label": "Industry or Niche",
+            "example": "SaaS Project Management"
+        }
+    ]
+}

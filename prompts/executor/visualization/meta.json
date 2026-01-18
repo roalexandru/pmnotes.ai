@@ -1,0 +1,30 @@
+{
+    "slug": "visualization",
+    "title": "Data Visualization",
+    "shortDescription": "Plot a chart from provided data.",
+    "surface": "executor",
+    "pmStage": "Reporting",
+    "complexity": "Intermediate",
+    "outputType": "Executed Code (Chart)",
+    "tags": [
+        "python",
+        "matplotlib",
+        "visualization"
+    ],
+    "jobsToBeDone": [
+        "Visualize sales data",
+        "Create reports"
+    ],
+    "inputs": [
+        {
+            "key": "chart_type",
+            "label": "Chart Type",
+            "example": "bar chart"
+        },
+        {
+            "key": "data_points",
+            "label": "Data Points",
+            "example": "Jan: 100, Feb: 150, Mar: 130"
+        }
+    ]
+}

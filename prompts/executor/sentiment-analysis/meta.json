@@ -1,0 +1,30 @@
+{
+    "slug": "sentiment-analysis",
+    "title": "Basic Sentiment Analysis",
+    "shortDescription": "Analyze sentiment of user feedback.",
+    "surface": "executor",
+    "pmStage": "Product Discovery",
+    "complexity": "Intermediate",
+    "outputType": "Executed Code (NLP)",
+    "tags": [
+        "python",
+        "nlp",
+        "sentiment"
+    ],
+    "jobsToBeDone": [
+        "Classify user feedback",
+        "Quantify sentiment"
+    ],
+    "inputs": [
+        {
+            "key": "feedback_list",
+            "label": "Feedback List",
+            "example": "['Love the new update!', 'The app crashes often.', 'Great customer service.', 'Not intuitive to use.']"
+        },
+        {
+            "key": "keywords",
+            "label": "Sentiment Keywords",
+            "example": "positive: love, great; negative: crashes, not"
+        }
+    ]
+}

@@ -1,0 +1,30 @@
+{
+    "slug": "feedback-summary",
+    "title": "Customer Feedback Summary",
+    "shortDescription": "Summarize user feedback to identify themes.",
+    "surface": "thinking",
+    "pmStage": "Product Discovery",
+    "complexity": "Beginner",
+    "outputType": "Summary Report",
+    "tags": [
+        "feedback",
+        "user-research",
+        "pain-points"
+    ],
+    "jobsToBeDone": [
+        "Synthesize raw feedback",
+        "Identify common pain points"
+    ],
+    "inputs": [
+        {
+            "key": "product_name",
+            "label": "Product Name",
+            "example": "PhotoEditor Pro"
+        },
+        {
+            "key": "feedback_text",
+            "label": "Feedback Text",
+            "example": "Apps crashes on save. Great filters but slow. Subscription is too expensive."
+        }
+    ]
+}

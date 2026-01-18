@@ -1,0 +1,30 @@
+{
+    "slug": "correlation-analysis",
+    "title": "Correlation Analysis",
+    "shortDescription": "Calculate correlation between two variables.",
+    "surface": "executor",
+    "pmStage": "Data Analysis",
+    "complexity": "Intermediate",
+    "outputType": "Executed Code (Statistics)",
+    "tags": [
+        "python",
+        "statistics",
+        "correlation"
+    ],
+    "jobsToBeDone": [
+        "Identify relationships in data",
+        "Validate hypotheses"
+    ],
+    "inputs": [
+        {
+            "key": "variable_a",
+            "label": "Variable A Data",
+            "example": "[50, 60, 55, 70, 65]"
+        },
+        {
+            "key": "variable_b",
+            "label": "Variable B Data",
+            "example": "[200, 240, 220, 300, 270]"
+        }
+    ]
+}

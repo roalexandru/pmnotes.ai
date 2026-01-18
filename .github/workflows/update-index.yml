@@ -6,7 +6,7 @@ on:
       - main
     paths:
       - 'prompts/**'
-      - '!prompts/prompts/index.json'
+      - '!prompts/index.json'
 
 permissions:
   contents: write
@@ -32,7 +32,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add prompts/prompts/index.json
+          git add prompts/index.json
           # Check for changes
           if git diff --staged --quiet; then
             echo "No changes to commit"

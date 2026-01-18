@@ -4,6 +4,7 @@
     "shortDescription": "Generate a comprehensive Product Requirements Document.",
     "surface": "builder",
     "pmStage": "Product Definition",
+    "featured": true,
     "complexity": "Intermediate",
     "outputType": "Markdown Document",
     "tags": [

@@ -4,6 +4,7 @@
     "shortDescription": "Generate a PRD outline for a new product.",
     "surface": "thinking",
     "pmStage": "Product Definition",
+    "featured": true,
     "complexity": "Intermediate",
     "outputType": "Markdown Outline",
     "tags": [

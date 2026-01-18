@@ -4,6 +4,7 @@
     "shortDescription": "Calculate correlation between two variables.",
     "surface": "executor",
     "pmStage": "Data Analysis",
+    "featured": true,
     "complexity": "Intermediate",
     "outputType": "Executed Code (Statistics)",
     "tags": [

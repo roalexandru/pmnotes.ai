@@ -4,6 +4,7 @@
     "shortDescription": "Simulate data points and perform analysis.",
     "surface": "executor",
     "pmStage": "Data Analysis",
+    "featured": true,
     "complexity": "Intermediate",
     "outputType": "Executed Code (Simulation)",
     "tags": [

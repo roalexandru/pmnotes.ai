@@ -4,6 +4,7 @@
     "shortDescription": "Create a functional React component.",
     "surface": "builder",
     "pmStage": "Prototyping",
+    "featured": true,
     "complexity": "Intermediate",
     "outputType": "Code (React)",
     "tags": [

@@ -4,6 +4,7 @@
     "shortDescription": "Create a detailed user persona based on target audience.",
     "surface": "thinking",
     "pmStage": "Product Discovery",
+    "featured": true,
     "complexity": "Beginner",
     "outputType": "Persona Profile",
     "tags": [

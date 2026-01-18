@@ -6,8 +6,7 @@ on:
       - main
     paths:
       - 'prompts/**'
-    paths-ignore:
-      - 'prompts/prompts/index.json'
+      - '!prompts/prompts/index.json'
 
 permissions:
   contents: write

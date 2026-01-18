@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-01-18T13:57:46.328Z",
+  "generatedAt": "2026-01-18T16:32:59.204Z",
   "items": [
     {
       "id": "api-endpoint",
@@ -176,11 +176,12 @@
         "requirements",
         "definition"
       ],
-      "updatedAt": "2026-01-18T13:27:35+02:00",
+      "updatedAt": "2026-01-18T18:30:27+02:00",
       "slug": "prd-writer",
       "shortDescription": "Generate a comprehensive Product Requirements Document.",
       "surface": "builder",
       "pmStage": "Product Definition",
+      "featured": true,
       "complexity": "Intermediate",
       "outputType": "Markdown Document",
       "jobsToBeDone": [
@@ -210,11 +211,12 @@
         "frontend",
         "component"
       ],
-      "updatedAt": "2026-01-18T13:27:35+02:00",
+      "updatedAt": "2026-01-18T18:30:27+02:00",
       "slug": "react-component",
       "shortDescription": "Create a functional React component.",
       "surface": "builder",
       "pmStage": "Prototyping",
+      "featured": true,
       "complexity": "Intermediate",
       "outputType": "Code (React)",
       "jobsToBeDone": [
@@ -443,11 +445,12 @@
         "statistics",
         "correlation"
       ],
-      "updatedAt": "2026-01-18T13:27:35+02:00",
+      "updatedAt": "2026-01-18T18:30:27+02:00",
       "slug": "correlation-analysis",
       "shortDescription": "Calculate correlation between two variables.",
       "surface": "executor",
       "pmStage": "Data Analysis",
+      "featured": true,
       "complexity": "Intermediate",
       "outputType": "Executed Code (Statistics)",
       "jobsToBeDone": [
@@ -511,11 +514,12 @@
         "simulation",
         "analysis"
       ],
-      "updatedAt": "2026-01-18T13:27:35+02:00",
+      "updatedAt": "2026-01-18T18:30:27+02:00",
       "slug": "data-simulation",
       "shortDescription": "Simulate data points and perform analysis.",
       "surface": "executor",
       "pmStage": "Data Analysis",
+      "featured": true,
       "complexity": "Intermediate",
       "outputType": "Executed Code (Simulation)",
       "jobsToBeDone": [
@@ -910,11 +914,12 @@
         "requirements",
         "scoping"
       ],
-      "updatedAt": "2026-01-18T13:27:35+02:00",
+      "updatedAt": "2026-01-18T18:30:27+02:00",
       "slug": "prd-outline",
       "shortDescription": "Generate a PRD outline for a new product.",
       "surface": "thinking",
       "pmStage": "Product Definition",
+      "featured": true,
       "complexity": "Intermediate",
       "outputType": "Markdown Outline",
       "jobsToBeDone": [
@@ -1070,11 +1075,12 @@
         "persona",
         "empathy"
       ],
-      "updatedAt": "2026-01-18T13:27:35+02:00",
+      "updatedAt": "2026-01-18T18:30:27+02:00",
       "slug": "user-persona",
       "shortDescription": "Create a detailed user persona based on target audience.",
       "surface": "thinking",
       "pmStage": "Product Discovery",
+      "featured": true,
       "complexity": "Beginner",
       "outputType": "Persona Profile",
       "jobsToBeDone": [

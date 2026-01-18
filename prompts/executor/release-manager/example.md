@@ -1,21 +1,33 @@
-# Release Notes Package v1.2.0
+# Release v1.2.0 (2026-02-01)
 
-## Status
-**Release Date**: 2023-10-27
-**Target Version**: v1.2.0
-**Previous Version**: v1.1.5
+## Highlights
+- Added churn risk dashboard widgets for PMs.
+- Reduced billing pipeline retries from 5 to 2 for faster recovery.
 
-## Changelog
-*   **Feature**: Added Dark Mode support for the dashboard. (PR #452)
-*   **Feature**: New "Export to CSV" button in the users table. (PR #448)
-*   **Fix**: Resolved login session timeout issue on Safari. (PR #455)
-*   **Perf**: Optimized image loading on the landing page (20% faster LCP). (PR #450)
+## Features
+- Analytics: Added cohort retention export to CSV.
+- Growth: Introduced onboarding checklist emails.
 
-## Automation Steps Taken
-1.  bumped version in `package.json` to `1.2.0`.
-2.  Generated `CHANGELOG.md` entry.
-3.  Created git tag `v1.2.0`.
+## Fixes
+- Fixed edge case where promo codes failed for annual plans.
+- Resolved timezone bug in scheduled reports.
 
-## Next Steps
-*   Run `npm publish` (awaiting manual approval).
-*   Deploy to Staging environment for smoke testing.
+## Chores
+- Upgraded dependencies for security patches.
+- Refactored data pipelines to reduce latency.
+
+## Risk Review
+- Billing: Retry logic changes could affect payments.
+- Auth: None detected.
+- Database: Added index to subscriptions table.
+
+## Checklist
+- [ ] Tests run (unit + integration)
+- [ ] DB migrations applied
+- [ ] Docs updated
+- [ ] Version bump in package.json / pyproject.toml
+
+## Version Bump Targets
+- package.json
+- CHANGELOG.md
+

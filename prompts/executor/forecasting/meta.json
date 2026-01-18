@@ -1,7 +1,7 @@
 {
     "slug": "forecasting",
-    "title": "Forecasting Simulation",
-    "shortDescription": "Project future growth based on rates.",
+    "title": "User Growth Forecast (with Churn)",
+    "shortDescription": "Project user base over time using growth and churn assumptions.",
     "surface": "executor",
     "pmStage": "Planning",
     "complexity": "Advanced",
@@ -12,8 +12,8 @@
         "growth"
     ],
     "jobsToBeDone": [
-        "Forecast user growth",
-        "Model churn impact"
+        "Estimate future users",
+        "Model impact of churn"
     ],
     "inputs": [
         {
@@ -30,6 +30,11 @@
             "key": "churn_rate",
             "label": "Monthly Churn Rate",
             "example": "5%"
+        },
+        {
+            "key": "months",
+            "label": "Months to Forecast",
+            "example": "12"
         }
     ]
 }

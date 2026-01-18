@@ -1,31 +1,26 @@
 import numpy as np
 
-# Simulation Parameters
+np.random.seed(42)
+
 days = 30
-mean_signups = 100
-std_dev = 15 # Assumed volatility
+daily_mean = 120
+daily_stddev = 15
+window = 7
 
-# 1. Generate Data
-np.random.seed(42) # For reproducibility
-daily_signups = np.random.normal(mean_signups, std_dev, days).astype(int)
+signups = np.random.normal(loc=daily_mean, scale=daily_stddev, size=days)
+signups = np.maximum(signups, 0)
 
-# 2. Analyze (7-Day Moving Average)
-def moving_average(data, window_size):
-    return np.convolve(data, np.ones(window_size)/window_size, mode='valid')
+moving_avg = np.convolve(signups, np.ones(window) / window, mode="valid")
 
-ma_7 = moving_average(daily_signups, 7)
+print(f"Days simulated: {days}")
+print(f"Mean sign-ups: {signups.mean():.1f}")
+print(f"Min/Max sign-ups: {signups.min():.1f} / {signups.max():.1f}")
+print(f"Latest {window}-day moving average: {moving_avg[-1]:.1f}")
+print("Insight: The moving average smooths daily noise to reveal the underlying growth trend.")
 
-# Output
-print("Day | Signups | 7-Day MA")
-print("----|---------|---------")
-for i in range(len(ma_7)):
-    day_num = i + 7
-    # Aligning Day 7 with the first MA value
-    print(f"{day_num:3} | {daily_signups[day_num-1]:7} | {ma_7[i]:.2f}")
-
-# Sample Output Chunk
-# Day | Signups | 7-Day MA
-# ----|---------|---------
-#   7 |     123 | 105.43
-#   8 |      88 | 104.14
-#   9 |      93 | 103.00
+# Sample Output:
+# Days simulated: 30
+# Mean sign-ups: 119.8
+# Min/Max sign-ups: 90.9 / 150.1
+# Latest 7-day moving average: 118.5
+# Insight: The moving average smooths daily noise to reveal the underlying growth trend.

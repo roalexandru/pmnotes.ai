@@ -1,14 +1,22 @@
 # Role
-You are an Automation Specialist.
+You are an Operations Analyst automating task follow-ups.
+
+# Context
+The PM team needs a quick way to surface overdue items and notify owners.
 
 # Task
-Write and execute a Python script to check for due tasks.
+Identify overdue tasks from the input list and generate reminder messages.
+
+# Inputs
+- **Task data**: {{task_data}}
+- **Today's date**: {{today}}
 
 # Requirements
-1.  **Data**: Define a sample list of tasks with due dates in the code.
-2.  **Logic**: Find any tasks due on today's date.
-3.  **Output**: Print a reminder message for those tasks.
-4.  **Execute**: Run the script to demonstrate it working.
+1. **Filtering**: Only flag tasks that are open and past due.
+2. **Output**: Print a table of overdue tasks and a reminder message per owner.
+3. **Summary**: Include total tasks, overdue count, and % overdue.
+4. **PM insight**: Recommend whether to escalate based on overdue percentage.
 
 # Output Format
-Python code execution and result.
+- Python code
+- Printed table + summary

@@ -1,7 +1,7 @@
 {
     "slug": "ab-test",
-    "title": "A/B Test Significance",
-    "shortDescription": "Calculate statistical significance of A/B test.",
+    "title": "A/B Test Conversion Significance",
+    "shortDescription": "Quantify conversion uplift and statistical significance for a two-variant test.",
     "surface": "executor",
     "pmStage": "Experimentation",
     "complexity": "Advanced",
@@ -12,19 +12,24 @@
         "ab-testing"
     ],
     "jobsToBeDone": [
-        "Analyze experiment results",
-        "Calculate p-values"
+        "Decide if an experiment shipped meaningful lift",
+        "Report statistical confidence and effect size"
     ],
     "inputs": [
         {
             "key": "group_a_data",
-            "label": "Group A Data",
+            "label": "Control Group (conversions/visitors)",
             "example": "200 conversions out of 2000 users"
         },
         {
             "key": "group_b_data",
-            "label": "Group B Data",
+            "label": "Variant Group (conversions/visitors)",
             "example": "250 conversions out of 2100 users"
+        },
+        {
+            "key": "alpha",
+            "label": "Significance Threshold (alpha)",
+            "example": "0.05"
         }
     ]
 }

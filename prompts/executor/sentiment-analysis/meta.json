@@ -1,7 +1,7 @@
 {
     "slug": "sentiment-analysis",
-    "title": "Basic Sentiment Analysis",
-    "shortDescription": "Analyze sentiment of user feedback.",
+    "title": "User Feedback Sentiment Triage",
+    "shortDescription": "Classify feedback sentiment and surface actionable themes.",
     "surface": "executor",
     "pmStage": "Product Discovery",
     "complexity": "Intermediate",
@@ -12,8 +12,8 @@
         "sentiment"
     ],
     "jobsToBeDone": [
-        "Classify user feedback",
-        "Quantify sentiment"
+        "Prioritize feedback",
+        "Spot recurring pain points"
     ],
     "inputs": [
         {
@@ -22,9 +22,14 @@
             "example": "['Love the new update!', 'The app crashes often.', 'Great customer service.', 'Not intuitive to use.']"
         },
         {
-            "key": "keywords",
-            "label": "Sentiment Keywords",
-            "example": "positive: love, great; negative: crashes, not"
+            "key": "positive_keywords",
+            "label": "Positive Keywords",
+            "example": "love, great, fast, helpful"
+        },
+        {
+            "key": "negative_keywords",
+            "label": "Negative Keywords",
+            "example": "crash, slow, confusing, not"
         }
     ]
 }

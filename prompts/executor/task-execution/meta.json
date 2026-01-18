@@ -1,7 +1,7 @@
 {
     "slug": "task-execution",
-    "title": "Automation Task Execution",
-    "shortDescription": "Execute automated tasks based on conditions.",
+    "title": "Task Escalation Automation",
+    "shortDescription": "Flag overdue tasks and generate owner reminders.",
     "surface": "executor",
     "pmStage": "Productivity",
     "complexity": "Intermediate",
@@ -12,14 +12,19 @@
         "tasks"
     ],
     "jobsToBeDone": [
-        "Check due dates",
-        "Trigger reminders"
+        "Identify overdue work",
+        "Nudge owners with reminders"
     ],
     "inputs": [
         {
             "key": "task_data",
             "label": "Task Data",
-            "example": "Sample list defined in code"
+            "example": "[{\"name\": \"Update pricing\", \"owner\": \"Ava\", \"due_date\": \"2026-01-20\", \"status\": \"open\"}]"
+        },
+        {
+            "key": "today",
+            "label": "Today's Date",
+            "example": "2026-01-21"
         }
     ]
 }

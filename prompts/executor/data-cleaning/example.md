@@ -1,37 +1,46 @@
 import pandas as pd
-import numpy as np
-import io
 
-# Creating mock CSV data for demonstration
-csv_content = """user_id,age,city
-1,25,New York
-2,,London
-3,30,Paris
-4,35,Tokyo
-5,,Berlin
-6,22,Sydney"""
+csv_path = "user_data.csv"
+columns_to_fix = ["age", "country", "plan_tier"]
 
-# Load DataFrame
-df = pd.read_csv(io.StringIO(csv_content))
+# Load data
+df = pd.read_csv(csv_path)
 
-print("Original Data:")
-print(df)
-print("\n" + "-"*30 + "\n")
+print("Missing values (before):")
+print(df[columns_to_fix].isna().sum())
 
-# Calculate average age (skipping NaNs automatically)
-avg_age = df['age'].mean()
-print(f"Calculated Average Age: {avg_age:.1f}")
+# Clean numeric columns
+if "age" in columns_to_fix:
+    df["age"] = pd.to_numeric(df["age"], errors="coerce")
+    df["age"] = df["age"].fillna(df["age"].median())
 
-# Count missing values
-missing_count = df['age'].isna().sum()
-print(f"Missing values found: {missing_count}")
+# Clean categorical columns
+for col in ["country", "plan_tier"]:
+    if col in columns_to_fix:
+        df[col] = df[col].astype(str).str.strip()
+        df[col] = df[col].replace({"nan": None})
+        df[col] = df[col].fillna(df[col].mode()[0])
 
-# Fill missing values
-df['age'] = df['age'].fillna(avg_age)
+print("\nMissing values (after):")
+print(df[columns_to_fix].isna().sum())
 
-print("\ncleaned Data:")
-print(df)
+cleaned_path = csv_path.replace(".csv", "_cleaned.csv")
+df.to_csv(cleaned_path, index=False)
 
-# Check
-new_missing = df['age'].isna().sum()
-print(f"\nRemaining missing values: {new_missing}")
+print(f"\nSaved cleaned file to: {cleaned_path}")
+print("\nCleaned preview:")
+print(df.head())
+
+# Sample Output:
+# Missing values (before):
+# age          12
+# country       5
+# plan_tier     8
+# Missing values (after):
+# age          0
+# country      0
+# plan_tier    0
+# Saved cleaned file to: user_data_cleaned.csv
+# Cleaned preview:
+#    user_id   age country plan_tier
+# 0        1  29.0      US      basic

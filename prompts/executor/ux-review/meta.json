@@ -1,0 +1,40 @@
+{
+    "slug": "ux-review",
+    "title": "UX Flow Review & Redesign Suggestions",
+    "shortDescription": "Audit a user flow for friction points and propose high-impact UX improvements.",
+    "surface": "executor",
+    "pmStage": "Discovery",
+    "complexity": "Advanced",
+    "outputType": "UX Review Report",
+    "tags": [
+        "ux",
+        "research",
+        "product"
+    ],
+    "jobsToBeDone": [
+        "Identify friction in key flows",
+        "Prioritize UX fixes with clear acceptance criteria"
+    ],
+    "inputs": [
+        {
+            "key": "flow_description",
+            "label": "Flow Description",
+            "example": "User signs up, imports data, creates first dashboard"
+        },
+        {
+            "key": "target_persona",
+            "label": "Target Persona",
+            "example": "Ops manager with limited analytics experience"
+        },
+        {
+            "key": "success_metric",
+            "label": "Success Metric",
+            "example": "Activation rate within 24 hours"
+        },
+        {
+            "key": "constraints",
+            "label": "Constraints",
+            "example": "No new backend endpoints; must ship in 2 weeks"
+        }
+    ]
+}

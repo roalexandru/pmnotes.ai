@@ -62,6 +62,17 @@ function generateIndex() {
             // Get last modified time from git history of the directory
             const updatedAt = getGitLastModified(slugPath);
 
+            // Read prompt content for search indexing
+            let promptContent = "";
+            const promptPath = path.join(slugPath, 'prompt.md');
+            if (fs.existsSync(promptPath)) {
+                try {
+                    promptContent = fs.readFileSync(promptPath, 'utf8');
+                } catch (e) {
+                    console.warn(`Warning: Failed to read prompt.md for ${slug}`);
+                }
+            }
+
             items.push({
                 id: slug,
                 title,
@@ -69,6 +80,7 @@ function generateIndex() {
                 path: `${category}/${slug}`,
                 tags,
                 updatedAt,
+                prompt: promptContent,
                 ...meta // include other meta fields if needed, but 'items' keeps it clean
             });
         });

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-01-18T13:57:46.328Z",
+  "generatedAt": "2026-01-18T18:53:59.311Z",
   "items": [
     {
       "id": "api-endpoint",
@@ -12,6 +12,7 @@
         "api"
       ],
       "updatedAt": "2026-01-18T13:27:35+02:00",
+      "prompt": "# Role\nYou are a Backend Developer specializing in Node.js and Express.\n\n# Task\nCreate a basic REST API endpoint GET /{{resource_name}}.\n\n# Requirements\n1.  **Framework**: Use Express.js.\n2.  **Response**: Return a JSON list of {{resource_name}}.\n3.  **Data Structure**: Each item should have the following fields: {{fields}}.\n4.  **Sample Data**: Include mock data in the response.\n\n# Output Format\nNode.js code snippet.\n",
       "slug": "api-endpoint",
       "shortDescription": "Create a REST API endpoint in Node.js.",
       "surface": "builder",
@@ -46,6 +47,7 @@
         "productivity"
       ],
       "updatedAt": "2026-01-18T13:27:35+02:00",
+      "prompt": "# Role\nYou are a Python Developer interested in automation.\n\n# Task\nCreate a Python script that iterates through a list of tasks.\n\n# Requirements\n1.  **Input**: {{task_list}}.\n2.  **Logic**: Identify any task due today.\n3.  **Output**: Print a reminder message for proper tasks.\n4.  **Extensibility**: Structure it so it's easy to later send these reminders via email.\n\n# Output Format\nPython script.\n",
       "slug": "automation-script",
       "shortDescription": "Create a Python script for task reminders.",
       "surface": "builder",
@@ -75,6 +77,7 @@
         "data-processing"
       ],
       "updatedAt": "2026-01-18T13:27:35+02:00",
+      "prompt": "# Role\nYou are a Python Developer or Data Engineer.\n\n# Task\nWrite a Python script that reads a CSV file.\n\n# Requirements\n1.  **Input**: A CSV file with columns: {{csv_columns}}.\n2.  **Logic**: Count the occurrences of values in the '{{column_name}}' column.\n3.  **Output**: Print the top 3 most common values with their counts.\n\n# Output Format\nPython script.\n",
       "slug": "data-script",
       "shortDescription": "Write a Python script to process CSV data.",
       "surface": "builder",
@@ -109,6 +112,7 @@
         "schema"
       ],
       "updatedAt": "2026-01-18T13:27:35+02:00",
+      "prompt": "# Role\nYou are a Database Architect.\n\n# Task\nDraft a SQL schema for a {{app_type}}.\n\n# Requirements\nInclude the following tables with appropriate columns and foreign keys:\n{{tables_list}}\n\n# Output Format\nSQL `CREATE TABLE` statements.\n",
       "slug": "db-schema",
       "shortDescription": "Draft a SQL schema for a database.",
       "surface": "builder",
@@ -143,6 +147,7 @@
         "mobile"
       ],
       "updatedAt": "2026-01-18T13:27:35+02:00",
+      "prompt": "# Role\nYou are an iOS Developer.\n\n# Task\nDefine a Swift struct called `{{struct_name}}`.\n\n# Requirements\n1.  **Properties**: Include `{{properties}}`.\n2.  **Usage**: Include an initializer and an example of how to create an instance.\n\n# Output Format\nSwift code snippet.\n",
       "slug": "mobile-model",
       "shortDescription": "Define a Swift struct for a mobile app.",
       "surface": "builder",
@@ -176,11 +181,13 @@
         "requirements",
         "definition"
       ],
-      "updatedAt": "2026-01-18T13:27:35+02:00",
+      "updatedAt": "2026-01-18T18:30:27+02:00",
+      "prompt": "# Role\nYou are a Senior Technical Product Manager.\n\n# Context\nI am building a feature in an existing codebase. I need a Product Requirements Document (PRD) to guide the engineering team.\n\n# Task\nDraft a PRD for the feature \"{{feature_name}}\", taking into account the current project context provided in the attached files.\n\n# Inputs\n- **Feature Name**: {{feature_name}}\n- **Context**: Referenced files in the chat (e.g., package.json, existing types).\n\n# Output Format\nGenerate a `PRD.md` file with the following sections:\n1.  **Overview**: Problem statement and goals.\n2.  **User Stories**: Gherkin style (Given/When/Then).\n3.  **Functional Requirements**: Specific API endpoints, UI states, or logic.\n4.  **Non-Functional Requirements**: Performance, security, accessibility.\n5.  **Technical Considerations**: Database schema changes, new dependencies (based on existing stack).\n\n# Constraints\n- Use the technology stack present in the context files.\n- Keep the scope MVP-focused unless specified otherwise.\n",
       "slug": "prd-writer",
       "shortDescription": "Generate a comprehensive Product Requirements Document.",
       "surface": "builder",
       "pmStage": "Product Definition",
+      "featured": true,
       "complexity": "Intermediate",
       "outputType": "Markdown Document",
       "jobsToBeDone": [
@@ -210,11 +217,13 @@
         "frontend",
         "component"
       ],
-      "updatedAt": "2026-01-18T13:27:35+02:00",
+      "updatedAt": "2026-01-18T18:30:27+02:00",
+      "prompt": "# Role\nYou are a React Developer.\n\n# Task\nCreate a functional component called {{component_name}}.\n\n# Requirements\n1.  **Props**: The component takes {{props_description}}.\n2.  **Rendering**: Display the data in a clean list format.\n3.  **Style**: Use inline styles or basic CSS classes for readability.\n\n# Output Format\nReact component code (JSX).\n",
       "slug": "react-component",
       "shortDescription": "Create a functional React component.",
       "surface": "builder",
       "pmStage": "Prototyping",
+      "featured": true,
       "complexity": "Intermediate",
       "outputType": "Code (React)",
       "jobsToBeDone": [
@@ -245,6 +254,7 @@
         "pseudocode"
       ],
       "updatedAt": "2026-01-18T13:27:35+02:00",
+      "prompt": "# Role\nYou are a Software Architect.\n\n# Task\nOutline pseudocode for a Slack bot that listens for the command `{{command}}`.\n\n# Requirements\n1.  **Trigger**: Respond when user types `{{command}}`.\n2.  **Action**: Check system status (mock logic).\n3.  **Response**: Reply with `{{response_message}}`.\n4.  **API interaction**: Include generic steps to connect to the Slack API.\n\n# Output Format\nPseudocode.\n",
       "slug": "slack-bot",
       "shortDescription": "Outline pseudocode for a Slack bot.",
       "surface": "builder",
@@ -279,6 +289,7 @@
         "ui"
       ],
       "updatedAt": "2026-01-18T13:27:35+02:00",
+      "prompt": "# Role\nYou are a Frontend Developer.\n\n# Task\nProvide an HTML/CSS/JavaScript snippet for a modal dialog.\n\n# Requirements\n1.  **Trigger**: User clicks a '{{trigger_button_text}}' button.\n2.  **Interaction**: A modal appears with the message \"{{modal_message}}\".\n3.  **Controls**: Include \"Confirm\" and \"Cancel\" buttons in the modal.\n\n# Output Format\nHTML/CSS/JS snippet.\n",
       "slug": "ui-interaction",
       "shortDescription": "Create a modal dialog interaction.",
       "surface": "builder",
@@ -313,6 +324,7 @@
         "unittest"
       ],
       "updatedAt": "2026-01-18T13:27:35+02:00",
+      "prompt": "# Role\nYou are a QA Engineer or Python Developer.\n\n# Task\nWrite a Python unit test (using unittest or pytest) for the function `{{function_name}}(user_usage)`.\n\n# Requirements\n1.  **Logic**: The function returns a subscription tier based on usage.\n2.  **Coverage**: Test at least one case for each of these tiers: {{cases}}.\n3.  **Assumptions**: Assume specific usage thresholds for each tier.\n\n# Output Format\nPython test code.\n",
       "slug": "unit-test",
       "shortDescription": "Write a unit test for a Python function.",
       "surface": "builder",
@@ -347,6 +359,7 @@
         "prototype"
       ],
       "updatedAt": "2026-01-18T13:27:35+02:00",
+      "prompt": "# Role\nYou are an Expert Frontend Developer.\n\n# Context\nI need a simple landing page for a {{product_type}}.\n\n# Task\nGenerate HTML and CSS for the landing page.\n\n# Requirements\n1.  **Header**: Navigation and logo placeholder.\n2.  **Hero Section**: Headline, subheadline, and a \"Sign Up\" button.\n3.  **Features Section**: Highlight three key features with icon placeholders.\n4.  **Style**: Clean, modern, and responsive.\n\n# Output Format\nSingle HTML file with embedded CSS.\n",
       "slug": "website-mockup",
       "shortDescription": "Generate HTML/CSS for a landing page.",
       "surface": "builder",
@@ -376,6 +389,7 @@
         "ab-testing"
       ],
       "updatedAt": "2026-01-18T13:27:35+02:00",
+      "prompt": "# Role\nYou are a Data Scientist specializing in experimentation.\n\n# Task\nPerform a statistical test to check if the conversion rate difference between two groups is significant.\nGroup A: {{group_a_data}}\nGroup B: {{group_b_data}}\n\n# Requirements\n1.  **Test**: Perform a chi-square test (or appropriate alternative).\n2.  **Output**: Print the p-value and a clear interpretation (Significant vs Not Significant).\n\n# Output Format\nPython code execution and result.\n",
       "slug": "ab-test",
       "shortDescription": "Calculate statistical significance of A/B test.",
       "surface": "executor",
@@ -410,6 +424,7 @@
         "requests"
       ],
       "updatedAt": "2026-01-18T13:27:35+02:00",
+      "prompt": "# Role\nYou are a Python Developer.\n\n# Task\nUse Python to fetch data from {{api_url}}.\n\n# Requirements\n1.  **Fetch**: Perform a GET request.\n2.  **Parse**: Parse the JSON response.\n3.  **Process**: {{task_description}}.\n\n# Output Format\nPython code execution and output.\n",
       "slug": "api-fetch",
       "shortDescription": "Fetch and parse data from a public API.",
       "surface": "executor",
@@ -443,11 +458,13 @@
         "statistics",
         "correlation"
       ],
-      "updatedAt": "2026-01-18T13:27:35+02:00",
+      "updatedAt": "2026-01-18T18:30:27+02:00",
+      "prompt": "# Role\nYou are a Statistician.\n\n# Task\nCalculate the correlation coefficient between these two variables.\nVar A: {{variable_a}}\nVar B: {{variable_b}}\n\n# Requirements\n1.  **Calculate**: Use Python (NumPy/Pandas) to find the correlation.\n2.  **Output**: Print the coefficient and interpret the strength/direction.\n\n# Output Format\nPython code execution and result.\n",
       "slug": "correlation-analysis",
       "shortDescription": "Calculate correlation between two variables.",
       "surface": "executor",
       "pmStage": "Data Analysis",
+      "featured": true,
       "complexity": "Intermediate",
       "outputType": "Executed Code (Statistics)",
       "jobsToBeDone": [
@@ -478,6 +495,7 @@
         "data-cleaning"
       ],
       "updatedAt": "2026-01-18T13:27:35+02:00",
+      "prompt": "# Role\nYou are a Data Engineer.\n\n# Task\nClean the dataset using Python pandas.\n\n# Requirements\n1.  **Load**: Load DataFrame from `{{csv_path}}`.\n2.  **Clean**: Fill missing values in `{{column_to_fix}}` with the average value of that column.\n3.  **Report**: Output the new average and count of filled values.\n\n# Output Format\nPython code execution and result.\n",
       "slug": "data-cleaning",
       "shortDescription": "Clean missing values in a dataset.",
       "surface": "executor",
@@ -511,11 +529,13 @@
         "simulation",
         "analysis"
       ],
-      "updatedAt": "2026-01-18T13:27:35+02:00",
+      "updatedAt": "2026-01-18T18:30:27+02:00",
+      "prompt": "# Role\nYou are a Data Scientist.\n\n# Task\nSimulate {{simulation_parameters}} using Python.\n\n# Requirements\n1.  **Generate**: Create the simulated dataset using random numbers (e.g., numpy).\n2.  **Analyze**: {{analysis_task}}.\n3.  **Output**: Print the resulting analysis.\n\n# Output Format\nPython code execution and result.\n",
       "slug": "data-simulation",
       "shortDescription": "Simulate data points and perform analysis.",
       "surface": "executor",
       "pmStage": "Data Analysis",
+      "featured": true,
       "complexity": "Intermediate",
       "outputType": "Executed Code (Simulation)",
       "jobsToBeDone": [
@@ -546,6 +566,7 @@
         "growth"
       ],
       "updatedAt": "2026-01-18T13:27:35+02:00",
+      "prompt": "# Role\nYou are a Business Analyst.\n\n# Task\nSimulate user growth for the next 12 months.\nStart: {{starting_users}} users\nGrowth: {{growth_rate}} monthly\nChurn: {{churn_rate}} monthly\n\n# Requirements\n1.  **Simulate**: Calculate the user count at the end of each month.\n2.  **Output**: Print the projected user count for each of the 12 months.\n\n# Output Format\nPython code execution and result.\n",
       "slug": "forecasting",
       "shortDescription": "Project future growth based on rates.",
       "surface": "executor",
@@ -585,6 +606,7 @@
         "statistics"
       ],
       "updatedAt": "2026-01-18T13:27:35+02:00",
+      "prompt": "# Role\nYou are a Data Analyst.\n\n# Task\nUsing Python, take this list of daily active users: {{data_list}}.\n\n# Requirements\n1.  **Calculate**: {{metrics_to_calculate}} daily active users from the list.\n2.  **Output**: Print the calculated values clearly.\n\n# Output Format\nPython code execution and result.\n",
       "slug": "metric-calculation",
       "shortDescription": "Calculate basic statistics from a dataset.",
       "surface": "executor",
@@ -619,6 +641,7 @@
         "automation"
       ],
       "updatedAt": "2026-01-18T13:27:35+02:00",
+      "prompt": "# Role\nYou are a Release Engineer Agent.\n\n# Context\nThe user wants to prepare a release for version {{version}}.\n\n# Task\n1.  Check the git log since the last tag.\n2.  Update the `package.json` version to {{version}}.\n3.  Draft a `CHANGELOG.md` entry based on the git log, categorized by type (Feat, Fix, Chore).\n4.  Commit the changes with the message \"chore(release): {{version}}\".\n\n# Inputs\n- **Target Version**: {{version}}\n- **Environment**: You have access to the terminal to run git commands and file system tools.\n\n# Output\n- Execute the necessary commands.\n- Report the status of the release preparation.\n",
       "slug": "release-manager",
       "shortDescription": "Autonomously checks git logs, changes files, and drafts release notes.",
       "surface": "executor",
@@ -648,6 +671,7 @@
         "sentiment"
       ],
       "updatedAt": "2026-01-18T13:27:35+02:00",
+      "prompt": "# Role\nYou are an NLP Engineer.\n\n# Task\nAnalyze the sentiment of this feedback list: {{feedback_list}}.\n\n# Requirements\n1.  **Logic**: Count how many comments are positive vs negative.\n2.  **Heuristic**: Assume {{keywords}} indicate sentiment.\n3.  **Output**: Print the counts for each category.\n\n# Output Format\nPython code execution and result.\n",
       "slug": "sentiment-analysis",
       "shortDescription": "Analyze sentiment of user feedback.",
       "surface": "executor",
@@ -682,6 +706,7 @@
         "tasks"
       ],
       "updatedAt": "2026-01-18T13:27:35+02:00",
+      "prompt": "# Role\nYou are an Automation Specialist.\n\n# Task\nWrite and execute a Python script to check for due tasks.\n\n# Requirements\n1.  **Data**: Define a sample list of tasks with due dates in the code.\n2.  **Logic**: Find any tasks due on today's date.\n3.  **Output**: Print a reminder message for those tasks.\n4.  **Execute**: Run the script to demonstrate it working.\n\n# Output Format\nPython code execution and result.\n",
       "slug": "task-execution",
       "shortDescription": "Execute automated tasks based on conditions.",
       "surface": "executor",
@@ -711,6 +736,7 @@
         "visualization"
       ],
       "updatedAt": "2026-01-18T13:27:35+02:00",
+      "prompt": "# Role\nYou are a Data Analyst.\n\n# Task\nUsing Python (matplotlib), plot a {{chart_type}} given the data: {{data_points}}.\n\n# Requirements\n1.  **Library**: Use matplotlib.\n2.  **Display**: Show the chart.\n\n# Output Format\nPython code execution and chart image.\n",
       "slug": "visualization",
       "shortDescription": "Plot a chart from provided data.",
       "surface": "executor",
@@ -745,6 +771,7 @@
         "differentiation"
       ],
       "updatedAt": "2026-01-18T15:26:43+02:00",
+      "prompt": "# Role\nYou are a Senior Product Strategy Consultant specializing in Competitive Intelligence.\n\n# Context\nWe are evaluating the competitive landscape commonly associated with {{our_product_category}}.\nWe are specifically looking at **{{competitor_a}}** and **{{competitor_b}}** to understand where **{{our_product}}** can win.\n\n# Task\nConduct a deep-dive comparison between {{competitor_a}} and {{competitor_b}}.\nAnalyze them across the following strategic dimensions:\n\n### 1. Market Positioning & ICP\n*   Who exactly are they targeting? (e.g., SMB vs. Enterprise, Devs vs. Non-technical)\n*   What is their primary value prop or \"hook\"?\n\n### 2. Product Capabilities\n*   **Core Strengths**: What do they do better than anyone else?\n*   **Critical Weaknesses**: frequent user complaints (e.g., from G2, Capterra, Reddit) or known functional gaps.\n*   **UX Philosophy**: Is it \"Power User/Complex\" or \"Simple/Plug-and-play\"?\n\n### 3. Business & Pricing Model\n*   Growth Model: PLG (Product-Led Growth) vs. SLG (Sales-Led Growth).\n*   Pricing Structure: Per seat, usage-based, flat fee? Is it considered expensive or commoditized?\n\n### 4. Strategic Moat\n*   What keeps their customers from leaving? (Data gravity, ecosystem integration, steep learning curve, brand).\n\n# Strategic Opportunity for {{our_product}}\nSynthesize the findings into an actionable strategy for {{our_product}}:\n*   **The \"Wedge\"**: What specific specific use case or segment is underserved by both A and B?\n*   **Differentiation Strategy**: Should we compete on price, simplicity, or a specific power-feature?\n*   **Attack Vectors**: Specific weaknesses in A or B we can directly market against.\n\n# Output Format\nStart with a **Comparison Matrix** (Table) summarizing the dimensions above.\nFollow with detailed **Strategic Analysis** sections.\nUse professional, analytical language.\n",
       "slug": "competitor-comparison",
       "shortDescription": "Compare two competitors to identify gaps.",
       "surface": "thinking",
@@ -785,6 +812,7 @@
         "MoSCoW"
       ],
       "updatedAt": "2026-01-18T13:27:35+02:00",
+      "prompt": "# Role\nYou are a Senior Product Manager skilled in backlog management and prioritization frameworks.\n\n# Context\nWe have a backlog of potential features and need to decide what to build next.\n\n# Task\nApply a prioritization framework (e.g., RICE or MoSCoW) to the provided feature list.\n\n# Inputs\n- **Feature List**: {{feature_list}}\n\n# Requirements\n1.  **Framework Choice**: Explicitly state which framework you are using and why.\n2.  **Ranking**: Rank the features from highest to lowest priority.\n3.  **Justification**: Provide a brief rationale for the top 3 and bottom 3 features.\n\n# Output Format\nPrioritized list with rationale.\n",
       "slug": "feature-prioritization",
       "shortDescription": "Prioritize features using a framework like RICE or MoSCoW.",
       "surface": "thinking",
@@ -814,6 +842,7 @@
         "pain-points"
       ],
       "updatedAt": "2026-01-18T15:57:33+02:00",
+      "prompt": "# Role\nYou are a Senior Product Manager skilled in qualitative data analysis and voice-of-customer research.\n\n# Context\nWe have collected raw user feedback for **{{product_name}}** from various channels (support tickets, surveys, social media).\nThe team is overwhelmed by the volume and needs a clear, actionable summary to prioritize our roadmap.\n\n# Task\nAnalyze the provided feedback text to identify key patterns.\n\"{{feedback_text}}\"\n\n# Requirements\n\n### 1. Sentiment & Themes\n*   Overall Sentiment: (Positive / Neutral / Negative) with a brief 1-sentence explanation.\n*   Major Themes: Group feedback into 3-5 distinct categories (e.g., \"UX/Onboarding\", \"Billing\", \"Performance\").\n\n### 2. Critical Issues (The \"Fix it Now\" List)\n*   Identify any bugs, blockers, or severe usability issues that are driving churn or preventing core workflows.\n*   **Action**: Tag these as [P0 - Critical] or [P1 - High].\n\n### 3. Feature Requests (The \"Build it Later\" List)\n*   Summarize new functionality users are asking for.\n*   Distinguish between \"Must Haves\" (parity with competitors) vs. \"Nice to have\" (delighters).\n\n### 4. Voice of the Customer (Quotes)\n*   For each major point, provide **one direct, verbatim quote** from the feedback to add emotional weight.\n\n# Output Format\nStart with an **Executive Summary** (3 bullet points max).\nFollow with the detailed **Thematic Analysis**.\nUse professional, product-centric language.\n",
       "slug": "feedback-summary",
       "shortDescription": "Summarize user feedback to identify themes.",
       "surface": "thinking",
@@ -848,6 +877,7 @@
         "swot"
       ],
       "updatedAt": "2026-01-18T13:27:35+02:00",
+      "prompt": "# Role\nYou are a Senior Product Strategist with expertise in market research and competitive analysis.\n\n# Context\nI am researching the {{industry}} market to understand the current landscape and identify key players.\n\n# Task\nProvide a detailed market analysis for the {{industry}} market.\n\n# Requirements\n1.  **Market Trends**: Identify current trends and estimated market size.\n2.  **Competitor Analysis**: Identify the top 3 competitors in this space.\n3.  **SWOT Analysis**: Provide a brief SWOT (Strengths, Weaknesses, Opportunities, Threats) analysis for EACH of the top 3 competitors.\n\n# Output Format\nPresent the findings in a structured report format.\n",
       "slug": "market-analysis",
       "shortDescription": "Analyze current trends, market size, and competitors.",
       "surface": "thinking",
@@ -877,6 +907,7 @@
         "launch"
       ],
       "updatedAt": "2026-01-18T13:27:35+02:00",
+      "prompt": "# Role\nYou are a Creative Copywriter with a knack for catchy marketing messages.\n\n# Context\nWe are launching a {{product_description}} for {{target_audience}}.\n\n# Task\nBrainstorm 5 creative value proposition statements or taglines that will resonate with this audience.\n\n# Requirements\n- Tone should be engaging and relevant to the target demographic.\n- Highlight the core benefit (value prop).\n- Keep them punchy and memorable.\n\n# Output Format\nList of 5 options with a brief explanation of why each works.\n",
       "slug": "marketing-ideation",
       "shortDescription": "Brainstorm creative value propositions and taglines.",
       "surface": "thinking",
@@ -910,11 +941,13 @@
         "requirements",
         "scoping"
       ],
-      "updatedAt": "2026-01-18T13:27:35+02:00",
+      "updatedAt": "2026-01-18T18:30:27+02:00",
+      "prompt": "# Role\nYou are a Product Manager skilled in defining clear and comprehensive product requirements.\n\n# Context\nI am defining a new {{product_type}} targeting {{target_segment}}.\n\n# Task\nGenerate a Product Requirements Document (PRD) outline.\n\n# Requirements\nInclude the following sections:\n1.  **Problem Statement**: What problem are we solving?\n2.  **Target Audience**: Who is the {{target_segment}}?\n3.  **Key Features**: List 3-5 high-level features essential for MVP.\n4.  **User Stories**: Provide 3 key user stories.\n5.  **Success Metrics**: Define primary and secondary success metrics (KPIs).\n\n# Output Format\nMarkdown outline.\n",
       "slug": "prd-outline",
       "shortDescription": "Generate a PRD outline for a new product.",
       "surface": "thinking",
       "pmStage": "Product Definition",
+      "featured": true,
       "complexity": "Intermediate",
       "outputType": "Markdown Outline",
       "jobsToBeDone": [
@@ -945,6 +978,7 @@
         "strategy"
       ],
       "updatedAt": "2026-01-18T13:27:35+02:00",
+      "prompt": "# Role\nYou are a Product Marketing Manager with expertise in pricing and monetization strategies.\n\n# Context\nWe are launching a {{product_type}} and need to decide on the best pricing model.\n\n# Task\nAnalyze different pricing models for a {{product_type}}.\n\n# Requirements\n1.  **Model Comparison**: Analyze the pros and cons of Freemium vs. Tiered Subscription models.\n2.  **Recommendation**: Which model would you recommend for our target users and why?\n3.  **Key Considerations**: What are the critical factors (e.g., CAC, LTV) we should monitor?\n\n# Output Format\nStrategic recommendation report.\n",
       "slug": "pricing-strategy",
       "shortDescription": "Analyze pricing models and recommend a strategy.",
       "surface": "thinking",
@@ -974,6 +1008,7 @@
         "planning"
       ],
       "updatedAt": "2026-01-18T13:27:35+02:00",
+      "prompt": "# Role\nYou are a Risk Manager or Senior PM conducting a pre-mortem.\n\n# Context\nWe are about to launch {{feature_or_product}}.\n\n# Task\nIdentify potential risks associated with this launch and suggest mitigation strategies.\n\n# Requirements\nCategorize risks into:\n1.  **Technical Risks** (e.g., scalability, bugs)\n2.  **Market Risks** (e.g., adoption, competition)\n3.  **Legal/Compliance Risks** (e.g., GDPR, data privacy)\n\nFor each risk, provide a mitigation strategy.\n\n# Output Format\nStructured list or table of risks and mitigations.\n",
       "slug": "risk-analysis",
       "shortDescription": "Identify potential risks and mitigation strategies.",
       "surface": "thinking",
@@ -1003,6 +1038,7 @@
         "strategy"
       ],
       "updatedAt": "2026-01-18T13:27:35+02:00",
+      "prompt": "# Role\nYou are a Product Manager focused on strategic planning and execution.\n\n# Context\nWe are planning the next 4 quarters for {{product_name}} with the following goals: {{goals}}.\nAssume we have limited engineering capacity.\n\n# Task\nOutline a high-level product roadmap for the next 4 quarters.\n\n# Requirements\n- **Breakdown**: Q1, Q2, Q3, Q4.\n- **Milestones**: List 2-3 major features or milestones per quarter.\n- **Logic**: Explain how the sequence supports the strategic goals.\n\n# Output Format\nQuarter-by-quarter roadmap.\n",
       "slug": "roadmap-planning",
       "shortDescription": "Outline a high-level product roadmap.",
       "surface": "thinking",
@@ -1037,6 +1073,7 @@
         "discovery"
       ],
       "updatedAt": "2026-01-18T13:27:35+02:00",
+      "prompt": "# Role\nYou are a Chief Product Officer with deep expertise in market strategy and competitive analysis.\n\n# Context\nI am a Product Manager looking to understand the strategic landscape for a specific market domain.\n\n# Task\nConduct a strategic analysis for the provided market domain.\n\n# Inputs\n- **Market Domain**: {{market_domain}}\n- **Competitors**: {{competitors}}\n\n# Output Format\nProvide a comprehensive report including:\n1.  **Market Overview**: Current state and key trends.\n2.  **Competitive Landscape**: Analysis of mentioned competitors (SWOT).\n3.  **Opportunities**: \"Blue Ocean\" opportunities or underserved needs.\n4.  **Strategic Recommendations**: Actionable advice for entering or growing in this space.\n\n# Constraints\n- Be objective and data-informed (where possible based on training data).\n- Focus on strategic differentiators, not just feature lists.\n",
       "slug": "strategic-analysis",
       "shortDescription": "Analyze market trends and competitive landscape.",
       "surface": "thinking",
@@ -1070,11 +1107,13 @@
         "persona",
         "empathy"
       ],
-      "updatedAt": "2026-01-18T13:27:35+02:00",
+      "updatedAt": "2026-01-18T18:30:27+02:00",
+      "prompt": "# Role\nYou are a UX Researcher capable of creating empathetic and detailed user personas.\n\n# Context\nWe are designing {{product_name}} for {{target_user_description}}.\n\n# Task\nCreate a comprehensive user persona for this product.\n\n# Requirements\nthe persona should include:\n1.  **Demographics**: Name, age, location, job title.\n2.  **Goals**: What are they trying to achieve?\n3.  **Pain Points**: What frustrates them in their current workflow?\n4.  **Product Fit**: How does {{product_name}} solve their problems?\n\n# Output Format\nStructured persona profile.\n",
       "slug": "user-persona",
       "shortDescription": "Create a detailed user persona based on target audience.",
       "surface": "thinking",
       "pmStage": "Product Discovery",
+      "featured": true,
       "complexity": "Beginner",
       "outputType": "Persona Profile",
       "jobsToBeDone": [

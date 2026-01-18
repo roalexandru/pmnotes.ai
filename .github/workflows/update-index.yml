@@ -1,0 +1,43 @@
+name: Update Prompts Index
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'prompts/**'
+    paths-ignore:
+      - 'prompts/prompts/index.json'
+
+permissions:
+  contents: write
+
+jobs:
+  update-index:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 # Needed for git log history timestamps
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Generate Index
+        run: node generate_index.js
+
+      - name: Commit and Push
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add prompts/prompts/index.json
+          # Check for changes
+          if git diff --staged --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "chore: update prompts index [skip ci]"
+            git push
+          fi

@@ -1,0 +1,1098 @@
+{
+  "generatedAt": "2026-01-18T12:21:31.860Z",
+  "items": [
+    {
+      "id": "api-endpoint",
+      "title": "Basic API Endpoint (Node.js)",
+      "category": "builder",
+      "path": "builder/api-endpoint",
+      "tags": [
+        "node",
+        "express",
+        "api"
+      ],
+      "updatedAt": "2026-01-18T13:27:35+02:00",
+      "slug": "api-endpoint",
+      "shortDescription": "Create a REST API endpoint in Node.js.",
+      "surface": "builder",
+      "pmStage": "Prototyping",
+      "complexity": "Intermediate",
+      "outputType": "Code (Node.js)",
+      "jobsToBeDone": [
+        "Mock backend logic",
+        "Create sample API"
+      ],
+      "inputs": [
+        {
+          "key": "resource_name",
+          "label": "Resource Name",
+          "example": "tasks"
+        },
+        {
+          "key": "fields",
+          "label": "Fields",
+          "example": "id, title, status"
+        }
+      ]
+    },
+    {
+      "id": "automation-script",
+      "title": "Automation Script (Python)",
+      "category": "builder",
+      "path": "builder/automation-script",
+      "tags": [
+        "python",
+        "automation",
+        "productivity"
+      ],
+      "updatedAt": "2026-01-18T13:27:35+02:00",
+      "slug": "automation-script",
+      "shortDescription": "Create a Python script for task reminders.",
+      "surface": "builder",
+      "pmStage": "Productivity",
+      "complexity": "Intermediate",
+      "outputType": "Code (Python)",
+      "jobsToBeDone": [
+        "Automate repetitive tasks",
+        "Send reminders"
+      ],
+      "inputs": [
+        {
+          "key": "task_list",
+          "label": "Task List Source",
+          "example": "List of dictionaries with task_name and due_date"
+        }
+      ]
+    },
+    {
+      "id": "data-script",
+      "title": "Data Processing Script (Python)",
+      "category": "builder",
+      "path": "builder/data-script",
+      "tags": [
+        "python",
+        "csv",
+        "data-processing"
+      ],
+      "updatedAt": "2026-01-18T13:27:35+02:00",
+      "slug": "data-script",
+      "shortDescription": "Write a Python script to process CSV data.",
+      "surface": "builder",
+      "pmStage": "Data Analysis",
+      "complexity": "Intermediate",
+      "outputType": "Code (Python)",
+      "jobsToBeDone": [
+        "Analyze CSV files",
+        "Extract insights from data"
+      ],
+      "inputs": [
+        {
+          "key": "column_name",
+          "label": "Target Column",
+          "example": "issue_type"
+        },
+        {
+          "key": "csv_columns",
+          "label": "CSV Columns",
+          "example": "ticket_id, issue_type, message"
+        }
+      ]
+    },
+    {
+      "id": "db-schema",
+      "title": "Database Schema (SQL)",
+      "category": "builder",
+      "path": "builder/db-schema",
+      "tags": [
+        "sql",
+        "database",
+        "schema"
+      ],
+      "updatedAt": "2026-01-18T13:27:35+02:00",
+      "slug": "db-schema",
+      "shortDescription": "Draft a SQL schema for a database.",
+      "surface": "builder",
+      "pmStage": "Technical Design",
+      "complexity": "Advanced",
+      "outputType": "Code (SQL)",
+      "jobsToBeDone": [
+        "Design data models",
+        "Create database tables"
+      ],
+      "inputs": [
+        {
+          "key": "app_type",
+          "label": "Application Type",
+          "example": "bug-tracking system"
+        },
+        {
+          "key": "tables_list",
+          "label": "Tables List",
+          "example": "Users, Bugs, Comments"
+        }
+      ]
+    },
+    {
+      "id": "mobile-model",
+      "title": "Mobile Data Model (Swift)",
+      "category": "builder",
+      "path": "builder/mobile-model",
+      "tags": [
+        "swift",
+        "ios",
+        "mobile"
+      ],
+      "updatedAt": "2026-01-18T13:27:35+02:00",
+      "slug": "mobile-model",
+      "shortDescription": "Define a Swift struct for a mobile app.",
+      "surface": "builder",
+      "pmStage": "Prototyping",
+      "complexity": "Intermediate",
+      "outputType": "Code (Swift)",
+      "jobsToBeDone": [
+        "Model mobile data",
+        "Create iOS structs"
+      ],
+      "inputs": [
+        {
+          "key": "struct_name",
+          "label": "Struct Name",
+          "example": "UserProfile"
+        },
+        {
+          "key": "properties",
+          "label": "Properties",
+          "example": "name: String, email: String, signupDate: Date"
+        }
+      ]
+    },
+    {
+      "id": "prd-writer",
+      "title": "PRD Writer",
+      "category": "builder",
+      "path": "builder/prd-writer",
+      "tags": [
+        "prd",
+        "requirements",
+        "definition"
+      ],
+      "updatedAt": "2026-01-18T13:27:35+02:00",
+      "slug": "prd-writer",
+      "shortDescription": "Generate a comprehensive Product Requirements Document.",
+      "surface": "builder",
+      "pmStage": "Product Definition",
+      "complexity": "Intermediate",
+      "outputType": "Markdown Document",
+      "jobsToBeDone": [
+        "Draft a PRD from rough notes",
+        "Standardize requirements format"
+      ],
+      "inputs": [
+        {
+          "key": "feature_name",
+          "label": "Feature Name",
+          "example": "User Authentication"
+        },
+        {
+          "key": "context_files",
+          "label": "Context Files",
+          "example": "@package.json @README.md"
+        }
+      ]
+    },
+    {
+      "id": "react-component",
+      "title": "Prototype Feature Component (React)",
+      "category": "builder",
+      "path": "builder/react-component",
+      "tags": [
+        "react",
+        "frontend",
+        "component"
+      ],
+      "updatedAt": "2026-01-18T13:27:35+02:00",
+      "slug": "react-component",
+      "shortDescription": "Create a functional React component.",
+      "surface": "builder",
+      "pmStage": "Prototyping",
+      "complexity": "Intermediate",
+      "outputType": "Code (React)",
+      "jobsToBeDone": [
+        "Build UI components",
+        "Prototype frontend features"
+      ],
+      "inputs": [
+        {
+          "key": "component_name",
+          "label": "Component Name",
+          "example": "FeatureList"
+        },
+        {
+          "key": "props_description",
+          "label": "Props Description",
+          "example": "an array of feature objects with name and description"
+        }
+      ]
+    },
+    {
+      "id": "slack-bot",
+      "title": "Slack Bot Pseudocode",
+      "category": "builder",
+      "path": "builder/slack-bot",
+      "tags": [
+        "slack",
+        "bot",
+        "pseudocode"
+      ],
+      "updatedAt": "2026-01-18T13:27:35+02:00",
+      "slug": "slack-bot",
+      "shortDescription": "Outline pseudocode for a Slack bot.",
+      "surface": "builder",
+      "pmStage": "Prototyping",
+      "complexity": "Intermediate",
+      "outputType": "Pseudocode",
+      "jobsToBeDone": [
+        "Design bot logic",
+        "Integrate with Slack API"
+      ],
+      "inputs": [
+        {
+          "key": "command",
+          "label": "Command",
+          "example": "/status"
+        },
+        {
+          "key": "response_message",
+          "label": "Response Message",
+          "example": "All systems operational"
+        }
+      ]
+    },
+    {
+      "id": "ui-interaction",
+      "title": "UI Interaction (HTML/JS)",
+      "category": "builder",
+      "path": "builder/ui-interaction",
+      "tags": [
+        "html",
+        "javascript",
+        "ui"
+      ],
+      "updatedAt": "2026-01-18T13:27:35+02:00",
+      "slug": "ui-interaction",
+      "shortDescription": "Create a modal dialog interaction.",
+      "surface": "builder",
+      "pmStage": "Prototyping",
+      "complexity": "Intermediate",
+      "outputType": "Code (HTML/JS)",
+      "jobsToBeDone": [
+        "Prototype UI interactions",
+        "Create modal dialogs"
+      ],
+      "inputs": [
+        {
+          "key": "trigger_button_text",
+          "label": "Trigger Button Text",
+          "example": "Subscribe"
+        },
+        {
+          "key": "modal_message",
+          "label": "Modal Message",
+          "example": "Are you sure you want to subscribe?"
+        }
+      ]
+    },
+    {
+      "id": "unit-test",
+      "title": "Unit Test Example (Python)",
+      "category": "builder",
+      "path": "builder/unit-test",
+      "tags": [
+        "python",
+        "testing",
+        "unittest"
+      ],
+      "updatedAt": "2026-01-18T13:27:35+02:00",
+      "slug": "unit-test",
+      "shortDescription": "Write a unit test for a Python function.",
+      "surface": "builder",
+      "pmStage": "Testing",
+      "complexity": "Intermediate",
+      "outputType": "Code (Python)",
+      "jobsToBeDone": [
+        "Ensure code quality",
+        "Write test cases"
+      ],
+      "inputs": [
+        {
+          "key": "function_name",
+          "label": "Function Name",
+          "example": "calculate_tier"
+        },
+        {
+          "key": "cases",
+          "label": "Test Cases",
+          "example": "Free, Pro, Enterprise"
+        }
+      ]
+    },
+    {
+      "id": "website-mockup",
+      "title": "Website Mockup (HTML/CSS)",
+      "category": "builder",
+      "path": "builder/website-mockup",
+      "tags": [
+        "html",
+        "css",
+        "prototype"
+      ],
+      "updatedAt": "2026-01-18T13:27:35+02:00",
+      "slug": "website-mockup",
+      "shortDescription": "Generate HTML/CSS for a landing page.",
+      "surface": "builder",
+      "pmStage": "Prototyping",
+      "complexity": "Intermediate",
+      "outputType": "Code (HTML/CSS)",
+      "jobsToBeDone": [
+        "Create quick landing page",
+        "Visualize web layout"
+      ],
+      "inputs": [
+        {
+          "key": "product_type",
+          "label": "Product Type",
+          "example": "SaaS CRM"
+        }
+      ]
+    },
+    {
+      "id": "ab-test",
+      "title": "A/B Test Significance",
+      "category": "executor",
+      "path": "executor/ab-test",
+      "tags": [
+        "python",
+        "statistics",
+        "ab-testing"
+      ],
+      "updatedAt": "2026-01-18T13:27:35+02:00",
+      "slug": "ab-test",
+      "shortDescription": "Calculate statistical significance of A/B test.",
+      "surface": "executor",
+      "pmStage": "Experimentation",
+      "complexity": "Advanced",
+      "outputType": "Executed Code (Statistics)",
+      "jobsToBeDone": [
+        "Analyze experiment results",
+        "Calculate p-values"
+      ],
+      "inputs": [
+        {
+          "key": "group_a_data",
+          "label": "Group A Data",
+          "example": "200 conversions out of 2000 users"
+        },
+        {
+          "key": "group_b_data",
+          "label": "Group B Data",
+          "example": "250 conversions out of 2100 users"
+        }
+      ]
+    },
+    {
+      "id": "api-fetch",
+      "title": "API Data Fetching",
+      "category": "executor",
+      "path": "executor/api-fetch",
+      "tags": [
+        "python",
+        "api",
+        "requests"
+      ],
+      "updatedAt": "2026-01-18T13:27:35+02:00",
+      "slug": "api-fetch",
+      "shortDescription": "Fetch and parse data from a public API.",
+      "surface": "executor",
+      "pmStage": "Data Gathering",
+      "complexity": "Intermediate",
+      "outputType": "Executed Code (Data)",
+      "jobsToBeDone": [
+        "Test API endpoints",
+        "Retrieve live data"
+      ],
+      "inputs": [
+        {
+          "key": "api_url",
+          "label": "API URL",
+          "example": "https://jsonplaceholder.typicode.com/todos"
+        },
+        {
+          "key": "task_description",
+          "label": "Task Description",
+          "example": "print out the titles of the first 5 TODO items"
+        }
+      ]
+    },
+    {
+      "id": "correlation-analysis",
+      "title": "Correlation Analysis",
+      "category": "executor",
+      "path": "executor/correlation-analysis",
+      "tags": [
+        "python",
+        "statistics",
+        "correlation"
+      ],
+      "updatedAt": "2026-01-18T13:27:35+02:00",
+      "slug": "correlation-analysis",
+      "shortDescription": "Calculate correlation between two variables.",
+      "surface": "executor",
+      "pmStage": "Data Analysis",
+      "complexity": "Intermediate",
+      "outputType": "Executed Code (Statistics)",
+      "jobsToBeDone": [
+        "Identify relationships in data",
+        "Validate hypotheses"
+      ],
+      "inputs": [
+        {
+          "key": "variable_a",
+          "label": "Variable A Data",
+          "example": "[50, 60, 55, 70, 65]"
+        },
+        {
+          "key": "variable_b",
+          "label": "Variable B Data",
+          "example": "[200, 240, 220, 300, 270]"
+        }
+      ]
+    },
+    {
+      "id": "data-cleaning",
+      "title": "Data Cleaning",
+      "category": "executor",
+      "path": "executor/data-cleaning",
+      "tags": [
+        "python",
+        "pandas",
+        "data-cleaning"
+      ],
+      "updatedAt": "2026-01-18T13:27:35+02:00",
+      "slug": "data-cleaning",
+      "shortDescription": "Clean missing values in a dataset.",
+      "surface": "executor",
+      "pmStage": "Data Preparation",
+      "complexity": "Intermediate",
+      "outputType": "Executed Code (Pandas)",
+      "jobsToBeDone": [
+        "Prepare data for analysis",
+        "Handle missing values"
+      ],
+      "inputs": [
+        {
+          "key": "csv_path",
+          "label": "CSV File Path",
+          "example": "user_data.csv"
+        },
+        {
+          "key": "column_to_fix",
+          "label": "Column to Fix",
+          "example": "age"
+        }
+      ]
+    },
+    {
+      "id": "data-simulation",
+      "title": "Data Simulation & Analysis",
+      "category": "executor",
+      "path": "executor/data-simulation",
+      "tags": [
+        "python",
+        "simulation",
+        "analysis"
+      ],
+      "updatedAt": "2026-01-18T13:27:35+02:00",
+      "slug": "data-simulation",
+      "shortDescription": "Simulate data points and perform analysis.",
+      "surface": "executor",
+      "pmStage": "Data Analysis",
+      "complexity": "Intermediate",
+      "outputType": "Executed Code (Simulation)",
+      "jobsToBeDone": [
+        "Simulate user growth",
+        "Calculate moving averages"
+      ],
+      "inputs": [
+        {
+          "key": "simulation_parameters",
+          "label": "Simulation Parameters",
+          "example": "30 days, mean of 100 sign-ups"
+        },
+        {
+          "key": "analysis_task",
+          "label": "Analysis Task",
+          "example": "calculate 7-day moving average"
+        }
+      ]
+    },
+    {
+      "id": "forecasting",
+      "title": "Forecasting Simulation",
+      "category": "executor",
+      "path": "executor/forecasting",
+      "tags": [
+        "python",
+        "forecasting",
+        "growth"
+      ],
+      "updatedAt": "2026-01-18T13:27:35+02:00",
+      "slug": "forecasting",
+      "shortDescription": "Project future growth based on rates.",
+      "surface": "executor",
+      "pmStage": "Planning",
+      "complexity": "Advanced",
+      "outputType": "Executed Code (Projection)",
+      "jobsToBeDone": [
+        "Forecast user growth",
+        "Model churn impact"
+      ],
+      "inputs": [
+        {
+          "key": "starting_users",
+          "label": "Starting Users",
+          "example": "1000"
+        },
+        {
+          "key": "growth_rate",
+          "label": "Monthly Growth Rate",
+          "example": "8%"
+        },
+        {
+          "key": "churn_rate",
+          "label": "Monthly Churn Rate",
+          "example": "5%"
+        }
+      ]
+    },
+    {
+      "id": "metric-calculation",
+      "title": "Metric Calculation",
+      "category": "executor",
+      "path": "executor/metric-calculation",
+      "tags": [
+        "python",
+        "analysis",
+        "statistics"
+      ],
+      "updatedAt": "2026-01-18T13:27:35+02:00",
+      "slug": "metric-calculation",
+      "shortDescription": "Calculate basic statistics from a dataset.",
+      "surface": "executor",
+      "pmStage": "Data Analysis",
+      "complexity": "Beginner",
+      "outputType": "Executed Code (Analysis)",
+      "jobsToBeDone": [
+        "Calculate averages",
+        "Analyze daily active users"
+      ],
+      "inputs": [
+        {
+          "key": "data_list",
+          "label": "Data List",
+          "example": "[120, 135, 150, 160, 155, 180, 200]"
+        },
+        {
+          "key": "metrics_to_calculate",
+          "label": "Metrics",
+          "example": "average, median, maximum"
+        }
+      ]
+    },
+    {
+      "id": "release-manager",
+      "title": "Release Manager",
+      "category": "executor",
+      "path": "executor/release-manager",
+      "tags": [
+        "release",
+        "git",
+        "automation"
+      ],
+      "updatedAt": "2026-01-18T13:27:35+02:00",
+      "slug": "release-manager",
+      "shortDescription": "Autonomously checks git logs, changes files, and drafts release notes.",
+      "surface": "executor",
+      "pmStage": "Delivery",
+      "complexity": "Advanced",
+      "outputType": "Release Package",
+      "jobsToBeDone": [
+        "Automate release notes creation",
+        "Update version numbers"
+      ],
+      "inputs": [
+        {
+          "key": "version",
+          "label": "Target Version",
+          "example": "v1.2.0"
+        }
+      ]
+    },
+    {
+      "id": "sentiment-analysis",
+      "title": "Basic Sentiment Analysis",
+      "category": "executor",
+      "path": "executor/sentiment-analysis",
+      "tags": [
+        "python",
+        "nlp",
+        "sentiment"
+      ],
+      "updatedAt": "2026-01-18T13:27:35+02:00",
+      "slug": "sentiment-analysis",
+      "shortDescription": "Analyze sentiment of user feedback.",
+      "surface": "executor",
+      "pmStage": "Product Discovery",
+      "complexity": "Intermediate",
+      "outputType": "Executed Code (NLP)",
+      "jobsToBeDone": [
+        "Classify user feedback",
+        "Quantify sentiment"
+      ],
+      "inputs": [
+        {
+          "key": "feedback_list",
+          "label": "Feedback List",
+          "example": "['Love the new update!', 'The app crashes often.', 'Great customer service.', 'Not intuitive to use.']"
+        },
+        {
+          "key": "keywords",
+          "label": "Sentiment Keywords",
+          "example": "positive: love, great; negative: crashes, not"
+        }
+      ]
+    },
+    {
+      "id": "task-execution",
+      "title": "Automation Task Execution",
+      "category": "executor",
+      "path": "executor/task-execution",
+      "tags": [
+        "python",
+        "automation",
+        "tasks"
+      ],
+      "updatedAt": "2026-01-18T13:27:35+02:00",
+      "slug": "task-execution",
+      "shortDescription": "Execute automated tasks based on conditions.",
+      "surface": "executor",
+      "pmStage": "Productivity",
+      "complexity": "Intermediate",
+      "outputType": "Executed Code (Automation)",
+      "jobsToBeDone": [
+        "Check due dates",
+        "Trigger reminders"
+      ],
+      "inputs": [
+        {
+          "key": "task_data",
+          "label": "Task Data",
+          "example": "Sample list defined in code"
+        }
+      ]
+    },
+    {
+      "id": "visualization",
+      "title": "Data Visualization",
+      "category": "executor",
+      "path": "executor/visualization",
+      "tags": [
+        "python",
+        "matplotlib",
+        "visualization"
+      ],
+      "updatedAt": "2026-01-18T13:27:35+02:00",
+      "slug": "visualization",
+      "shortDescription": "Plot a chart from provided data.",
+      "surface": "executor",
+      "pmStage": "Reporting",
+      "complexity": "Intermediate",
+      "outputType": "Executed Code (Chart)",
+      "jobsToBeDone": [
+        "Visualize sales data",
+        "Create reports"
+      ],
+      "inputs": [
+        {
+          "key": "chart_type",
+          "label": "Chart Type",
+          "example": "bar chart"
+        },
+        {
+          "key": "data_points",
+          "label": "Data Points",
+          "example": "Jan: 100, Feb: 150, Mar: 130"
+        }
+      ]
+    },
+    {
+      "id": "competitor-comparison",
+      "title": "Competitor Comparison",
+      "category": "thinking",
+      "path": "thinking/competitor-comparison",
+      "tags": [
+        "competition",
+        "market-analysis",
+        "differentiation"
+      ],
+      "updatedAt": "2026-01-18T13:27:35+02:00",
+      "slug": "competitor-comparison",
+      "shortDescription": "Compare two competitors to identify gaps.",
+      "surface": "thinking",
+      "pmStage": "Product Discovery",
+      "complexity": "Intermediate",
+      "outputType": "Comparison Table",
+      "jobsToBeDone": [
+        "Benchmark against competitors",
+        "Find differentiation opportunities"
+      ],
+      "inputs": [
+        {
+          "key": "competitor_a",
+          "label": "Competitor A",
+          "example": "Slack"
+        },
+        {
+          "key": "competitor_b",
+          "label": "Competitor B",
+          "example": "Microsoft Teams"
+        },
+        {
+          "key": "our_product",
+          "label": "Our Product",
+          "example": "RocketChat"
+        }
+      ]
+    },
+    {
+      "id": "feature-prioritization",
+      "title": "Feature Prioritization",
+      "category": "thinking",
+      "path": "thinking/feature-prioritization",
+      "tags": [
+        "prioritization",
+        "roadmap",
+        "RICE",
+        "MoSCoW"
+      ],
+      "updatedAt": "2026-01-18T13:27:35+02:00",
+      "slug": "feature-prioritization",
+      "shortDescription": "Prioritize features using a framework like RICE or MoSCoW.",
+      "surface": "thinking",
+      "pmStage": "Product Planning",
+      "complexity": "Intermediate",
+      "outputType": "Prioritized List",
+      "jobsToBeDone": [
+        "Rank feature backlog",
+        "Justify roadmap decisions"
+      ],
+      "inputs": [
+        {
+          "key": "feature_list",
+          "label": "Feature List",
+          "example": "Dark mode, Offline support, Social login, Export to PDF"
+        }
+      ]
+    },
+    {
+      "id": "feedback-summary",
+      "title": "Customer Feedback Summary",
+      "category": "thinking",
+      "path": "thinking/feedback-summary",
+      "tags": [
+        "feedback",
+        "user-research",
+        "pain-points"
+      ],
+      "updatedAt": "2026-01-18T13:27:35+02:00",
+      "slug": "feedback-summary",
+      "shortDescription": "Summarize user feedback to identify themes.",
+      "surface": "thinking",
+      "pmStage": "Product Discovery",
+      "complexity": "Beginner",
+      "outputType": "Summary Report",
+      "jobsToBeDone": [
+        "Synthesize raw feedback",
+        "Identify common pain points"
+      ],
+      "inputs": [
+        {
+          "key": "product_name",
+          "label": "Product Name",
+          "example": "PhotoEditor Pro"
+        },
+        {
+          "key": "feedback_text",
+          "label": "Feedback Text",
+          "example": "Apps crashes on save. Great filters but slow. Subscription is too expensive."
+        }
+      ]
+    },
+    {
+      "id": "market-analysis",
+      "title": "Market Analysis",
+      "category": "thinking",
+      "path": "thinking/market-analysis",
+      "tags": [
+        "market-research",
+        "competitors",
+        "swot"
+      ],
+      "updatedAt": "2026-01-18T13:27:35+02:00",
+      "slug": "market-analysis",
+      "shortDescription": "Analyze current trends, market size, and competitors.",
+      "surface": "thinking",
+      "pmStage": "Product Discovery",
+      "complexity": "Intermediate",
+      "outputType": "Market Report",
+      "jobsToBeDone": [
+        "Understand market trends",
+        "Analyze competitor strengths and weaknesses"
+      ],
+      "inputs": [
+        {
+          "key": "industry",
+          "label": "Industry or Niche",
+          "example": "SaaS Project Management"
+        }
+      ]
+    },
+    {
+      "id": "marketing-ideation",
+      "title": "Marketing Message Ideation",
+      "category": "thinking",
+      "path": "thinking/marketing-ideation",
+      "tags": [
+        "marketing",
+        "copywriting",
+        "launch"
+      ],
+      "updatedAt": "2026-01-18T13:27:35+02:00",
+      "slug": "marketing-ideation",
+      "shortDescription": "Brainstorm creative value propositions and taglines.",
+      "surface": "thinking",
+      "pmStage": "Go-to-Market",
+      "complexity": "Beginner",
+      "outputType": "Creative List",
+      "jobsToBeDone": [
+        "Create marketing copy",
+        "Brainstorm slogans"
+      ],
+      "inputs": [
+        {
+          "key": "product_description",
+          "label": "Product Description",
+          "example": "An AI-powered meal planner that reduces food waste"
+        },
+        {
+          "key": "target_audience",
+          "label": "Target Audience",
+          "example": "Eco-conscious millennials"
+        }
+      ]
+    },
+    {
+      "id": "prd-outline",
+      "title": "PRD Outline",
+      "category": "thinking",
+      "path": "thinking/prd-outline",
+      "tags": [
+        "prd",
+        "requirements",
+        "scoping"
+      ],
+      "updatedAt": "2026-01-18T13:27:35+02:00",
+      "slug": "prd-outline",
+      "shortDescription": "Generate a PRD outline for a new product.",
+      "surface": "thinking",
+      "pmStage": "Product Definition",
+      "complexity": "Intermediate",
+      "outputType": "Markdown Outline",
+      "jobsToBeDone": [
+        "Draft initial PRD structure",
+        "Define key features and success metrics"
+      ],
+      "inputs": [
+        {
+          "key": "product_type",
+          "label": "Product Type",
+          "example": "Mobile Fitness App"
+        },
+        {
+          "key": "target_segment",
+          "label": "Target User Segment",
+          "example": "Busy professionals working from home"
+        }
+      ]
+    },
+    {
+      "id": "pricing-strategy",
+      "title": "Pricing Strategy",
+      "category": "thinking",
+      "path": "thinking/pricing-strategy",
+      "tags": [
+        "pricing",
+        "monetization",
+        "strategy"
+      ],
+      "updatedAt": "2026-01-18T13:27:35+02:00",
+      "slug": "pricing-strategy",
+      "shortDescription": "Analyze pricing models and recommend a strategy.",
+      "surface": "thinking",
+      "pmStage": "Go-to-Market",
+      "complexity": "Advanced",
+      "outputType": "Strategic Analysis",
+      "jobsToBeDone": [
+        "Evaluate pricing models",
+        "Compare freemium vs subscription"
+      ],
+      "inputs": [
+        {
+          "key": "product_type",
+          "label": "Product Type",
+          "example": "SaaS productivity tool"
+        }
+      ]
+    },
+    {
+      "id": "risk-analysis",
+      "title": "Risk & Mitigation Analysis",
+      "category": "thinking",
+      "path": "thinking/risk-analysis",
+      "tags": [
+        "risk-management",
+        "pre-mortem",
+        "planning"
+      ],
+      "updatedAt": "2026-01-18T13:27:35+02:00",
+      "slug": "risk-analysis",
+      "shortDescription": "Identify potential risks and mitigation strategies.",
+      "surface": "thinking",
+      "pmStage": "Product Planning",
+      "complexity": "Intermediate",
+      "outputType": "Risk Register",
+      "jobsToBeDone": [
+        "Anticipate project risks",
+        "Plan mitigation strategies"
+      ],
+      "inputs": [
+        {
+          "key": "feature_or_product",
+          "label": "Feature/Product",
+          "example": "AI-based Chatbot"
+        }
+      ]
+    },
+    {
+      "id": "roadmap-planning",
+      "title": "Roadmap Planning",
+      "category": "thinking",
+      "path": "thinking/roadmap-planning",
+      "tags": [
+        "roadmap",
+        "planning",
+        "strategy"
+      ],
+      "updatedAt": "2026-01-18T13:27:35+02:00",
+      "slug": "roadmap-planning",
+      "shortDescription": "Outline a high-level product roadmap.",
+      "surface": "thinking",
+      "pmStage": "Product Planning",
+      "complexity": "Advanced",
+      "outputType": "Roadmap Schedule",
+      "jobsToBeDone": [
+        "Plan quarterly milestones",
+        "Communicate product vision"
+      ],
+      "inputs": [
+        {
+          "key": "product_name",
+          "label": "Product Name",
+          "example": "DevOps Dashboard"
+        },
+        {
+          "key": "goals",
+          "label": "Strategic Goals",
+          "example": "Increase adoption, reduce churn, launch mobile app"
+        }
+      ]
+    },
+    {
+      "id": "strategic-analysis",
+      "title": "Strategic Analysis",
+      "category": "thinking",
+      "path": "thinking/strategic-analysis",
+      "tags": [
+        "strategy",
+        "market-analysis",
+        "discovery"
+      ],
+      "updatedAt": "2026-01-18T13:27:35+02:00",
+      "slug": "strategic-analysis",
+      "shortDescription": "Analyze market trends and competitive landscape.",
+      "surface": "thinking",
+      "pmStage": "Product Discovery",
+      "complexity": "Advanced",
+      "outputType": "Strategic Report",
+      "jobsToBeDone": [
+        "Analyze generic market trends",
+        "Identify blue ocean opportunities"
+      ],
+      "inputs": [
+        {
+          "key": "market_domain",
+          "label": "Market / Domain",
+          "example": "Generative AI for Legal Tech"
+        },
+        {
+          "key": "competitors",
+          "label": "Main Competitors",
+          "example": "LexisNexis, Casetext"
+        }
+      ]
+    },
+    {
+      "id": "user-persona",
+      "title": "User Persona Brainstorm",
+      "category": "thinking",
+      "path": "thinking/user-persona",
+      "tags": [
+        "user-research",
+        "persona",
+        "empathy"
+      ],
+      "updatedAt": "2026-01-18T13:27:35+02:00",
+      "slug": "user-persona",
+      "shortDescription": "Create a detailed user persona based on target audience.",
+      "surface": "thinking",
+      "pmStage": "Product Discovery",
+      "complexity": "Beginner",
+      "outputType": "Persona Profile",
+      "jobsToBeDone": [
+        "Visualize target user",
+        "Understand user pain points"
+      ],
+      "inputs": [
+        {
+          "key": "product_name",
+          "label": "Product Name",
+          "example": "TaskMaster"
+        },
+        {
+          "key": "target_user_description",
+          "label": "Target User Description",
+          "example": "Freelance graphic designers managing multiple clients"
+        }
+      ]
+    }
+  ]
+}

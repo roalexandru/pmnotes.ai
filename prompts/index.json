@@ -188,6 +188,7 @@
       "surface": "builder",
       "pmStage": "Product Definition",
       "featured": true,
+      "featured": true,
       "complexity": "Intermediate",
       "outputType": "Markdown Document",
       "jobsToBeDone": [
@@ -223,6 +224,7 @@
       "shortDescription": "Create a functional React component.",
       "surface": "builder",
       "pmStage": "Prototyping",
+      "featured": true,
       "featured": true,
       "complexity": "Intermediate",
       "outputType": "Code (React)",
@@ -465,6 +467,7 @@
       "surface": "executor",
       "pmStage": "Data Analysis",
       "featured": true,
+      "featured": true,
       "complexity": "Intermediate",
       "outputType": "Executed Code (Statistics)",
       "jobsToBeDone": [
@@ -535,6 +538,7 @@
       "shortDescription": "Simulate data points and perform analysis.",
       "surface": "executor",
       "pmStage": "Data Analysis",
+      "featured": true,
       "featured": true,
       "complexity": "Intermediate",
       "outputType": "Executed Code (Simulation)",
@@ -948,6 +952,7 @@
       "surface": "thinking",
       "pmStage": "Product Definition",
       "featured": true,
+      "featured": true,
       "complexity": "Intermediate",
       "outputType": "Markdown Outline",
       "jobsToBeDone": [
@@ -1113,6 +1118,7 @@
       "shortDescription": "Create a detailed user persona based on target audience.",
       "surface": "thinking",
       "pmStage": "Product Discovery",
+      "featured": true,
       "featured": true,
       "complexity": "Beginner",
       "outputType": "Persona Profile",

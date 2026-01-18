@@ -1,0 +1,53 @@
+{
+    "slug": "tech-design-doc",
+    "title": "Technical Design Doc Generator",
+    "shortDescription": "Turn a PRD or high-level concept into an end-to-end technical design.",
+    "surface": "thinking",
+    "pmStage": "Technical Design",
+    "featured": true,
+    "complexity": "Advanced",
+    "outputType": "Technical Design Document",
+    "tags": [
+        "architecture",
+        "tech-stack",
+        "design",
+        "engineering"
+    ],
+    "jobsToBeDone": [
+        "Select a tech stack aligned to requirements",
+        "Translate product scope into architecture",
+        "Align engineering on implementation plan"
+    ],
+    "inputs": [
+        {
+            "key": "app_name",
+            "label": "Application Name",
+            "example": "FleetPulse"
+        },
+        {
+            "key": "prd_or_description",
+            "label": "PRD or App Description",
+            "example": "A B2B dashboard for real-time fleet monitoring with alerts and route analytics"
+        },
+        {
+            "key": "scale_requirements",
+            "label": "Scale Requirements",
+            "example": "5k concurrent users, 500k events/minute"
+        },
+        {
+            "key": "non_functional_requirements",
+            "label": "Non-Functional Requirements",
+            "example": "99.9% uptime, SOC2 compliance, <200ms alert latency"
+        },
+        {
+            "key": "constraints",
+            "label": "Constraints",
+            "example": "Must deploy on AWS; prefer managed services"
+        },
+        {
+            "key": "existing_stack",
+            "label": "Existing Stack (if any)",
+            "example": "React, Node.js, Postgres"
+        }
+    ]
+}

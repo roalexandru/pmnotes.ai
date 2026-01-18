@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-01-18T19:30:55.278Z",
+  "generatedAt": "2026-01-18T19:38:09.755Z",
   "items": [
     {
       "id": "api-endpoint",
@@ -761,6 +761,79 @@
       ]
     },
     {
+      "id": "ai-prd-generator",
+      "title": "AI-Ready PRD Generator",
+      "category": "thinking",
+      "path": "thinking/ai-prd-generator",
+      "tags": [
+        "prd",
+        "ai",
+        "requirements",
+        "specification"
+      ],
+      "updatedAt": "2026-01-18T19:38:09.595Z",
+      "prompt": "# Role\nYou are a Senior Product Manager who writes PRDs tailored for AI coding agents (Cursor, Claude Code).\n\n# Context\nWe are defining **{{product_name}}**, a {{product_type}} for **{{target_users}}**.\nProblem: **{{problem_statement}}**.\nKey workflows: **{{key_workflows}}**.\nAI role: **{{ai_role}}**.\nSuccess metrics: **{{success_metrics}}**.\nConstraints: **{{constraints}}**.\nExisting stack: **{{existing_stack}}**.\n\n# Task\nCreate a PRD that an AI engineer can use as the primary build reference.\n\n# Requirements\nInclude the following sections:\n1. **Summary**\n   - One-paragraph overview of the product and why it matters.\n2. **Goals & Non-Goals**\n   - 3–5 measurable goals and explicit out-of-scope items.\n3. **Target Users & Jobs-to-be-Done**\n   - Personas, JTBD, and success criteria for each.\n4. **User Journeys**\n   - 2–3 step-by-step flows that match the key workflows.\n5. **Functional Requirements**\n   - Numbered list with acceptance criteria and priority tags (Must/Should/Could).\n6. **AI Interaction Design**\n   - Prompt strategy, system constraints, tone, and when to ask for confirmation.\n7. **Data & Integrations**\n   - Inputs the AI needs, data sources, APIs, and required permissions.\n8. **Non-Functional Requirements**\n   - Performance, reliability, security, privacy, compliance.\n9. **Metrics & Instrumentation**\n   - Events to track, dashboards, and success thresholds.\n10. **Risks & Open Questions**\n    - Unknowns that could block delivery and how to validate them.\n\n# Output Format\nMarkdown PRD with clear headings, tables where helpful, and concise bullets.\n",
+      "slug": "ai-prd-generator",
+      "shortDescription": "Create a PRD optimized for AI coding agents in Cursor or Claude Code.",
+      "surface": "thinking",
+      "pmStage": "Product Definition",
+      "featured": true,
+      "complexity": "Intermediate",
+      "outputType": "Markdown PRD",
+      "jobsToBeDone": [
+        "Translate ideas into AI-ready requirements",
+        "Give AI coding tools a clear build spec",
+        "Align stakeholders on scope and constraints"
+      ],
+      "inputs": [
+        {
+          "key": "product_name",
+          "label": "Product or Feature Name",
+          "example": "SupportOps Assistant"
+        },
+        {
+          "key": "product_type",
+          "label": "Product Type",
+          "example": "Internal AI assistant for customer support"
+        },
+        {
+          "key": "target_users",
+          "label": "Target Users",
+          "example": "Tier-1 support agents and team leads"
+        },
+        {
+          "key": "problem_statement",
+          "label": "Problem Statement",
+          "example": "Agents spend too long summarizing tickets and locating policy answers"
+        },
+        {
+          "key": "key_workflows",
+          "label": "Key Workflows",
+          "example": "Summarize ticket, draft response, cite policy, log disposition"
+        },
+        {
+          "key": "ai_role",
+          "label": "AI Role / Behavior",
+          "example": "Acts as a co-pilot that proposes drafts but requires human approval"
+        },
+        {
+          "key": "success_metrics",
+          "label": "Success Metrics",
+          "example": "Reduce average handle time by 25%; 90% of drafts accepted"
+        },
+        {
+          "key": "constraints",
+          "label": "Constraints",
+          "example": "No PII leaves VPC; must integrate with Zendesk"
+        },
+        {
+          "key": "existing_stack",
+          "label": "Existing Stack",
+          "example": "React, Node.js, Postgres, AWS"
+        }
+      ]
+    },
+    {
       "id": "competitor-comparison",
       "title": "Competitor Comparison & Differentiation",
       "category": "thinking",
@@ -1275,6 +1348,64 @@
           "key": "entry_goal",
           "label": "Strategic Goal",
           "example": "Identify a defendable wedge for a new product"
+        }
+      ]
+    },
+    {
+      "id": "tech-design-doc",
+      "title": "Technical Design Doc Generator",
+      "category": "thinking",
+      "path": "thinking/tech-design-doc",
+      "tags": [
+        "architecture",
+        "tech-stack",
+        "design",
+        "engineering"
+      ],
+      "updatedAt": "2026-01-18T19:38:09.742Z",
+      "prompt": "# Role\nYou are a Principal Software Architect who produces clear, pragmatic technical design documents.\n\n# Context\nApplication: **{{app_name}}**.\nDescription/PRD: **{{prd_or_description}}**.\nScale requirements: **{{scale_requirements}}**.\nNon-functional requirements: **{{non_functional_requirements}}**.\nConstraints: **{{constraints}}**.\nExisting stack: **{{existing_stack}}**.\n\n# Task\nCreate a technical design document that proposes the best architecture, stack, and implementation plan.\n\n# Requirements\nInclude the following sections:\n1. **Executive Summary**\n   - Design goals and how the architecture meets them.\n2. **Chosen Tech Stack**\n   - Frontend, backend, data, infra, and AI/ML (if applicable) with rationale.\n3. **System Architecture**\n   - High-level diagram (text) showing services and data flow.\n4. **Core Components**\n   - Responsibilities, dependencies, and scaling considerations.\n5. **Data Model**\n   - Key entities, storage choices, and retention strategy.\n6. **API & Integration Contracts**\n   - Main endpoints, events, or message topics.\n7. **Performance & Scalability**\n   - Caching, throughput assumptions, and bottlenecks.\n8. **Security & Compliance**\n   - Auth, authorization, data protection, and auditability.\n9. **Observability & Operations**\n   - Logging, metrics, alerts, and runbooks.\n10. **Phased Delivery Plan**\n   - MVP → V1 milestones with risks and dependencies.\n\n# Output Format\nMarkdown technical design document with headings, tables, and bullet points.\n",
+      "slug": "tech-design-doc",
+      "shortDescription": "Turn a PRD or high-level concept into an end-to-end technical design.",
+      "surface": "thinking",
+      "pmStage": "Technical Design",
+      "featured": true,
+      "complexity": "Advanced",
+      "outputType": "Technical Design Document",
+      "jobsToBeDone": [
+        "Select a tech stack aligned to requirements",
+        "Translate product scope into architecture",
+        "Align engineering on implementation plan"
+      ],
+      "inputs": [
+        {
+          "key": "app_name",
+          "label": "Application Name",
+          "example": "FleetPulse"
+        },
+        {
+          "key": "prd_or_description",
+          "label": "PRD or App Description",
+          "example": "A B2B dashboard for real-time fleet monitoring with alerts and route analytics"
+        },
+        {
+          "key": "scale_requirements",
+          "label": "Scale Requirements",
+          "example": "5k concurrent users, 500k events/minute"
+        },
+        {
+          "key": "non_functional_requirements",
+          "label": "Non-Functional Requirements",
+          "example": "99.9% uptime, SOC2 compliance, <200ms alert latency"
+        },
+        {
+          "key": "constraints",
+          "label": "Constraints",
+          "example": "Must deploy on AWS; prefer managed services"
+        },
+        {
+          "key": "existing_stack",
+          "label": "Existing Stack (if any)",
+          "example": "React, Node.js, Postgres"
         }
       ]
     },

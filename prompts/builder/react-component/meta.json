@@ -1,7 +1,7 @@
 {
     "slug": "react-component",
-    "title": "Prototype Feature Component (React)",
-    "shortDescription": "Create a functional React component.",
+    "title": "Interactive List Component (React)",
+    "shortDescription": "Build a reusable React component with empty/loading states.",
     "surface": "builder",
     "pmStage": "Prototyping",
     "featured": true,
@@ -14,7 +14,8 @@
     ],
     "jobsToBeDone": [
         "Build UI components",
-        "Prototype frontend features"
+        "Prototype frontend features",
+        "Handle states cleanly"
     ],
     "inputs": [
         {
@@ -23,9 +24,14 @@
             "example": "FeatureList"
         },
         {
-            "key": "props_description",
-            "label": "Props Description",
-            "example": "an array of feature objects with name and description"
+            "key": "data_shape",
+            "label": "Data Shape",
+            "example": "array of features with id, name, description, and optional badge"
+        },
+        {
+            "key": "primary_action",
+            "label": "Primary Action",
+            "example": "onSelect(featureId)"
         }
     ]
 }

@@ -1,7 +1,7 @@
 {
     "slug": "db-schema",
-    "title": "Database Schema (SQL)",
-    "shortDescription": "Draft a SQL schema for a database.",
+    "title": "Relational Schema Blueprint (SQL)",
+    "shortDescription": "Draft a normalized schema with constraints and indexes.",
     "surface": "builder",
     "pmStage": "Technical Design",
     "complexity": "Advanced",
@@ -13,7 +13,8 @@
     ],
     "jobsToBeDone": [
         "Design data models",
-        "Create database tables"
+        "Create database tables",
+        "Capture relationships clearly"
     ],
     "inputs": [
         {
@@ -22,9 +23,14 @@
             "example": "bug-tracking system"
         },
         {
-            "key": "tables_list",
-            "label": "Tables List",
-            "example": "Users, Bugs, Comments"
+            "key": "core_entities",
+            "label": "Core Entities",
+            "example": "Users, Bugs, Comments, Projects"
+        },
+        {
+            "key": "relationships",
+            "label": "Relationships",
+            "example": "Users report Bugs; Bugs belong to Projects; Comments belong to Bugs"
         }
     ]
 }

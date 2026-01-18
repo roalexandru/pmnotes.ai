@@ -1,35 +1,63 @@
 # Product Requirements Document: User Authentication
 
-## 1. Overview
-The **User Authentication** feature allows users to sign up, log in, and manage their sessions securely. It is the gatekeeper for the application, enabling personalized experiences and data security.
+## Overview
+User Authentication enables secure access to the platform with email + password login. It protects user data while supporting a smooth onboarding experience for new accounts.
 
-## 2. Goals
-*   **Security**: Ensure user data is protected with industry-standard encryption (bcrypt).
-*   **Usability**: Frictionless signup process (< 1 minute).
-*   **Scalability**: Support 100k+ concurrent users.
+## Goals & Non-Goals
+**Goals**
+- Enable new users to sign up and verify email.
+- Allow returning users to log in and manage sessions.
+- Reduce failed login attempts by improving error handling.
 
-## 3. User Stories
-*   **Signup**: As a new user, I want to create an account using my email and password so I can access the app.
-*   **Login**: As a returning user, I want to log in with my credentials so I can view my saved data.
-*   **Forgot Password**: As a user who forgot their password, I want to reset it via email link.
+**Non-Goals (MVP)**
+- Social login (Google/GitHub).
+- Multi-factor authentication.
+- Enterprise SSO.
 
-## 4. Functional Requirements
-### 4.1. Registration
-*   POST `/api/auth/register`
-*   Fields: `email`, `password`, `confirmPassword`.
-*   Validation: Email format, Password strength (min 8 chars, 1 number).
+## User Stories
+- **Signup**: Given I am new, when I submit a valid email + password, then I receive a verification email and can log in after verifying.
+- **Login**: Given I have a verified account, when I submit valid credentials, then I receive a session and land on the dashboard.
+- **Password Reset**: Given I forgot my password, when I request a reset, then I receive an email link to set a new password.
 
-### 4.2. Login
-*   POST `/api/auth/login`
-*   Returns: JWT Token (expires in 24h).
+## Functional Requirements
+1. **Registration API**
+   - `POST /api/auth/register` with `email`, `password`.
+   - Validate email format and password strength (min 8 chars, 1 number).
+2. **Email Verification**
+   - `GET /api/auth/verify?token=...`.
+   - Tokens expire in 24 hours.
+3. **Login API**
+   - `POST /api/auth/login` returns a session cookie (HTTPOnly, Secure).
+4. **Password Reset**
+   - `POST /api/auth/forgot-password` sends reset email.
+   - `POST /api/auth/reset-password` accepts token + new password.
+5. **UI Requirements**
+   - Signup/Login forms with inline validation errors.
+   - Password reset flow with success state.
 
-### 4.3. Session Management
-*   Store JWT in HTTPOnly Cookie.
-*   Middleware to protect private routes.
+## Non-Functional Requirements
+- **Performance**: Auth endpoints respond in < 300ms p95.
+- **Security**: Store passwords with bcrypt; rate limit auth endpoints.
+- **Accessibility**: Forms must be keyboard navigable with clear error messaging.
+- **Observability**: Log auth failures with reason codes.
 
-## 5. Non-Functional Requirements
-*   **Performance**: Auth requests should respond in < 200ms.
-*   **Reliability**: 99.99% uptime for auth services.
+## UX Notes
+- Provide clear guidance on password requirements.
+- Use a single “Continue” CTA and contextual helper text.
 
-## 6. Open Questions
-*   should we implement Social Login (Google/GitHub) in MVP? (Decision: Postpone to v1.1).
+## Data & Analytics
+- Track events: `auth_signup_started`, `auth_signup_success`, `auth_login_failed`, `auth_password_reset_requested`.
+- Success metric targets: 70% signup completion within 10 minutes; <2% login failure due to validation errors.
+
+## Dependencies
+- Email service (SendGrid or existing provider).
+- Existing user database migration for verification fields.
+
+## Risks & Mitigations
+1. **Email deliverability issues** → add resend verification link + monitoring.
+2. **Brute-force attacks** → rate limit and lockout after N attempts.
+3. **Legacy user data conflicts** → run migration scripts and backfill verification status.
+
+## Open Questions
+- Do we require email verification before first login in MVP?
+- Should password reset tokens be single-use or reusable within expiry window?

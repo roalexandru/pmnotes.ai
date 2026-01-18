@@ -1,10 +1,10 @@
 {
     "slug": "ui-interaction",
-    "title": "UI Interaction (HTML/JS)",
-    "shortDescription": "Create a modal dialog interaction.",
+    "title": "Accessible Modal Interaction (HTML/JS)",
+    "shortDescription": "Create an accessible confirmation modal with keyboard support.",
     "surface": "builder",
     "pmStage": "Prototyping",
-    "complexity": "Intermediate",
+    "complexity": "Beginner",
     "outputType": "Code (HTML/JS)",
     "tags": [
         "html",
@@ -13,7 +13,7 @@
     ],
     "jobsToBeDone": [
         "Prototype UI interactions",
-        "Create modal dialogs"
+        "Create accessible modals"
     ],
     "inputs": [
         {

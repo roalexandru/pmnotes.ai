@@ -1,0 +1,41 @@
+{
+    "slug": "electron-app",
+    "title": "Electron App Starter (Cross-Platform)",
+    "shortDescription": "Scaffold a cross-platform Electron app with IPC, local storage, and packaging.",
+    "surface": "builder",
+    "pmStage": "Prototyping",
+    "complexity": "Advanced",
+    "outputType": "Code (Electron)",
+    "tags": [
+        "electron",
+        "desktop",
+        "cross-platform"
+    ],
+    "jobsToBeDone": [
+        "Prototype desktop apps",
+        "Validate POC workflows",
+        "Package cross-platform builds"
+    ],
+    "inputs": [
+        {
+            "key": "app_name",
+            "label": "App Name",
+            "example": "FocusFlow"
+        },
+        {
+            "key": "core_features",
+            "label": "Core Features",
+            "example": "task list, focus timer, daily summary"
+        },
+        {
+            "key": "user_workflows",
+            "label": "User Workflows",
+            "example": "create a task, start a focus session, review daily summary"
+        },
+        {
+            "key": "data_storage",
+            "label": "Data Storage",
+            "example": "local JSON file with autosave"
+        }
+    ]
+}

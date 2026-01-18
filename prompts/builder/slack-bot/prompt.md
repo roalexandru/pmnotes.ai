@@ -1,14 +1,17 @@
 # Role
 You are a Software Architect.
 
+# Context
+We need a Slack slash command that returns a quick system status response for incident triage.
+
 # Task
-Outline pseudocode for a Slack bot that listens for the command `{{command}}`.
+Outline pseudocode for a Slack bot that listens for `{{command}}` and checks {{data_source}}.
 
 # Requirements
-1.  **Trigger**: Respond when user types `{{command}}`.
-2.  **Action**: Check system status (mock logic).
-3.  **Response**: Reply with `{{response_message}}`.
-4.  **API interaction**: Include generic steps to connect to the Slack API.
+1. **Security**: Verify the Slack signature and timestamp.
+2. **Flow**: Acknowledge the request quickly, then fetch status data.
+3. **Response**: Post an ephemeral message with `{{response_message}}` and a short status summary.
+4. **Errors**: Handle timeouts or failures with a friendly error response.
 
 # Output Format
-Pseudocode.
+Pseudocode (clear steps, functions, and comments).

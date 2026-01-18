@@ -1,10 +1,10 @@
 {
     "slug": "mobile-model",
-    "title": "Mobile Data Model (Swift)",
-    "shortDescription": "Define a Swift struct for a mobile app.",
+    "title": "Codable Mobile Model (Swift)",
+    "shortDescription": "Define a Swift model with Codable support and JSON mapping.",
     "surface": "builder",
     "pmStage": "Prototyping",
-    "complexity": "Intermediate",
+    "complexity": "Beginner",
     "outputType": "Code (Swift)",
     "tags": [
         "swift",
@@ -13,7 +13,8 @@
     ],
     "jobsToBeDone": [
         "Model mobile data",
-        "Create iOS structs"
+        "Create iOS structs",
+        "Parse API responses"
     ],
     "inputs": [
         {
@@ -24,7 +25,12 @@
         {
             "key": "properties",
             "label": "Properties",
-            "example": "name: String, email: String, signupDate: Date"
+            "example": "id: String, name: String, email: String, signupDate: Date, avatarUrl: URL?"
+        },
+        {
+            "key": "json_example",
+            "label": "JSON Example",
+            "example": "{ \"id\": \"u_123\", \"name\": \"Alex\", \"email\": \"alex@example.com\", \"signup_date\": \"2024-01-15T10:00:00Z\", \"avatar_url\": null }"
         }
     ]
 }

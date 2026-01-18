@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-01-18T12:21:31.860Z",
+  "generatedAt": "2026-01-18T13:57:46.328Z",
   "items": [
     {
       "id": "api-endpoint",
@@ -744,7 +744,7 @@
         "market-analysis",
         "differentiation"
       ],
-      "updatedAt": "2026-01-18T13:27:35+02:00",
+      "updatedAt": "2026-01-18T15:26:43+02:00",
       "slug": "competitor-comparison",
       "shortDescription": "Compare two competitors to identify gaps.",
       "surface": "thinking",
@@ -813,7 +813,7 @@
         "user-research",
         "pain-points"
       ],
-      "updatedAt": "2026-01-18T13:27:35+02:00",
+      "updatedAt": "2026-01-18T15:57:33+02:00",
       "slug": "feedback-summary",
       "shortDescription": "Summarize user feedback to identify themes.",
       "surface": "thinking",

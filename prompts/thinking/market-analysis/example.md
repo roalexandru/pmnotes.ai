@@ -1,34 +1,34 @@
-# Market Analysis: SaaS Project Management
+# Market Analysis: SaaS Project Management (Mid-Market, North America + UK)
 
-## 1. Market Trends
-The SaaS Project Management market is mature but evolving towards AI-driven automation and consolidation.
-*   **Market Size**: Projected to exceed $15 billion by 2027.
-*   **Key Trends**:
-    *   **AI Integration**: Auto-assigning tasks and predicting project risks.
-    *   **Consolidation**: Tools (like ClickUp) becoming "all-in-one" workspaces replacing docs, whiteboards, and chat.
-    *   **Product-Led Growth (PLG)**: Bottom-up adoption remains the primary go-to-market motion.
+## Executive Summary
+* The market is mature but expanding via consolidation and AI-enabled workflows.
+* Buyers prioritize cross-team visibility and workflow automation over standalone task tracking.
+* Differentiation is shifting to integrations, workflow flexibility, and time-to-value.
 
-## 2. Competitor Analysis (Top 3)
-1.  **Asana**: Focuses on clarity and collaboration for enterprise teams.
-2.  **Monday.com**: Highly visual, customizable work OS.
-3.  **Jira (Atlassian)**: The standard for software development teams.
+## Market Size & Growth
+* **TAM**: ~$18–22B global; **SAM**: ~$6–8B in North America + UK mid-market.
+* **SOM (24 months)**: ~$60–120M based on 1–2% share of SAM.
+* **Assumptions**: $12–18 per user/month, 200–2,000 employee firms, 30–50% tool adoption.
 
-## 3. SWOT Analysis
+## Key Trends
+* **AI-assisted project planning** to reduce manual status updates.
+* **Tool consolidation** into “work hubs” (docs + tasks + reporting).
+* **Security & compliance** expectations rising as PM tools store customer data.
 
-### Asana
-*   **Strengths**: Strong brand, intuitive design, good enterprise features.
-*   **Weaknesses**: Can become expensive at scale; "noise" from too many notifications.
-*   **Opportunities**: Deeper integration with marketing/creative workflows.
-*   **Threats**: Monday.com eating into non-technical team market share.
+## Competitive Landscape
 
-### Monday.com
-*   **Strengths**: Extremely flexible, great for non-technical users, aggressive marketing.
-*   **Weaknesses**: Can feel cluttered; varying depth of features compared to specialized tools.
-*   **Opportunities**: Expansion into CRM and Dev tools (Monday CRM, Monday Dev).
-*   **Threats**: Complexity fatigue as boards grow.
+| Competitor | Primary Segment | Differentiation | Pricing Signal |
+| :--- | :--- | :--- | :--- |
+| Asana | Enterprise + mid-market | Workflow clarity, enterprise controls | $10–30/user/mo |
+| Monday.com | Mid-market | Visual customization, templates | $8–24/user/mo |
+| Jira | Dev teams | Deep engineering workflows | $8–15/user/mo |
+| ClickUp | SMB + mid-market | All-in-one suite | $7–19/user/mo |
 
-### Jira
-*   **Strengths**: Deep integration with dev lifecycle (Bitbucket, CI/CD), massive ecosystem.
-*   **Weaknesses**: Steep learning curve, often considered "clunky" by non-developers.
-*   **Opportunities**: Jira Product Discovery to capture upstream PM work.
-*   **Threats**: Linear and other modern dev tools winning over startups.
+## Opportunities & Risks
+**Opportunities**
+* Verticalized templates for product + engineering teams.
+* Faster onboarding with pre-configured workflows.
+
+**Risks**
+* Commoditization of task management features.
+* Procurement bundling pressure from Microsoft/Google suites.

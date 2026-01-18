@@ -1,19 +1,21 @@
 {
     "slug": "marketing-ideation",
     "title": "Marketing Message Ideation",
-    "shortDescription": "Brainstorm creative value propositions and taglines.",
+    "shortDescription": "Generate value props and taglines aligned to a specific audience and brand voice.",
     "surface": "thinking",
     "pmStage": "Go-to-Market",
     "complexity": "Beginner",
-    "outputType": "Creative List",
+    "outputType": "Messaging Options",
     "tags": [
         "marketing",
         "copywriting",
-        "launch"
+        "launch",
+        "positioning"
     ],
     "jobsToBeDone": [
         "Create marketing copy",
-        "Brainstorm slogans"
+        "Define value propositions",
+        "Test messaging angles"
     ],
     "inputs": [
         {
@@ -22,9 +24,29 @@
             "example": "An AI-powered meal planner that reduces food waste"
         },
         {
+            "key": "primary_benefit",
+            "label": "Primary Benefit",
+            "example": "Save money by using ingredients you already have"
+        },
+        {
             "key": "target_audience",
             "label": "Target Audience",
             "example": "Eco-conscious millennials"
+        },
+        {
+            "key": "differentiator",
+            "label": "Key Differentiator",
+            "example": "Generates meals from pantry inventory in under 30 seconds"
+        },
+        {
+            "key": "brand_voice",
+            "label": "Brand Voice",
+            "example": "Optimistic, friendly, practical"
+        },
+        {
+            "key": "channel",
+            "label": "Primary Channel",
+            "example": "Landing page hero + paid social ads"
         }
     ]
 }

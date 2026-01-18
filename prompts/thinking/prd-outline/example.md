@@ -1,24 +1,38 @@
-# PRD Outline: Mobile Fitness App
+# PRD Outline: PulseFit (Mobile Fitness App)
 
-## 1. Problem Statement
-Many busy professionals want to stay fit but lack the time for long gym sessions or the knowledge to construct effective home workouts. Existing apps are either too complex (hardcore bodybuilding) or too generic (running apps).
+## 1. Problem & Opportunity
+* Busy professionals have short breaks between meetings and struggle to fit workouts into their day.
+* Existing apps are either too complex or require long sessions.
 
-## 2. Target Audience
-**"Work-from-Home Warrior"**: A busy professional (30-45 years old) working remotely. They have 20-30 minutes gaps between meetings and want high-intensity, efficient workouts requiring no equipment.
+## 2. Goals & Success Metrics
+* **Business Goal**: Increase 7-day activation to 40%.
+* **Primary KPI**: % of users who complete 3 workouts in week one.
+* **Secondary KPIs**: Day-30 retention, average session length.
 
-## 3. Key Features (MVP)
-*   **Smart Time-Boxing**: Generate a workout based on exact available time (e.g., "I have 15 minutes").
-*   **Video Guidance**: High-quality, loopable GIFs/Videos for each exercise.
-*   **Progress Tracking**: Simple log of workouts completed and streak counter.
-*   **Calendar Sync**: Suggested workout times based on calendar gaps.
+## 3. Target Users & Jobs-to-be-Done
+* **Persona**: Remote professionals (30–45) with 15–30 minute gaps.
+* **JTBD**: “Help me stay fit without disrupting my workday.”
+* **Key Use Cases**: Time-boxed workout, quick progress check-in.
 
-## 4. User Stories
-*   As a user, I want to input my available time (e.g., 20 mins) so that I get a perfectly tailored workout.
-*   As a user, I want to see a video demonstration of "Burpees" so I perform them safely.
-*   As a user, I want to view my weekly streak so I feel motivated to not break the chain.
+## 4. Scope
+* **MVP Features**: Time-boxed workout generator, exercise video guidance, streak tracking, calendar reminders.
+* **Non-Goals**: Wearable integration, advanced nutrition tracking.
+* **Assumptions**: Users will share available time windows at onboarding.
 
-## 5. Success Metrics
-*   **Primary Metric**: % of users who complete at least 3 workouts in their first week (Activation).
-*   **Secondary Metrics**:
-    *   Average workout duration.
-    *   Day-30 Retention rate.
+## 5. User Stories
+* As a user, I want to enter my available time so the app builds a workout that fits my schedule.
+* As a user, I want guided videos so I can perform exercises safely.
+* As a user, I want a streak view to stay motivated across weeks.
+* As a user, I want calendar reminders so I don’t forget my planned sessions.
+
+## 6. Requirements & Constraints
+* **Platforms**: iOS + Android (React Native).
+* **Constraints**: MVP in 8 weeks; no wearables at launch.
+
+## 7. Dependencies & Risks
+* Video content production and hosting costs.
+* Onboarding needs data privacy review for health-related inputs.
+
+## 8. Open Questions
+* What is the minimum workout library needed for perceived value?
+* Do users prefer HIIT vs. low-impact routines?

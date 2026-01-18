@@ -1,7 +1,7 @@
 {
     "slug": "roadmap-planning",
     "title": "Roadmap Planning",
-    "shortDescription": "Outline a high-level product roadmap.",
+    "shortDescription": "Build a quarterly roadmap aligned to goals, capacity, and key metrics.",
     "surface": "thinking",
     "pmStage": "Product Planning",
     "complexity": "Advanced",
@@ -13,7 +13,8 @@
     ],
     "jobsToBeDone": [
         "Plan quarterly milestones",
-        "Communicate product vision"
+        "Align roadmap to goals",
+        "Communicate sequencing logic"
     ],
     "inputs": [
         {
@@ -25,6 +26,16 @@
             "key": "goals",
             "label": "Strategic Goals",
             "example": "Increase adoption, reduce churn, launch mobile app"
+        },
+        {
+            "key": "constraints",
+            "label": "Constraints",
+            "example": "Team of 5 engineers; SOC2 audit in Q4"
+        },
+        {
+            "key": "key_metrics",
+            "label": "Key Metrics",
+            "example": "Activation rate, WAU, churn"
         }
     ]
 }

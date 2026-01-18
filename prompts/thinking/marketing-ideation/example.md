@@ -1,21 +1,29 @@
-# Marketing Ideation: AI Meal Planner
+# Marketing Message Ideation: AI Meal Planner
 
-**Target Audience**: Eco-conscious millennials.
-**Product**: AI-powered meal planner that reduces food waste.
+**Audience**: Eco-conscious millennials
+**Benefit**: Save money by using ingredients you already have
+**Differentiator**: Generates meals from pantry inventory in under 30 seconds
+**Voice**: Optimistic, friendly, practical
 
-## 5 Creative Value Propositions / Taglines
+## Value Proposition Statements
+1. **“Turn what’s already in your pantry into a week of meals — in under 30 seconds.”**
+   *Rationale*: Highlights speed and convenience while anchoring to waste reduction.
+2. **“Save money and waste less food with meal plans built around what you already own.”**
+   *Rationale*: Directly ties the core benefit to practical outcomes.
+3. **“Plan smarter, shop less, and feel good about every meal you make.”**
+   *Rationale*: Combines emotional and functional value.
 
-1.  **"Eat Good, Waste Less, Save More."**
-    *   *Why it works*: Short, punchy, tri-colon structure. Hits the trifecta of benefits: Taste, Ecology, Wallet.
+## Taglines
+* “Cook smart. Waste less.”
+* “Your pantry, upgraded.”
+* “Meals in 30 seconds.”
+* “Good food, zero guilt.”
+* “Make what you have work.”
 
-2.  **"Your Fridge's New Best Friend."**
-    *   *Why it works*: Personifies the appliance, friendly tone, implies it works *with* what you already have rather than demanding new groceries.
+## CTA Suggestions
+* “Build my meal plan”
+* “Scan my pantry”
+* “Start saving today”
 
-3.  **"Stop Throwing Money in the Trash."**
-    *   *Why it works*: Provocative. Shifts the frame from "saving the planet" (abstract) to "losing money" (immediate pain).
-
-4.  **"Zero Waste. Zero Stress. 100% Delicious."**
-    *   *Why it works*: Uses the "Zero/Zero/100" pattern to emphasize convenience and quality while highlighting the eco-benefit.
-
-5.  **"Cook Smart. The Planet Will Thank You."**
-    *   *Why it works*: Empowering ("Cook Smart") and connects a small daily action to a larger purpose.
+## Rationale
+These options emphasize speed, savings, and sustainability — the three most compelling motivators for the target audience, and a fit for quick-scan landing page and social ad placements.

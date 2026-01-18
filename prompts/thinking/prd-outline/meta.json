@@ -1,7 +1,7 @@
 {
     "slug": "prd-outline",
-    "title": "PRD Outline",
-    "shortDescription": "Generate a PRD outline for a new product.",
+    "title": "PRD Outline Builder",
+    "shortDescription": "Create a structured PRD outline tailored to a product goal and audience.",
     "surface": "thinking",
     "pmStage": "Product Definition",
     "featured": true,
@@ -10,13 +10,20 @@
     "tags": [
         "prd",
         "requirements",
-        "scoping"
+        "scoping",
+        "planning"
     ],
     "jobsToBeDone": [
-        "Draft initial PRD structure",
-        "Define key features and success metrics"
+        "Draft a PRD structure",
+        "Clarify goals, scope, and success metrics",
+        "Align stakeholders on requirements"
     ],
     "inputs": [
+        {
+            "key": "product_name",
+            "label": "Product Name",
+            "example": "PulseFit"
+        },
         {
             "key": "product_type",
             "label": "Product Type",
@@ -26,6 +33,21 @@
             "key": "target_segment",
             "label": "Target User Segment",
             "example": "Busy professionals working from home"
+        },
+        {
+            "key": "problem_statement",
+            "label": "Problem Statement",
+            "example": "Users struggle to fit workouts into short breaks between meetings"
+        },
+        {
+            "key": "business_goal",
+            "label": "Business Goal",
+            "example": "Increase 7-day activation to 40%"
+        },
+        {
+            "key": "constraints",
+            "label": "Constraints",
+            "example": "MVP within 8 weeks; no wearables integration at launch"
         }
     ]
 }

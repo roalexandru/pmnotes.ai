@@ -1,19 +1,29 @@
 # Role
-You are a Senior Product Manager skilled in backlog management and prioritization frameworks.
+You are a Senior Product Manager skilled in backlog prioritization and outcome-driven planning.
 
 # Context
-We have a backlog of potential features and need to decide what to build next.
+We are prioritizing the {{product_name}} roadmap to achieve: **{{objective}}**.
+Constraints: **{{constraints}}**.
 
 # Task
-Apply a prioritization framework (e.g., RICE or MoSCoW) to the provided feature list.
-
-# Inputs
-- **Feature List**: {{feature_list}}
+Prioritize the following features using **{{framework_preference}}** (or pick the best-fitting framework if not specified):
+{{feature_list}}
 
 # Requirements
-1.  **Framework Choice**: Explicitly state which framework you are using and why.
-2.  **Ranking**: Rank the features from highest to lowest priority.
-3.  **Justification**: Provide a brief rationale for the top 3 and bottom 3 features.
+1. **Framework Selection**
+   - Name the framework and why it fits the objective and constraints.
+2. **Scoring Table**
+   - Score each feature using the framework’s criteria.
+3. **Ranked List**
+   - Provide the final ranking with a 1–2 sentence rationale per feature.
+4. **Quick-Win vs. Big-Bet**
+   - Identify at least one quick-win and one longer-term bet.
+5. **Risks & Dependencies**
+   - Note any major dependencies or delivery risks.
 
 # Output Format
-Prioritized list with rationale.
+1. **Framework Choice** (short paragraph)
+2. **Scoring Table** (markdown table)
+3. **Ranked Recommendations** (numbered list)
+4. **Quick-Win & Big-Bet** (bullets)
+5. **Risks & Dependencies** (bullets)

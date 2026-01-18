@@ -1,24 +1,29 @@
-# Feature Prioritization: RICE Score Analysis
+# Feature Prioritization: TaskFlow Activation Push
 
-## Framework Choice: RICE
-I am using the **RICE** (Reach, Impact, Confidence, Effort) framework because it balances the potential benefit against the development cost, which is crucial for our limited engineering resources.
+## Framework Choice
+I will use **RICE** because the objective is activation growth and we need a balanced view of reach, impact, confidence, and effort within a 6-week window.
 
-## Prioritized List
+## Scoring Table
 
-| Rank | Feature | Reach (1-10) | Impact (1-3) | Confidence (100%) | Effort (1-5) | RICE Score |
+| Rank | Feature | Reach (1-10) | Impact (1-3) | Confidence (0-100%) | Effort (1-5) | RICE Score |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| **1.** | **Social Login** (Google/Apple) | 9 | 2 | 100% | 1 | **1800** |
-| **2.** | **Dark Mode** | 10 | 1 | 90% | 2 | **450** |
-| **3.** | **Offline Support** | 5 | 3 | 80% | 4 | **300** |
-| **4.** | **Export to PDF** | 2 | 2 | 70% | 3 | **93** |
+| 1 | Social login | 9 | 2 | 90% | 1 | 1620 |
+| 2 | In-app checklist onboarding | 8 | 2 | 85% | 2 | 680 |
+| 3 | Dark mode | 7 | 1 | 80% | 2 | 280 |
+| 4 | Offline support | 4 | 2 | 60% | 4 | 120 |
+| 5 | Export to PDF | 3 | 1 | 70% | 3 | 70 |
 
-*(Note: Score = (Reach * Impact * Confidence) / Effort)*
+## Ranked Recommendations
+1. **Social login**: Removes friction at sign-up and affects nearly every new user, delivering immediate activation lift.
+2. **In-app checklist onboarding**: Guides users to the “first value moment” and can be shipped incrementally.
+3. **Dark mode**: Popular request but limited activation impact; low risk and aligns with design system.
+4. **Offline support**: Valuable but high effort relative to activation gains in the short term.
+5. **Export to PDF**: Lowest reach and primarily a reporting feature for power users.
 
-## Justification
+## Quick-Win & Big-Bet
+* **Quick-Win**: Social login (low effort, high reach).
+* **Big-Bet**: Offline support (high effort, potential long-term retention impact).
 
-### Top Priorities
-1.  **Social Login**: Low effort (Using Auth0/Firebase) but massive impact on conversion rate. It removes friction for almost every new user.
-2.  **Dark Mode**: Highly requested, touches 100% of users, and relatively low complexity if our design system supports tokens.
-
-### Lowest Priority
-4.  **Export to PDF**: While useful for a niche group, the reach is low, and rendering PDFs consistently across devices is surprisingly high effort. We should backlog this until we have enterprise customers asking for reporting.
+## Risks & Dependencies
+* Social login depends on Auth0 configuration and compliance review.
+* Offline support requires data model changes and sync conflict resolution.

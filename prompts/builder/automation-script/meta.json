@@ -1,7 +1,7 @@
 {
     "slug": "automation-script",
-    "title": "Automation Script (Python)",
-    "shortDescription": "Create a Python script for task reminders.",
+    "title": "Task Reminder Automation (Python)",
+    "shortDescription": "Automate due-soon reminders with time-zone aware scheduling.",
     "surface": "builder",
     "pmStage": "Productivity",
     "complexity": "Intermediate",
@@ -13,13 +13,24 @@
     ],
     "jobsToBeDone": [
         "Automate repetitive tasks",
-        "Send reminders"
+        "Send reminders",
+        "Generate daily summaries"
     ],
     "inputs": [
         {
-            "key": "task_list",
-            "label": "Task List Source",
-            "example": "List of dictionaries with task_name and due_date"
+            "key": "task_source",
+            "label": "Task Source",
+            "example": "list of dicts with task_name, due_date, and owner"
+        },
+        {
+            "key": "timezone",
+            "label": "Timezone",
+            "example": "America/Los_Angeles"
+        },
+        {
+            "key": "lead_time_hours",
+            "label": "Lead Time (Hours)",
+            "example": "24"
         }
     ]
 }

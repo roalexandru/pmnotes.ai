@@ -1,7 +1,7 @@
 {
     "slug": "unit-test",
-    "title": "Unit Test Example (Python)",
-    "shortDescription": "Write a unit test for a Python function.",
+    "title": "Unit Test Template (Python)",
+    "shortDescription": "Write robust unit tests with edge cases and boundaries.",
     "surface": "builder",
     "pmStage": "Testing",
     "complexity": "Intermediate",
@@ -13,7 +13,8 @@
     ],
     "jobsToBeDone": [
         "Ensure code quality",
-        "Write test cases"
+        "Write test cases",
+        "Capture edge conditions"
     ],
     "inputs": [
         {
@@ -22,9 +23,9 @@
             "example": "calculate_tier"
         },
         {
-            "key": "cases",
-            "label": "Test Cases",
-            "example": "Free, Pro, Enterprise"
+            "key": "business_rules",
+            "label": "Business Rules",
+            "example": "Free < 100, Pro 100-999, Enterprise >= 1000"
         }
     ]
 }

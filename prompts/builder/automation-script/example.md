@@ -1,32 +1,46 @@
-import datetime
+from __future__ import annotations
+
+from datetime import datetime, timedelta
+from zoneinfo import ZoneInfo
 
 # Sample Data
-tasks = [
-    {"task_name": "Submit Report", "due_date": "2023-10-27"},
-    {"task_name": "Team Meeting", "due_date": "2023-10-28"}, # Future
-    {"task_name": "Pay Server Bill", "due_date": datetime.date.today().strftime("%Y-%m-%d")}, # Due Today
+TASKS = [
+    {"task_name": "Submit Q3 report", "due_date": "2024-11-21T17:00:00", "owner": "Ava"},
+    {"task_name": "Renew SSL certificate", "due_date": "2024-11-23T09:00:00", "owner": "Jules"},
+    {"task_name": "Prepare weekly demo", "due_date": "2024-11-22T10:30:00", "owner": "Riley"},
 ]
 
-def check_deadlines(task_list):
-    today = datetime.date.today().strftime("%Y-%m-%d")
-    
-    print(f"Checking tasks for {today}...\n")
-    
-    due_tasks = []
-    
-    for task in task_list:
-        if task["due_date"] == today:
-            due_tasks.append(task)
-            
-    if not due_tasks:
-        print("No tasks due today!")
-    else:
-        for t in due_tasks:
-            send_reminder(t)
+TIMEZONE = "America/Los_Angeles"
+LEAD_TIME_HOURS = 24
 
-def send_reminder(task):
-    # This function is a placeholder for email/slack logic
-    print(f"[REMINDER] Task '{task['task_name']}' is due TODAY!")
+
+def parse_due_date(raw_date: str, tz: ZoneInfo) -> datetime:
+    parsed = datetime.fromisoformat(raw_date)
+    if parsed.tzinfo is None:
+        return parsed.replace(tzinfo=tz)
+    return parsed.astimezone(tz)
+
+
+def send_reminder(task: dict, due_at: datetime) -> None:
+    # Placeholder for email/Slack integration
+    print(f"[REMINDER] {task['task_name']} (Owner: {task['owner']}) is due at {due_at:%Y-%m-%d %H:%M %Z}")
+
+
+def check_due_soon(tasks: list[dict], lead_hours: int, timezone: str) -> int:
+    tz = ZoneInfo(timezone)
+    now = datetime.now(tz)
+    window_end = now + timedelta(hours=lead_hours)
+
+    reminders_sent = 0
+    for task in tasks:
+        due_at = parse_due_date(task["due_date"], tz)
+        if now <= due_at <= window_end:
+            send_reminder(task, due_at)
+            reminders_sent += 1
+
+    print(f"\nTotal reminders sent: {reminders_sent}")
+    return reminders_sent
+
 
 if __name__ == "__main__":
-    check_deadlines(tasks)
+    check_due_soon(TASKS, LEAD_TIME_HOURS, TIMEZONE)

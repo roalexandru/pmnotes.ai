@@ -1,0 +1,41 @@
+{
+    "slug": "browser-extension",
+    "title": "Browser Extension Starter (Manifest V3)",
+    "shortDescription": "Create a POC browser extension with popup, content script, and storage.",
+    "surface": "builder",
+    "pmStage": "Prototyping",
+    "complexity": "Advanced",
+    "outputType": "Code (Browser Extension)",
+    "tags": [
+        "extension",
+        "chrome",
+        "firefox"
+    ],
+    "jobsToBeDone": [
+        "Prototype extension workflows",
+        "Validate content script UX",
+        "Test browser APIs"
+    ],
+    "inputs": [
+        {
+            "key": "extension_name",
+            "label": "Extension Name",
+            "example": "TabTamer"
+        },
+        {
+            "key": "use_case",
+            "label": "Use Case",
+            "example": "highlight overdue tasks in project tools"
+        },
+        {
+            "key": "target_sites",
+            "label": "Target Sites",
+            "example": "https://app.asana.com/*"
+        },
+        {
+            "key": "permissions",
+            "label": "Permissions",
+            "example": "storage, tabs, scripting"
+        }
+    ]
+}

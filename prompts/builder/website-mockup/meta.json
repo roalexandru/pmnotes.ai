@@ -1,7 +1,7 @@
 {
     "slug": "website-mockup",
-    "title": "Website Mockup (HTML/CSS)",
-    "shortDescription": "Generate HTML/CSS for a landing page.",
+    "title": "Landing Page Mockup (HTML/CSS)",
+    "shortDescription": "Generate a responsive landing page with product messaging.",
     "surface": "builder",
     "pmStage": "Prototyping",
     "complexity": "Intermediate",
@@ -13,13 +13,24 @@
     ],
     "jobsToBeDone": [
         "Create quick landing page",
-        "Visualize web layout"
+        "Visualize web layout",
+        "Showcase product value"
     ],
     "inputs": [
+        {
+            "key": "product_name",
+            "label": "Product Name",
+            "example": "CRMify"
+        },
         {
             "key": "product_type",
             "label": "Product Type",
             "example": "SaaS CRM"
+        },
+        {
+            "key": "primary_cta",
+            "label": "Primary Call-to-Action",
+            "example": "Start Free Trial"
         }
     ]
 }

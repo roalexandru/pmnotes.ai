@@ -1,22 +1,37 @@
 import Foundation
 
-struct UserProfile {
+struct UserProfile: Codable, Identifiable, Equatable {
+    let id: String
     let name: String
     let email: String
     let signupDate: Date
+    let avatarUrl: URL?
 
-    // Custom initializer (optional if using default memberwise init, but good for clarity)
-    init(name: String, email: String, signupDate: Date = Date()) {
-        self.name = name
-        self.email = email
-        self.signupDate = signupDate
+    enum CodingKeys: String, CodingKey {
+        case id
+        case name
+        case email
+        case signupDate = "signup_date"
+        case avatarUrl = "avatar_url"
+    }
+
+    static var decoder: JSONDecoder {
+        let decoder = JSONDecoder()
+        decoder.dateDecodingStrategy = .iso8601
+        return decoder
     }
 }
 
 // Example Usage
-let newUser = UserProfile(
-    name: "Alex Roman",
-    email: "alex@example.com"
-)
+let json = """
+{ "id": "u_123", "name": "Alex", "email": "alex@example.com", "signup_date": "2024-01-15T10:00:00Z", "avatar_url": null }
+"""
 
-print("Created user: \(newUser.name) joined on \(newUser.signupDate)")
+if let data = json.data(using: .utf8) {
+    do {
+        let profile = try UserProfile.decoder.decode(UserProfile.self, from: data)
+        print("Loaded user: \(profile.name)")
+    } catch {
+        print("Failed to decode: \(error)")
+    }
+}

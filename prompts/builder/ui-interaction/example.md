@@ -1,8 +1,9 @@
 <!-- HTML Structure -->
 <button id="subscribeBtn" class="btn-primary">Subscribe</button>
 
-<div id="confirmModal" class="modal hidden">
-  <div class="modal-content">
+<div id="confirmModal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+  <div class="modal-content" role="document">
+    <h2 id="modalTitle">Confirm Action</h2>
     <p>Are you sure you want to subscribe?</p>
     <div class="modal-actions">
       <button id="confirmBtn" class="btn-confirm">Confirm</button>
@@ -14,23 +15,24 @@
 <!-- CSS Styles -->
 <style>
   .hidden { display: none; }
-  
+
   .modal {
-    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    position: fixed; inset: 0;
     background: rgba(0,0,0,0.5);
     display: flex; justify-content: center; align-items: center;
   }
-  
+
   .modal-content {
     background: white; padding: 2rem; border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0,0,0,0.1); text-align: center;
+    width: min(90%, 400px);
   }
-  
+
   .modal-actions { margin-top: 1.5rem; display: flex; gap: 1rem; justify-content: center; }
-  
-  .btn-primary { padding: 0.5rem 1rem; background: blue; color: white; border: none; cursor: pointer; }
-  .btn-confirm { padding: 0.5rem 1rem; background: green; color: white; border: none; cursor: pointer; }
-  .btn-cancel { padding: 0.5rem 1rem; background: gray; color: white; border: none; cursor: pointer; }
+
+  .btn-primary { padding: 0.5rem 1rem; background: #2563eb; color: white; border: none; cursor: pointer; }
+  .btn-confirm { padding: 0.5rem 1rem; background: #16a34a; color: white; border: none; cursor: pointer; }
+  .btn-cancel { padding: 0.5rem 1rem; background: #6b7280; color: white; border: none; cursor: pointer; }
 </style>
 
 <!-- JavaScript Logic -->
@@ -40,27 +42,35 @@
   const confirmBtn = document.getElementById('confirmBtn');
   const cancelBtn = document.getElementById('cancelBtn');
 
-  // Open Modal
-  subscribeBtn.addEventListener('click', () => {
-    modal.classList.remove('hidden'); // Use flex to show
-    modal.style.display = 'flex'; 
-  });
+  const openModal = () => {
+    modal.classList.remove('hidden');
+    modal.style.display = 'flex';
+    confirmBtn.focus();
+  };
 
-  // Close Modal (Cancel)
-  cancelBtn.addEventListener('click', () => {
+  const closeModal = () => {
     modal.style.display = 'none';
-  });
+    modal.classList.add('hidden');
+    subscribeBtn.focus();
+  };
 
-  // Close Modal (Confirm)
+  subscribeBtn.addEventListener('click', openModal);
+  cancelBtn.addEventListener('click', closeModal);
+
   confirmBtn.addEventListener('click', () => {
     alert('Subscribed successfully!');
-    modal.style.display = 'none';
+    closeModal();
   });
 
-  // Close on outside click
-  window.addEventListener('click', (e) => {
-    if (e.target === modal) {
-      modal.style.display = 'none';
+  window.addEventListener('click', (event) => {
+    if (event.target === modal) {
+      closeModal();
+    }
+  });
+
+  window.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape' && !modal.classList.contains('hidden')) {
+      closeModal();
     }
   });
 </script>

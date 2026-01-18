@@ -1,7 +1,7 @@
 {
     "slug": "api-endpoint",
-    "title": "Basic API Endpoint (Node.js)",
-    "shortDescription": "Create a REST API endpoint in Node.js.",
+    "title": "REST API List Endpoint (Node.js)",
+    "shortDescription": "Design a production-ready GET endpoint with filtering and pagination.",
     "surface": "builder",
     "pmStage": "Prototyping",
     "complexity": "Intermediate",
@@ -13,7 +13,8 @@
     ],
     "jobsToBeDone": [
         "Mock backend logic",
-        "Create sample API"
+        "Create sample API",
+        "Prototype filtering and pagination"
     ],
     "inputs": [
         {
@@ -24,7 +25,12 @@
         {
             "key": "fields",
             "label": "Fields",
-            "example": "id, title, status"
+            "example": "id, title, status, assignee"
+        },
+        {
+            "key": "query_params",
+            "label": "Query Parameters",
+            "example": "status, assignee, limit, offset"
         }
     ]
 }

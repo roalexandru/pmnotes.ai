@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-01-18T19:30:55.278Z",
+  "generatedAt": "2026-01-18T20:02:21.876Z",
   "items": [
     {
       "id": "api-endpoint",
-      "title": "Basic API Endpoint (Node.js)",
+      "title": "REST API List Endpoint (Node.js)",
       "category": "builder",
       "path": "builder/api-endpoint",
       "tags": [
@@ -11,17 +11,18 @@
         "express",
         "api"
       ],
-      "updatedAt": "2026-01-18T13:27:35+02:00",
-      "prompt": "# Role\nYou are a Backend Developer specializing in Node.js and Express.\n\n# Task\nCreate a basic REST API endpoint GET /{{resource_name}}.\n\n# Requirements\n1.  **Framework**: Use Express.js.\n2.  **Response**: Return a JSON list of {{resource_name}}.\n3.  **Data Structure**: Each item should have the following fields: {{fields}}.\n4.  **Sample Data**: Include mock data in the response.\n\n# Output Format\nNode.js code snippet.\n",
+      "updatedAt": "2026-01-18T20:01:41+00:00",
+      "prompt": "# Role\nYou are a Backend Developer specializing in Node.js and Express.\n\n# Context\nWe need a realistic GET endpoint that supports basic filtering and pagination for a product demo.\n\n# Task\nCreate a REST endpoint `GET /{{resource_name}}` that returns a list of {{resource_name}}.\n\n# Inputs\n- **Resource Name**: {{resource_name}}\n- **Fields**: {{fields}}\n- **Query Parameters**: {{query_params}}\n\n# Requirements\n1. **Framework**: Use Express.js with a single in-memory array as mock data.\n2. **Filtering**: Support filtering using the provided query parameters (ignore `limit`/`offset` for filtering).\n3. **Pagination**: Support `limit` and `offset` query params with safe defaults.\n4. **Response Shape**: Return `{ success, count, data, pagination }`.\n5. **Errors**: Validate `limit` and `offset` to be non-negative integers and return a 400 with a helpful message if invalid.\n\n# Output Format\nProvide a Node.js code snippet (server + route handler).\n",
       "slug": "api-endpoint",
-      "shortDescription": "Create a REST API endpoint in Node.js.",
+      "shortDescription": "Design a production-ready GET endpoint with filtering and pagination.",
       "surface": "builder",
       "pmStage": "Prototyping",
       "complexity": "Intermediate",
       "outputType": "Code (Node.js)",
       "jobsToBeDone": [
         "Mock backend logic",
-        "Create sample API"
+        "Create sample API",
+        "Prototype filtering and pagination"
       ],
       "inputs": [
         {
@@ -32,13 +33,18 @@
         {
           "key": "fields",
           "label": "Fields",
-          "example": "id, title, status"
+          "example": "id, title, status, assignee"
+        },
+        {
+          "key": "query_params",
+          "label": "Query Parameters",
+          "example": "status, assignee, limit, offset"
         }
       ]
     },
     {
       "id": "automation-script",
-      "title": "Automation Script (Python)",
+      "title": "Task Reminder Automation (Python)",
       "category": "builder",
       "path": "builder/automation-script",
       "tags": [
@@ -46,29 +52,86 @@
         "automation",
         "productivity"
       ],
-      "updatedAt": "2026-01-18T13:27:35+02:00",
-      "prompt": "# Role\nYou are a Python Developer interested in automation.\n\n# Task\nCreate a Python script that iterates through a list of tasks.\n\n# Requirements\n1.  **Input**: {{task_list}}.\n2.  **Logic**: Identify any task due today.\n3.  **Output**: Print a reminder message for proper tasks.\n4.  **Extensibility**: Structure it so it's easy to later send these reminders via email.\n\n# Output Format\nPython script.\n",
+      "updatedAt": "2026-01-18T20:01:41+00:00",
+      "prompt": "# Role\nYou are a Python Developer focused on automation.\n\n# Context\nWe want a lightweight reminder script that can be run daily (cron/GitHub Actions) to alert owners about tasks due soon.\n\n# Task\nCreate a Python script that scans {{task_source}} and prints reminders for tasks due within the next {{lead_time_hours}} hours in the {{timezone}} timezone.\n\n# Requirements\n1. **Input**: Accept a list of dictionaries and include a small sample dataset in the script.\n2. **Time Handling**: Parse ISO dates, localize to the provided timezone, and compare against \"now\".\n3. **Output**: Print a concise reminder line per task (include task name, owner, and due date).\n4. **Extensibility**: Isolate a `send_reminder()` function as a placeholder for email/Slack integration.\n5. **Summary**: Print a total count of reminders sent.\n\n# Output Format\nPython script.\n",
       "slug": "automation-script",
-      "shortDescription": "Create a Python script for task reminders.",
+      "shortDescription": "Automate due-soon reminders with time-zone aware scheduling.",
       "surface": "builder",
       "pmStage": "Productivity",
       "complexity": "Intermediate",
       "outputType": "Code (Python)",
       "jobsToBeDone": [
         "Automate repetitive tasks",
-        "Send reminders"
+        "Send reminders",
+        "Generate daily summaries"
       ],
       "inputs": [
         {
-          "key": "task_list",
-          "label": "Task List Source",
-          "example": "List of dictionaries with task_name and due_date"
+          "key": "task_source",
+          "label": "Task Source",
+          "example": "list of dicts with task_name, due_date, and owner"
+        },
+        {
+          "key": "timezone",
+          "label": "Timezone",
+          "example": "America/Los_Angeles"
+        },
+        {
+          "key": "lead_time_hours",
+          "label": "Lead Time (Hours)",
+          "example": "24"
+        }
+      ]
+    },
+    {
+      "id": "browser-extension",
+      "title": "Browser Extension Starter (Manifest V3)",
+      "category": "builder",
+      "path": "builder/browser-extension",
+      "tags": [
+        "extension",
+        "chrome",
+        "firefox"
+      ],
+      "updatedAt": "2026-01-18T20:01:41+00:00",
+      "prompt": "# Role\nYou are a Browser Extension Developer.\n\n# Context\nWe need a quick POC extension for {{use_case}} that works across modern browsers.\n\n# Task\nCreate a Manifest V3 extension called \"{{extension_name}}\" targeting {{target_sites}}.\n\n# Requirements\n1. **Manifest**: Include permissions ({{permissions}}), host permissions, icons, and action popup.\n2. **Popup UI**: Provide a clean popup UI that toggles the extension on/off.\n3. **Content Script**: Inject a script to modify the page (e.g., highlight elements) on {{target_sites}}.\n4. **Storage**: Persist user preferences with `chrome.storage.sync` (or `browser.storage.sync`).\n5. **Background**: Include a service worker for handling events and messaging.\n6. **Compatibility Notes**: Briefly note how to adapt for Firefox (manifest version and APIs).\n\n# Output Format\nProvide a file tree and the core files (`manifest.json`, `popup.html`, `popup.js`, `content.js`, `background.js`, `styles.css`).\n",
+      "slug": "browser-extension",
+      "shortDescription": "Create a POC browser extension with popup, content script, and storage.",
+      "surface": "builder",
+      "pmStage": "Prototyping",
+      "complexity": "Advanced",
+      "outputType": "Code (Browser Extension)",
+      "jobsToBeDone": [
+        "Prototype extension workflows",
+        "Validate content script UX",
+        "Test browser APIs"
+      ],
+      "inputs": [
+        {
+          "key": "extension_name",
+          "label": "Extension Name",
+          "example": "TabTamer"
+        },
+        {
+          "key": "use_case",
+          "label": "Use Case",
+          "example": "highlight overdue tasks in project tools"
+        },
+        {
+          "key": "target_sites",
+          "label": "Target Sites",
+          "example": "https://app.asana.com/*"
+        },
+        {
+          "key": "permissions",
+          "label": "Permissions",
+          "example": "storage, tabs, scripting"
         }
       ]
     },
     {
       "id": "data-script",
-      "title": "Data Processing Script (Python)",
+      "title": "CSV Insight Generator (Python)",
       "category": "builder",
       "path": "builder/data-script",
       "tags": [
@@ -76,34 +139,40 @@
         "csv",
         "data-processing"
       ],
-      "updatedAt": "2026-01-18T13:27:35+02:00",
-      "prompt": "# Role\nYou are a Python Developer or Data Engineer.\n\n# Task\nWrite a Python script that reads a CSV file.\n\n# Requirements\n1.  **Input**: A CSV file with columns: {{csv_columns}}.\n2.  **Logic**: Count the occurrences of values in the '{{column_name}}' column.\n3.  **Output**: Print the top 3 most common values with their counts.\n\n# Output Format\nPython script.\n",
+      "updatedAt": "2026-01-18T20:01:41+00:00",
+      "prompt": "# Role\nYou are a Python Developer or Data Engineer.\n\n# Context\nWe have a CSV export and need a quick analysis script that cleans data and produces a summary table.\n\n# Task\nWrite a Python script that reads a CSV with columns: {{csv_columns}} and summarizes {{metric_column}} by {{group_by_column}}.\n\n# Requirements\n1. **Input**: Read from a file path variable (e.g., `INPUT_CSV`).\n2. **Cleaning**: Drop rows with missing {{group_by_column}} or {{metric_column}}; coerce {{metric_column}} to float.\n3. **Aggregation**: Compute count, average, and 90th percentile for {{metric_column}} grouped by {{group_by_column}}.\n4. **Output**: Print the top 5 groups by count and write a `summary.csv` with all groups.\n5. **Errors**: Handle file-not-found and bad columns gracefully.\n\n# Output Format\nPython script.\n",
       "slug": "data-script",
-      "shortDescription": "Write a Python script to process CSV data.",
+      "shortDescription": "Clean a CSV and summarize key metrics by group.",
       "surface": "builder",
       "pmStage": "Data Analysis",
       "complexity": "Intermediate",
       "outputType": "Code (Python)",
       "jobsToBeDone": [
         "Analyze CSV files",
-        "Extract insights from data"
+        "Extract insights from data",
+        "Create clean output files"
       ],
       "inputs": [
         {
-          "key": "column_name",
-          "label": "Target Column",
+          "key": "csv_columns",
+          "label": "CSV Columns",
+          "example": "ticket_id, issue_type, created_at, resolution_hours"
+        },
+        {
+          "key": "group_by_column",
+          "label": "Group By Column",
           "example": "issue_type"
         },
         {
-          "key": "csv_columns",
-          "label": "CSV Columns",
-          "example": "ticket_id, issue_type, message"
+          "key": "metric_column",
+          "label": "Metric Column",
+          "example": "resolution_hours"
         }
       ]
     },
     {
       "id": "db-schema",
-      "title": "Database Schema (SQL)",
+      "title": "Relational Schema Blueprint (SQL)",
       "category": "builder",
       "path": "builder/db-schema",
       "tags": [
@@ -111,17 +180,18 @@
         "database",
         "schema"
       ],
-      "updatedAt": "2026-01-18T13:27:35+02:00",
-      "prompt": "# Role\nYou are a Database Architect.\n\n# Task\nDraft a SQL schema for a {{app_type}}.\n\n# Requirements\nInclude the following tables with appropriate columns and foreign keys:\n{{tables_list}}\n\n# Output Format\nSQL `CREATE TABLE` statements.\n",
+      "updatedAt": "2026-01-18T20:01:41+00:00",
+      "prompt": "# Role\nYou are a Database Architect.\n\n# Context\nWe need a clean, production-ready relational schema to guide initial development.\n\n# Task\nDraft a SQL schema for a {{app_type}} with entities: {{core_entities}}.\n\n# Requirements\n1. **Relationships**: Model the relationships described: {{relationships}}.\n2. **Normalization**: Use separate tables and foreign keys instead of repeated fields.\n3. **Constraints**: Include NOT NULL, UNIQUE where appropriate, and CHECK constraints for enums.\n4. **Timestamps**: Add `created_at` and `updated_at` to core tables.\n5. **Indexes**: Add indexes for foreign keys and high-traffic query fields.\n\n# Output Format\nSQL `CREATE TABLE` statements (PostgreSQL dialect) with indexes.\n",
       "slug": "db-schema",
-      "shortDescription": "Draft a SQL schema for a database.",
+      "shortDescription": "Draft a normalized schema with constraints and indexes.",
       "surface": "builder",
       "pmStage": "Technical Design",
       "complexity": "Advanced",
       "outputType": "Code (SQL)",
       "jobsToBeDone": [
         "Design data models",
-        "Create database tables"
+        "Create database tables",
+        "Capture relationships clearly"
       ],
       "inputs": [
         {
@@ -130,15 +200,66 @@
           "example": "bug-tracking system"
         },
         {
-          "key": "tables_list",
-          "label": "Tables List",
-          "example": "Users, Bugs, Comments"
+          "key": "core_entities",
+          "label": "Core Entities",
+          "example": "Users, Bugs, Comments, Projects"
+        },
+        {
+          "key": "relationships",
+          "label": "Relationships",
+          "example": "Users report Bugs; Bugs belong to Projects; Comments belong to Bugs"
+        }
+      ]
+    },
+    {
+      "id": "electron-app",
+      "title": "Electron App Starter (Cross-Platform)",
+      "category": "builder",
+      "path": "builder/electron-app",
+      "tags": [
+        "electron",
+        "desktop",
+        "cross-platform"
+      ],
+      "updatedAt": "2026-01-18T20:01:41+00:00",
+      "prompt": "# Role\nYou are an Electron Developer shipping cross-platform desktop apps.\n\n# Context\nWe want a rich client POC that runs on macOS, Windows, and Linux for stakeholder demos.\n\n# Task\nCreate a minimal but complete Electron app scaffold for \"{{app_name}}\" that demonstrates {{core_features}}.\n\n# Inputs\n- **Core Features**: {{core_features}}\n- **User Workflows**: {{user_workflows}}\n- **Data Storage**: {{data_storage}}\n\n# Requirements\n1. **Architecture**: Include `main` process, `preload` bridge, and a `renderer` UI.\n2. **Functionality**: Describe how each workflow should behave end-to-end (UI -> data -> UI).\n3. **IPC**: Demonstrate one IPC call (renderer -> main) for reading/writing {{data_storage}}.\n4. **State**: Store data locally and show how it loads on app start.\n5. **UX**: Provide a polished UI layout (header, primary action, list view, empty state).\n6. **Security**: Use context isolation and disable remote module usage.\n7. **Packaging**: Include multi-target build notes and config placeholders for macOS, Windows, and Linux.\n\n# Output Format\nProvide a file tree and the key files (`main.js`, `preload.js`, `renderer.js`, `index.html`, `styles.css`, `package.json`).\n",
+      "slug": "electron-app",
+      "shortDescription": "Scaffold a cross-platform Electron app with IPC, local storage, and packaging.",
+      "surface": "builder",
+      "pmStage": "Prototyping",
+      "complexity": "Advanced",
+      "outputType": "Code (Electron)",
+      "jobsToBeDone": [
+        "Prototype desktop apps",
+        "Validate POC workflows",
+        "Package cross-platform builds"
+      ],
+      "inputs": [
+        {
+          "key": "app_name",
+          "label": "App Name",
+          "example": "FocusFlow"
+        },
+        {
+          "key": "core_features",
+          "label": "Core Features",
+          "example": "task list, focus timer, daily summary"
+        },
+        {
+          "key": "user_workflows",
+          "label": "User Workflows",
+          "example": "create a task, start a focus session, review daily summary"
+        },
+        {
+          "key": "data_storage",
+          "label": "Data Storage",
+          "example": "local JSON file with autosave"
         }
       ]
     },
     {
       "id": "mobile-model",
-      "title": "Mobile Data Model (Swift)",
+      "title": "Codable Mobile Model (Swift)",
       "category": "builder",
       "path": "builder/mobile-model",
       "tags": [
@@ -146,17 +267,18 @@
         "ios",
         "mobile"
       ],
-      "updatedAt": "2026-01-18T13:27:35+02:00",
-      "prompt": "# Role\nYou are an iOS Developer.\n\n# Task\nDefine a Swift struct called `{{struct_name}}`.\n\n# Requirements\n1.  **Properties**: Include `{{properties}}`.\n2.  **Usage**: Include an initializer and an example of how to create an instance.\n\n# Output Format\nSwift code snippet.\n",
+      "updatedAt": "2026-01-18T20:01:41+00:00",
+      "prompt": "# Role\nYou are an iOS Developer.\n\n# Context\nWe need a Swift model that can decode API responses and work well with SwiftUI.\n\n# Task\nDefine a Swift struct named `{{struct_name}}` with properties: {{properties}}.\n\n# Requirements\n1. **Protocols**: Conform to `Codable`, `Identifiable`, and `Equatable`.\n2. **JSON Mapping**: Include `CodingKeys` to map snake_case keys from this JSON example: {{json_example}}.\n3. **Date Parsing**: Include a `static` JSON decoder configured for ISO-8601 dates.\n4. **Usage**: Provide a short example of decoding the JSON into the model.\n\n# Output Format\nSwift code snippet.\n",
       "slug": "mobile-model",
-      "shortDescription": "Define a Swift struct for a mobile app.",
+      "shortDescription": "Define a Swift model with Codable support and JSON mapping.",
       "surface": "builder",
       "pmStage": "Prototyping",
-      "complexity": "Intermediate",
+      "complexity": "Beginner",
       "outputType": "Code (Swift)",
       "jobsToBeDone": [
         "Model mobile data",
-        "Create iOS structs"
+        "Create iOS structs",
+        "Parse API responses"
       ],
       "inputs": [
         {
@@ -167,13 +289,18 @@
         {
           "key": "properties",
           "label": "Properties",
-          "example": "name: String, email: String, signupDate: Date"
+          "example": "id: String, name: String, email: String, signupDate: Date, avatarUrl: URL?"
+        },
+        {
+          "key": "json_example",
+          "label": "JSON Example",
+          "example": "{ \"id\": \"u_123\", \"name\": \"Alex\", \"email\": \"alex@example.com\", \"signup_date\": \"2024-01-15T10:00:00Z\", \"avatar_url\": null }"
         }
       ]
     },
     {
       "id": "prd-writer",
-      "title": "PRD Writer",
+      "title": "PRD Generator (MVP Scope)",
       "category": "builder",
       "path": "builder/prd-writer",
       "tags": [
@@ -181,24 +308,35 @@
         "requirements",
         "definition"
       ],
-      "updatedAt": "2026-01-18T18:30:27+02:00",
-      "prompt": "# Role\nYou are a Senior Technical Product Manager.\n\n# Context\nI am building a feature in an existing codebase. I need a Product Requirements Document (PRD) to guide the engineering team.\n\n# Task\nDraft a PRD for the feature \"{{feature_name}}\", taking into account the current project context provided in the attached files.\n\n# Inputs\n- **Feature Name**: {{feature_name}}\n- **Context**: Referenced files in the chat (e.g., package.json, existing types).\n\n# Output Format\nGenerate a `PRD.md` file with the following sections:\n1.  **Overview**: Problem statement and goals.\n2.  **User Stories**: Gherkin style (Given/When/Then).\n3.  **Functional Requirements**: Specific API endpoints, UI states, or logic.\n4.  **Non-Functional Requirements**: Performance, security, accessibility.\n5.  **Technical Considerations**: Database schema changes, new dependencies (based on existing stack).\n\n# Constraints\n- Use the technology stack present in the context files.\n- Keep the scope MVP-focused unless specified otherwise.\n",
+      "updatedAt": "2026-01-18T20:01:41+00:00",
+      "prompt": "# Role\nYou are a Senior Technical Product Manager.\n\n# Context\nWe are building a new feature inside an existing codebase. Use the provided repo context to keep requirements realistic.\n\n# Task\nDraft a PRD for \"{{feature_name}}\" aimed at {{target_users}}.\n\n# Inputs\n- **Feature Name**: {{feature_name}}\n- **Target Users**: {{target_users}}\n- **Success Metrics**: {{success_metrics}}\n- **Context Files**: {{context_files}}\n\n# Requirements\n1. **MVP Scope**: Clearly list what is in and out of scope.\n2. **User Stories**: Use Gherkin (Given/When/Then).\n3. **Functional Requirements**: Include API/UI/workflow requirements that match the existing stack.\n4. **Non-Functional Requirements**: Performance, security, accessibility, and observability.\n5. **Dependencies**: Call out internal/external dependencies.\n6. **Risks & Mitigations**: Identify at least 3 risks.\n7. **Analytics**: Define events or KPIs tied to the success metrics.\n\n# Output Format\nGenerate a `PRD.md` with headings:\n- Overview\n- Goals & Non-Goals\n- User Stories\n- Functional Requirements\n- Non-Functional Requirements\n- UX Notes\n- Data & Analytics\n- Dependencies\n- Risks & Mitigations\n- Open Questions\n",
       "slug": "prd-writer",
-      "shortDescription": "Generate a comprehensive Product Requirements Document.",
+      "shortDescription": "Produce a structured PRD with goals, scope, risks, and metrics.",
       "surface": "builder",
       "pmStage": "Product Definition",
       "featured": true,
-      "complexity": "Intermediate",
+      "complexity": "Advanced",
       "outputType": "Markdown Document",
       "jobsToBeDone": [
         "Draft a PRD from rough notes",
-        "Standardize requirements format"
+        "Align stakeholders on scope",
+        "Document MVP success metrics"
       ],
       "inputs": [
         {
           "key": "feature_name",
           "label": "Feature Name",
           "example": "User Authentication"
+        },
+        {
+          "key": "target_users",
+          "label": "Target Users",
+          "example": "New and returning end-users who need secure access"
+        },
+        {
+          "key": "success_metrics",
+          "label": "Success Metrics",
+          "example": "Signup conversion rate, login success rate, support tickets"
         },
         {
           "key": "context_files",
@@ -209,7 +347,7 @@
     },
     {
       "id": "react-component",
-      "title": "Prototype Feature Component (React)",
+      "title": "Interactive List Component (React)",
       "category": "builder",
       "path": "builder/react-component",
       "tags": [
@@ -217,10 +355,10 @@
         "frontend",
         "component"
       ],
-      "updatedAt": "2026-01-18T18:30:27+02:00",
-      "prompt": "# Role\nYou are a React Developer.\n\n# Task\nCreate a functional component called {{component_name}}.\n\n# Requirements\n1.  **Props**: The component takes {{props_description}}.\n2.  **Rendering**: Display the data in a clean list format.\n3.  **Style**: Use inline styles or basic CSS classes for readability.\n\n# Output Format\nReact component code (JSX).\n",
+      "updatedAt": "2026-01-18T20:01:41+00:00",
+      "prompt": "# Role\nYou are a React Developer.\n\n# Context\nWe need a production-ready component that can be dropped into a prototype with minimal wiring.\n\n# Task\nCreate a functional component called `{{component_name}}`.\n\n# Inputs\n- **Data Shape**: {{data_shape}}\n- **Primary Action**: {{primary_action}}\n\n# Requirements\n1. **TypeScript**: Provide `type` definitions for props and data items.\n2. **States**: Handle loading, empty, and populated states.\n3. **Interaction**: Wire the primary action to a button or clickable card.\n4. **Accessibility**: Use semantic HTML and aria labels where needed.\n5. **Styling**: Use simple utility classes or inline styles (no external dependencies).\n\n# Output Format\nReact component code (TSX).\n",
       "slug": "react-component",
-      "shortDescription": "Create a functional React component.",
+      "shortDescription": "Build a reusable React component with empty/loading states.",
       "surface": "builder",
       "pmStage": "Prototyping",
       "featured": true,
@@ -228,7 +366,8 @@
       "outputType": "Code (React)",
       "jobsToBeDone": [
         "Build UI components",
-        "Prototype frontend features"
+        "Prototype frontend features",
+        "Handle states cleanly"
       ],
       "inputs": [
         {
@@ -237,15 +376,20 @@
           "example": "FeatureList"
         },
         {
-          "key": "props_description",
-          "label": "Props Description",
-          "example": "an array of feature objects with name and description"
+          "key": "data_shape",
+          "label": "Data Shape",
+          "example": "array of features with id, name, description, and optional badge"
+        },
+        {
+          "key": "primary_action",
+          "label": "Primary Action",
+          "example": "onSelect(featureId)"
         }
       ]
     },
     {
       "id": "slack-bot",
-      "title": "Slack Bot Pseudocode",
+      "title": "Slack Command Bot (Pseudocode)",
       "category": "builder",
       "path": "builder/slack-bot",
       "tags": [
@@ -253,34 +397,40 @@
         "bot",
         "pseudocode"
       ],
-      "updatedAt": "2026-01-18T13:27:35+02:00",
-      "prompt": "# Role\nYou are a Software Architect.\n\n# Task\nOutline pseudocode for a Slack bot that listens for the command `{{command}}`.\n\n# Requirements\n1.  **Trigger**: Respond when user types `{{command}}`.\n2.  **Action**: Check system status (mock logic).\n3.  **Response**: Reply with `{{response_message}}`.\n4.  **API interaction**: Include generic steps to connect to the Slack API.\n\n# Output Format\nPseudocode.\n",
+      "updatedAt": "2026-01-18T20:01:41+00:00",
+      "prompt": "# Role\nYou are a Software Architect.\n\n# Context\nWe need a Slack slash command that returns a quick system status response for incident triage.\n\n# Task\nOutline pseudocode for a Slack bot that listens for `{{command}}` and checks {{data_source}}.\n\n# Requirements\n1. **Security**: Verify the Slack signature and timestamp.\n2. **Flow**: Acknowledge the request quickly, then fetch status data.\n3. **Response**: Post an ephemeral message with `{{response_message}}` and a short status summary.\n4. **Errors**: Handle timeouts or failures with a friendly error response.\n\n# Output Format\nPseudocode (clear steps, functions, and comments).\n",
       "slug": "slack-bot",
-      "shortDescription": "Outline pseudocode for a Slack bot.",
+      "shortDescription": "Outline secure Slack command handling with status checks.",
       "surface": "builder",
       "pmStage": "Prototyping",
       "complexity": "Intermediate",
       "outputType": "Pseudocode",
       "jobsToBeDone": [
         "Design bot logic",
-        "Integrate with Slack API"
+        "Integrate with Slack API",
+        "Document request validation"
       ],
       "inputs": [
         {
           "key": "command",
-          "label": "Command",
+          "label": "Slash Command",
           "example": "/status"
         },
         {
+          "key": "data_source",
+          "label": "Status Data Source",
+          "example": "health check endpoint or database ping"
+        },
+        {
           "key": "response_message",
-          "label": "Response Message",
+          "label": "Success Response",
           "example": "All systems operational"
         }
       ]
     },
     {
       "id": "ui-interaction",
-      "title": "UI Interaction (HTML/JS)",
+      "title": "Accessible Modal Interaction (HTML/JS)",
       "category": "builder",
       "path": "builder/ui-interaction",
       "tags": [
@@ -288,17 +438,17 @@
         "javascript",
         "ui"
       ],
-      "updatedAt": "2026-01-18T13:27:35+02:00",
-      "prompt": "# Role\nYou are a Frontend Developer.\n\n# Task\nProvide an HTML/CSS/JavaScript snippet for a modal dialog.\n\n# Requirements\n1.  **Trigger**: User clicks a '{{trigger_button_text}}' button.\n2.  **Interaction**: A modal appears with the message \"{{modal_message}}\".\n3.  **Controls**: Include \"Confirm\" and \"Cancel\" buttons in the modal.\n\n# Output Format\nHTML/CSS/JS snippet.\n",
+      "updatedAt": "2026-01-18T20:01:41+00:00",
+      "prompt": "# Role\nYou are a Frontend Developer.\n\n# Context\nWe need a lightweight modal confirmation dialog with good accessibility defaults.\n\n# Task\nProvide an HTML/CSS/JavaScript snippet for a modal dialog.\n\n# Requirements\n1. **Trigger**: User clicks a \"{{trigger_button_text}}\" button.\n2. **Interaction**: A modal appears with the message \"{{modal_message}}\".\n3. **Controls**: Include \"Confirm\" and \"Cancel\" buttons in the modal.\n4. **Accessibility**: Use `role=\"dialog\"`, `aria-modal=\"true\"`, and close on ESC.\n5. **UX**: Clicking the backdrop closes the modal.\n\n# Output Format\nHTML/CSS/JS snippet.\n",
       "slug": "ui-interaction",
-      "shortDescription": "Create a modal dialog interaction.",
+      "shortDescription": "Create an accessible confirmation modal with keyboard support.",
       "surface": "builder",
       "pmStage": "Prototyping",
-      "complexity": "Intermediate",
+      "complexity": "Beginner",
       "outputType": "Code (HTML/JS)",
       "jobsToBeDone": [
         "Prototype UI interactions",
-        "Create modal dialogs"
+        "Create accessible modals"
       ],
       "inputs": [
         {
@@ -315,7 +465,7 @@
     },
     {
       "id": "unit-test",
-      "title": "Unit Test Example (Python)",
+      "title": "Unit Test Template (Python)",
       "category": "builder",
       "path": "builder/unit-test",
       "tags": [
@@ -323,17 +473,18 @@
         "testing",
         "unittest"
       ],
-      "updatedAt": "2026-01-18T13:27:35+02:00",
-      "prompt": "# Role\nYou are a QA Engineer or Python Developer.\n\n# Task\nWrite a Python unit test (using unittest or pytest) for the function `{{function_name}}(user_usage)`.\n\n# Requirements\n1.  **Logic**: The function returns a subscription tier based on usage.\n2.  **Coverage**: Test at least one case for each of these tiers: {{cases}}.\n3.  **Assumptions**: Assume specific usage thresholds for each tier.\n\n# Output Format\nPython test code.\n",
+      "updatedAt": "2026-01-18T20:01:41+00:00",
+      "prompt": "# Role\nYou are a QA Engineer or Python Developer.\n\n# Context\nWe need tests that validate boundary conditions and invalid inputs for a core pricing rule.\n\n# Task\nWrite Python unit tests (pytest or unittest) for `{{function_name}}(usage)` based on these rules: {{business_rules}}.\n\n# Requirements\n1. **Coverage**: Test at least one case for each tier.\n2. **Boundaries**: Include tests for exact thresholds and off-by-one values.\n3. **Invalid Input**: Add at least one test for negative or non-numeric input.\n4. **Clarity**: Use descriptive test names and comments for each scenario.\n\n# Output Format\nPython test code.\n",
       "slug": "unit-test",
-      "shortDescription": "Write a unit test for a Python function.",
+      "shortDescription": "Write robust unit tests with edge cases and boundaries.",
       "surface": "builder",
       "pmStage": "Testing",
       "complexity": "Intermediate",
       "outputType": "Code (Python)",
       "jobsToBeDone": [
         "Ensure code quality",
-        "Write test cases"
+        "Write test cases",
+        "Capture edge conditions"
       ],
       "inputs": [
         {
@@ -342,15 +493,15 @@
           "example": "calculate_tier"
         },
         {
-          "key": "cases",
-          "label": "Test Cases",
-          "example": "Free, Pro, Enterprise"
+          "key": "business_rules",
+          "label": "Business Rules",
+          "example": "Free < 100, Pro 100-999, Enterprise >= 1000"
         }
       ]
     },
     {
       "id": "website-mockup",
-      "title": "Website Mockup (HTML/CSS)",
+      "title": "Landing Page Mockup (HTML/CSS)",
       "category": "builder",
       "path": "builder/website-mockup",
       "tags": [
@@ -358,23 +509,34 @@
         "css",
         "prototype"
       ],
-      "updatedAt": "2026-01-18T13:27:35+02:00",
-      "prompt": "# Role\nYou are an Expert Frontend Developer.\n\n# Context\nI need a simple landing page for a {{product_type}}.\n\n# Task\nGenerate HTML and CSS for the landing page.\n\n# Requirements\n1.  **Header**: Navigation and logo placeholder.\n2.  **Hero Section**: Headline, subheadline, and a \"Sign Up\" button.\n3.  **Features Section**: Highlight three key features with icon placeholders.\n4.  **Style**: Clean, modern, and responsive.\n\n# Output Format\nSingle HTML file with embedded CSS.\n",
+      "updatedAt": "2026-01-18T20:01:41+00:00",
+      "prompt": "# Role\nYou are an Expert Frontend Developer.\n\n# Context\nWe need a quick landing page to validate messaging and layout for a {{product_type}}.\n\n# Task\nGenerate HTML and CSS for the landing page.\n\n# Requirements\n1. **Header**: Logo placeholder and navigation links.\n2. **Hero**: Headline, subheadline, and a primary CTA button labeled \"{{primary_cta}}\".\n3. **Social Proof**: Include a short testimonials section.\n4. **Features**: Highlight three key features with icon placeholders.\n5. **Pricing Preview**: Simple two-tier pricing cards.\n6. **Style**: Clean, modern, responsive, and accessible.\n\n# Output Format\nSingle HTML file with embedded CSS.\n",
       "slug": "website-mockup",
-      "shortDescription": "Generate HTML/CSS for a landing page.",
+      "shortDescription": "Generate a responsive landing page with product messaging.",
       "surface": "builder",
       "pmStage": "Prototyping",
       "complexity": "Intermediate",
       "outputType": "Code (HTML/CSS)",
       "jobsToBeDone": [
         "Create quick landing page",
-        "Visualize web layout"
+        "Visualize web layout",
+        "Showcase product value"
       ],
       "inputs": [
+        {
+          "key": "product_name",
+          "label": "Product Name",
+          "example": "CRMify"
+        },
         {
           "key": "product_type",
           "label": "Product Type",
           "example": "SaaS CRM"
+        },
+        {
+          "key": "primary_cta",
+          "label": "Primary Call-to-Action",
+          "example": "Start Free Trial"
         }
       ]
     },

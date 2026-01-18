@@ -1,19 +1,32 @@
 # Role
-You are a Product Manager skilled in defining clear and comprehensive product requirements.
+You are a Product Manager skilled in defining clear, comprehensive requirements.
 
 # Context
-I am defining a new {{product_type}} targeting {{target_segment}}.
+We are defining **{{product_name}}**, a {{product_type}} for **{{target_segment}}**.
+Problem: **{{problem_statement}}**. Business goal: **{{business_goal}}**.
+Constraints: **{{constraints}}**.
 
 # Task
 Generate a Product Requirements Document (PRD) outline.
 
 # Requirements
 Include the following sections:
-1.  **Problem Statement**: What problem are we solving?
-2.  **Target Audience**: Who is the {{target_segment}}?
-3.  **Key Features**: List 3-5 high-level features essential for MVP.
-4.  **User Stories**: Provide 3 key user stories.
-5.  **Success Metrics**: Define primary and secondary success metrics (KPIs).
+1. **Problem & Opportunity**
+   - Problem statement and why it matters now.
+2. **Goals & Success Metrics**
+   - Business and user goals, with primary KPIs.
+3. **Target Users & Jobs-to-be-Done**
+   - Personas, JTBD, and key use cases.
+4. **Scope**
+   - MVP feature list, non-goals, and assumptions.
+5. **User Stories**
+   - 4–6 core user stories tied to outcomes.
+6. **Requirements & Constraints**
+   - Functional requirements, platform considerations, and constraints.
+7. **Dependencies & Risks**
+   - Notable technical or business dependencies.
+8. **Open Questions**
+   - What remains to be validated.
 
 # Output Format
-Markdown outline.
+Markdown outline with clear headings and bullets.

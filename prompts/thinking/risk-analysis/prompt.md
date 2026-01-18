@@ -2,18 +2,26 @@
 You are a Risk Manager or Senior PM conducting a pre-mortem.
 
 # Context
-We are about to launch {{feature_or_product}}.
+We are preparing to launch **{{feature_or_product}}**.
+Scope: **{{launch_scope}}**. Timeline: **{{timeline}}**.
+Dependencies: **{{dependencies}}**.
 
 # Task
-Identify potential risks associated with this launch and suggest mitigation strategies.
+Identify and prioritize risks, then propose concrete mitigations.
 
 # Requirements
 Categorize risks into:
-1.  **Technical Risks** (e.g., scalability, bugs)
-2.  **Market Risks** (e.g., adoption, competition)
-3.  **Legal/Compliance Risks** (e.g., GDPR, data privacy)
+1. **Technical Risks** (scalability, reliability, security)
+2. **Market Risks** (adoption, positioning, competition)
+3. **Operational Risks** (support, internal readiness)
+4. **Legal/Compliance Risks** (privacy, regulatory)
 
-For each risk, provide a mitigation strategy.
+For each risk, include:
+* **Likelihood** (Low/Medium/High)
+* **Impact** (Low/Medium/High)
+* **Mitigation** (preventative and reactive)
+* **Early Warning Signal**
+* **Owner** (suggested function)
 
 # Output Format
-Structured list or table of risks and mitigations.
+A risk register table, followed by top 3 focus risks with mitigation plans.

@@ -1,16 +1,29 @@
 # Role
-You are a Product Marketing Manager with expertise in pricing and monetization strategies.
+You are a Product Marketing Manager with expertise in pricing, packaging, and monetization strategy.
 
 # Context
-We are launching a {{product_type}} and need to decide on the best pricing model.
+We are launching a **{{product_type}}** for **{{target_customer}}**.
+Value metric: **{{value_metric}}**. Benchmarks: **{{competitive_benchmarks}}**.
+Business goal: **{{business_goal}}**.
 
 # Task
-Analyze different pricing models for a {{product_type}}.
+Recommend a pricing strategy and packaging approach.
 
 # Requirements
-1.  **Model Comparison**: Analyze the pros and cons of Freemium vs. Tiered Subscription models.
-2.  **Recommendation**: Which model would you recommend for our target users and why?
-3.  **Key Considerations**: What are the critical factors (e.g., CAC, LTV) we should monitor?
+1. **Model Comparison**
+   - Compare Freemium, Tiered Subscription, and Usage-based pricing for this context.
+2. **Packaging Recommendation**
+   - Propose 2–3 tiers with target customer fit and value metric alignment.
+3. **Price Point Guidance**
+   - Provide a directional price range and rationale vs. benchmarks.
+4. **Metrics to Monitor**
+   - CAC payback, conversion, expansion, churn, and ARPA.
+5. **Risks & Experiments**
+   - Key risks and a 60–90 day pricing experiment plan.
 
 # Output Format
-Strategic recommendation report.
+1. **Summary Recommendation** (short paragraph)
+2. **Model Comparison** (table)
+3. **Packaging Proposal** (table)
+4. **Metrics to Monitor** (bullets)
+5. **Risks & Experiments** (bullets)

@@ -1,21 +1,33 @@
 {
     "slug": "competitor-comparison",
-    "title": "Competitor Comparison",
-    "shortDescription": "Compare two competitors to identify gaps.",
+    "title": "Competitor Comparison & Differentiation",
+    "shortDescription": "Compare competitors and identify concrete differentiation opportunities.",
     "surface": "thinking",
     "pmStage": "Product Discovery",
     "complexity": "Intermediate",
-    "outputType": "Comparison Table",
+    "outputType": "Comparison Matrix + Strategy",
     "tags": [
         "competition",
         "market-analysis",
-        "differentiation"
+        "differentiation",
+        "positioning"
     ],
     "jobsToBeDone": [
         "Benchmark against competitors",
-        "Find differentiation opportunities"
+        "Identify a defensible wedge",
+        "Inform positioning and roadmap"
     ],
     "inputs": [
+        {
+            "key": "our_product",
+            "label": "Our Product",
+            "example": "RocketChat"
+        },
+        {
+            "key": "our_product_category",
+            "label": "Product Category",
+            "example": "Team communication & collaboration"
+        },
         {
             "key": "competitor_a",
             "label": "Competitor A",
@@ -27,9 +39,14 @@
             "example": "Microsoft Teams"
         },
         {
-            "key": "our_product",
-            "label": "Our Product",
-            "example": "RocketChat"
+            "key": "target_segment",
+            "label": "Target Segment",
+            "example": "Highly regulated enterprises (healthcare, government)"
+        },
+        {
+            "key": "differentiation_goal",
+            "label": "Differentiation Goal",
+            "example": "Win deals where data sovereignty and customization are critical"
         }
     ]
 }

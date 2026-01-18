@@ -1,7 +1,7 @@
 {
     "slug": "user-persona",
-    "title": "User Persona Brainstorm",
-    "shortDescription": "Create a detailed user persona based on target audience.",
+    "title": "User Persona Builder",
+    "shortDescription": "Create a detailed persona grounded in goals, behaviors, and buying criteria.",
     "surface": "thinking",
     "pmStage": "Product Discovery",
     "featured": true,
@@ -10,11 +10,13 @@
     "tags": [
         "user-research",
         "persona",
-        "empathy"
+        "empathy",
+        "jtbd"
     ],
     "jobsToBeDone": [
         "Visualize target user",
-        "Understand user pain points"
+        "Understand motivations and pain points",
+        "Align team on user needs"
     ],
     "inputs": [
         {
@@ -26,6 +28,16 @@
             "key": "target_user_description",
             "label": "Target User Description",
             "example": "Freelance graphic designers managing multiple clients"
+        },
+        {
+            "key": "primary_job",
+            "label": "Primary Job-to-be-Done",
+            "example": "Deliver client work on time without admin overload"
+        },
+        {
+            "key": "context",
+            "label": "Usage Context",
+            "example": "Works from coworking spaces, mobile-first during client meetings"
         }
     ]
 }

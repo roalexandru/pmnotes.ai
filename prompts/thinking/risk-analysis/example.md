@@ -1,17 +1,16 @@
-# Risk & Mitigation Analysis: AI-based Chatbot Launch
+# Risk & Mitigation Analysis: AI-based Chatbot (Public Beta)
 
-## 1. Technical Risks
-*   **Risk**: **Hallucinations/Inaccurate Responses**. The bot might confidently provide wrong answers to customers, damaging trust.
-    *   *Mitigation*: Implement "Retrieval Augmented Generation" (RAG) to ground answers in our help center docs. Add a "Cite Sources" feature. Set low temperature for determination.
-*   **Risk**: **Latency Spikes**. During high traffic, LLM response times might exceed 5 seconds.
-    *   *Mitigation*: Implement streaming responses (typing indicator). Fallback to cached answers for common questions.
+## Risk Register
 
-## 2. Market Risks
-*   **Risk**: **User Frustration ("Human Loop")**. Users hate getting stuck with a bot when they have a complex issue.
-    *   *Mitigation*: Always offer an "Escalate to Human" button after 2 failed attempts or negative sentiment detection.
-*   **Risk**: **Low Adoption**. Users might ignore the chat widget.
-    *   *Mitigation*: Proactive prompts based on user behavior (e.g., "stuck on checkout?").
+| Category | Risk | Likelihood | Impact | Mitigation | Early Warning Signal | Owner |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| Technical | Hallucinated answers damage trust | High | High | RAG with curated sources; response confidence labels | Spike in negative CSAT on bot sessions | Engineering + Support |
+| Technical | Latency exceeds 5s during peak | Medium | High | Response streaming, caching FAQs | 95th percentile latency >5s | Engineering |
+| Market | Users avoid bot for complex issues | Medium | Medium | Easy “Escalate to human” path after 2 failed turns | Low engagement rate on bot widget | Support |
+| Operational | Support team not trained on handoff | Medium | Medium | Training + playbooks + escalation SLAs | Increased ticket resolution time | Support |
+| Legal | PII leakage into model prompts | Medium | High | PII redaction + updated data processing terms | Privacy complaints or DSR requests | Legal |
 
-## 3. Legal/Compliance Risks
-*   **Risk**: **PII Leakage**. Users might paste sensitive data (credit cards, health info) into the chat which gets sent to OpenAI.
-    *   *Mitigation*: Implement a PII redaction layer (regex filter) on the client/edge before sending data to the LLM provider. Update Terms of Service.
+## Top Focus Risks
+1. **Hallucinated answers**: Launch with a limited knowledge base and require source citations for every answer.
+2. **Latency spikes**: Set SLOs and add a fallback to static FAQ responses.
+3. **PII leakage**: Implement pre-processing and audit logs for prompt content.

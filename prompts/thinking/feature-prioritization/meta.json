@@ -1,11 +1,11 @@
 {
     "slug": "feature-prioritization",
-    "title": "Feature Prioritization",
-    "shortDescription": "Prioritize features using a framework like RICE or MoSCoW.",
+    "title": "Feature Prioritization Framework",
+    "shortDescription": "Rank features using a structured scoring framework and clear rationale.",
     "surface": "thinking",
     "pmStage": "Product Planning",
     "complexity": "Intermediate",
-    "outputType": "Prioritized List",
+    "outputType": "Prioritized List + Scoring",
     "tags": [
         "prioritization",
         "roadmap",
@@ -13,14 +13,35 @@
         "MoSCoW"
     ],
     "jobsToBeDone": [
-        "Rank feature backlog",
-        "Justify roadmap decisions"
+        "Rank a feature backlog",
+        "Explain tradeoffs to stakeholders",
+        "Align priorities to goals"
     ],
     "inputs": [
+        {
+            "key": "product_name",
+            "label": "Product Name",
+            "example": "TaskFlow"
+        },
+        {
+            "key": "objective",
+            "label": "Primary Objective",
+            "example": "Increase activation from 32% to 45%"
+        },
         {
             "key": "feature_list",
             "label": "Feature List",
             "example": "Dark mode, Offline support, Social login, Export to PDF"
+        },
+        {
+            "key": "constraints",
+            "label": "Constraints",
+            "example": "2 engineers for 6 weeks; must ship 1 quick-win"
+        },
+        {
+            "key": "framework_preference",
+            "label": "Framework Preference",
+            "example": "RICE (if unknown, choose best fit)"
         }
     ]
 }

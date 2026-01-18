@@ -1,36 +1,33 @@
-# Feedback Analysis: TaskFlow v2.0 Launch
+# Feedback Synthesis: PhotoEditor Pro (Last 60 Days)
 
 ## Executive Summary
-*   **Sentiment**: Mixed-Negative. While users love the new "Dark Mode" UI, the removal of the "Quick Add" widget has caused significant friction.
-*   **Top Priority**: Immediate restoration or replacement of the "Quick Add" functionality is critical to stop churn.
-*   **Secondary Issue**: Mobile app sync latency has increased, frustrating power users on the go.
+* Sentiment is **mixed-negative** due to export crashes and perceived slow performance.
+* Pro users value filters and presets but feel the price is high relative to stability.
+* Immediate reliability fixes will likely reduce churn more than new features.
 
-## Thematic Analysis
+## Theme Table
 
-### 1. Critical Issues (Fix it Now)
-*   **[P0 - Critical] Removal of "Quick Add" Widget**
-    *   *Context*: Users relied on this for capturing tasks in <5 seconds. The new flow takes 4 clicks.
-    *   *Voice of Customer*: "I literally can't use the app anymore. I used to dump ideas in seconds, now I have to navigate three menus. Rolling back to Todoist until this is fixed."
-*   **[P1 - High] Mobile Sync Latency**
-    *   *Context*: Tasks added on desktop take up to 2 minutes to appear on mobile.
-    *   *Voice of Customer*: "I added a grocery list on my Mac, got to the store, and my phone was blank. Defeats the purpose of a cloud sync app."
+| Theme | Frequency | Example Quote |
+| :--- | :--- | :--- |
+| Export reliability | High | “The app crashes every time I export a 4K file.” |
+| Performance | Medium | “Great filters but it takes forever to load my library.” |
+| Pricing value | Medium | “It’s too expensive for something that still crashes.” |
+| UI/Workflow | Low | “I wish batch editing didn’t take so many clicks.” |
 
-### 2. UX & Design (Mixed)
-*   **Positive**: Dark Mode & New Typography
-    *   Users universally praise the visual refresh. It feels modern and cleaner.
-    *   *Voice of Customer*: "The new Midnight Blue theme is gorgeous. Finally easy on the eyes for late-night planning."
-*   **Negative**: "Dense" Information Density
-    *   The new list view shows fewer items per screen, requiring more scrolling.
-    *   *Voice of Customer*: "Why is everything so big? I can only see 5 tasks at a time now. Please give us a 'Compact View' option."
+## Critical Issues
+* **[P0] Export crash on 4K files** — core workflow is blocked for power users.
+* **[P1] Slow library loading** — impacts editing flow and time-to-value.
 
-### 3. Feature Requests (Build it Later)
-*   **Calendar Two-Way Sync (Must Have)**
-    *   Users want tasks to appear on their GCal/Outlook automatically.
-    *   *Voice of Customer*: "If this doesn't sync with my work calendar soon, I can't justify the Pro subscription."
-*   **Natural Language Processing (Nice to Have)**
-    *   Requests for "smart dates" (e.g., typing 'buy milk tomorrow at 5pm').
-    *   *Voice of Customer*: "It's 2024, why do I have to manually use a date picker? Let me just type!"
+## Feature Requests
+**Must-Have**
+* Batch export presets for consistent outputs.
+* Cloud backup for project files.
 
-## Recommendation
-1.  **Immediate Hotfix**: Re-enable the legacy "Quick Add" widget code if possible, or build a simplified modal immediately.
-2.  **Backlog**: Prioritize "Compact View" for the next sprint to appease power users.
+**Nice-to-Have**
+* AI auto-enhance toggle.
+* Customizable keyboard shortcuts.
+
+## Recommended Next Steps
+* **Quick Fix**: Hotfix export crash and add crash telemetry for affected file types.
+* **Research**: Conduct 5 user interviews on perceived pricing vs. stability tradeoffs.
+* **Roadmap Candidate**: Batch export presets to reduce time-to-complete for pro workflows.

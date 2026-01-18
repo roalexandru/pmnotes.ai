@@ -1,19 +1,21 @@
 {
     "slug": "feedback-summary",
-    "title": "Customer Feedback Summary",
-    "shortDescription": "Summarize user feedback to identify themes.",
+    "title": "Customer Feedback Synthesis",
+    "shortDescription": "Distill raw feedback into themes, severity, and actionable next steps.",
     "surface": "thinking",
     "pmStage": "Product Discovery",
     "complexity": "Beginner",
-    "outputType": "Summary Report",
+    "outputType": "Insight Report",
     "tags": [
         "feedback",
         "user-research",
-        "pain-points"
+        "pain-points",
+        "voice-of-customer"
     ],
     "jobsToBeDone": [
         "Synthesize raw feedback",
-        "Identify common pain points"
+        "Identify urgent issues",
+        "Prioritize feature requests"
     ],
     "inputs": [
         {
@@ -22,9 +24,24 @@
             "example": "PhotoEditor Pro"
         },
         {
+            "key": "feedback_sources",
+            "label": "Feedback Sources",
+            "example": "Support tickets, App Store reviews, NPS survey"
+        },
+        {
+            "key": "time_window",
+            "label": "Time Window",
+            "example": "Last 60 days"
+        },
+        {
+            "key": "target_segment",
+            "label": "Target Segment",
+            "example": "Pro users on annual plans"
+        },
+        {
             "key": "feedback_text",
             "label": "Feedback Text",
-            "example": "Apps crashes on save. Great filters but slow. Subscription is too expensive."
+            "example": "App crashes on export. Great filters but slow. Subscription is too expensive."
         }
     ]
 }

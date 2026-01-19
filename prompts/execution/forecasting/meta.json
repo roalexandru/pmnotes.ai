@@ -1,0 +1,40 @@
+{
+    "slug": "forecasting",
+    "title": "User Growth Forecast (with Churn)",
+    "shortDescription": "Project user base over time using growth and churn assumptions.",
+    "surface": "execution",
+    "pmStage": "Planning",
+    "complexity": "Advanced",
+    "outputType": "Executed Code (Projection)",
+    "tags": [
+        "python",
+        "forecasting",
+        "growth"
+    ],
+    "jobsToBeDone": [
+        "Estimate future users",
+        "Model impact of churn"
+    ],
+    "inputs": [
+        {
+            "key": "starting_users",
+            "label": "Starting Users",
+            "example": "1000"
+        },
+        {
+            "key": "growth_rate",
+            "label": "Monthly Growth Rate",
+            "example": "8%"
+        },
+        {
+            "key": "churn_rate",
+            "label": "Monthly Churn Rate",
+            "example": "5%"
+        },
+        {
+            "key": "months",
+            "label": "Months to Forecast",
+            "example": "12"
+        }
+    ]
+}

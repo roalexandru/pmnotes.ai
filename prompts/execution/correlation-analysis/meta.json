@@ -1,0 +1,36 @@
+{
+    "slug": "correlation-analysis",
+    "title": "Correlation & Relationship Check",
+    "shortDescription": "Quantify the relationship between two product metrics and interpret strength.",
+    "surface": "execution",
+    "pmStage": "Data Analysis",
+    "featured": true,
+    "complexity": "Intermediate",
+    "outputType": "Executed Code (Statistics)",
+    "tags": [
+        "python",
+        "statistics",
+        "correlation"
+    ],
+    "jobsToBeDone": [
+        "Validate metric relationships",
+        "Support hypotheses with statistical evidence"
+    ],
+    "inputs": [
+        {
+            "key": "variable_a",
+            "label": "Metric A Values",
+            "example": "[50, 60, 55, 70, 65]"
+        },
+        {
+            "key": "variable_b",
+            "label": "Metric B Values",
+            "example": "[200, 240, 220, 300, 270]"
+        },
+        {
+            "key": "method",
+            "label": "Correlation Method",
+            "example": "pearson"
+        }
+    ]
+}

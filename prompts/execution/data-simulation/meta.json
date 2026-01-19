@@ -1,0 +1,41 @@
+{
+    "slug": "data-simulation",
+    "title": "Growth Simulation & Moving Average",
+    "shortDescription": "Simulate user growth scenarios and summarize trend smoothing.",
+    "surface": "execution",
+    "pmStage": "Data Analysis",
+    "featured": true,
+    "complexity": "Intermediate",
+    "outputType": "Executed Code (Simulation)",
+    "tags": [
+        "python",
+        "simulation",
+        "analysis"
+    ],
+    "jobsToBeDone": [
+        "Model sign-up volatility",
+        "Explain trends with moving averages"
+    ],
+    "inputs": [
+        {
+            "key": "days",
+            "label": "Number of Days",
+            "example": "30"
+        },
+        {
+            "key": "daily_mean",
+            "label": "Daily Mean Sign-ups",
+            "example": "120"
+        },
+        {
+            "key": "daily_stddev",
+            "label": "Daily Std Dev",
+            "example": "15"
+        },
+        {
+            "key": "window_size",
+            "label": "Moving Average Window",
+            "example": "7"
+        }
+    ]
+}

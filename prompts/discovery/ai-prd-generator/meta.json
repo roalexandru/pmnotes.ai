@@ -1,0 +1,68 @@
+{
+    "slug": "ai-prd-generator",
+    "title": "AI-Ready PRD Generator",
+    "shortDescription": "Create a PRD optimized for AI coding agents in Cursor or Claude Code.",
+    "surface": "discovery",
+    "pmStage": "Product Definition",
+    "featured": true,
+    "complexity": "Intermediate",
+    "outputType": "Markdown PRD",
+    "tags": [
+        "prd",
+        "ai",
+        "requirements",
+        "specification"
+    ],
+    "jobsToBeDone": [
+        "Translate ideas into AI-ready requirements",
+        "Give AI coding tools a clear build spec",
+        "Align stakeholders on scope and constraints"
+    ],
+    "inputs": [
+        {
+            "key": "product_name",
+            "label": "Product or Feature Name",
+            "example": "SupportOps Assistant"
+        },
+        {
+            "key": "product_type",
+            "label": "Product Type",
+            "example": "Internal AI assistant for customer support"
+        },
+        {
+            "key": "target_users",
+            "label": "Target Users",
+            "example": "Tier-1 support agents and team leads"
+        },
+        {
+            "key": "problem_statement",
+            "label": "Problem Statement",
+            "example": "Agents spend too long summarizing tickets and locating policy answers"
+        },
+        {
+            "key": "key_workflows",
+            "label": "Key Workflows",
+            "example": "Summarize ticket, draft response, cite policy, log disposition"
+        },
+        {
+            "key": "ai_role",
+            "label": "AI Role / Behavior",
+            "example": "Acts as a co-pilot that proposes drafts but requires human approval"
+        },
+        {
+            "key": "success_metrics",
+            "label": "Success Metrics",
+            "example": "Reduce average handle time by 25%; 90% of drafts accepted"
+        },
+        {
+            "key": "constraints",
+            "label": "Constraints",
+            "example": "No PII leaves VPC; must integrate with Zendesk"
+        },
+        {
+            "key": "existing_stack",
+            "label": "Existing Stack",
+            "example": "React, Node.js, Postgres, AWS"
+        }
+    ]
+}

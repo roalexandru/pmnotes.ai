@@ -19,10 +19,10 @@ collections/                # (Optional) Curated lists of prompts
 ```
 
 ### Surfaces
-Prompts are categorized into "Surfaces" representing different mental modes:
-- **Thinking**: Strategic analysis, ideation, and problem-solving (e.g., Feature Prioritization, Market Analysis).
-- **Builder**: Creating tangible artifacts and documents (e.g., PRDs, User Stories).
-- **Executor**: tactical tasks and communications (e.g., Release Notes, Emails).
+Prompts are categorized into three core workflows:
+- **Discovery** (folder: `thinking`): Strategy, user research, and problem definition (e.g., Drafting PRDs, analyzing feedback).
+- **Prototyping** (folder: `builder`): Building functional prototypes and data models (e.g., Generating schema, frontend components).
+- **Execution** (folder: `executor`): Automating technical tasks and migrations (e.g., Data analysis, repo-wide refactors).
 
 ## Prompt Structure
 

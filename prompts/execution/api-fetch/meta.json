@@ -1,0 +1,40 @@
+{
+    "slug": "api-fetch",
+    "title": "Live API Data Fetch & Validation",
+    "shortDescription": "Pull live API data, validate response shape, and summarize key fields.",
+    "surface": "execution",
+    "pmStage": "Data Gathering",
+    "complexity": "Intermediate",
+    "outputType": "Executed Code (Data)",
+    "tags": [
+        "python",
+        "api",
+        "requests"
+    ],
+    "jobsToBeDone": [
+        "Verify third-party API reliability",
+        "Extract fields needed for a demo or analysis"
+    ],
+    "inputs": [
+        {
+            "key": "api_url",
+            "label": "API URL",
+            "example": "https://jsonplaceholder.typicode.com/todos"
+        },
+        {
+            "key": "query_params",
+            "label": "Query Parameters",
+            "example": "userId=1&completed=false"
+        },
+        {
+            "key": "fields_to_extract",
+            "label": "Fields to Extract",
+            "example": "id, title, completed"
+        },
+        {
+            "key": "record_limit",
+            "label": "Record Limit",
+            "example": "5"
+        }
+    ]
+}

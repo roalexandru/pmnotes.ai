@@ -1,0 +1,35 @@
+{
+    "slug": "visualization",
+    "title": "Metric Trend Visualization",
+    "shortDescription": "Create a chart for a KPI trend and annotate key changes.",
+    "surface": "execution",
+    "pmStage": "Reporting",
+    "complexity": "Intermediate",
+    "outputType": "Executed Code (Chart)",
+    "tags": [
+        "python",
+        "matplotlib",
+        "visualization"
+    ],
+    "jobsToBeDone": [
+        "Visualize KPI performance",
+        "Create shareable charts"
+    ],
+    "inputs": [
+        {
+            "key": "chart_type",
+            "label": "Chart Type",
+            "example": "line"
+        },
+        {
+            "key": "data_points",
+            "label": "Data Points",
+            "example": "Jan: 100, Feb: 150, Mar: 130"
+        },
+        {
+            "key": "highlight_point",
+            "label": "Highlight Point",
+            "example": "Feb"
+        }
+    ]
+}

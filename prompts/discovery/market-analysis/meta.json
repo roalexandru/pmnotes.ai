@@ -1,0 +1,47 @@
+{
+    "slug": "market-analysis",
+    "title": "Market Analysis Brief",
+    "shortDescription": "Assess market size, trends, and competitive dynamics for a target segment.",
+    "surface": "discovery",
+    "pmStage": "Product Discovery",
+    "complexity": "Intermediate",
+    "outputType": "Market Brief",
+    "tags": [
+        "market-research",
+        "competitors",
+        "swot",
+        "tam-sam-som"
+    ],
+    "jobsToBeDone": [
+        "Understand market trends",
+        "Estimate market potential",
+        "Map competitive landscape"
+    ],
+    "inputs": [
+        {
+            "key": "industry",
+            "label": "Industry or Niche",
+            "example": "SaaS Project Management"
+        },
+        {
+            "key": "geography",
+            "label": "Target Geography",
+            "example": "North America + UK"
+        },
+        {
+            "key": "customer_segment",
+            "label": "Customer Segment",
+            "example": "Mid-market tech companies (200-2,000 employees)"
+        },
+        {
+            "key": "business_model",
+            "label": "Business Model",
+            "example": "B2B SaaS"
+        },
+        {
+            "key": "time_horizon",
+            "label": "Time Horizon",
+            "example": "Next 24 months"
+        }
+    ]
+}

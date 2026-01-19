@@ -1,0 +1,41 @@
+{
+    "slug": "risk-analysis",
+    "title": "Risk & Mitigation Analysis",
+    "shortDescription": "Run a pre-mortem to identify launch risks and mitigation plans.",
+    "surface": "discovery",
+    "pmStage": "Product Planning",
+    "complexity": "Intermediate",
+    "outputType": "Risk Register",
+    "tags": [
+        "risk-management",
+        "pre-mortem",
+        "planning"
+    ],
+    "jobsToBeDone": [
+        "Anticipate launch risks",
+        "Plan mitigation strategies",
+        "Align on risk owners"
+    ],
+    "inputs": [
+        {
+            "key": "feature_or_product",
+            "label": "Feature/Product",
+            "example": "AI-based Chatbot"
+        },
+        {
+            "key": "launch_scope",
+            "label": "Launch Scope",
+            "example": "Public beta for existing customers"
+        },
+        {
+            "key": "timeline",
+            "label": "Timeline",
+            "example": "6 weeks"
+        },
+        {
+            "key": "dependencies",
+            "label": "Key Dependencies",
+            "example": "LLM vendor, support team training"
+        }
+    ]
+}

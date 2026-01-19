@@ -1,0 +1,36 @@
+{
+    "slug": "data-script",
+    "title": "CSV Insight Generator (Python)",
+    "shortDescription": "Clean a CSV and summarize key metrics by group.",
+    "surface": "prototyping",
+    "pmStage": "Data Analysis",
+    "complexity": "Intermediate",
+    "outputType": "Code (Python)",
+    "tags": [
+        "python",
+        "csv",
+        "data-processing"
+    ],
+    "jobsToBeDone": [
+        "Analyze CSV files",
+        "Extract insights from data",
+        "Create clean output files"
+    ],
+    "inputs": [
+        {
+            "key": "csv_columns",
+            "label": "CSV Columns",
+            "example": "ticket_id, issue_type, created_at, resolution_hours"
+        },
+        {
+            "key": "group_by_column",
+            "label": "Group By Column",
+            "example": "issue_type"
+        },
+        {
+            "key": "metric_column",
+            "label": "Metric Column",
+            "example": "resolution_hours"
+        }
+    ]
+}

@@ -13,7 +13,7 @@ We use github to host code, to track issues and feature requests, and to accept 
 
 ## Creating a New Prompt
 
-1.  **Choose a Surface**: Decide if your prompt belongs to `thinking`, `builder`, or `executor`.
+1.  **Choose a Surface**: Decide if your prompt belongs to **Discovery** (`thinking`), **Prototyping** (`builder`), or **Execution** (`executor`).
 2.  **Create a Directory**: Create a new folder in `prompts/<surface>/<your-prompt-slug>`.
 3.  **Add Files**:
     *   `meta.json`: Describe your prompt. Ensure the `slug` matches your directory name.

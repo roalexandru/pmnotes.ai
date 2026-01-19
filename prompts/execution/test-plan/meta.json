@@ -1,0 +1,40 @@
+{
+    "slug": "test-plan",
+    "title": "Feature Test Plan & Coverage Review",
+    "shortDescription": "Draft a comprehensive test plan with unit, integration, and E2E coverage.",
+    "surface": "execution",
+    "pmStage": "Delivery",
+    "complexity": "Advanced",
+    "outputType": "Test Plan",
+    "tags": [
+        "qa",
+        "testing",
+        "product"
+    ],
+    "jobsToBeDone": [
+        "Ensure coverage for a new feature",
+        "Reduce regression risk before release"
+    ],
+    "inputs": [
+        {
+            "key": "feature_description",
+            "label": "Feature Description",
+            "example": "Self-serve invoice download for billing admins"
+        },
+        {
+            "key": "risk_areas",
+            "label": "Risk Areas",
+            "example": "permissions, PDF generation, billing data integrity"
+        },
+        {
+            "key": "dependencies",
+            "label": "Dependencies",
+            "example": "Stripe API, PDF renderer"
+        },
+        {
+            "key": "test_environment",
+            "label": "Test Environment",
+            "example": "staging with anonymized billing data"
+        }
+    ]
+}

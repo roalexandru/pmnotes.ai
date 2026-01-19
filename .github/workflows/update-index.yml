@@ -1,9 +1,8 @@
 name: Update Prompts Index
 
 on:
-  push:
-    branches:
-      - main
+  pull_request:
+    types: [opened, synchronize, reopened]
     paths:
       - 'prompts/**'
       - '!prompts/index.json'
@@ -12,13 +11,30 @@ permissions:
   contents: write
 
 jobs:
+  validate-prompts:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Run Prompt Validation Tests
+        run: node scripts/validate_prompts.js
+
   update-index:
     runs-on: ubuntu-latest
+    if: ${{ github.event.pull_request.head.repo.fork == false }}
+    needs: validate-prompts
     steps:
       - name: Checkout
         uses: actions/checkout@v4
         with:
           fetch-depth: 0 # Needed for git log history timestamps
+          ref: ${{ github.head_ref }}
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
@@ -28,15 +44,14 @@ jobs:
       - name: Generate Index
         run: node generate_index.js
 
-      - name: Commit and Push
+      - name: Commit and Push Index Update
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add prompts/index.json
-          # Check for changes
           if git diff --staged --quiet; then
             echo "No changes to commit"
-          else
-            git commit -m "chore: update prompts index [skip ci]"
-            git push
+            exit 0
           fi
+          git commit -m "update prompts index"
+          git push

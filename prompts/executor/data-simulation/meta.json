@@ -1,7 +1,7 @@
 {
     "slug": "data-simulation",
-    "title": "Data Simulation & Analysis",
-    "shortDescription": "Simulate data points and perform analysis.",
+    "title": "Growth Simulation & Moving Average",
+    "shortDescription": "Simulate user growth scenarios and summarize trend smoothing.",
     "surface": "executor",
     "pmStage": "Data Analysis",
     "featured": true,
@@ -13,19 +13,29 @@
         "analysis"
     ],
     "jobsToBeDone": [
-        "Simulate user growth",
-        "Calculate moving averages"
+        "Model sign-up volatility",
+        "Explain trends with moving averages"
     ],
     "inputs": [
         {
-            "key": "simulation_parameters",
-            "label": "Simulation Parameters",
-            "example": "30 days, mean of 100 sign-ups"
+            "key": "days",
+            "label": "Number of Days",
+            "example": "30"
         },
         {
-            "key": "analysis_task",
-            "label": "Analysis Task",
-            "example": "calculate 7-day moving average"
+            "key": "daily_mean",
+            "label": "Daily Mean Sign-ups",
+            "example": "120"
+        },
+        {
+            "key": "daily_stddev",
+            "label": "Daily Std Dev",
+            "example": "15"
+        },
+        {
+            "key": "window_size",
+            "label": "Moving Average Window",
+            "example": "7"
         }
     ]
 }

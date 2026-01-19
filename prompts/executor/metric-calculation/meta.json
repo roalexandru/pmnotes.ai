@@ -1,7 +1,7 @@
 {
     "slug": "metric-calculation",
-    "title": "Metric Calculation",
-    "shortDescription": "Calculate basic statistics from a dataset.",
+    "title": "Product Metric Summary",
+    "shortDescription": "Compute key summary statistics for a product metric series.",
     "surface": "executor",
     "pmStage": "Data Analysis",
     "complexity": "Beginner",
@@ -12,19 +12,24 @@
         "statistics"
     ],
     "jobsToBeDone": [
-        "Calculate averages",
-        "Analyze daily active users"
+        "Summarize KPI performance",
+        "Share quick metric snapshots"
     ],
     "inputs": [
         {
+            "key": "metric_name",
+            "label": "Metric Name",
+            "example": "daily active users"
+        },
+        {
             "key": "data_list",
-            "label": "Data List",
+            "label": "Metric Values",
             "example": "[120, 135, 150, 160, 155, 180, 200]"
         },
         {
             "key": "metrics_to_calculate",
-            "label": "Metrics",
-            "example": "average, median, maximum"
+            "label": "Statistics",
+            "example": "average, median, minimum, maximum"
         }
     ]
 }

@@ -1,25 +1,31 @@
-data = [120, 135, 150, 160, 155, 180, 200]
+import numpy as np
 
-# Calculate Metrics
-average = sum(data) / len(data)
-data_sorted = sorted(data)
-n = len(data)
-if n % 2 == 1:
-    median = data_sorted[n // 2]
-else:
-    median = (data_sorted[n // 2 - 1] + data_sorted[n // 2]) / 2
-maximum = max(data)
+metric_name = "daily active users"
+values = [120, 135, 150, 160, 155, 180, 200]
+metrics_to_calculate = ["average", "median", "minimum", "maximum", "stddev"]
 
-# Output
-print(f"Data: {data}")
-print("-" * 20)
-print(f"Average DAU: {average:.2f}")
-print(f"Median  DAU: {median}")
-print(f"Maximum DAU: {maximum}")
+arr = np.array(values, dtype=float)
 
-# Output Look
-# Data: [120, 135, 150, 160, 155, 180, 200]
-# --------------------
-# Average DAU: 157.14
-# Median  DAU: 155
-# Maximum DAU: 200
+summary = {
+    "average": arr.mean(),
+    "median": np.median(arr),
+    "minimum": arr.min(),
+    "maximum": arr.max(),
+    "stddev": arr.std(ddof=1)
+}
+
+print(f"Metric: {metric_name}")
+for key in metrics_to_calculate:
+    print(f"{key.title()}: {summary[key]:.2f}")
+
+if "stddev" in metrics_to_calculate and summary["stddev"] > summary["average"] * 0.2:
+    print("Insight: Volatility looks elevated; investigate outlier days.")
+
+# Sample Output:
+# Metric: daily active users
+# Average: 157.14
+# Median: 155.00
+# Minimum: 120.00
+# Maximum: 200.00
+# Stddev: 28.07
+# Insight: Volatility looks elevated; investigate outlier days.

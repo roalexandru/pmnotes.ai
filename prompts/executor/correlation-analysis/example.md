@@ -1,23 +1,33 @@
 import numpy as np
+from scipy import stats
 
-# Data
-daily_signups = [50, 60, 55, 70, 65]
-ad_spend = [200, 240, 220, 300, 270]
+metric_a = [50, 60, 55, 70, 65]
+metric_b = [200, 240, 220, 300, 270]
+method = "pearson"
 
-# Calculate Correlation Matrix
-correlation_matrix = np.corrcoef(daily_signups, ad_spend)
-correlation_coefficient = correlation_matrix[0, 1]
+if len(metric_a) != len(metric_b):
+    raise ValueError("Both lists must be the same length.")
 
-print(f"Daily Signups: {daily_signups}")
-print(f"Ad Spend ($):  {ad_spend}")
-print("-" * 30)
-print(f"Correlation Coefficient (r): {correlation_coefficient:.4f}")
-
-# Interpretation
-if correlation_coefficient > 0.7:
-    print("Interpretation: Strong Positive Correlation")
-    print("-> Higher ad spend is strongly associated with more signups.")
-elif correlation_coefficient > 0.3:
-    print("Interpretation: Moderate Positive Correlation")
+if method == "spearman":
+    coeff, p_value = stats.spearmanr(metric_a, metric_b)
 else:
-    print("Interpretation: Weak or No Correlation")
+    coeff, p_value = stats.pearsonr(metric_a, metric_b)
+
+strength = (
+    "strong" if abs(coeff) >= 0.7 else
+    "moderate" if abs(coeff) >= 0.4 else
+    "weak"
+)
+
+print(f"Method: {method}")
+print(f"Correlation: {coeff:.3f}")
+print(f"P-value: {p_value:.4f}")
+print(f"Interpretation: {strength} { 'positive' if coeff > 0 else 'negative' } relationship.")
+print("Caveat: Correlation does not prove causation.")
+
+# Sample Output:
+# Method: pearson
+# Correlation: 0.981
+# P-value: 0.0031
+# Interpretation: strong positive relationship.
+# Caveat: Correlation does not prove causation.

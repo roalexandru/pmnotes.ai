@@ -1,7 +1,7 @@
 {
     "slug": "release-manager",
-    "title": "Release Manager",
-    "shortDescription": "Autonomously checks git logs, changes files, and drafts release notes.",
+    "title": "Release Notes & Version Bump",
+    "shortDescription": "Generate release notes and checklist from recent git changes.",
     "surface": "executor",
     "pmStage": "Delivery",
     "complexity": "Advanced",
@@ -12,14 +12,24 @@
         "automation"
     ],
     "jobsToBeDone": [
-        "Automate release notes creation",
-        "Update version numbers"
+        "Draft release notes fast",
+        "Standardize version bumps"
     ],
     "inputs": [
         {
             "key": "version",
             "label": "Target Version",
             "example": "v1.2.0"
+        },
+        {
+            "key": "since_tag",
+            "label": "Compare Against Tag",
+            "example": "v1.1.0"
+        },
+        {
+            "key": "release_date",
+            "label": "Release Date",
+            "example": "2026-02-01"
         }
     ]
 }

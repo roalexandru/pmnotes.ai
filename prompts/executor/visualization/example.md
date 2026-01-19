@@ -1,25 +1,42 @@
 import matplotlib.pyplot as plt
 
-# Data
-months = ['Jan', 'Feb', 'Mar']
-sales = [100, 150, 130]
+chart_type = "line"
+raw_points = "Jan: 100, Feb: 150, Mar: 130, Apr: 170"
+highlight = "Feb"
 
-# Create Bar Chart
-plt.figure(figsize=(8, 5))
-plt.bar(months, sales, color=['#3498db', '#e74c3c', '#2ecc71'])
+pairs = [item.strip() for item in raw_points.split(",")]
+labels = []
+values = []
+for pair in pairs:
+    label, value = pair.split(":")
+    labels.append(label.strip())
+    values.append(float(value.strip()))
 
-# Styling
-plt.title('Q1 Sales Performance')
-plt.xlabel('Month')
-plt.ylabel('Sales ($k)')
-plt.grid(axis='y', linestyle='--', alpha=0.7)
+plt.figure(figsize=(6, 4))
+if chart_type == "bar":
+    plt.bar(labels, values, color="#6BA4FF")
+else:
+    plt.plot(labels, values, marker="o", color="#1F77B4")
 
-# Show value on top of bars
-for i, v in enumerate(sales):
-    plt.text(i, v + 2, str(v), ha='center', fontweight='bold')
+if highlight in labels:
+    idx = labels.index(highlight)
+    plt.scatter([labels[idx]], [values[idx]], color="red", zorder=3)
+    plt.annotate(
+        f"{highlight}: {values[idx]:.0f}",
+        (labels[idx], values[idx]),
+        textcoords="offset points",
+        xytext=(0, 8),
+        ha="center"
+    )
 
-# Show
-plt.show()
+plt.title("KPI Trend")
+plt.xlabel("Month")
+plt.ylabel("Value")
+plt.tight_layout()
+plt.savefig("kpi_chart.png")
 
-# (Note: In a real code interpreter environment, this would display the image)
-print("Chart generated successfully.")
+print(f"Highlighted {highlight} as a key movement in the trend.")
+
+# Sample Output:
+# Highlighted Feb as a key movement in the trend.
+# (Chart saved to kpi_chart.png)

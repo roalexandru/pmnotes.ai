@@ -1,7 +1,7 @@
 {
     "slug": "data-cleaning",
-    "title": "Data Cleaning",
-    "shortDescription": "Clean missing values in a dataset.",
+    "title": "CSV Cleaning & Quality Report",
+    "shortDescription": "Clean missing values, enforce data types, and report quality changes.",
     "surface": "executor",
     "pmStage": "Data Preparation",
     "complexity": "Intermediate",
@@ -13,7 +13,7 @@
     ],
     "jobsToBeDone": [
         "Prepare data for analysis",
-        "Handle missing values"
+        "Standardize fields for dashboards"
     ],
     "inputs": [
         {
@@ -22,9 +22,14 @@
             "example": "user_data.csv"
         },
         {
-            "key": "column_to_fix",
-            "label": "Column to Fix",
-            "example": "age"
+            "key": "columns_to_fix",
+            "label": "Columns to Clean",
+            "example": "age, country, plan_tier"
+        },
+        {
+            "key": "imputation_strategy",
+            "label": "Imputation Strategy",
+            "example": "numeric=median, categorical=mode"
         }
     ]
 }

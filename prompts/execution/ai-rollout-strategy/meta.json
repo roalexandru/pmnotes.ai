@@ -1,0 +1,54 @@
+{
+    "slug": "ai-rollout-strategy",
+    "title": "AI Feature Rollout Strategy",
+    "shortDescription": "Plan phased rollout for AI features with shadow mode, confidence ramps, and human-in-the-loop transitions.",
+    "surface": "execution",
+    "pmStage": "Launch & Rollout",
+    "complexity": "Advanced",
+    "outputType": "Rollout Plan",
+    "tags": [
+        "ai",
+        "ml",
+        "rollout",
+        "launch",
+        "risk",
+        "enterprise"
+    ],
+    "jobsToBeDone": [
+        "Plan safe AI feature rollout",
+        "Design human-to-AI transition",
+        "Define rollback criteria and procedures"
+    ],
+    "inputs": [
+        {
+            "key": "ai_feature_name",
+            "label": "AI Feature Name",
+            "example": "Intelligent Document Processing"
+        },
+        {
+            "key": "current_process",
+            "label": "Current Process",
+            "example": "Manual data entry by AP clerks, 15 min per invoice, 5% error rate"
+        },
+        {
+            "key": "user_segments",
+            "label": "User Segments",
+            "example": "Enterprise customers (100+ users), Mid-market (10-100 users), SMB (<10 users)"
+        },
+        {
+            "key": "risk_tolerance",
+            "label": "Risk Tolerance",
+            "example": "Low - financial data, errors cause payment delays and compliance issues"
+        },
+        {
+            "key": "success_metrics",
+            "label": "Success Metrics",
+            "example": "Accuracy >95%, user adoption >70%, processing time <2 min, user satisfaction >4.0/5"
+        },
+        {
+            "key": "timeline_constraints",
+            "label": "Timeline Constraints",
+            "example": "Q2 launch target, must be stable before month-end processing peaks"
+        }
+    ]
+}

@@ -1,0 +1,56 @@
+{
+  "slug": "technical-pm-essentials",
+  "title": "Technical PM Essentials",
+  "shortDescription": "Essential prompts for technical product managers working with engineering teams.",
+  "description": "A collection of prompts designed for technical product managers who work closely with engineering teams. Covers technical documentation, API design, database planning, and test strategies.",
+  "icon": "code",
+  "category": "topic",
+  "difficulty": "Advanced",
+  "estimatedTime": "Ongoing",
+  "tags": ["technical", "engineering", "api", "database", "testing"],
+  "prompts": [
+    {
+      "slug": "discovery/tech-design-doc",
+      "order": 1,
+      "note": "Create technical design documents"
+    },
+    {
+      "slug": "prototyping/api-endpoint",
+      "order": 2,
+      "note": "Design and document API endpoints"
+    },
+    {
+      "slug": "prototyping/db-schema",
+      "order": 3,
+      "note": "Plan database schemas and data models"
+    },
+    {
+      "slug": "prototyping/unit-test",
+      "order": 4,
+      "note": "Generate unit test specifications"
+    },
+    {
+      "slug": "execution/test-plan",
+      "order": 5,
+      "note": "Create comprehensive test plans"
+    },
+    {
+      "slug": "execution/ux-review",
+      "order": 6,
+      "note": "Technical UX review and recommendations",
+      "optional": true
+    }
+  ],
+  "prerequisites": [
+    "Basic understanding of software architecture",
+    "Familiarity with APIs and databases",
+    "Technical communication skills"
+  ],
+  "outcomes": [
+    "Technical design documentation",
+    "API specifications",
+    "Database schema designs",
+    "Test coverage plans"
+  ],
+  "createdAt": "2026-01-23"
+}

@@ -1,0 +1,48 @@
+{
+    "slug": "ai-user-research",
+    "title": "AI Feature User Research Framework",
+    "shortDescription": "Understand user needs, trust levels, and AI literacy for intelligent features.",
+    "surface": "discovery",
+    "pmStage": "Product Discovery",
+    "complexity": "Intermediate",
+    "outputType": "Research Framework",
+    "tags": [
+        "ai",
+        "user-research",
+        "trust",
+        "automation",
+        "enterprise"
+    ],
+    "jobsToBeDone": [
+        "Understand user readiness for AI features",
+        "Identify trust barriers and enablers",
+        "Design appropriate human-AI interaction patterns"
+    ],
+    "inputs": [
+        {
+            "key": "ai_feature_name",
+            "label": "AI Feature Name",
+            "example": "Intelligent Document Processing"
+        },
+        {
+            "key": "target_users",
+            "label": "Target Users",
+            "example": "Enterprise finance teams processing invoices"
+        },
+        {
+            "key": "current_workflow",
+            "label": "Current Manual Workflow",
+            "example": "Manual data entry from PDFs into ERP, 15 mins per invoice"
+        },
+        {
+            "key": "ai_capability",
+            "label": "AI Capability Being Introduced",
+            "example": "Automated extraction and validation of invoice fields"
+        },
+        {
+            "key": "error_consequence",
+            "label": "Consequence of AI Errors",
+            "example": "Incorrect payments, audit failures, vendor disputes"
+        }
+    ]
+}

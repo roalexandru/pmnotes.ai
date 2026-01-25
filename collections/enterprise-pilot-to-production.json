@@ -1,0 +1,63 @@
+{
+  "slug": "enterprise-pilot-to-production",
+  "title": "Enterprise Pilot to Production",
+  "shortDescription": "Scale a successful enterprise pilot into full production deployment.",
+  "description": "A systematic approach to transitioning enterprise AI/automation solutions from pilot phase to full production. Covers success criteria validation, stakeholder alignment, scaling strategy, and rollout planning. Essential for PMs managing enterprise deployments with multiple stakeholders and complex requirements.",
+  "icon": "rocket",
+  "category": "playbook",
+  "industry": "Enterprise",
+  "difficulty": "Advanced",
+  "estimatedTime": "4-8 weeks",
+  "tags": ["enterprise", "pilot", "production", "scaling", "deployment", "AI", "automation"],
+  "prompts": [
+    {
+      "slug": "discovery/feedback-summary",
+      "order": 1,
+      "note": "Synthesize pilot feedback from all stakeholders and users"
+    },
+    {
+      "slug": "execution/metric-calculation",
+      "order": 2,
+      "note": "Calculate and validate pilot success metrics and ROI"
+    },
+    {
+      "slug": "discovery/risk-analysis",
+      "order": 3,
+      "note": "Identify production scaling risks and mitigation strategies"
+    },
+    {
+      "slug": "discovery/roadmap-planning",
+      "order": 4,
+      "note": "Plan phased rollout roadmap across departments/regions"
+    },
+    {
+      "slug": "discovery/tech-design-doc",
+      "order": 5,
+      "note": "Document production architecture and scaling requirements"
+    },
+    {
+      "slug": "execution/test-plan",
+      "order": 6,
+      "note": "Create comprehensive production testing and validation plan"
+    },
+    {
+      "slug": "execution/release-manager",
+      "order": 7,
+      "note": "Execute phased production rollout"
+    }
+  ],
+  "prerequisites": [
+    "Completed pilot with measurable results",
+    "Executive sponsor alignment",
+    "Budget approval for production deployment",
+    "IT/Security team engagement"
+  ],
+  "outcomes": [
+    "Validated pilot success metrics and ROI documentation",
+    "Production scaling architecture",
+    "Phased rollout plan with milestones",
+    "Risk mitigation strategies",
+    "Go-live readiness checklist"
+  ],
+  "createdAt": "2026-01-24"
+}

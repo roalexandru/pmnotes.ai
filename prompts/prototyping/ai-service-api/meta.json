@@ -1,0 +1,54 @@
+{
+    "slug": "ai-service-api",
+    "title": "AI Service API Design",
+    "shortDescription": "Design production-ready API contracts for AI/ML inference services with proper error handling, versioning, and async patterns.",
+    "surface": "prototyping",
+    "pmStage": "Prototyping & Design",
+    "complexity": "Advanced",
+    "outputType": "API Specification",
+    "tags": [
+        "ai",
+        "ml",
+        "api",
+        "inference",
+        "async",
+        "enterprise"
+    ],
+    "jobsToBeDone": [
+        "Design AI inference API contracts",
+        "Handle async and streaming responses",
+        "Plan for model versioning and fallbacks"
+    ],
+    "inputs": [
+        {
+            "key": "ai_feature_name",
+            "label": "AI Feature Name",
+            "example": "Document Intelligence API"
+        },
+        {
+            "key": "inference_type",
+            "label": "Inference Type",
+            "example": "Synchronous with async fallback for large documents"
+        },
+        {
+            "key": "input_types",
+            "label": "Input Types",
+            "example": "PDF documents (up to 100 pages), images (PNG, JPG), scanned documents"
+        },
+        {
+            "key": "output_format",
+            "label": "Output Format",
+            "example": "Structured JSON with extracted fields, confidence scores, and bounding boxes"
+        },
+        {
+            "key": "latency_requirements",
+            "label": "Latency Requirements",
+            "example": "p95 < 5s for single page, async for multi-page with webhook callback"
+        },
+        {
+            "key": "consumers",
+            "label": "API Consumers",
+            "example": "Internal web app, mobile SDK, enterprise customers via REST API"
+        }
+    ]
+}

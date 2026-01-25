@@ -1,0 +1,54 @@
+{
+    "slug": "ai-model-requirements",
+    "title": "AI Model Performance Requirements & SLAs",
+    "shortDescription": "Define ML model metrics, thresholds, and service level agreements for production AI.",
+    "surface": "discovery",
+    "pmStage": "Product Definition",
+    "complexity": "Advanced",
+    "outputType": "Requirements Specification",
+    "tags": [
+        "ai",
+        "ml",
+        "metrics",
+        "sla",
+        "performance",
+        "enterprise"
+    ],
+    "jobsToBeDone": [
+        "Define success criteria for AI features",
+        "Set model performance thresholds",
+        "Establish SLAs with stakeholders"
+    ],
+    "inputs": [
+        {
+            "key": "ai_feature_name",
+            "label": "AI Feature Name",
+            "example": "Invoice Data Extraction"
+        },
+        {
+            "key": "task_type",
+            "label": "ML Task Type",
+            "example": "Document extraction with NER and classification"
+        },
+        {
+            "key": "business_context",
+            "label": "Business Context",
+            "example": "Automate accounts payable processing for enterprise finance teams"
+        },
+        {
+            "key": "volume_expectations",
+            "label": "Volume Expectations",
+            "example": "10,000 invoices/day, peak 500/hour, avg document 3 pages"
+        },
+        {
+            "key": "error_tolerance",
+            "label": "Error Tolerance",
+            "example": "Errors cause payment delays and vendor disputes; high accuracy required"
+        },
+        {
+            "key": "user_workflow",
+            "label": "User Workflow",
+            "example": "AI extracts, human reviews exceptions, auto-routes high-confidence results"
+        }
+    ]
+}

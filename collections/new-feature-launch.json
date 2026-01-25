@@ -1,0 +1,58 @@
+{
+  "slug": "new-feature-launch",
+  "title": "New Feature Launch Playbook",
+  "shortDescription": "Complete workflow from discovery to execution for launching new features.",
+  "description": "This collection guides you through the entire process of launching a new feature, from initial discovery and prioritization through creating documentation, building prototypes, and managing the release. Follow these prompts in order for a comprehensive feature launch process.",
+  "icon": "rocket",
+  "category": "playbook",
+  "difficulty": "Intermediate",
+  "estimatedTime": "2-4 weeks",
+  "tags": ["workflow", "feature", "launch", "end-to-end", "prd"],
+  "prompts": [
+    {
+      "slug": "discovery/feature-prioritization",
+      "order": 1,
+      "note": "Start by evaluating and prioritizing your feature ideas"
+    },
+    {
+      "slug": "discovery/user-persona",
+      "order": 2,
+      "note": "Define who you're building this feature for"
+    },
+    {
+      "slug": "discovery/ai-prd-generator",
+      "order": 3,
+      "note": "Create a comprehensive Product Requirements Document"
+    },
+    {
+      "slug": "discovery/risk-analysis",
+      "order": 4,
+      "note": "Identify and plan for potential risks",
+      "optional": true
+    },
+    {
+      "slug": "prototyping/react-component",
+      "order": 5,
+      "note": "Build UI prototype components",
+      "optional": true
+    },
+    {
+      "slug": "execution/release-manager",
+      "order": 6,
+      "note": "Plan and execute the release"
+    }
+  ],
+  "prerequisites": [
+    "A feature idea or problem to solve",
+    "Basic understanding of your target users",
+    "Access to product analytics (optional)"
+  ],
+  "outcomes": [
+    "Prioritized feature backlog",
+    "Clear user personas",
+    "Complete PRD document",
+    "Risk mitigation plan",
+    "Release execution plan"
+  ],
+  "createdAt": "2026-01-23"
+}

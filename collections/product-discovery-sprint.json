@@ -1,0 +1,57 @@
+{
+  "slug": "product-discovery-sprint",
+  "title": "Product Discovery Sprint",
+  "shortDescription": "Run a focused discovery sprint to validate ideas and define product direction.",
+  "description": "A structured approach to product discovery that helps you understand your market, users, and competitive landscape. Use this collection to run a focused discovery sprint before committing to building new features or products.",
+  "icon": "search",
+  "category": "playbook",
+  "difficulty": "Intermediate",
+  "estimatedTime": "1-2 weeks",
+  "tags": ["discovery", "research", "strategy", "validation", "sprint"],
+  "prompts": [
+    {
+      "slug": "discovery/market-analysis",
+      "order": 1,
+      "note": "Understand the market opportunity and landscape"
+    },
+    {
+      "slug": "discovery/competitor-comparison",
+      "order": 2,
+      "note": "Analyze competitive positioning"
+    },
+    {
+      "slug": "discovery/user-persona",
+      "order": 3,
+      "note": "Define and understand your target users"
+    },
+    {
+      "slug": "discovery/feedback-summary",
+      "order": 4,
+      "note": "Synthesize user feedback and insights",
+      "optional": true
+    },
+    {
+      "slug": "discovery/strategic-analysis",
+      "order": 5,
+      "note": "Strategic analysis and recommendations"
+    },
+    {
+      "slug": "discovery/feature-prioritization",
+      "order": 6,
+      "note": "Prioritize opportunities based on findings"
+    }
+  ],
+  "prerequisites": [
+    "A product area or opportunity to explore",
+    "Access to market data or research",
+    "User feedback or interview notes (optional)"
+  ],
+  "outcomes": [
+    "Market opportunity assessment",
+    "Competitive analysis report",
+    "User personas and needs",
+    "Strategic recommendations",
+    "Prioritized opportunity list"
+  ],
+  "createdAt": "2026-01-23"
+}

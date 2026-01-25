@@ -1,0 +1,64 @@
+{
+  "slug": "enterprise-security-compliance",
+  "title": "Enterprise Security & Compliance Readiness",
+  "shortDescription": "Prepare your product for enterprise security requirements and compliance certifications.",
+  "description": "Navigate the complex landscape of enterprise security requirements. This playbook helps PMs work with security teams to achieve SOC 2, GDPR, HIPAA compliance, pass security reviews, and address enterprise procurement requirements. Essential for selling AI/automation solutions to regulated industries and large enterprises.",
+  "icon": "shield",
+  "category": "playbook",
+  "industry": "Enterprise",
+  "difficulty": "Advanced",
+  "estimatedTime": "8-12 weeks",
+  "tags": ["security", "compliance", "enterprise", "SOC2", "GDPR", "HIPAA", "procurement"],
+  "prompts": [
+    {
+      "slug": "discovery/market-analysis",
+      "order": 1,
+      "note": "Analyze target market compliance requirements (healthcare, finance, etc.)"
+    },
+    {
+      "slug": "discovery/risk-analysis",
+      "order": 2,
+      "note": "Conduct security risk assessment and gap analysis"
+    },
+    {
+      "slug": "discovery/feature-prioritization",
+      "order": 3,
+      "note": "Prioritize security features and compliance requirements"
+    },
+    {
+      "slug": "discovery/tech-design-doc",
+      "order": 4,
+      "note": "Document security architecture and data handling practices"
+    },
+    {
+      "slug": "discovery/roadmap-planning",
+      "order": 5,
+      "note": "Plan compliance certification timeline and milestones"
+    },
+    {
+      "slug": "execution/test-plan",
+      "order": 6,
+      "note": "Create security testing and penetration testing plan"
+    },
+    {
+      "slug": "discovery/ai-prd-generator",
+      "order": 7,
+      "note": "Document security features PRD (SSO, audit logs, encryption, etc.)",
+      "optional": true
+    }
+  ],
+  "prerequisites": [
+    "Understanding of target customer compliance requirements",
+    "Access to security and legal teams",
+    "Current security posture assessment",
+    "Budget for compliance certifications"
+  ],
+  "outcomes": [
+    "Compliance requirements matrix",
+    "Security architecture documentation",
+    "Certification roadmap (SOC 2, GDPR, etc.)",
+    "Security feature specifications",
+    "Vendor security questionnaire responses"
+  ],
+  "createdAt": "2026-01-24"
+}

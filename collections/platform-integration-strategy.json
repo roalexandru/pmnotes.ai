@@ -1,0 +1,70 @@
+{
+  "slug": "platform-integration-strategy",
+  "title": "Platform Integration Strategy",
+  "shortDescription": "Plan and execute integrations with enterprise systems like Salesforce, SAP, and ServiceNow.",
+  "description": "A comprehensive approach to building enterprise integrations that drive platform adoption. Covers partner ecosystem analysis, integration architecture, API design, and go-to-market strategy for integrations. Critical for enterprise platforms that need to connect with existing customer tech stacks.",
+  "icon": "plug",
+  "category": "playbook",
+  "industry": "Enterprise",
+  "difficulty": "Advanced",
+  "estimatedTime": "4-6 weeks",
+  "tags": ["integration", "platform", "API", "enterprise", "ecosystem", "partnerships"],
+  "prompts": [
+    {
+      "slug": "discovery/market-analysis",
+      "order": 1,
+      "note": "Analyze integration ecosystem and prioritize target platforms"
+    },
+    {
+      "slug": "discovery/user-persona",
+      "order": 2,
+      "note": "Define integration user personas: admins, developers, end users"
+    },
+    {
+      "slug": "discovery/feature-prioritization",
+      "order": 3,
+      "note": "Prioritize integration features and use cases"
+    },
+    {
+      "slug": "discovery/tech-design-doc",
+      "order": 4,
+      "note": "Document integration architecture and data flow patterns"
+    },
+    {
+      "slug": "prototyping/api-endpoint",
+      "order": 5,
+      "note": "Design integration APIs and webhook specifications"
+    },
+    {
+      "slug": "prototyping/automation-script",
+      "order": 6,
+      "note": "Create sample integration scripts and templates",
+      "optional": true
+    },
+    {
+      "slug": "execution/test-plan",
+      "order": 7,
+      "note": "Plan integration testing across partner platforms"
+    },
+    {
+      "slug": "discovery/marketing-ideation",
+      "order": 8,
+      "note": "Develop co-marketing strategy with integration partners",
+      "optional": true
+    }
+  ],
+  "prerequisites": [
+    "Platform API capabilities defined",
+    "Target integration platforms identified",
+    "Partner program or ecosystem strategy",
+    "Customer demand signals for specific integrations"
+  ],
+  "outcomes": [
+    "Integration priority roadmap",
+    "Technical architecture documentation",
+    "API specifications for integrations",
+    "Partner co-marketing plan",
+    "Integration testing framework"
+  ],
+  "createdAt": "2026-01-24"
+}

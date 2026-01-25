@@ -1,0 +1,72 @@
+{
+  "slug": "ai-feature-productization",
+  "title": "AI Feature Productization",
+  "shortDescription": "Transform AI/ML prototypes into production-ready product features.",
+  "description": "Comprehensive guide for taking AI and machine learning capabilities from research or prototype stage to fully productized features. This playbook addresses the unique challenges of AI products including model performance metrics, bias detection, explainability, edge cases, user trust, and safe rollout strategies. Critical for PMs at AI-first companies building intelligent automation.",
+  "icon": "sparkles",
+  "category": "playbook",
+  "industry": "Enterprise",
+  "difficulty": "Advanced",
+  "estimatedTime": "8-14 weeks",
+  "tags": ["AI", "ML", "productization", "enterprise", "automation", "machine-learning", "model-metrics", "bias", "rollout"],
+  "prompts": [
+    {
+      "slug": "discovery/ai-user-research",
+      "order": 1,
+      "note": "Conduct AI-specific user research to understand trust, AI literacy, and human-AI interaction patterns"
+    },
+    {
+      "slug": "discovery/ai-prd-generator",
+      "order": 2,
+      "note": "Create comprehensive PRD for AI feature including model requirements and AI interaction design"
+    },
+    {
+      "slug": "discovery/ai-risk-assessment",
+      "order": 3,
+      "note": "Conduct thorough AI/ML risk assessment: bias, drift, hallucination, explainability, adversarial attacks"
+    },
+    {
+      "slug": "discovery/ai-model-requirements",
+      "order": 4,
+      "note": "Define model performance metrics, thresholds, SLAs, and acceptance criteria"
+    },
+    {
+      "slug": "prototyping/ai-service-api",
+      "order": 5,
+      "note": "Design production-ready AI inference APIs with async patterns, confidence scores, and versioning"
+    },
+    {
+      "slug": "prototyping/db-schema",
+      "order": 6,
+      "note": "Design data schema for training data, predictions, feedback loops, and audit trails",
+      "optional": true
+    },
+    {
+      "slug": "execution/ai-testing-strategy",
+      "order": 7,
+      "note": "Create comprehensive ML testing strategy: accuracy, bias, robustness, and production validation"
+    },
+    {
+      "slug": "execution/ai-rollout-strategy",
+      "order": 8,
+      "note": "Plan phased AI rollout with shadow mode, confidence ramps, and human-in-the-loop transitions"
+    }
+  ],
+  "prerequisites": [
+    "Working AI/ML prototype or proof of concept",
+    "Access to training data and initial model performance metrics",
+    "Alignment with ML/AI engineering team on technical feasibility",
+    "Understanding of model limitations, edge cases, and failure modes",
+    "Stakeholder buy-in for phased rollout approach"
+  ],
+  "outcomes": [
+    "AI-specific user research insights on trust and adoption patterns",
+    "Production-ready AI feature PRD with model requirements",
+    "Comprehensive AI/ML risk register with mitigations",
+    "Model performance metrics, thresholds, and SLAs",
+    "AI service API specification with async and streaming support",
+    "ML testing framework covering accuracy, bias, and robustness",
+    "Phased rollout plan with confidence ramps and rollback procedures"
+  ],
+  "createdAt": "2026-01-24"
+}

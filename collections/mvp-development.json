@@ -1,0 +1,62 @@
+{
+  "slug": "mvp-development",
+  "title": "MVP Development",
+  "shortDescription": "Build a minimum viable product from concept to working prototype.",
+  "description": "This collection guides you through building an MVP, from defining what to build to creating working prototypes. Perfect for startups, new products, or validating ideas quickly.",
+  "icon": "zap",
+  "category": "playbook",
+  "difficulty": "Intermediate",
+  "estimatedTime": "2-3 weeks",
+  "tags": ["mvp", "startup", "prototype", "validation", "lean"],
+  "prompts": [
+    {
+      "slug": "discovery/feature-prioritization",
+      "order": 1,
+      "note": "Ruthlessly prioritize for MVP scope"
+    },
+    {
+      "slug": "discovery/ai-prd-generator",
+      "order": 2,
+      "note": "Document your MVP requirements"
+    },
+    {
+      "slug": "prototyping/db-schema",
+      "order": 3,
+      "note": "Design your data model"
+    },
+    {
+      "slug": "prototyping/api-endpoint",
+      "order": 4,
+      "note": "Define your API structure"
+    },
+    {
+      "slug": "prototyping/react-component",
+      "order": 5,
+      "note": "Build UI components"
+    },
+    {
+      "slug": "prototyping/website-mockup",
+      "order": 6,
+      "note": "Create landing page or marketing site",
+      "optional": true
+    },
+    {
+      "slug": "execution/test-plan",
+      "order": 7,
+      "note": "Plan validation testing"
+    }
+  ],
+  "prerequisites": [
+    "A clear problem to solve",
+    "Target user definition",
+    "Basic technical understanding"
+  ],
+  "outcomes": [
+    "Minimal feature set defined",
+    "Working data model",
+    "API specifications",
+    "UI prototypes",
+    "Validation test plan"
+  ],
+  "createdAt": "2026-01-23"
+}

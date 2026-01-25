@@ -1,0 +1,59 @@
+{
+  "slug": "enterprise-sales-enablement",
+  "title": "Enterprise Sales Enablement",
+  "shortDescription": "Create compelling sales materials for enterprise AI/automation deals.",
+  "description": "Equip your sales team with everything they need to close enterprise deals. This playbook helps PMs create ROI calculators, competitive battle cards, demo scripts, and objection handling guides. Essential for companies with long enterprise sales cycles and multiple stakeholder buy-in requirements.",
+  "icon": "briefcase",
+  "category": "playbook",
+  "industry": "Enterprise",
+  "difficulty": "Intermediate",
+  "estimatedTime": "2-3 weeks",
+  "tags": ["sales", "enterprise", "enablement", "ROI", "competitive", "B2B"],
+  "prompts": [
+    {
+      "slug": "discovery/user-persona",
+      "order": 1,
+      "note": "Define buyer personas: economic buyer, technical buyer, end user"
+    },
+    {
+      "slug": "discovery/competitor-comparison",
+      "order": 2,
+      "note": "Create competitive analysis and battle cards"
+    },
+    {
+      "slug": "discovery/pricing-strategy",
+      "order": 3,
+      "note": "Develop pricing strategy and packaging for enterprise tiers"
+    },
+    {
+      "slug": "execution/metric-calculation",
+      "order": 4,
+      "note": "Build ROI calculator and value quantification framework"
+    },
+    {
+      "slug": "discovery/marketing-ideation",
+      "order": 5,
+      "note": "Generate messaging and positioning for enterprise buyers"
+    },
+    {
+      "slug": "discovery/strategic-analysis",
+      "order": 6,
+      "note": "Analyze deal patterns and create playbook for common scenarios",
+      "optional": true
+    }
+  ],
+  "prerequisites": [
+    "Understanding of target enterprise segments",
+    "Access to win/loss data and sales feedback",
+    "Competitive intelligence",
+    "Customer success stories and metrics"
+  ],
+  "outcomes": [
+    "Buyer persona documentation",
+    "Competitive battle cards",
+    "ROI calculator and value framework",
+    "Pricing and packaging guide",
+    "Sales messaging and objection handling"
+  ],
+  "createdAt": "2026-01-24"
+}

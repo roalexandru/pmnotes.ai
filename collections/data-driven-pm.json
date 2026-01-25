@@ -1,0 +1,62 @@
+{
+  "slug": "data-driven-pm",
+  "title": "Data-Driven Product Management",
+  "shortDescription": "Leverage data analysis to make better product decisions.",
+  "description": "A collection focused on using data to drive product decisions. Learn to analyze metrics, run experiments, and extract insights from user behavior data.",
+  "icon": "bar-chart",
+  "category": "topic",
+  "difficulty": "Intermediate",
+  "estimatedTime": "Ongoing",
+  "tags": ["data", "analytics", "metrics", "experiments", "insights"],
+  "prompts": [
+    {
+      "slug": "execution/metric-calculation",
+      "order": 1,
+      "note": "Define and calculate key product metrics"
+    },
+    {
+      "slug": "execution/data-cleaning",
+      "order": 2,
+      "note": "Prepare and clean data for analysis",
+      "optional": true
+    },
+    {
+      "slug": "execution/correlation-analysis",
+      "order": 3,
+      "note": "Find correlations in your data"
+    },
+    {
+      "slug": "execution/ab-test",
+      "order": 4,
+      "note": "Design and analyze A/B tests"
+    },
+    {
+      "slug": "execution/forecasting",
+      "order": 5,
+      "note": "Forecast trends and outcomes"
+    },
+    {
+      "slug": "execution/visualization",
+      "order": 6,
+      "note": "Create compelling data visualizations"
+    },
+    {
+      "slug": "execution/sentiment-analysis",
+      "order": 7,
+      "note": "Analyze sentiment in user feedback",
+      "optional": true
+    }
+  ],
+  "prerequisites": [
+    "Access to product analytics data",
+    "Basic understanding of statistics",
+    "Familiarity with data tools (spreadsheets, SQL)"
+  ],
+  "outcomes": [
+    "Key metrics dashboard",
+    "Experiment design framework",
+    "Data-backed product insights",
+    "Forecast models"
+  ],
+  "createdAt": "2026-01-23"
+}

@@ -1,0 +1,51 @@
+{
+  "slug": "pm-beginner-toolkit",
+  "title": "PM Beginner Toolkit",
+  "shortDescription": "Essential prompts for product managers just getting started.",
+  "description": "A curated collection of fundamental prompts that every new product manager should know. Start here to build your PM toolkit with the most commonly used and impactful prompts.",
+  "icon": "graduation-cap",
+  "category": "foundation",
+  "difficulty": "Beginner",
+  "estimatedTime": "1 week",
+  "tags": ["beginner", "fundamentals", "learning", "starter"],
+  "prompts": [
+    {
+      "slug": "discovery/user-persona",
+      "order": 1,
+      "note": "Learn to define and understand your users"
+    },
+    {
+      "slug": "discovery/feature-prioritization",
+      "order": 2,
+      "note": "Master the art of prioritization"
+    },
+    {
+      "slug": "discovery/prd-outline",
+      "order": 3,
+      "note": "Write effective product requirement documents"
+    },
+    {
+      "slug": "discovery/competitor-comparison",
+      "order": 4,
+      "note": "Analyze your competitive landscape"
+    },
+    {
+      "slug": "discovery/roadmap-planning",
+      "order": 5,
+      "note": "Plan and communicate your roadmap"
+    }
+  ],
+  "prerequisites": [
+    "Interest in product management",
+    "A product or feature idea to work with",
+    "Basic business understanding"
+  ],
+  "outcomes": [
+    "User persona skills",
+    "Prioritization frameworks",
+    "PRD writing ability",
+    "Competitive analysis skills",
+    "Roadmap planning skills"
+  ],
+  "createdAt": "2026-01-23"
+}

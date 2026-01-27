@@ -5,8 +5,8 @@
   "description": "Equip your sales team with everything they need to close enterprise deals. This playbook helps PMs create ROI calculators, competitive battle cards, demo scripts, and objection handling guides. Essential for companies with long enterprise sales cycles and multiple stakeholder buy-in requirements.",
   "icon": "briefcase",
   "category": "playbook",
-  "industry": "Enterprise",
-  "difficulty": "Intermediate",
+  "teamScale": "Enterprise",
+  "difficulty": "Structured",
   "estimatedTime": "2-3 weeks",
   "tags": ["sales", "enterprise", "enablement", "ROI", "competitive", "B2B"],
   "prompts": [

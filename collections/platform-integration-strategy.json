@@ -5,10 +5,17 @@
   "description": "A comprehensive approach to building enterprise integrations that drive platform adoption. Covers partner ecosystem analysis, integration architecture, API design, and go-to-market strategy for integrations. Critical for enterprise platforms that need to connect with existing customer tech stacks.",
   "icon": "plug",
   "category": "playbook",
-  "industry": "Enterprise",
-  "difficulty": "Advanced",
+  "teamScale": "Enterprise",
+  "difficulty": "Deep",
   "estimatedTime": "4-6 weeks",
-  "tags": ["integration", "platform", "API", "enterprise", "ecosystem", "partnerships"],
+  "tags": [
+    "integration",
+    "platform",
+    "API",
+    "enterprise",
+    "ecosystem",
+    "partnerships"
+  ],
   "prompts": [
     {
       "slug": "discovery/market-analysis",

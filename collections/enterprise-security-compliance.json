@@ -5,10 +5,18 @@
   "description": "Navigate the complex landscape of enterprise security requirements. This playbook helps PMs work with security teams to achieve SOC 2, GDPR, HIPAA compliance, pass security reviews, and address enterprise procurement requirements. Essential for selling AI/automation solutions to regulated industries and large enterprises.",
   "icon": "shield",
   "category": "playbook",
-  "industry": "Enterprise",
-  "difficulty": "Advanced",
+  "teamScale": "Enterprise",
+  "difficulty": "Deep",
   "estimatedTime": "8-12 weeks",
-  "tags": ["security", "compliance", "enterprise", "SOC2", "GDPR", "HIPAA", "procurement"],
+  "tags": [
+    "security",
+    "compliance",
+    "enterprise",
+    "SOC2",
+    "GDPR",
+    "HIPAA",
+    "procurement"
+  ],
   "prompts": [
     {
       "slug": "discovery/market-analysis",

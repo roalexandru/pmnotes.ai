@@ -5,7 +5,7 @@
   "description": "This collection guides you through the entire process of launching a new feature, from initial discovery and prioritization through creating documentation, building prototypes, and managing the release. Follow these prompts in order for a comprehensive feature launch process.",
   "icon": "rocket",
   "category": "playbook",
-  "difficulty": "Intermediate",
+  "difficulty": "Structured",
   "estimatedTime": "2-4 weeks",
   "tags": ["workflow", "feature", "launch", "end-to-end", "prd"],
   "prompts": [

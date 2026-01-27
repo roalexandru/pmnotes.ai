@@ -5,10 +5,20 @@
   "description": "Comprehensive guide for taking AI and machine learning capabilities from research or prototype stage to fully productized features. This playbook addresses the unique challenges of AI products including model performance metrics, bias detection, explainability, edge cases, user trust, and safe rollout strategies. Critical for PMs at AI-first companies building intelligent automation.",
   "icon": "sparkles",
   "category": "playbook",
-  "industry": "Enterprise",
-  "difficulty": "Advanced",
+  "teamScale": "Enterprise",
+  "difficulty": "Deep",
   "estimatedTime": "8-14 weeks",
-  "tags": ["AI", "ML", "productization", "enterprise", "automation", "machine-learning", "model-metrics", "bias", "rollout"],
+  "tags": [
+    "AI",
+    "ML",
+    "productization",
+    "enterprise",
+    "automation",
+    "machine-learning",
+    "model-metrics",
+    "bias",
+    "rollout"
+  ],
   "prompts": [
     {
       "slug": "discovery/ai-user-research",

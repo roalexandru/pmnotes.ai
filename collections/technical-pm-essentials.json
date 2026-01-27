@@ -5,7 +5,7 @@
   "description": "A collection of prompts designed for technical product managers who work closely with engineering teams. Covers technical documentation, API design, database planning, and test strategies.",
   "icon": "code",
   "category": "topic",
-  "difficulty": "Advanced",
+  "difficulty": "Deep",
   "estimatedTime": "Ongoing",
   "tags": ["technical", "engineering", "api", "database", "testing"],
   "prompts": [

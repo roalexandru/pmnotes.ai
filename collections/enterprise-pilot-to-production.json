@@ -5,10 +5,18 @@
   "description": "A systematic approach to transitioning enterprise AI/automation solutions from pilot phase to full production. Covers success criteria validation, stakeholder alignment, scaling strategy, and rollout planning. Essential for PMs managing enterprise deployments with multiple stakeholders and complex requirements.",
   "icon": "rocket",
   "category": "playbook",
-  "industry": "Enterprise",
-  "difficulty": "Advanced",
+  "teamScale": "Enterprise",
+  "difficulty": "Deep",
   "estimatedTime": "4-8 weeks",
-  "tags": ["enterprise", "pilot", "production", "scaling", "deployment", "AI", "automation"],
+  "tags": [
+    "enterprise",
+    "pilot",
+    "production",
+    "scaling",
+    "deployment",
+    "AI",
+    "automation"
+  ],
   "prompts": [
     {
       "slug": "discovery/feedback-summary",

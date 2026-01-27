@@ -1,54 +1,48 @@
 {
-    "slug": "ai-risk-assessment",
-    "title": "AI/ML Risk Assessment Framework",
-    "shortDescription": "Identify and mitigate AI-specific risks including bias, drift, hallucination, and explainability.",
-    "surface": "discovery",
-    "pmStage": "Strategy & Decision Artifacts",
-    "complexity": "Deep",
-    "outputType": "Risk Register",
-    "tags": [
-        "ai",
-        "ml",
-        "risk",
-        "bias",
-        "fairness",
-        "enterprise"
-    ],
-    "jobsToBeDone": [
-        "Identify AI-specific risks before launch",
-        "Plan mitigation strategies for ML failures",
-        "Satisfy enterprise compliance requirements"
-    ],
-    "inputs": [
-        {
-            "key": "ai_feature_name",
-            "label": "AI Feature Name",
-            "example": "Intelligent Contract Analysis"
-        },
-        {
-            "key": "model_type",
-            "label": "Model Type",
-            "example": "LLM-based document extraction with fine-tuned NER"
-        },
-        {
-            "key": "training_data_source",
-            "label": "Training Data Source",
-            "example": "100K historical contracts from 50 enterprise customers"
-        },
-        {
-            "key": "decision_impact",
-            "label": "Decision Impact",
-            "example": "Automated clause flagging that triggers legal review workflows"
-        },
-        {
-            "key": "user_population",
-            "label": "User Population",
-            "example": "Legal teams at Fortune 500 companies across US, EU, APAC"
-        },
-        {
-            "key": "regulatory_context",
-            "label": "Regulatory Context",
-            "example": "GDPR, SOC 2, potential AI Act implications"
-        }
-    ]
+  "slug": "ai-risk-assessment",
+  "title": "AI/ML Risk Assessment Framework",
+  "shortDescription": "Identify and mitigate AI-specific risks including bias, drift, hallucination, and explainability.",
+  "surface": "discovery",
+  "pmStage": "Strategy & Decision Artifacts",
+  "teamScale": "Enterprise",
+  "complexity": "Deep",
+  "outputType": "Risk Register",
+  "tags": ["ai", "ml", "risk", "bias", "fairness", "enterprise"],
+  "jobsToBeDone": [
+    "Identify AI-specific risks before launch",
+    "Plan mitigation strategies for ML failures",
+    "Satisfy enterprise compliance requirements"
+  ],
+  "inputs": [
+    {
+      "key": "ai_feature_name",
+      "label": "AI Feature Name",
+      "example": "Intelligent Contract Analysis"
+    },
+    {
+      "key": "model_type",
+      "label": "Model Type",
+      "example": "LLM-based document extraction with fine-tuned NER"
+    },
+    {
+      "key": "training_data_source",
+      "label": "Training Data Source",
+      "example": "100K historical contracts from 50 enterprise customers"
+    },
+    {
+      "key": "decision_impact",
+      "label": "Decision Impact",
+      "example": "Automated clause flagging that triggers legal review workflows"
+    },
+    {
+      "key": "user_population",
+      "label": "User Population",
+      "example": "Legal teams at Fortune 500 companies across US, EU, APAC"
+    },
+    {
+      "key": "regulatory_context",
+      "label": "Regulatory Context",
+      "example": "GDPR, SOC 2, potential AI Act implications"
+    }
+  ]
 }

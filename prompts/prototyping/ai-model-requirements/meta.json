@@ -4,6 +4,7 @@
   "shortDescription": "Define ML model metrics, thresholds, and service level agreements for production AI.",
   "surface": "prototyping",
   "pmStage": "Requirements & Specifications",
+  "teamScale": "Enterprise",
   "complexity": "Deep",
   "outputType": "Requirements Specification",
   "tags": ["ai", "ml", "metrics", "sla", "performance", "enterprise"],

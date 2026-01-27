@@ -5,7 +5,8 @@
   "description": "This collection guides you through building an MVP, from defining what to build to creating working prototypes. Perfect for startups, new products, or validating ideas quickly.",
   "icon": "zap",
   "category": "playbook",
-  "difficulty": "Intermediate",
+  "teamScale": "Startup / SMB",
+  "difficulty": "Structured",
   "estimatedTime": "2-3 weeks",
   "tags": ["mvp", "startup", "prototype", "validation", "lean"],
   "prompts": [

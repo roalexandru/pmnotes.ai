@@ -5,7 +5,7 @@
   "description": "A structured approach to product discovery that helps you understand your market, users, and competitive landscape. Use this collection to run a focused discovery sprint before committing to building new features or products.",
   "icon": "search",
   "category": "playbook",
-  "difficulty": "Intermediate",
+  "difficulty": "Structured",
   "estimatedTime": "1-2 weeks",
   "tags": ["discovery", "research", "strategy", "validation", "sprint"],
   "prompts": [

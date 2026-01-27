@@ -5,7 +5,7 @@
   "description": "A collection focused on using data to drive product decisions. Learn to analyze metrics, run experiments, and extract insights from user behavior data.",
   "icon": "bar-chart",
   "category": "topic",
-  "difficulty": "Intermediate",
+  "difficulty": "Structured",
   "estimatedTime": "Ongoing",
   "tags": ["data", "analytics", "metrics", "experiments", "insights"],
   "prompts": [

@@ -1,54 +1,48 @@
 {
-    "slug": "ai-testing-strategy",
-    "title": "AI/ML Testing Strategy",
-    "shortDescription": "Design comprehensive testing strategy for ML models covering accuracy, bias, robustness, and production validation.",
-    "surface": "execution",
-    "pmStage": "Risk, Quality & Validation",
-    "complexity": "Deep",
-    "outputType": "Test Strategy",
-    "tags": [
-        "ai",
-        "ml",
-        "testing",
-        "qa",
-        "validation",
-        "enterprise"
-    ],
-    "jobsToBeDone": [
-        "Design ML model test suites",
-        "Plan bias and fairness testing",
-        "Define production validation procedures"
-    ],
-    "inputs": [
-        {
-            "key": "ai_feature_name",
-            "label": "AI Feature Name",
-            "example": "Intelligent Document Processing"
-        },
-        {
-            "key": "model_type",
-            "label": "Model Type",
-            "example": "Multi-modal transformer for document understanding (vision + NLP)"
-        },
-        {
-            "key": "critical_outcomes",
-            "label": "Critical Outcomes",
-            "example": "Financial field extraction accuracy - errors cause payment issues and compliance risk"
-        },
-        {
-            "key": "user_segments",
-            "label": "User Segments to Test",
-            "example": "Enterprise (complex docs), Mid-market (standard docs), International (multi-language)"
-        },
-        {
-            "key": "edge_cases",
-            "label": "Known Edge Cases",
-            "example": "Handwritten notes, poor scan quality, multi-column layouts, non-standard formats"
-        },
-        {
-            "key": "regulatory_requirements",
-            "label": "Regulatory Requirements",
-            "example": "GDPR (no PII leakage), SOC 2 (audit trails), EU AI Act (bias documentation)"
-        }
-    ]
+  "slug": "ai-testing-strategy",
+  "title": "AI/ML Testing Strategy",
+  "shortDescription": "Design comprehensive testing strategy for ML models covering accuracy, bias, robustness, and production validation.",
+  "surface": "execution",
+  "pmStage": "Risk, Quality & Validation",
+  "teamScale": "Enterprise",
+  "complexity": "Deep",
+  "outputType": "Test Strategy",
+  "tags": ["ai", "ml", "testing", "qa", "validation", "enterprise"],
+  "jobsToBeDone": [
+    "Design ML model test suites",
+    "Plan bias and fairness testing",
+    "Define production validation procedures"
+  ],
+  "inputs": [
+    {
+      "key": "ai_feature_name",
+      "label": "AI Feature Name",
+      "example": "Intelligent Document Processing"
+    },
+    {
+      "key": "model_type",
+      "label": "Model Type",
+      "example": "Multi-modal transformer for document understanding (vision + NLP)"
+    },
+    {
+      "key": "critical_outcomes",
+      "label": "Critical Outcomes",
+      "example": "Financial field extraction accuracy - errors cause payment issues and compliance risk"
+    },
+    {
+      "key": "user_segments",
+      "label": "User Segments to Test",
+      "example": "Enterprise (complex docs), Mid-market (standard docs), International (multi-language)"
+    },
+    {
+      "key": "edge_cases",
+      "label": "Known Edge Cases",
+      "example": "Handwritten notes, poor scan quality, multi-column layouts, non-standard formats"
+    },
+    {
+      "key": "regulatory_requirements",
+      "label": "Regulatory Requirements",
+      "example": "GDPR (no PII leakage), SOC 2 (audit trails), EU AI Act (bias documentation)"
+    }
+  ]
 }

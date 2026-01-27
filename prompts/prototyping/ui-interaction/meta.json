@@ -3,8 +3,8 @@
     "title": "Accessible Modal Interaction (HTML/JS)",
     "shortDescription": "Create an accessible confirmation modal with keyboard support.",
     "surface": "prototyping",
-    "pmStage": "Prototyping",
-    "complexity": "Beginner",
+    "pmStage": "Product & UX Prototypes",
+    "complexity": "Quick",
     "outputType": "Code (HTML/JS)",
     "tags": [
         "html",

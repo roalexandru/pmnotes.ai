@@ -3,9 +3,9 @@
     "title": "AI-Ready PRD Generator",
     "shortDescription": "Create a PRD optimized for AI coding agents in Cursor or Claude Code.",
     "surface": "discovery",
-    "pmStage": "Product Definition",
+    "pmStage": "Requirements & Specifications",
     "featured": true,
-    "complexity": "Intermediate",
+    "complexity": "Structured",
     "outputType": "Markdown PRD",
     "tags": [
         "prd",

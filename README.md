@@ -19,7 +19,9 @@ collections/                # (Optional) Curated lists of prompts
 ```
 
 ### Surfaces
+
 Prompts are categorized into three core workflows:
+
 - **Discovery** (folder: `thinking`): Strategy, user research, and problem definition (e.g., Drafting PRDs, analyzing feedback).
 - **Prototyping** (folder: `builder`): Building functional prototypes and data models (e.g., Generating schema, frontend components).
 - **Execution** (folder: `executor`): Automating technical tasks and migrations (e.g., Data analysis, repo-wide refactors).
@@ -29,41 +31,47 @@ Prompts are categorized into three core workflows:
 Each prompt is a directory containing three essential files:
 
 ### 1. `meta.json`
+
 Defines the structure and properties of the prompt.
+
 ```json
 {
-    "slug": "feature-prioritization",
-    "title": "Feature Prioritization",
-    "shortDescription": "Prioritize features using a framework like RICE or MoSCoW.",
-    "surface": "thinking",
-    "pmStage": "Product Planning",
-    "complexity": "Intermediate",
-    "outputType": "Prioritized List",
-    "tags": ["prioritization", "roadmap"],
-    "jobsToBeDone": ["Rank feature backlog"],
-    "inputs": [
-        {
-            "key": "feature_list",
-            "label": "Feature List",
-            "example": "Dark mode, Offline support..."
-        }
-    ]
+  "slug": "feature-prioritization",
+  "title": "Feature Prioritization",
+  "shortDescription": "Prioritize features using a framework like RICE or MoSCoW.",
+  "surface": "thinking",
+  "pmStage": "Strategy & Decision Artifacts",
+  "complexity": "Intermediate",
+  "outputType": "Prioritized List",
+  "tags": ["prioritization", "roadmap"],
+  "jobsToBeDone": ["Rank feature backlog"],
+  "inputs": [
+    {
+      "key": "feature_list",
+      "label": "Feature List",
+      "example": "Dark mode, Offline support..."
+    }
+  ]
 }
 ```
 
 ### 2. `prompt.md`
+
 The prompt template itself. It uses Handlebars-style syntax `{{variable_name}}` for dynamic inputs defined in `meta.json`.
 
 ```markdown
 # Role
+
 You are a Senior Product Manager...
 
 # Task
+
 Prioritize the following features: {{feature_list}}
 ...
 ```
 
 ### 3. `example.md`
+
 A static example of what the Large Language Model (LLM) should generate, used for preview and validation.
 
 ## Contributing

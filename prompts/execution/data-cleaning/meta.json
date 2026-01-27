@@ -3,8 +3,8 @@
     "title": "CSV Cleaning & Quality Report",
     "shortDescription": "Clean missing values, enforce data types, and report quality changes.",
     "surface": "execution",
-    "pmStage": "Data Preparation",
-    "complexity": "Intermediate",
+    "pmStage": "Data Analysis & Visualizations",
+    "complexity": "Structured",
     "outputType": "Executed Code (Pandas)",
     "tags": [
         "python",

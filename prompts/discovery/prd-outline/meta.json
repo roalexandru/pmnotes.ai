@@ -3,9 +3,9 @@
     "title": "PRD Outline Builder",
     "shortDescription": "Create a structured PRD outline tailored to a product goal and audience.",
     "surface": "discovery",
-    "pmStage": "Product Definition",
+    "pmStage": "Requirements & Specifications",
     "featured": true,
-    "complexity": "Intermediate",
+    "complexity": "Structured",
     "outputType": "Markdown Outline",
     "tags": [
         "prd",

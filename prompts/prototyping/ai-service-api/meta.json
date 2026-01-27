@@ -3,8 +3,8 @@
     "title": "AI Service API Design",
     "shortDescription": "Design production-ready API contracts for AI/ML inference services with proper error handling, versioning, and async patterns.",
     "surface": "prototyping",
-    "pmStage": "Prototyping & Design",
-    "complexity": "Advanced",
+    "pmStage": "Product & UX Prototypes",
+    "complexity": "Deep",
     "outputType": "API Specification",
     "tags": [
         "ai",

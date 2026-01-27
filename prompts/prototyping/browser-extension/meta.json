@@ -3,8 +3,8 @@
     "title": "Browser Extension Starter (Manifest V3)",
     "shortDescription": "Create a POC browser extension with popup, content script, and storage.",
     "surface": "prototyping",
-    "pmStage": "Prototyping",
-    "complexity": "Advanced",
+    "pmStage": "Product & UX Prototypes",
+    "complexity": "Deep",
     "outputType": "Code (Browser Extension)",
     "tags": [
         "extension",

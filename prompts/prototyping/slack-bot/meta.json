@@ -3,8 +3,8 @@
     "title": "Slack Command Bot (Pseudocode)",
     "shortDescription": "Outline secure Slack command handling with status checks.",
     "surface": "prototyping",
-    "pmStage": "Prototyping",
-    "complexity": "Intermediate",
+    "pmStage": "Product & UX Prototypes",
+    "complexity": "Structured",
     "outputType": "Pseudocode",
     "tags": [
         "slack",

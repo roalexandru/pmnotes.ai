@@ -3,9 +3,9 @@
     "title": "User Persona Builder",
     "shortDescription": "Create a detailed persona grounded in goals, behaviors, and buying criteria.",
     "surface": "discovery",
-    "pmStage": "Product Discovery",
+    "pmStage": "Research & Insight Reports",
     "featured": true,
-    "complexity": "Beginner",
+    "complexity": "Quick",
     "outputType": "Persona Profile",
     "tags": [
         "user-research",

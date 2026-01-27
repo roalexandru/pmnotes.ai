@@ -3,8 +3,8 @@
     "title": "Unit Test Template (Python)",
     "shortDescription": "Write robust unit tests with edge cases and boundaries.",
     "surface": "prototyping",
-    "pmStage": "Testing",
-    "complexity": "Intermediate",
+    "pmStage": "Risk, Quality & Validation",
+    "complexity": "Structured",
     "outputType": "Code (Python)",
     "tags": [
         "python",

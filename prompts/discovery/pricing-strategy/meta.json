@@ -1,47 +1,42 @@
 {
-    "slug": "pricing-strategy",
-    "title": "Pricing Strategy Review",
-    "shortDescription": "Compare pricing models and recommend packaging with key metrics to monitor.",
-    "surface": "discovery",
-    "pmStage": "Go-to-Market",
-    "complexity": "Advanced",
-    "outputType": "Pricing Recommendation",
-    "tags": [
-        "pricing",
-        "monetization",
-        "strategy",
-        "packaging"
-    ],
-    "jobsToBeDone": [
-        "Evaluate pricing models",
-        "Recommend packaging and value metric",
-        "Define pricing risks and experiments"
-    ],
-    "inputs": [
-        {
-            "key": "product_type",
-            "label": "Product Type",
-            "example": "B2B SaaS productivity tool"
-        },
-        {
-            "key": "target_customer",
-            "label": "Target Customer",
-            "example": "Mid-market teams (100-500 seats)"
-        },
-        {
-            "key": "value_metric",
-            "label": "Primary Value Metric",
-            "example": "Per active seat"
-        },
-        {
-            "key": "competitive_benchmarks",
-            "label": "Competitive Benchmarks",
-            "example": "$12-25 per user/month; freemium common"
-        },
-        {
-            "key": "business_goal",
-            "label": "Business Goal",
-            "example": "Reach $1M ARR in 12 months"
-        }
-    ]
+  "slug": "pricing-strategy",
+  "title": "Pricing Strategy Review",
+  "shortDescription": "Compare pricing models and recommend packaging with key metrics to monitor.",
+  "surface": "discovery",
+  "pmStage": "Strategy & Decision Artifacts",
+  "complexity": "Deep",
+  "outputType": "Pricing Recommendation",
+  "tags": ["pricing", "monetization", "strategy", "packaging"],
+  "jobsToBeDone": [
+    "Evaluate pricing models",
+    "Recommend packaging and value metric",
+    "Define pricing risks and experiments"
+  ],
+  "inputs": [
+    {
+      "key": "product_type",
+      "label": "Product Type",
+      "example": "B2B SaaS productivity tool"
+    },
+    {
+      "key": "target_customer",
+      "label": "Target Customer",
+      "example": "Mid-market teams (100-500 seats)"
+    },
+    {
+      "key": "value_metric",
+      "label": "Primary Value Metric",
+      "example": "Per active seat"
+    },
+    {
+      "key": "competitive_benchmarks",
+      "label": "Competitive Benchmarks",
+      "example": "$12-25 per user/month; freemium common"
+    },
+    {
+      "key": "business_goal",
+      "label": "Business Goal",
+      "example": "Reach $1M ARR in 12 months"
+    }
+  ]
 }

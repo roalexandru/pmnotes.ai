@@ -3,8 +3,8 @@
     "title": "AI/ML Risk Assessment Framework",
     "shortDescription": "Identify and mitigate AI-specific risks including bias, drift, hallucination, and explainability.",
     "surface": "discovery",
-    "pmStage": "Product Planning",
-    "complexity": "Advanced",
+    "pmStage": "Strategy & Decision Artifacts",
+    "complexity": "Deep",
     "outputType": "Risk Register",
     "tags": [
         "ai",

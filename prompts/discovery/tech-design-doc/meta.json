@@ -3,9 +3,9 @@
     "title": "Technical Design Doc Generator",
     "shortDescription": "Turn a PRD or high-level concept into an end-to-end technical design.",
     "surface": "discovery",
-    "pmStage": "Technical Design",
+    "pmStage": "Code Templates & Schemas",
     "featured": true,
-    "complexity": "Advanced",
+    "complexity": "Deep",
     "outputType": "Technical Design Document",
     "tags": [
         "architecture",

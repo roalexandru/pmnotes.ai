@@ -3,8 +3,8 @@
     "title": "Live API Data Fetch & Validation",
     "shortDescription": "Pull live API data, validate response shape, and summarize key fields.",
     "surface": "execution",
-    "pmStage": "Data Gathering",
-    "complexity": "Intermediate",
+    "pmStage": "Data Analysis & Visualizations",
+    "complexity": "Structured",
     "outputType": "Executed Code (Data)",
     "tags": [
         "python",

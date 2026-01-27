@@ -3,9 +3,9 @@
     "title": "Interactive List Component (React)",
     "shortDescription": "Build a reusable React component with empty/loading states.",
     "surface": "prototyping",
-    "pmStage": "Prototyping",
+    "pmStage": "Product & UX Prototypes",
     "featured": true,
-    "complexity": "Intermediate",
+    "complexity": "Structured",
     "outputType": "Code (React)",
     "tags": [
         "react",

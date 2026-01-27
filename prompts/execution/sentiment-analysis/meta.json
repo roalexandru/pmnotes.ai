@@ -3,8 +3,8 @@
     "title": "User Feedback Sentiment Triage",
     "shortDescription": "Classify feedback sentiment and surface actionable themes.",
     "surface": "execution",
-    "pmStage": "Product Discovery",
-    "complexity": "Intermediate",
+    "pmStage": "Research & Insight Reports",
+    "complexity": "Structured",
     "outputType": "Executed Code (NLP)",
     "tags": [
         "python",

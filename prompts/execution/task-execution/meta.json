@@ -3,8 +3,8 @@
     "title": "Task Escalation Automation",
     "shortDescription": "Flag overdue tasks and generate owner reminders.",
     "surface": "execution",
-    "pmStage": "Productivity",
-    "complexity": "Intermediate",
+    "pmStage": "Automation & Scripts",
+    "complexity": "Structured",
     "outputType": "Executed Code (Automation)",
     "tags": [
         "python",

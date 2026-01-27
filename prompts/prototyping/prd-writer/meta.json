@@ -3,9 +3,9 @@
     "title": "PRD Generator (MVP Scope)",
     "shortDescription": "Produce a structured PRD with goals, scope, risks, and metrics.",
     "surface": "prototyping",
-    "pmStage": "Product Definition",
+    "pmStage": "Requirements & Specifications",
     "featured": true,
-    "complexity": "Advanced",
+    "complexity": "Deep",
     "outputType": "Markdown Document",
     "tags": [
         "prd",

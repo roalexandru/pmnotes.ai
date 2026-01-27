@@ -3,8 +3,8 @@
     "title": "Customer Feedback Synthesis",
     "shortDescription": "Distill raw feedback into themes, severity, and actionable next steps.",
     "surface": "discovery",
-    "pmStage": "Product Discovery",
-    "complexity": "Beginner",
+    "pmStage": "Research & Insight Reports",
+    "complexity": "Quick",
     "outputType": "Insight Report",
     "tags": [
         "feedback",

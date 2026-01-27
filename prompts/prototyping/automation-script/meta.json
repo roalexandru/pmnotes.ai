@@ -3,8 +3,8 @@
     "title": "Task Reminder Automation (Python)",
     "shortDescription": "Automate due-soon reminders with time-zone aware scheduling.",
     "surface": "prototyping",
-    "pmStage": "Productivity",
-    "complexity": "Intermediate",
+    "pmStage": "Automation & Scripts",
+    "complexity": "Structured",
     "outputType": "Code (Python)",
     "tags": [
         "python",

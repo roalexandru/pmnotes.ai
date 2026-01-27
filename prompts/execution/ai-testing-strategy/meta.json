@@ -3,8 +3,8 @@
     "title": "AI/ML Testing Strategy",
     "shortDescription": "Design comprehensive testing strategy for ML models covering accuracy, bias, robustness, and production validation.",
     "surface": "execution",
-    "pmStage": "Quality Assurance",
-    "complexity": "Advanced",
+    "pmStage": "Risk, Quality & Validation",
+    "complexity": "Deep",
     "outputType": "Test Strategy",
     "tags": [
         "ai",

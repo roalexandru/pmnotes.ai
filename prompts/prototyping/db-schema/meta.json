@@ -3,8 +3,8 @@
     "title": "Relational Schema Blueprint (SQL)",
     "shortDescription": "Draft a normalized schema with constraints and indexes.",
     "surface": "prototyping",
-    "pmStage": "Technical Design",
-    "complexity": "Advanced",
+    "pmStage": "Code Templates & Schemas",
+    "complexity": "Deep",
     "outputType": "Code (SQL)",
     "tags": [
         "sql",

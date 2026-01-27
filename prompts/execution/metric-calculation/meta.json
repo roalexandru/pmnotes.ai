@@ -3,8 +3,8 @@
     "title": "Product Metric Summary",
     "shortDescription": "Compute key summary statistics for a product metric series.",
     "surface": "execution",
-    "pmStage": "Data Analysis",
-    "complexity": "Beginner",
+    "pmStage": "Data Analysis & Visualizations",
+    "complexity": "Quick",
     "outputType": "Executed Code (Analysis)",
     "tags": [
         "python",

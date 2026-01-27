@@ -3,8 +3,8 @@
     "title": "Roadmap Planning",
     "shortDescription": "Build a quarterly roadmap aligned to goals, capacity, and key metrics.",
     "surface": "discovery",
-    "pmStage": "Product Planning",
-    "complexity": "Advanced",
+    "pmStage": "Strategy & Decision Artifacts",
+    "complexity": "Deep",
     "outputType": "Roadmap Schedule",
     "tags": [
         "roadmap",

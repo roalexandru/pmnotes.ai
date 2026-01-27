@@ -3,8 +3,8 @@
     "title": "REST API List Endpoint (Node.js)",
     "shortDescription": "Design a production-ready GET endpoint with filtering and pagination.",
     "surface": "prototyping",
-    "pmStage": "Prototyping",
-    "complexity": "Intermediate",
+    "pmStage": "Product & UX Prototypes",
+    "complexity": "Structured",
     "outputType": "Code (Node.js)",
     "tags": [
         "node",

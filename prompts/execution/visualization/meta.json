@@ -3,8 +3,8 @@
     "title": "Metric Trend Visualization",
     "shortDescription": "Create a chart for a KPI trend and annotate key changes.",
     "surface": "execution",
-    "pmStage": "Reporting",
-    "complexity": "Intermediate",
+    "pmStage": "Data Analysis & Visualizations",
+    "complexity": "Structured",
     "outputType": "Executed Code (Chart)",
     "tags": [
         "python",

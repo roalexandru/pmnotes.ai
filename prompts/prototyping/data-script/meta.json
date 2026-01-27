@@ -3,8 +3,8 @@
     "title": "CSV Insight Generator (Python)",
     "shortDescription": "Clean a CSV and summarize key metrics by group.",
     "surface": "prototyping",
-    "pmStage": "Data Analysis",
-    "complexity": "Intermediate",
+    "pmStage": "Data Analysis & Visualizations",
+    "complexity": "Structured",
     "outputType": "Code (Python)",
     "tags": [
         "python",

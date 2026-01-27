@@ -3,8 +3,8 @@
     "title": "Feature Test Plan & Coverage Review",
     "shortDescription": "Draft a comprehensive test plan with unit, integration, and E2E coverage.",
     "surface": "execution",
-    "pmStage": "Delivery",
-    "complexity": "Advanced",
+    "pmStage": "Plans & Playbooks",
+    "complexity": "Deep",
     "outputType": "Test Plan",
     "tags": [
         "qa",

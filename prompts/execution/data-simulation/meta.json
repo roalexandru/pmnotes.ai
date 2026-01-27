@@ -3,9 +3,9 @@
     "title": "Growth Simulation & Moving Average",
     "shortDescription": "Simulate user growth scenarios and summarize trend smoothing.",
     "surface": "execution",
-    "pmStage": "Data Analysis",
+    "pmStage": "Data Analysis & Visualizations",
     "featured": true,
-    "complexity": "Intermediate",
+    "complexity": "Structured",
     "outputType": "Executed Code (Simulation)",
     "tags": [
         "python",

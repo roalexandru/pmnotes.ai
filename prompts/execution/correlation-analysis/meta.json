@@ -3,9 +3,9 @@
     "title": "Correlation & Relationship Check",
     "shortDescription": "Quantify the relationship between two product metrics and interpret strength.",
     "surface": "execution",
-    "pmStage": "Data Analysis",
+    "pmStage": "Data Analysis & Visualizations",
     "featured": true,
-    "complexity": "Intermediate",
+    "complexity": "Structured",
     "outputType": "Executed Code (Statistics)",
     "tags": [
         "python",

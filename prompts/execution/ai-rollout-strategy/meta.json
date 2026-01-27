@@ -3,8 +3,8 @@
     "title": "AI Feature Rollout Strategy",
     "shortDescription": "Plan phased rollout for AI features with shadow mode, confidence ramps, and human-in-the-loop transitions.",
     "surface": "execution",
-    "pmStage": "Launch & Rollout",
-    "complexity": "Advanced",
+    "pmStage": "Plans & Playbooks",
+    "complexity": "Deep",
     "outputType": "Rollout Plan",
     "tags": [
         "ai",

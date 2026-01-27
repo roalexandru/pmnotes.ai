@@ -3,8 +3,8 @@
     "title": "Feature Prioritization Framework",
     "shortDescription": "Rank features using a structured scoring framework and clear rationale.",
     "surface": "discovery",
-    "pmStage": "Product Planning",
-    "complexity": "Intermediate",
+    "pmStage": "Strategy & Decision Artifacts",
+    "complexity": "Structured",
     "outputType": "Prioritized List + Scoring",
     "tags": [
         "prioritization",

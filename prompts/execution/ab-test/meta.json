@@ -3,8 +3,8 @@
     "title": "A/B Test Conversion Significance",
     "shortDescription": "Quantify conversion uplift and statistical significance for a two-variant test.",
     "surface": "execution",
-    "pmStage": "Experimentation",
-    "complexity": "Advanced",
+    "pmStage": "Data Analysis & Visualizations",
+    "complexity": "Deep",
     "outputType": "Executed Code (Statistics)",
     "tags": [
         "python",

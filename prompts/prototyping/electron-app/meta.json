@@ -3,8 +3,8 @@
     "title": "Electron App Starter (Cross-Platform)",
     "shortDescription": "Scaffold a cross-platform Electron app with IPC, local storage, and packaging.",
     "surface": "prototyping",
-    "pmStage": "Prototyping",
-    "complexity": "Advanced",
+    "pmStage": "Product & UX Prototypes",
+    "complexity": "Deep",
     "outputType": "Code (Electron)",
     "tags": [
         "electron",

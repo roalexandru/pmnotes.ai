@@ -3,8 +3,8 @@
     "title": "Codable Mobile Model (Swift)",
     "shortDescription": "Define a Swift model with Codable support and JSON mapping.",
     "surface": "prototyping",
-    "pmStage": "Prototyping",
-    "complexity": "Beginner",
+    "pmStage": "Product & UX Prototypes",
+    "complexity": "Quick",
     "outputType": "Code (Swift)",
     "tags": [
         "swift",

@@ -3,8 +3,8 @@
     "title": "Release Notes & Version Bump",
     "shortDescription": "Generate release notes and checklist from recent git changes.",
     "surface": "execution",
-    "pmStage": "Delivery",
-    "complexity": "Advanced",
+    "pmStage": "Plans & Playbooks",
+    "complexity": "Deep",
     "outputType": "Release Package",
     "tags": [
         "release",

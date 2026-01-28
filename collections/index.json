@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-01-28T14:00:11.785Z",
+  "generatedAt": "2026-01-28T14:24:34.362Z",
   "collections": [
     {
       "slug": "ai-feature-productization",
@@ -696,7 +696,7 @@
       "description": "A fast-paced playbook for building proof-of-concept prototypes. Validate feasibility, UX, and technical approach before committing to full development. Includes PRD scoping, technical design, implementation planning, UX review, feasibility assessment, and legal/IP considerations.",
       "icon": "zap",
       "category": "playbook",
-      "teamScale": "Startup",
+      "teamScale": "Startup / SMB",
       "difficulty": "Structured",
       "estimatedTime": "3-5 days",
       "tags": [

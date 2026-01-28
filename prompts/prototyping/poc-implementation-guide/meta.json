@@ -1,0 +1,54 @@
+{
+  "slug": "poc-implementation-guide",
+  "title": "POC Implementation Guide",
+  "shortDescription": "Generate a step-by-step implementation plan for building a POC quickly.",
+  "surface": "prototyping",
+  "pmStage": "Code Templates & Schemas",
+  "complexity": "Structured",
+  "outputType": "Implementation Plan",
+  "tags": ["poc", "prototype", "implementation", "planning", "rapid"],
+  "jobsToBeDone": [
+    "Plan POC implementation steps",
+    "Identify what to build vs. skip",
+    "Define milestones and checkpoints",
+    "Align team on build approach"
+  ],
+  "inputs": [
+    {
+      "key": "product_name",
+      "label": "Product/Feature Name",
+      "example": "AI Support Chatbot"
+    },
+    {
+      "key": "prd_summary",
+      "label": "PRD Summary",
+      "example": "Paste your PRD or key sections: problem, goals, core features, constraints"
+    },
+    {
+      "key": "tech_design_summary",
+      "label": "Tech Design Summary",
+      "example": "Paste your tech design or key sections: stack, architecture, data model"
+    },
+    {
+      "key": "poc_goal",
+      "label": "POC Goal",
+      "example": "Validate that LLM can accurately answer FAQ questions with <3s latency"
+    },
+    {
+      "key": "timeline",
+      "label": "Timeline",
+      "example": "3-5 days"
+    },
+    {
+      "key": "team_resources",
+      "label": "Available Resources",
+      "example": "1 backend dev, 1 frontend dev, designer for 4 hours"
+    },
+    {
+      "key": "existing_assets",
+      "label": "Existing Assets to Leverage",
+      "example": "Existing React component library, FAQ database, Slack workspace for testing",
+      "optional": true
+    }
+  ]
+}

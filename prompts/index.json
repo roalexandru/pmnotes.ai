@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-01-27T20:28:59.950Z",
+  "generatedAt": "2026-01-28T13:56:16.703Z",
   "items": [
     {
       "id": "ai-prd-generator",
@@ -13,7 +13,7 @@
         "specification"
       ],
       "updatedAt": "2026-01-27T22:03:51+02:00",
-      "prompt": "# Role\nYou are a Senior Product Manager who writes PRDs tailored for AI coding agents (Cursor, Claude Code).\n\n# Context\nWe are defining **{{product_name}}**, a {{product_type}} for **{{target_users}}**.\nProblem: **{{problem_statement}}**.\nKey workflows: **{{key_workflows}}**.\nAI role: **{{ai_role}}**.\nSuccess metrics: **{{success_metrics}}**.\nConstraints: **{{constraints}}**.\nExisting stack: **{{existing_stack}}**.\n\n# Task\nCreate a PRD that an AI engineer can use as the primary build reference.\n\n# Requirements\nInclude the following sections:\n1. **Summary**\n   - One-paragraph overview of the product and why it matters.\n2. **Goals & Non-Goals**\n   - 3–5 measurable goals and explicit out-of-scope items.\n3. **Target Users & Jobs-to-be-Done**\n   - Personas, JTBD, and success criteria for each.\n4. **User Journeys**\n   - 2–3 step-by-step flows that match the key workflows.\n5. **Functional Requirements**\n   - Numbered list with acceptance criteria and priority tags (Must/Should/Could).\n6. **AI Interaction Design**\n   - Prompt strategy, system constraints, tone, and when to ask for confirmation.\n7. **Data & Integrations**\n   - Inputs the AI needs, data sources, APIs, and required permissions.\n8. **Non-Functional Requirements**\n   - Performance, reliability, security, privacy, compliance.\n9. **Metrics & Instrumentation**\n   - Events to track, dashboards, and success thresholds.\n10. **Risks & Open Questions**\n    - Unknowns that could block delivery and how to validate them.\n\n# Output Format\nMarkdown PRD with clear headings, tables where helpful, and concise bullets.\n",
+      "prompt": "# Role\n\nYou are a Senior Product Manager who writes PRDs tailored for AI coding agents (Cursor, Claude Code).\n\n# Context\n\nWe are defining **{{product_name}}**, a {{product_type}} for **{{target_users}}**.\nProblem: **{{problem_statement}}**.\nKey workflows: **{{key_workflows}}**.\nAI role: **{{ai_role}}**.\nSuccess metrics: **{{success_metrics}}**.\nConstraints: **{{constraints}}**.\nExisting stack: **{{existing_stack}}**.\n\n# Task\n\nCreate a PRD that an AI engineer can use as the primary build reference.\n\n# Requirements\n\nInclude the following sections:\n\n1. **Summary**\n   - One-paragraph overview of the product and why it matters.\n2. **Goals & Non-Goals**\n   - 3–5 measurable goals and explicit out-of-scope items.\n3. **Target Users & Jobs-to-be-Done**\n   - Personas, JTBD, and success criteria for each.\n4. **User Journeys**\n   - 2–3 step-by-step flows that match the key workflows.\n5. **Functional Requirements**\n   - Numbered list with acceptance criteria and priority tags (Must/Should/Could).\n6. **AI Interaction Design**\n   - Prompt strategy, system constraints, tone, and when to ask for confirmation.\n7. **Data & Integrations**\n   - Inputs the AI needs, data sources, APIs, and required permissions.\n8. **Non-Functional Requirements**\n   - Performance, reliability, security, privacy, compliance.\n9. **Metrics & Instrumentation**\n   - Events to track, dashboards, and success thresholds.\n10. **Risks & Open Questions**\n    - Unknowns that could block delivery and how to validate them.\n\n# Output Format\n\nReturn the entire PRD as a **single markdown code block** so it can be easily copied and pasted. Use clear headings, tables where helpful, and concise bullets within the code block.\n",
       "slug": "ai-prd-generator",
       "shortDescription": "Create a PRD optimized for AI coding agents in Cursor or Claude Code.",
       "surface": "discovery",
@@ -87,7 +87,7 @@
         "fairness",
         "enterprise"
       ],
-      "updatedAt": "2026-01-27T22:03:51+02:00",
+      "updatedAt": "2026-01-27T22:49:49+02:00",
       "prompt": "# Role\nYou are an AI Risk Manager and ML Ethics specialist conducting a comprehensive risk assessment for an AI feature launch.\n\n# Context\nWe are preparing to launch **{{ai_feature_name}}**.\nModel type: **{{model_type}}**.\nTraining data: **{{training_data_source}}**.\nDecision impact: **{{decision_impact}}**.\nUser population: **{{user_population}}**.\nRegulatory context: **{{regulatory_context}}**.\n\n# Task\nCreate a comprehensive AI/ML risk assessment covering all dimensions of AI risk, with concrete mitigation strategies and monitoring plans.\n\n# Requirements\n\n## 1. Model Performance Risks\n\n### Accuracy & Reliability\n- **False Positives**: What happens when AI incorrectly flags something?\n- **False Negatives**: What happens when AI misses something important?\n- **Confidence Calibration**: Is the model's confidence score reliable?\n- **Edge Cases**: What inputs might cause unexpected behavior?\n\n### Model Degradation\n- **Data Drift**: How will distribution changes affect performance?\n- **Concept Drift**: How will real-world changes affect model assumptions?\n- **Staleness**: How quickly does the model become outdated?\n\n## 2. Bias & Fairness Risks\n\n### Training Data Bias\n- What biases might exist in the training data?\n- Which groups might be underrepresented?\n- How might historical biases be encoded?\n\n### Algorithmic Bias\n- Could the model treat different groups unfairly?\n- What protected attributes might correlate with features?\n- How could bias manifest in outcomes?\n\n### Measurement Bias\n- How was ground truth determined in training data?\n- Could labeling have introduced bias?\n\n## 3. Explainability & Transparency Risks\n\n### Interpretability\n- Can we explain why the model made a decision?\n- What level of explanation do users/regulators need?\n- Are there \"black box\" components?\n\n### Auditability\n- Can decisions be traced and reviewed?\n- Is there sufficient logging for compliance?\n- Can we reproduce past decisions?\n\n## 4. Security & Adversarial Risks\n\n### Adversarial Attacks\n- How could bad actors manipulate inputs?\n- What prompt injection risks exist (for LLMs)?\n- Could the model be fooled by edge cases?\n\n### Data Poisoning\n- Could training data be manipulated?\n- How do we validate data integrity?\n\n### Model Extraction\n- Could competitors reverse-engineer the model?\n- What IP protection is needed?\n\n## 5. Operational Risks\n\n### Availability & Latency\n- What if the model service goes down?\n- What latency is acceptable for the use case?\n- What's the fallback if AI is unavailable?\n\n### Scalability\n- Can the model handle peak loads?\n- What are the cost implications of scale?\n\n### Versioning & Rollback\n- How do we safely update models?\n- Can we quickly rollback if issues arise?\n\n## 6. Ethical & Societal Risks\n\n### Automation Impact\n- Does this displace human workers?\n- Does it augment or replace human judgment?\n- Are there skills atrophy concerns?\n\n### Misuse Potential\n- Could this feature be misused?\n- What guardrails prevent harmful use?\n\n### Transparency to End Users\n- Do users know they're interacting with AI?\n- Do they understand its limitations?\n\n## 7. Regulatory & Compliance Risks\n\n### Current Regulations\n- GDPR implications (automated decision-making)\n- Industry-specific regulations\n- AI-specific regulations (EU AI Act)\n\n### Documentation Requirements\n- Model cards and documentation needs\n- Bias audits and fairness reports\n- Human oversight requirements\n\n## Risk Register Format\n\nFor each identified risk, provide:\n- **Risk ID**: Unique identifier\n- **Category**: Performance/Bias/Explainability/Security/Operational/Ethical/Regulatory\n- **Description**: Clear description of the risk\n- **Likelihood**: Low/Medium/High\n- **Impact**: Low/Medium/High (if risk materializes)\n- **Risk Score**: Likelihood × Impact\n- **Mitigation Strategy**: Preventive actions\n- **Detection Method**: How we'll know if it happens\n- **Response Plan**: What to do if it occurs\n- **Owner**: Who is responsible\n- **Monitoring Metrics**: KPIs to track\n\n## Output\n1. Executive summary with top 5 risks\n2. Detailed risk register table\n3. Mitigation roadmap with priorities\n4. Monitoring dashboard requirements\n5. Escalation procedures\n\n# Output Format\nStructured risk assessment with tables, clear categories, and actionable mitigations.\n",
       "slug": "ai-risk-assessment",
       "shortDescription": "Identify and mitigate AI-specific risks including bias, drift, hallucination, and explainability.",
@@ -146,7 +146,7 @@
         "automation",
         "enterprise"
       ],
-      "updatedAt": "2026-01-27T22:03:51+02:00",
+      "updatedAt": "2026-01-27T22:49:49+02:00",
       "prompt": "# Role\nYou are a UX Researcher specializing in AI/ML product experiences and human-AI interaction design.\n\n# Context\nWe are developing **{{ai_feature_name}}** for **{{target_users}}**.\nCurrent workflow: **{{current_workflow}}**.\nAI capability: **{{ai_capability}}**.\nError consequences: **{{error_consequence}}**.\n\n# Task\nCreate a comprehensive user research framework to understand how users will interact with, trust, and adopt this AI feature.\n\n# Requirements\n\n## 1. User Segmentation by AI Readiness\nIdentify 3-4 user segments based on:\n- **AI Literacy**: Technical understanding of AI/ML\n- **Trust Disposition**: Skeptic, Cautious, or Early Adopter\n- **Risk Tolerance**: How they handle AI errors\n- **Autonomy Preference**: Full automation vs. human-in-the-loop\n\n## 2. Key Research Questions\nFor each segment, define questions to understand:\n- Current pain points in manual workflow\n- Mental models about AI capabilities and limitations\n- Trust calibration (when do they trust vs. verify?)\n- Error recovery expectations\n- Control and override needs\n- Transparency and explainability requirements\n\n## 3. AI-Specific User Journey Mapping\nMap the journey including:\n- **First encounter**: How do users discover the AI feature?\n- **Trust building**: What evidence do they need?\n- **Adoption curve**: Progressive trust building stages\n- **Error experience**: How they discover and handle AI mistakes\n- **Feedback loops**: How they correct and train the AI\n\n## 4. Human-AI Interaction Patterns\nRecommend interaction patterns for each segment:\n- **Full automation** - AI acts autonomously\n- **AI-assisted** - AI suggests, human approves\n- **AI-on-demand** - Human triggers AI when needed\n- **Human-first** - Human does work, AI validates\n\n## 5. Trust Calibration Signals\nIdentify what users need to see:\n- Confidence indicators\n- Explanation of AI decisions\n- Audit trails and provenance\n- Comparison to manual results\n- Performance metrics over time\n\n## 6. Interview Guide\nProvide 10 key interview questions specifically for AI feature research.\n\n## 7. Success Metrics for User Adoption\nDefine metrics to track:\n- Adoption rate by segment\n- Trust calibration accuracy (do users appropriately trust/distrust?)\n- Override rate (healthy skepticism vs. lack of trust)\n- Time to full automation confidence\n- User satisfaction with AI assistance\n\n# Output Format\nStructured research framework with clear sections, tables for segments, and actionable interview questions.\n",
       "slug": "ai-user-research",
       "shortDescription": "Understand user needs, trust levels, and AI literacy for intelligent features.",
@@ -350,6 +350,73 @@
       ]
     },
     {
+      "id": "legal-ip-review",
+      "title": "Legal & IP Review Checklist",
+      "category": "discovery",
+      "path": "discovery/legal-ip-review",
+      "tags": [
+        "legal",
+        "ip",
+        "copyright",
+        "licensing",
+        "compliance",
+        "open-source"
+      ],
+      "updatedAt": "2026-01-28T13:56:11.605Z",
+      "prompt": "# Role\n\nYou are a Legal & IP Advisor helping product teams identify intellectual property, licensing, and compliance considerations early in the development process.\n\n# Context\n\nWe are building **{{product_name}}**.\n\n**Product Description**: {{product_description}}\n\n**Tech Stack & Dependencies**: {{tech_stack}}\n\n**Data Sources**: {{data_sources}}\n\n**Third-Party Services/APIs**: {{third_party_services}}\n\n{{#if target_market}}\n**Target Market**: {{target_market}}\n{{/if}}\n\n{{#if similar_products}}\n**Similar Products**: {{similar_products}}\n{{/if}}\n\n# Task\n\nCreate a comprehensive legal and IP review checklist that identifies potential issues and action items before development proceeds.\n\n# Requirements\n\n## 1. Open Source License Compliance\n\nReview the tech stack and flag:\n- **License Types**: Categorize dependencies by license (MIT, Apache 2.0, GPL, LGPL, etc.)\n- **Copyleft Risks**: Flag any GPL/AGPL that could affect distribution\n- **Attribution Requirements**: List required notices and attributions\n- **Commercial Use Restrictions**: Any licenses limiting commercial use\n\n## 2. Third-Party API & Service Review\n\nFor each third-party service:\n- **Terms of Service**: Key restrictions (rate limits, usage caps, data retention)\n- **Data Processing**: Where data is processed, data residency requirements\n- **Output Ownership**: Who owns AI-generated content (critical for LLM APIs)\n- **Liability & Indemnification**: Key risk areas\n- **Exit Strategy**: Data portability, vendor lock-in concerns\n\n## 3. Data & Content Rights\n\nEvaluate data sources:\n- **Ownership**: Do we have rights to use this data?\n- **Privacy**: PII, GDPR, CCPA considerations\n- **Training Data**: Rights for ML training (if applicable)\n- **User-Generated Content**: Terms for content created by/for users\n- **Scraping/Collection**: How was data obtained?\n\n## 4. Intellectual Property Considerations\n\n### Copyright\n- Content originality requirements\n- Fair use considerations\n- DMCA compliance needs\n\n### Trademarks\n- Product name availability\n- Similar product name conflicts\n- Domain availability\n\n### Patents\n- Freedom to operate concerns\n- Prior art for novel features\n- Defensive considerations\n\n### Trade Secrets\n- Confidential information handling\n- NDA requirements with vendors/partners\n\n## 5. AI-Specific Considerations (if applicable)\n\n- **Model Licensing**: Terms for using base models\n- **Output Rights**: Ownership of AI-generated content\n- **Disclosure Requirements**: When must AI use be disclosed?\n- **Liability for Outputs**: Who is liable for AI errors/hallucinations?\n- **Training Data Provenance**: Legal status of training data\n\n## 6. Compliance Checklist by Region\n\nFlag relevant regulations:\n- **US**: CCPA, CAN-SPAM, COPPA, Section 230\n- **EU**: GDPR, AI Act, Digital Services Act\n- **Industry-Specific**: HIPAA, PCI-DSS, SOC 2, etc.\n\n## 7. Action Items\n\nPrioritize into:\n- **Blockers**: Must resolve before launch\n- **Pre-Launch**: Should resolve before GA\n- **Post-Launch**: Can address after initial release\n- **Legal Review Needed**: Requires actual legal counsel\n\n# Output Format\n\nReturn the entire review as a **single markdown code block** so it can be easily copied and pasted. Use checklists, tables, and clear categorization. Include a summary of top risks at the beginning.\n",
+      "slug": "legal-ip-review",
+      "shortDescription": "Review copyright, licensing, and IP considerations before building.",
+      "surface": "discovery",
+      "pmStage": "Risk, Quality & Validation",
+      "complexity": "Structured",
+      "outputType": "Legal Checklist",
+      "jobsToBeDone": [
+        "Identify IP and licensing risks early",
+        "Review open-source compliance",
+        "Flag copyright and trademark issues",
+        "Create action items for legal review"
+      ],
+      "inputs": [
+        {
+          "key": "product_name",
+          "label": "Product/Feature Name",
+          "example": "AI Support Chatbot"
+        },
+        {
+          "key": "product_description",
+          "label": "Product Description",
+          "example": "A chatbot that uses LLM to answer customer support questions based on our FAQ database"
+        },
+        {
+          "key": "tech_stack",
+          "label": "Tech Stack & Dependencies",
+          "example": "Next.js (MIT), OpenAI API, shadcn/ui (MIT), Tailwind CSS (MIT)"
+        },
+        {
+          "key": "data_sources",
+          "label": "Data Sources",
+          "example": "Internal FAQ database, customer support tickets (anonymized), public product documentation"
+        },
+        {
+          "key": "third_party_services",
+          "label": "Third-Party Services/APIs",
+          "example": "OpenAI API, Vercel hosting, Sentry error tracking"
+        },
+        {
+          "key": "target_market",
+          "label": "Target Market/Region",
+          "example": "US and EU enterprise customers",
+          "optional": true
+        },
+        {
+          "key": "similar_products",
+          "label": "Similar Products (for trademark check)",
+          "example": "Intercom, Zendesk Answer Bot, Drift",
+          "optional": true
+        }
+      ]
+    },
+    {
       "id": "market-analysis",
       "title": "Market Analysis Brief",
       "category": "discovery",
@@ -470,7 +537,7 @@
         "planning"
       ],
       "updatedAt": "2026-01-27T22:03:51+02:00",
-      "prompt": "# Role\nYou are a Product Manager skilled in defining clear, comprehensive requirements.\n\n# Context\nWe are defining **{{product_name}}**, a {{product_type}} for **{{target_segment}}**.\nProblem: **{{problem_statement}}**. Business goal: **{{business_goal}}**.\nConstraints: **{{constraints}}**.\n\n# Task\nGenerate a Product Requirements Document (PRD) outline.\n\n# Requirements\nInclude the following sections:\n1. **Problem & Opportunity**\n   - Problem statement and why it matters now.\n2. **Goals & Success Metrics**\n   - Business and user goals, with primary KPIs.\n3. **Target Users & Jobs-to-be-Done**\n   - Personas, JTBD, and key use cases.\n4. **Scope**\n   - MVP feature list, non-goals, and assumptions.\n5. **User Stories**\n   - 4–6 core user stories tied to outcomes.\n6. **Requirements & Constraints**\n   - Functional requirements, platform considerations, and constraints.\n7. **Dependencies & Risks**\n   - Notable technical or business dependencies.\n8. **Open Questions**\n   - What remains to be validated.\n\n# Output Format\nMarkdown outline with clear headings and bullets.\n",
+      "prompt": "# Role\n\nYou are a Product Manager skilled in defining clear, comprehensive requirements.\n\n# Context\n\nWe are defining **{{product_name}}**, a {{product_type}} for **{{target_segment}}**.\nProblem: **{{problem_statement}}**. Business goal: **{{business_goal}}**.\nConstraints: **{{constraints}}**.\n\n# Task\n\nGenerate a Product Requirements Document (PRD) outline.\n\n# Requirements\n\nInclude the following sections:\n\n1. **Problem & Opportunity**\n   - Problem statement and why it matters now.\n2. **Goals & Success Metrics**\n   - Business and user goals, with primary KPIs.\n3. **Target Users & Jobs-to-be-Done**\n   - Personas, JTBD, and key use cases.\n4. **Scope**\n   - MVP feature list, non-goals, and assumptions.\n5. **User Stories**\n   - 4–6 core user stories tied to outcomes.\n6. **Requirements & Constraints**\n   - Functional requirements, platform considerations, and constraints.\n7. **Dependencies & Risks**\n   - Notable technical or business dependencies.\n8. **Open Questions**\n   - What remains to be validated.\n\n# Output Format\n\nReturn the entire PRD outline as a **single markdown code block** so it can be easily copied and pasted. Use clear headings and bullets within the code block.\n",
       "slug": "prd-outline",
       "shortDescription": "Create a structured PRD outline tailored to a product goal and audience.",
       "surface": "discovery",
@@ -570,26 +637,29 @@
     },
     {
       "id": "risk-analysis",
-      "title": "Risk & Mitigation Analysis",
+      "title": "Risk & Feasibility Assessment",
       "category": "discovery",
       "path": "discovery/risk-analysis",
       "tags": [
         "risk-management",
         "pre-mortem",
-        "planning"
+        "planning",
+        "feasibility",
+        "poc"
       ],
       "updatedAt": "2026-01-27T22:03:51+02:00",
-      "prompt": "# Role\nYou are a Risk Manager or Senior PM conducting a pre-mortem.\n\n# Context\nWe are preparing to launch **{{feature_or_product}}**.\nScope: **{{launch_scope}}**. Timeline: **{{timeline}}**.\nDependencies: **{{dependencies}}**.\n\n# Task\nIdentify and prioritize risks, then propose concrete mitigations.\n\n# Requirements\nCategorize risks into:\n1. **Technical Risks** (scalability, reliability, security)\n2. **Market Risks** (adoption, positioning, competition)\n3. **Operational Risks** (support, internal readiness)\n4. **Legal/Compliance Risks** (privacy, regulatory)\n\nFor each risk, include:\n* **Likelihood** (Low/Medium/High)\n* **Impact** (Low/Medium/High)\n* **Mitigation** (preventative and reactive)\n* **Early Warning Signal**\n* **Owner** (suggested function)\n\n# Output Format\nA risk register table, followed by top 3 focus risks with mitigation plans.\n",
+      "prompt": "# Role\n\nYou are a Risk Manager or Senior PM conducting a pre-mortem and feasibility assessment.\n\n# Context\n\nWe are assessing **{{feature_or_product}}** for {{assessment_stage}}.\nScope: **{{launch_scope}}**. Timeline: **{{timeline}}**.\nDependencies: **{{dependencies}}**.\n\n{{#if prd_summary}}\n**PRD Summary**: {{prd_summary}}\n{{/if}}\n\n{{#if tech_design_summary}}\n**Technical Design Summary**: {{tech_design_summary}}\n{{/if}}\n\n# Task\n\nIdentify and prioritize risks, assess feasibility, and propose concrete mitigations. Provide a clear go/no-go recommendation.\n\n# Requirements\n\n## 1. Feasibility Assessment\n\nEvaluate feasibility across these dimensions:\n- **Technical Feasibility**: Can we build this with available tech/skills?\n- **Resource Feasibility**: Do we have the time, budget, and people?\n- **Market Feasibility**: Is there validated demand? Any showstoppers?\n- **Operational Feasibility**: Can we support and maintain this?\n\nRate each dimension: **Green** (feasible), **Yellow** (concerns, but manageable), **Red** (significant blockers).\n\n## 2. Risk Register\n\nCategorize risks into:\n\n1. **Technical Risks** (complexity, unknowns, scalability, reliability, security)\n2. **Market Risks** (adoption, positioning, competition, timing)\n3. **Resource Risks** (skills gaps, capacity, dependencies on key people)\n4. **Operational Risks** (support, internal readiness, maintenance burden)\n5. **Legal/Compliance Risks** (privacy, regulatory, IP)\n\nFor each risk, include:\n\n- **Likelihood** (Low/Medium/High)\n- **Impact** (Low/Medium/High)\n- **Mitigation** (preventative and reactive)\n- **Early Warning Signal**\n- **Owner** (suggested function)\n\n## 3. Go/No-Go Recommendation\n\nProvide a clear recommendation:\n- **GO**: Proceed with POC/launch\n- **GO WITH CONDITIONS**: Proceed only if specific mitigations are in place\n- **NO-GO**: Do not proceed; explain blocking issues\n- **PIVOT**: Consider alternative approach\n\n# Output Format\n\nReturn the entire analysis as a **single markdown code block** so it can be easily copied and pasted. Include:\n1. Feasibility scorecard table\n2. Risk register table\n3. Top 3 focus risks with mitigation plans\n4. Go/No-Go recommendation with rationale\n",
       "slug": "risk-analysis",
-      "shortDescription": "Run a pre-mortem to identify launch risks and mitigation plans.",
+      "shortDescription": "Assess feasibility and identify risks with go/no-go recommendation.",
       "surface": "discovery",
       "pmStage": "Risk, Quality & Validation",
       "complexity": "Structured",
       "outputType": "Risk Register",
       "jobsToBeDone": [
-        "Anticipate launch risks",
+        "Assess technical and market feasibility",
+        "Anticipate launch/POC risks",
         "Plan mitigation strategies",
-        "Align on risk owners"
+        "Make go/no-go decisions"
       ],
       "inputs": [
         {
@@ -598,19 +668,42 @@
           "example": "AI-based Chatbot"
         },
         {
+          "key": "assessment_stage",
+          "label": "Assessment Stage",
+          "example": "POC validation",
+          "options": [
+            "POC validation",
+            "MVP launch",
+            "Public beta",
+            "Full launch"
+          ]
+        },
+        {
           "key": "launch_scope",
-          "label": "Launch Scope",
-          "example": "Public beta for existing customers"
+          "label": "Scope",
+          "example": "Internal POC with 5 pilot users"
         },
         {
           "key": "timeline",
           "label": "Timeline",
-          "example": "6 weeks"
+          "example": "3-5 days"
         },
         {
           "key": "dependencies",
           "label": "Key Dependencies",
-          "example": "LLM vendor, support team training"
+          "example": "LLM vendor, design resources, test data"
+        },
+        {
+          "key": "prd_summary",
+          "label": "PRD Summary (optional)",
+          "example": "Paste key sections from your PRD: goals, scope, requirements",
+          "optional": true
+        },
+        {
+          "key": "tech_design_summary",
+          "label": "Tech Design Summary (optional)",
+          "example": "Paste key sections: stack, architecture, key components",
+          "optional": true
         }
       ]
     },
@@ -625,7 +718,7 @@
         "strategy"
       ],
       "updatedAt": "2026-01-27T22:03:51+02:00",
-      "prompt": "# Role\nYou are a Product Manager focused on strategic planning and execution.\n\n# Context\nWe are planning the next 4 quarters for **{{product_name}}**.\nStrategic goals: **{{goals}}**. Constraints: **{{constraints}}**.\nKey metrics: **{{key_metrics}}**.\n\n# Task\nOutline a high-level product roadmap for the next 4 quarters.\n\n# Requirements\n- **Quarter Breakdown**: Q1–Q4 with 2–3 major initiatives each.\n- **Sequencing Logic**: Explain how each quarter builds toward the goals.\n- **Metrics Impact**: Tie each quarter to expected movement in key metrics.\n- **Dependencies**: Note major dependencies or cross-team needs.\n\n# Output Format\n1. **Roadmap Table** (Quarter | Theme | Initiatives | Metric Impact)\n2. **Sequencing Rationale** (short paragraph)\n3. **Dependencies & Risks** (bullets)\n",
+      "prompt": "# Role\n\nYou are a Product Manager focused on strategic planning and execution.\n\n# Context\n\nWe are planning the next 4 quarters for **{{product_name}}**.\nStrategic goals: **{{goals}}**. Constraints: **{{constraints}}**.\nKey metrics: **{{key_metrics}}**.\n\n# Task\n\nOutline a high-level product roadmap for the next 4 quarters.\n\n# Requirements\n\n- **Quarter Breakdown**: Q1–Q4 with 2–3 major initiatives each.\n- **Sequencing Logic**: Explain how each quarter builds toward the goals.\n- **Metrics Impact**: Tie each quarter to expected movement in key metrics.\n- **Dependencies**: Note major dependencies or cross-team needs.\n\n# Output Format\n\nReturn the entire roadmap as a **single markdown code block** so it can be easily copied and pasted. Include:\n\n1. **Roadmap Table** (Quarter | Theme | Initiatives | Metric Impact)\n2. **Sequencing Rationale** (short paragraph)\n3. **Dependencies & Risks** (bullets)\n",
       "slug": "roadmap-planning",
       "shortDescription": "Build a quarterly roadmap aligned to goals, capacity, and key metrics.",
       "surface": "discovery",
@@ -671,7 +764,7 @@
         "discovery"
       ],
       "updatedAt": "2026-01-27T22:03:51+02:00",
-      "prompt": "# Role\nYou are a Chief Product Officer with deep expertise in market strategy and competitive analysis.\n\n# Context\nMarket domain: **{{market_domain}}**.\nCustomer segments: **{{customer_segments}}**.\nCompetitors: **{{competitors}}**.\nStrategic goal: **{{entry_goal}}**.\n\n# Task\nConduct a strategic analysis and recommend the best path forward.\n\n# Requirements\n1. **Market Overview**\n   - Key trends, growth drivers, and regulatory considerations.\n2. **Customer Needs**\n   - Core jobs-to-be-done and buying criteria by segment.\n3. **Competitive Landscape**\n   - Strengths/weaknesses and positioning of named competitors.\n4. **Strategic Options**\n   - 2–3 distinct options (e.g., niche vertical, platform play, partnership).\n5. **Recommendation**\n   - Choose one option and justify with risks, tradeoffs, and success metrics.\n\n# Output Format\n1. **Executive Summary** (3 bullets)\n2. **Market & Customer Insights** (bullets)\n3. **Competitive Landscape** (table)\n4. **Strategic Options** (bullets)\n5. **Recommendation & Metrics** (bullets)\n",
+      "prompt": "# Role\n\nYou are a Chief Product Officer with deep expertise in market strategy and competitive analysis.\n\n# Context\n\nMarket domain: **{{market_domain}}**.\nCustomer segments: **{{customer_segments}}**.\nCompetitors: **{{competitors}}**.\nStrategic goal: **{{entry_goal}}**.\n\n# Task\n\nConduct a strategic analysis and recommend the best path forward.\n\n# Requirements\n\n1. **Market Overview**\n   - Key trends, growth drivers, and regulatory considerations.\n2. **Customer Needs**\n   - Core jobs-to-be-done and buying criteria by segment.\n3. **Competitive Landscape**\n   - Strengths/weaknesses and positioning of named competitors.\n4. **Strategic Options**\n   - 2–3 distinct options (e.g., niche vertical, platform play, partnership).\n5. **Recommendation**\n   - Choose one option and justify with risks, tradeoffs, and success metrics.\n\n# Output Format\n\nReturn the entire analysis as a **single markdown code block** so it can be easily copied and pasted. Include:\n\n1. **Executive Summary** (3 bullets)\n2. **Market & Customer Insights** (bullets)\n3. **Competitive Landscape** (table)\n4. **Strategic Options** (bullets)\n5. **Recommendation & Metrics** (bullets)\n",
       "slug": "strategic-analysis",
       "shortDescription": "Assess market dynamics and recommend a strategic entry or growth plan.",
       "surface": "discovery",
@@ -718,7 +811,7 @@
         "engineering"
       ],
       "updatedAt": "2026-01-27T22:03:51+02:00",
-      "prompt": "# Role\nYou are a Principal Software Architect who produces clear, pragmatic technical design documents.\n\n# Context\nApplication: **{{app_name}}**.\nDescription/PRD: **{{prd_or_description}}**.\nScale requirements: **{{scale_requirements}}**.\nNon-functional requirements: **{{non_functional_requirements}}**.\nConstraints: **{{constraints}}**.\nExisting stack: **{{existing_stack}}**.\n\n# Task\nCreate a technical design document that proposes the best architecture, stack, and implementation plan.\n\n# Requirements\nInclude the following sections:\n1. **Executive Summary**\n   - Design goals and how the architecture meets them.\n2. **Chosen Tech Stack**\n   - Frontend, backend, data, infra, and AI/ML (if applicable) with rationale.\n3. **System Architecture**\n   - High-level diagram (text) showing services and data flow.\n4. **Core Components**\n   - Responsibilities, dependencies, and scaling considerations.\n5. **Data Model**\n   - Key entities, storage choices, and retention strategy.\n6. **API & Integration Contracts**\n   - Main endpoints, events, or message topics.\n7. **Performance & Scalability**\n   - Caching, throughput assumptions, and bottlenecks.\n8. **Security & Compliance**\n   - Auth, authorization, data protection, and auditability.\n9. **Observability & Operations**\n   - Logging, metrics, alerts, and runbooks.\n10. **Phased Delivery Plan**\n   - MVP → V1 milestones with risks and dependencies.\n\n# Output Format\nMarkdown technical design document with headings, tables, and bullet points.\n",
+      "prompt": "# Role\n\nYou are a Principal Software Architect who produces clear, pragmatic technical design documents.\n\n# Context\n\nApplication: **{{app_name}}**.\nDescription/PRD: **{{prd_or_description}}**.\nScale requirements: **{{scale_requirements}}**.\nNon-functional requirements: **{{non_functional_requirements}}**.\nConstraints: **{{constraints}}**.\nExisting stack: **{{existing_stack}}**.\n\n# Task\n\nCreate a technical design document that proposes the best architecture, stack, and implementation plan.\n\n# Requirements\n\nInclude the following sections:\n\n1. **Executive Summary**\n   - Design goals and how the architecture meets them.\n2. **Chosen Tech Stack**\n   - Frontend, backend, data, infra, and AI/ML (if applicable) with rationale.\n3. **System Architecture**\n   - High-level diagram (text) showing services and data flow.\n4. **Core Components**\n   - Responsibilities, dependencies, and scaling considerations.\n5. **Data Model**\n   - Key entities, storage choices, and retention strategy.\n6. **API & Integration Contracts**\n   - Main endpoints, events, or message topics.\n7. **Performance & Scalability**\n   - Caching, throughput assumptions, and bottlenecks.\n8. **Security & Compliance**\n   - Auth, authorization, data protection, and auditability.\n9. **Observability & Operations**\n   - Logging, metrics, alerts, and runbooks.\n10. **Phased Delivery Plan**\n\n- MVP → V1 milestones with risks and dependencies.\n\n# Output Format\n\nReturn the entire technical design document as a **single markdown code block** so it can be easily copied and pasted. Use clear headings, tables, and bullet points within the code block.\n",
       "slug": "tech-design-doc",
       "shortDescription": "Turn a PRD or high-level concept into an end-to-end technical design.",
       "surface": "discovery",
@@ -865,7 +958,7 @@
         "risk",
         "enterprise"
       ],
-      "updatedAt": "2026-01-27T22:03:51+02:00",
+      "updatedAt": "2026-01-27T22:49:49+02:00",
       "prompt": "# Role\nYou are an AI Product Launch specialist with expertise in safely rolling out ML-powered features, managing the transition from human to AI-assisted workflows.\n\n# Context\nWe are planning the rollout for **{{ai_feature_name}}**.\nCurrent process: **{{current_process}}**.\nUser segments: **{{user_segments}}**.\nRisk tolerance: **{{risk_tolerance}}**.\nSuccess metrics: **{{success_metrics}}**.\nTimeline constraints: **{{timeline_constraints}}**.\n\n# Task\nCreate a comprehensive rollout strategy that safely transitions users from human-only to AI-assisted workflows, with appropriate safeguards, feedback loops, and rollback procedures.\n\n# Requirements\n\n## 1. Rollout Philosophy\n\n### Progressive Trust Building\n- **Shadow Mode**: AI runs silently, predictions logged but not shown\n- **Suggestion Mode**: AI suggests, human decides\n- **Confirmation Mode**: AI acts, human confirms\n- **Autonomous Mode**: AI acts, human reviews exceptions\n\n### Confidence-Based Progression\n- Low confidence → Always human review\n- Medium confidence → User can accept/override\n- High confidence → Auto-process with audit trail\n\n## 2. Pre-Launch Validation\n\n### Model Readiness Checklist\n- [ ] Accuracy meets minimum thresholds on test set\n- [ ] Confidence calibration validated (ECE < threshold)\n- [ ] Edge cases documented and handled\n- [ ] Performance regression tests passing\n- [ ] Bias audits completed for all segments\n\n### Infrastructure Readiness\n- [ ] Monitoring dashboards operational\n- [ ] Alerting configured and tested\n- [ ] Fallback mechanisms verified\n- [ ] Rollback procedure documented and tested\n- [ ] On-call rotation established\n\n### User Readiness\n- [ ] Documentation and training materials ready\n- [ ] Support team trained on AI feature\n- [ ] FAQ and troubleshooting guides published\n- [ ] Feedback collection mechanism in place\n\n## 3. Phased Rollout Plan\n\n### Phase 0: Shadow Mode (Week 1-2)\n**Goal**: Validate model performance on real production data\n\n- **What**: Model runs on all traffic, outputs logged but not shown\n- **Who**: All users (invisible to them)\n- **Metrics**: Compare AI predictions vs. human decisions\n- **Success criteria**: AI accuracy matches or exceeds baseline\n- **Risk mitigation**: Zero user impact, purely observational\n\n### Phase 1: Internal Dogfood (Week 2-3)\n**Goal**: Gather internal feedback on UX and accuracy\n\n- **What**: Full feature enabled for internal users\n- **Who**: Internal team, beta testers\n- **Metrics**: Usability feedback, edge case discovery\n- **Success criteria**: >80% positive feedback, critical bugs fixed\n- **Risk mitigation**: Known, trusted users, direct feedback channel\n\n### Phase 2: Limited Beta (Week 3-5)\n**Goal**: Validate with real customers in controlled environment\n\n- **What**: Feature available in suggestion mode\n- **Who**: 5-10 hand-selected customers (opted-in)\n- **Metrics**: Accuracy, adoption, support tickets, qualitative feedback\n- **Success criteria**: >90% accuracy, no critical issues\n- **Risk mitigation**: Direct customer relationships, rapid response\n\n### Phase 3: Controlled Rollout (Week 5-8)\n**Goal**: Scale while maintaining quality\n\n- **What**: Gradual percentage rollout with confidence ramp\n- **Who**: 10% → 25% → 50% of eligible users\n- **Metrics**: Full production metrics at scale\n- **Success criteria**: Metrics hold across segments\n- **Risk mitigation**: Automatic rollback on metric degradation\n\n### Phase 4: General Availability (Week 8+)\n**Goal**: Full production deployment\n\n- **What**: Feature available to all users\n- **Who**: 100% of eligible users\n- **Metrics**: Ongoing monitoring\n- **Success criteria**: Sustained metric achievement\n- **Risk mitigation**: Continuous monitoring, rapid response\n\n## 4. Audience Selection Strategy\n\n### Segment Prioritization\nFor each segment, evaluate:\n- **Risk level**: Impact of errors on this segment\n- **Value potential**: Benefit if AI works well\n- **Feedback quality**: Ability to provide useful feedback\n- **Technical sophistication**: Ability to work around issues\n\n### Selection Criteria for Early Access\n- Customers with strong relationship\n- Lower-risk use cases initially\n- Diverse enough to validate across scenarios\n- Engaged enough to provide feedback\n\n### Segment Rollout Order\n1. Internal users (lowest risk, fastest feedback)\n2. SMB segment (lower stakes, faster iteration)\n3. Mid-market (moderate stakes, scaled validation)\n4. Enterprise (highest stakes, proven stability)\n\n## 5. Confidence Thresholds & Routing\n\n### Threshold Strategy\n| Confidence Level | Behavior | User Experience |\n|-----------------|----------|-----------------|\n| >0.95 | Auto-process | No intervention needed |\n| 0.80-0.95 | Suggest & confirm | One-click approval |\n| 0.60-0.80 | Suggest & review | User reviews before confirm |\n| <0.60 | Human required | Route to manual queue |\n\n### Threshold Progression\n- Week 1-2: Conservative (all to human review)\n- Week 3-4: Moderate (high confidence auto-only)\n- Week 5+: Optimized (based on observed performance)\n\n## 6. Feature Flags & Controls\n\n### Rollout Controls\n- **Kill switch**: Instantly disable AI feature globally\n- **Segment toggle**: Enable/disable by customer segment\n- **Percentage rollout**: Control % of traffic using AI\n- **Confidence override**: Adjust thresholds dynamically\n- **Mode selection**: Switch between suggestion/confirmation/auto\n\n### Per-Customer Controls\n- **Opt-out**: Customer can disable AI feature\n- **Threshold adjustment**: Customer can set confidence thresholds\n- **Mode selection**: Customer can choose automation level\n\n## 7. Monitoring & Alerts\n\n### Real-Time Dashboards\n- Model accuracy (rolling 24h)\n- Confidence distribution\n- Processing latency\n- Error rates\n- User adoption/override rates\n\n### Alert Thresholds\n| Metric | Warning | Critical | Action |\n|--------|---------|----------|--------|\n| Accuracy | <93% | <90% | Pause rollout |\n| Latency p95 | >5s | >10s | Scale up |\n| Error rate | >2% | >5% | Rollback |\n| Override rate | >30% | >50% | Investigate |\n\n### Escalation Path\n1. Automated alert → On-call engineer\n2. Investigation (15 min) → ML Lead\n3. Decision point → Product Lead + Engineering Lead\n4. Rollback decision → VP Engineering\n\n## 8. Rollback Procedures\n\n### Automatic Rollback Triggers\n- Accuracy drops below minimum threshold\n- Error rate exceeds critical threshold\n- Service availability below SLA\n- Security incident detected\n\n### Manual Rollback Procedure\n1. Execute kill switch (immediate)\n2. Notify affected users\n3. Route pending work to manual queue\n4. Post-mortem within 24 hours\n\n### Rollback Recovery\n- Root cause analysis\n- Fix validation in shadow mode\n- Gradual re-rollout with closer monitoring\n\n## 9. User Communication\n\n### Pre-Launch\n- Announcement of upcoming feature\n- What to expect, benefits, limitations\n- How to provide feedback\n- Opt-out options\n\n### During Rollout\n- Feature is now available notification\n- Quick start guide\n- Support channel for questions\n\n### Feedback Collection\n- In-product feedback button\n- Regular NPS surveys\n- Support ticket analysis\n- Customer success check-ins\n\n## 10. Success Criteria by Phase\n\nDefine go/no-go criteria for each phase transition.\n",
       "slug": "ai-rollout-strategy",
       "shortDescription": "Plan phased rollout for AI features with shadow mode, confidence ramps, and human-in-the-loop transitions.",
@@ -925,7 +1018,7 @@
         "validation",
         "enterprise"
       ],
-      "updatedAt": "2026-01-27T22:03:51+02:00",
+      "updatedAt": "2026-01-27T22:49:49+02:00",
       "prompt": "# Role\nYou are an ML Quality Assurance specialist designing comprehensive testing strategies for AI/ML features, covering model performance, fairness, robustness, and production validation.\n\n# Context\nWe are developing a testing strategy for **{{ai_feature_name}}**.\nModel type: **{{model_type}}**.\nCritical outcomes: **{{critical_outcomes}}**.\nUser segments: **{{user_segments}}**.\nKnown edge cases: **{{edge_cases}}**.\nRegulatory requirements: **{{regulatory_requirements}}**.\n\n# Task\nCreate a comprehensive ML testing strategy that goes beyond traditional software testing to address the unique challenges of AI systems: probabilistic outputs, bias, data drift, and adversarial robustness.\n\n# Requirements\n\n## 1. Test Data Strategy\n\n### Training/Test Split\n- **Hold-out test set**: Data model has never seen\n- **Temporal split**: Recent data for validation\n- **Stratified sampling**: Representation across segments\n- **Golden test set**: Curated, high-quality examples\n\n### Test Data Requirements\n- **Coverage**: All document types, languages, edge cases\n- **Labeling quality**: Ground truth validation\n- **Size requirements**: Statistically significant samples\n- **Refresh cadence**: How often to update test sets\n\n### Synthetic Data\n- **When to use**: Edge cases, rare scenarios\n- **Generation methods**: Rules-based, generative models\n- **Validation**: Human review of synthetic samples\n\n## 2. Model Accuracy Testing\n\n### Overall Accuracy Metrics\n- **Accuracy**: % correct predictions\n- **Precision/Recall/F1**: Per class and weighted\n- **Mean Average Precision**: For ranking/detection\n- **Confusion matrix analysis**: Error patterns\n\n### Field-Level Testing\nFor extraction tasks:\n- **Per-field accuracy**: Individual field performance\n- **Weighted accuracy**: By field importance\n- **Full-document accuracy**: All fields correct\n\n### Regression Testing\n- **Baseline comparison**: New vs. previous model\n- **Regression threshold**: Acceptable degradation\n- **Sliced analysis**: By segment, by time period\n\n## 3. Confidence Calibration Testing\n\n### Calibration Metrics\n- **Expected Calibration Error (ECE)**: Confidence vs. accuracy gap\n- **Maximum Calibration Error (MCE)**: Worst-case calibration\n- **Reliability diagrams**: Visual calibration analysis\n\n### Threshold Testing\n- **Accuracy at confidence levels**: Is 90% confidence = 90% accuracy?\n- **Coverage vs. accuracy tradeoffs**: Threshold optimization\n- **Uncertainty quantification**: Error bar accuracy\n\n## 4. Bias and Fairness Testing\n\n### Fairness Metrics\n- **Demographic parity**: Equal positive rates across groups\n- **Equalized odds**: Equal TPR/FPR across groups\n- **Predictive parity**: Equal precision across groups\n- **Individual fairness**: Similar inputs → similar outputs\n\n### Segment Analysis\n- **Geographic segments**: Performance by region\n- **User segments**: Performance by customer type\n- **Input segments**: Performance by document type\n- **Language segments**: Performance by language\n\n### Bias Detection\n- **Proxy variable analysis**: Features correlated with protected attributes\n- **Outcome disparity**: Different error rates for different groups\n- **Representation audit**: Training data coverage\n\n## 5. Robustness Testing\n\n### Input Perturbation\n- **Noise injection**: Image quality degradation\n- **Format variations**: Layout changes, fonts\n- **Missing data**: Incomplete inputs\n- **Corrupted data**: Partial file corruption\n\n### Adversarial Testing\n- **Adversarial examples**: Crafted to fool model\n- **Prompt injection**: For LLM components\n- **Evasion attacks**: Designed to cause misclassification\n\n### Boundary Testing\n- **Edge cases**: Minimum/maximum valid inputs\n- **Out-of-distribution**: Inputs unlike training data\n- **Corner cases**: Combinations of edge conditions\n\n## 6. Performance Testing\n\n### Latency Testing\n- **Benchmarking**: p50, p95, p99 latency\n- **Load testing**: Performance under load\n- **Stress testing**: Breaking point identification\n- **Spike testing**: Response to traffic bursts\n\n### Scalability Testing\n- **Horizontal scaling**: Add instances\n- **Vertical scaling**: Increase resources\n- **Cost efficiency**: $/inference at scale\n\n### Resource Testing\n- **Memory usage**: Peak and average\n- **GPU utilization**: Inference efficiency\n- **Batch processing**: Throughput optimization\n\n## 7. Integration Testing\n\n### API Contract Testing\n- **Request validation**: Input schema enforcement\n- **Response validation**: Output schema compliance\n- **Error handling**: Graceful degradation\n- **Timeout behavior**: Fallback mechanisms\n\n### End-to-End Testing\n- **Full workflow**: Upload → inference → display\n- **User journey testing**: Critical paths\n- **Cross-system testing**: Dependencies\n\n### Fallback Testing\n- **Service degradation**: Partial failures\n- **Complete failure**: Model unavailable\n- **Recovery testing**: Restore from failure\n\n## 8. Production Validation\n\n### Shadow Testing\n- **A/B comparison**: Model vs. baseline\n- **Canary deployment**: Small traffic percentage\n- **Blue-green testing**: Parallel environments\n\n### Monitoring Validation\n- **Alert testing**: Verify alerts fire correctly\n- **Dashboard accuracy**: Metrics correctness\n- **Logging completeness**: Required data captured\n\n### Rollback Testing\n- **Rollback procedure**: Verify works correctly\n- **Data consistency**: No corruption on rollback\n- **Recovery time**: Meet RTO requirements\n\n## 9. Compliance Testing\n\n### Regulatory Requirements\n- **Data privacy**: PII handling verification\n- **Audit trails**: Logging completeness\n- **Explainability**: Decision reasoning available\n\n### Documentation Testing\n- **Model cards**: Accuracy and completeness\n- **Bias reports**: Fairness documentation\n- **Limitation disclosure**: User-facing limitations\n\n## 10. Test Automation\n\n### Continuous Testing\n- **CI/CD integration**: Tests in pipeline\n- **Automated regression**: On every model update\n- **Scheduled testing**: Regular validation\n\n### Test Infrastructure\n- **Test data management**: Versioning, access\n- **Evaluation harness**: Standardized testing\n- **Reporting**: Automated metrics tracking\n\n# Output Format\nComprehensive test strategy document with:\n1. Test plan by category\n2. Test case templates\n3. Pass/fail criteria\n4. Automation approach\n5. Reporting requirements\n",
       "slug": "ai-testing-strategy",
       "shortDescription": "Design comprehensive testing strategy for ML models covering accuracy, bias, robustness, and production validation.",
@@ -1397,40 +1490,60 @@
       "tags": [
         "ux",
         "research",
-        "product"
+        "product",
+        "prototype",
+        "poc"
       ],
       "updatedAt": "2026-01-27T22:03:51+02:00",
-      "prompt": "# Role\nYou are a Senior Product Designer reviewing a critical activation flow.\n\n# Context\nThe PM team needs a fast, high-quality UX audit to improve activation.\n\n# Task\nReview the described flow, identify friction points, and propose a redesign plan.\n\n# Inputs\n- **Flow description**: {{flow_description}}\n- **Target persona**: {{target_persona}}\n- **Success metric**: {{success_metric}}\n- **Constraints**: {{constraints}}\n\n# Requirements\n1. **Friction audit**: List top 5 friction points tied to the persona.\n2. **Recommendations**: Provide 3–5 UX changes with rationale.\n3. **Impact/Effort**: Include a small table ranking each change.\n4. **Acceptance criteria**: Provide testable criteria for the top 2 changes.\n5. **PM value**: Explain how improvements map to the success metric.\n\n# Output Format\n- UX review report with headings and a table\n",
+      "prompt": "# Role\n\nYou are a Senior Product Designer reviewing a product flow or prototype.\n\n# Context\n\nThe PM team needs a fast, high-quality UX audit to improve the user experience.\n\n**Product/Feature**: {{product_name}}\n**Flow Description**: {{flow_description}}\n**Target Persona**: {{target_persona}}\n**Success Metric**: {{success_metric}}\n**Constraints**: {{constraints}}\n\n{{#if prd_reference}}\n**PRD Reference** (for requirements validation):\n{{prd_reference}}\n{{/if}}\n\n{{#if poc_demo_notes}}\n**POC/Prototype Notes** (what was built):\n{{poc_demo_notes}}\n{{/if}}\n\n# Task\n\nReview the described flow or prototype, identify friction points, and propose improvements.\n\n# Requirements\n\n## 1. Friction Audit\nList top 5 friction points tied to the persona:\n- What's confusing or unclear?\n- Where do users hesitate or drop off?\n- What's missing that users expect?\n- What's unnecessary or overwhelming?\n\n## 2. Requirements Validation (if PRD provided)\nCheck the UX against stated requirements:\n- Which user stories are well-supported?\n- Which user stories have UX gaps?\n- Any requirements that conflict with good UX?\n\n## 3. Recommendations\nProvide 3–5 UX changes with:\n- Clear description of the change\n- Rationale tied to user needs\n- Impact/Effort rating\n\n## 4. Prioritized Action Table\n\n| Change | Impact | Effort | Priority | Notes |\n|--------|--------|--------|----------|-------|\n| ... | High/Med/Low | High/Med/Low | P0/P1/P2 | ... |\n\n## 5. Acceptance Criteria\nFor top 2 changes, provide testable criteria:\n- What does \"done\" look like?\n- How would you verify the improvement?\n\n## 6. Quick Wins vs. Post-POC\nSeparate recommendations into:\n- **Quick Wins**: Can fix in hours, high impact\n- **Pre-Launch**: Should fix before GA\n- **Post-Launch**: Nice to have, can iterate\n\n# Output Format\n\nReturn the entire UX review as a **single markdown code block** so it can be easily copied and pasted. Use headings and tables for clarity.\n",
       "slug": "ux-review",
-      "shortDescription": "Audit a user flow for friction points and propose high-impact UX improvements.",
+      "shortDescription": "Audit a user flow or prototype for friction points and propose improvements.",
       "surface": "execution",
       "pmStage": "Research & Insight Reports",
-      "complexity": "Deep",
+      "complexity": "Structured",
       "outputType": "UX Review Report",
       "jobsToBeDone": [
         "Identify friction in key flows",
+        "Validate POC/prototype against requirements",
         "Prioritize UX fixes with clear acceptance criteria"
       ],
       "inputs": [
         {
+          "key": "product_name",
+          "label": "Product/Feature Name",
+          "example": "AI Support Chatbot"
+        },
+        {
           "key": "flow_description",
           "label": "Flow Description",
-          "example": "User signs up, imports data, creates first dashboard"
+          "example": "User opens chat widget, types question, receives AI response, can escalate to human"
         },
         {
           "key": "target_persona",
           "label": "Target Persona",
-          "example": "Ops manager with limited analytics experience"
+          "example": "Customer seeking quick answers to billing/shipping questions"
         },
         {
           "key": "success_metric",
           "label": "Success Metric",
-          "example": "Activation rate within 24 hours"
+          "example": "80% of queries resolved without human escalation"
         },
         {
           "key": "constraints",
           "label": "Constraints",
-          "example": "No new backend endpoints; must ship in 2 weeks"
+          "example": "Must work on mobile; POC timeline is 3 days"
+        },
+        {
+          "key": "prd_reference",
+          "label": "PRD Reference (optional)",
+          "example": "Paste key user stories or requirements from your PRD to validate against",
+          "optional": true
+        },
+        {
+          "key": "poc_demo_notes",
+          "label": "POC/Prototype Notes (optional)",
+          "example": "Describe what was built: 'Chat widget with streaming responses, FAQ search, escalate button'",
+          "optional": true
         }
       ]
     },
@@ -1487,7 +1600,7 @@
         "performance",
         "enterprise"
       ],
-      "updatedAt": "2026-01-27T22:03:51+02:00",
+      "updatedAt": "2026-01-27T22:49:49+02:00",
       "prompt": "# Role\nYou are an ML Product Manager defining production requirements for an AI feature, bridging business needs with technical model capabilities.\n\n# Context\nWe are defining requirements for **{{ai_feature_name}}**.\nML task: **{{task_type}}**.\nBusiness context: **{{business_context}}**.\nVolume: **{{volume_expectations}}**.\nError tolerance: **{{error_tolerance}}**.\nUser workflow: **{{user_workflow}}**.\n\n# Task\nCreate a comprehensive model requirements specification that defines success criteria, performance thresholds, and SLAs that engineering can build against and business can measure.\n\n# Requirements\n\n## 1. Business Success Metrics\n\nDefine metrics that matter to business stakeholders:\n- **Primary outcome metric**: The business KPI this AI feature improves\n- **Efficiency gains**: Time/cost savings quantified\n- **Quality improvements**: Error reduction, consistency gains\n- **User adoption targets**: Usage and satisfaction goals\n\n## 2. Model Performance Metrics\n\n### Classification/Detection Tasks\n- **Accuracy**: Overall correctness rate\n- **Precision**: Of predicted positives, how many are correct?\n- **Recall**: Of actual positives, how many did we find?\n- **F1 Score**: Harmonic mean of precision and recall\n- **Specificity**: True negative rate\n\n### Extraction/Generation Tasks\n- **Exact match rate**: Perfectly correct extractions\n- **Character error rate**: For OCR/transcription\n- **BLEU/ROUGE scores**: For text generation\n- **Semantic accuracy**: Meaning preserved even if words differ\n\n### Confidence & Calibration\n- **Confidence calibration**: Is 90% confidence actually 90% accurate?\n- **Expected calibration error (ECE)**: Calibration gap measurement\n- **Confidence distribution**: Spread of confidence scores\n\n## 3. Performance Thresholds\n\nFor each metric, define:\n- **Minimum viable**: Below this, don't ship\n- **Launch target**: Acceptable for initial launch\n- **Excellence target**: Goal for mature product\n- **Regression threshold**: Drop triggers investigation\n\nConsider thresholds for:\n- Overall performance\n- Performance by segment (user type, input type, etc.)\n- Edge cases and failure modes\n\n## 4. Latency Requirements\n\n- **p50 latency**: Median response time\n- **p95 latency**: 95th percentile (most users)\n- **p99 latency**: 99th percentile (worst case)\n- **Timeout threshold**: When to abort and fallback\n- **User-perceived latency**: Including UI, not just model\n\n## 5. Throughput & Scalability\n\n- **Sustained throughput**: Requests per second, normal load\n- **Peak throughput**: Maximum capacity needed\n- **Burst handling**: How to handle traffic spikes\n- **Scaling characteristics**: Linear, step-function, etc.\n\n## 6. Availability & Reliability\n\n- **Uptime SLA**: 99.9%? 99.95%?\n- **Planned maintenance windows**: When and how long\n- **Degradation modes**: What happens at partial capacity\n- **Fallback behavior**: What if AI is unavailable\n\n## 7. Cost Constraints\n\n- **Cost per inference**: Target unit economics\n- **Monthly budget ceiling**: Maximum spend\n- **Cost vs. accuracy tradeoffs**: Where to optimize\n- **ROI requirements**: Payback period expectations\n\n## 8. Segmented Requirements\n\nDefine different thresholds for:\n- **High-value vs. routine**: Critical decisions vs. bulk processing\n- **Enterprise tiers**: SLA differences by customer segment\n- **Regions/languages**: Performance variation acceptable?\n- **Input complexity**: Simple vs. complex inputs\n\n## 9. Monitoring & Alerting Requirements\n\n- **Real-time dashboards**: What metrics to surface\n- **Alerting thresholds**: When to page on-call\n- **Reporting cadence**: Daily/weekly/monthly reviews\n- **Drift detection**: How to spot degradation\n\n## 10. Acceptance Criteria\n\nDefine clear criteria for:\n- **Model readiness**: When is model ready for testing?\n- **Feature readiness**: When is feature ready for beta?\n- **Launch readiness**: When can we GA?\n- **Ongoing compliance**: How do we stay in compliance?\n\n# Output Format\nStructured requirements document with tables for metrics and thresholds, clear definitions, and rationale for each requirement.\n",
       "slug": "ai-model-requirements",
       "shortDescription": "Define ML model metrics, thresholds, and service level agreements for production AI.",
@@ -1547,7 +1660,7 @@
         "async",
         "enterprise"
       ],
-      "updatedAt": "2026-01-27T22:03:51+02:00",
+      "updatedAt": "2026-01-27T22:49:49+02:00",
       "prompt": "# Role\nYou are an API architect specializing in AI/ML inference services, designing production-ready API contracts that handle the unique challenges of ML systems.\n\n# Context\nWe are designing the API for **{{ai_feature_name}}**.\nInference type: **{{inference_type}}**.\nInput types: **{{input_types}}**.\nOutput format: **{{output_format}}**.\nLatency requirements: **{{latency_requirements}}**.\nAPI consumers: **{{consumers}}**.\n\n# Task\nDesign a comprehensive API specification for an AI inference service that handles ML-specific concerns like confidence scores, model versioning, async processing, and graceful degradation.\n\n# Requirements\n\n## 1. Core Inference Endpoint Design\n\n### Request Structure\n- **Input payload**: How to submit data for inference\n- **Preprocessing options**: Client-controlled preprocessing parameters\n- **Inference parameters**: Confidence thresholds, model selection, output options\n- **Idempotency**: Request deduplication for retries\n\n### Response Structure\n- **Predictions**: Primary model output\n- **Confidence scores**: Per-prediction and aggregate confidence\n- **Metadata**: Processing time, model version, request ID\n- **Warnings**: Non-fatal issues (low confidence, partial results)\n\n## 2. Async Processing Patterns\n\n### For Long-Running Inference\n- **Job submission**: POST to create async job\n- **Status polling**: GET job status endpoint\n- **Webhook callbacks**: Push notification on completion\n- **Result retrieval**: GET completed results\n- **Job cancellation**: DELETE to cancel pending jobs\n\n### Streaming Responses\n- **Server-Sent Events (SSE)**: For incremental results\n- **WebSocket**: For bidirectional streaming\n- **Chunked responses**: For large result sets\n\n## 3. Model Versioning Strategy\n\n### Version Management\n- **Model version header**: X-Model-Version request/response\n- **Version pinning**: Allow clients to pin specific versions\n- **Deprecation policy**: Sunset headers and migration timeline\n- **A/B routing**: Traffic splitting between model versions\n\n### Backward Compatibility\n- **Response schema evolution**: Additive changes only\n- **Feature flags**: New capabilities behind flags\n- **Migration guides**: Version upgrade documentation\n\n## 4. Error Handling for ML Systems\n\n### ML-Specific Error Types\n- **Low confidence**: Model uncertain, recommend human review\n- **Out of distribution**: Input unlike training data\n- **Model unavailable**: Inference service down\n- **Timeout**: Processing exceeded time limit\n- **Quota exceeded**: Rate or usage limits hit\n\n### Error Response Format\n```json\n{\n  \"error\": {\n    \"code\": \"LOW_CONFIDENCE\",\n    \"message\": \"Model confidence below threshold\",\n    \"details\": {\n      \"confidence\": 0.45,\n      \"threshold\": 0.70,\n      \"recommendation\": \"human_review\"\n    },\n    \"request_id\": \"req_123\",\n    \"model_version\": \"v2.1.0\"\n  }\n}\n```\n\n## 5. Confidence & Uncertainty\n\n### Confidence Reporting\n- **Per-field confidence**: Individual prediction confidence\n- **Aggregate confidence**: Overall result reliability\n- **Calibration info**: Is 80% confidence actually 80% accurate?\n\n### Uncertainty Handling\n- **Threshold parameters**: Client-configurable confidence thresholds\n- **Fallback behavior**: What to return when uncertain\n- **Human-in-the-loop routing**: Flag for manual review\n\n## 6. Rate Limiting & Quotas\n\n### Limit Types\n- **Requests per second**: Burst protection\n- **Requests per day**: Usage quotas\n- **Concurrent requests**: Parallel processing limits\n- **Payload size**: Input size restrictions\n\n### Limit Communication\n- **Rate limit headers**: X-RateLimit-Limit, X-RateLimit-Remaining\n- **Quota headers**: X-Quota-Limit, X-Quota-Used\n- **Retry-After**: When to retry after limit hit\n\n## 7. Observability & Debugging\n\n### Request Tracing\n- **Request ID**: Unique identifier for tracing\n- **Correlation ID**: Link related requests\n- **Timing breakdown**: Preprocessing, inference, postprocessing\n\n### Debug Mode\n- **Verbose responses**: Additional debugging info\n- **Feature attribution**: Why did the model decide this?\n- **Intermediate results**: Step-by-step processing\n\n## 8. Security Considerations\n\n### Authentication & Authorization\n- **API key management**: Key rotation, scoping\n- **OAuth 2.0**: For user-context requests\n- **Request signing**: For sensitive operations\n\n### Data Protection\n- **PII handling**: Redaction options\n- **Data retention**: How long inputs/outputs stored\n- **Encryption**: In-transit and at-rest requirements\n\n## 9. SDK & Client Considerations\n\n### Client Libraries\n- **Retry logic**: Exponential backoff with jitter\n- **Timeout handling**: Configurable timeouts\n- **Connection pooling**: Efficient resource usage\n- **Async support**: Native async/await patterns\n\n### Developer Experience\n- **OpenAPI/Swagger spec**: Machine-readable API definition\n- **Code samples**: Examples in major languages\n- **Sandbox environment**: Testing without production impact\n\n# Output Format\nComplete API specification with:\n1. OpenAPI 3.0 schema for all endpoints\n2. Request/response examples\n3. Error code reference\n4. Rate limiting documentation\n5. SDK integration guide\n",
       "slug": "ai-service-api",
       "shortDescription": "Design production-ready API contracts for AI/ML inference services with proper error handling, versioning, and async patterns.",
@@ -1888,6 +2001,71 @@
           "key": "json_example",
           "label": "JSON Example",
           "example": "{ \"id\": \"u_123\", \"name\": \"Alex\", \"email\": \"alex@example.com\", \"signup_date\": \"2024-01-15T10:00:00Z\", \"avatar_url\": null }"
+        }
+      ]
+    },
+    {
+      "id": "poc-implementation-guide",
+      "title": "POC Implementation Guide",
+      "category": "prototyping",
+      "path": "prototyping/poc-implementation-guide",
+      "tags": [
+        "poc",
+        "prototype",
+        "implementation",
+        "planning",
+        "rapid"
+      ],
+      "updatedAt": "2026-01-28T13:56:16.062Z",
+      "prompt": "# Role\n\nYou are a Senior Technical PM and rapid prototyping expert who helps teams build POCs quickly and effectively.\n\n# Context\n\nWe are building a POC for **{{product_name}}**.\n\n**PRD Summary**:\n{{prd_summary}}\n\n**Tech Design Summary**:\n{{tech_design_summary}}\n\n**POC Goal**: {{poc_goal}}\n**Timeline**: {{timeline}}\n**Available Resources**: {{team_resources}}\n{{#if existing_assets}}\n**Existing Assets**: {{existing_assets}}\n{{/if}}\n\n# Task\n\nCreate a detailed implementation guide that helps the team build this POC quickly while validating the core hypothesis.\n\n# Requirements\n\n## 1. POC Scope Definition\n\nClearly define:\n- **In Scope**: What MUST be built to validate the POC goal\n- **Out of Scope**: What to explicitly skip (with rationale)\n- **Shortcuts Allowed**: Where to cut corners (mocks, hardcoded data, manual steps)\n\n## 2. Technical Decisions\n\nFor each major component, recommend:\n- **Build vs. Buy vs. Mock**: What to implement, what to use off-the-shelf, what to fake\n- **Tech Stack Choices**: Fastest path to working prototype (prioritize speed over perfection)\n- **Data Strategy**: Real data, synthetic data, or hardcoded fixtures\n\n## 3. Implementation Phases\n\nBreak down into phases with clear milestones:\n\n### Phase 1: Foundation (Day 1)\n- Environment setup\n- Core integrations\n- Basic data flow\n\n### Phase 2: Core Functionality (Day 2-3)\n- Main feature implementation\n- Happy path working\n\n### Phase 3: Polish & Demo-Ready (Day 4-5)\n- Error handling for demo scenarios\n- Basic UI/UX polish\n- Demo script preparation\n\n## 4. Task Breakdown\n\nProvide a detailed task list:\n- Task name and description\n- Estimated effort (hours)\n- Owner suggestion (role)\n- Dependencies\n- Acceptance criteria (minimal)\n\n## 5. Risk Mitigation\n\nIdentify:\n- **Blockers**: What could stop progress entirely\n- **Fallback Plans**: Plan B for each blocker\n- **Daily Checkpoints**: What should be working by end of each day\n\n## 6. Demo Preparation\n\n- Key scenarios to demonstrate\n- Data/setup needed for demo\n- Known limitations to disclose\n- Talking points for stakeholders\n\n# Output Format\n\nReturn the entire implementation guide as a **single markdown code block** so it can be easily copied and pasted. Use clear headings, tables for task breakdown, and checklists where appropriate.\n",
+      "slug": "poc-implementation-guide",
+      "shortDescription": "Generate a step-by-step implementation plan for building a POC quickly.",
+      "surface": "prototyping",
+      "pmStage": "Code Templates & Schemas",
+      "complexity": "Structured",
+      "outputType": "Implementation Plan",
+      "jobsToBeDone": [
+        "Plan POC implementation steps",
+        "Identify what to build vs. skip",
+        "Define milestones and checkpoints",
+        "Align team on build approach"
+      ],
+      "inputs": [
+        {
+          "key": "product_name",
+          "label": "Product/Feature Name",
+          "example": "AI Support Chatbot"
+        },
+        {
+          "key": "prd_summary",
+          "label": "PRD Summary",
+          "example": "Paste your PRD or key sections: problem, goals, core features, constraints"
+        },
+        {
+          "key": "tech_design_summary",
+          "label": "Tech Design Summary",
+          "example": "Paste your tech design or key sections: stack, architecture, data model"
+        },
+        {
+          "key": "poc_goal",
+          "label": "POC Goal",
+          "example": "Validate that LLM can accurately answer FAQ questions with <3s latency"
+        },
+        {
+          "key": "timeline",
+          "label": "Timeline",
+          "example": "3-5 days"
+        },
+        {
+          "key": "team_resources",
+          "label": "Available Resources",
+          "example": "1 backend dev, 1 frontend dev, designer for 4 hours"
+        },
+        {
+          "key": "existing_assets",
+          "label": "Existing Assets to Leverage",
+          "example": "Existing React component library, FAQ database, Slack workspace for testing",
+          "optional": true
         }
       ]
     },

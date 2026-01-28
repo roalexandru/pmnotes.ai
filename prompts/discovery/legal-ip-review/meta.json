@@ -1,0 +1,55 @@
+{
+  "slug": "legal-ip-review",
+  "title": "Legal & IP Review Checklist",
+  "shortDescription": "Review copyright, licensing, and IP considerations before building.",
+  "surface": "discovery",
+  "pmStage": "Risk, Quality & Validation",
+  "complexity": "Structured",
+  "outputType": "Legal Checklist",
+  "tags": ["legal", "ip", "copyright", "licensing", "compliance", "open-source"],
+  "jobsToBeDone": [
+    "Identify IP and licensing risks early",
+    "Review open-source compliance",
+    "Flag copyright and trademark issues",
+    "Create action items for legal review"
+  ],
+  "inputs": [
+    {
+      "key": "product_name",
+      "label": "Product/Feature Name",
+      "example": "AI Support Chatbot"
+    },
+    {
+      "key": "product_description",
+      "label": "Product Description",
+      "example": "A chatbot that uses LLM to answer customer support questions based on our FAQ database"
+    },
+    {
+      "key": "tech_stack",
+      "label": "Tech Stack & Dependencies",
+      "example": "Next.js (MIT), OpenAI API, shadcn/ui (MIT), Tailwind CSS (MIT)"
+    },
+    {
+      "key": "data_sources",
+      "label": "Data Sources",
+      "example": "Internal FAQ database, customer support tickets (anonymized), public product documentation"
+    },
+    {
+      "key": "third_party_services",
+      "label": "Third-Party Services/APIs",
+      "example": "OpenAI API, Vercel hosting, Sentry error tracking"
+    },
+    {
+      "key": "target_market",
+      "label": "Target Market/Region",
+      "example": "US and EU enterprise customers",
+      "optional": true
+    },
+    {
+      "key": "similar_products",
+      "label": "Similar Products (for trademark check)",
+      "example": "Intercom, Zendesk Answer Bot, Drift",
+      "optional": true
+    }
+  ]
+}

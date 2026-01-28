@@ -1,40 +1,60 @@
 {
     "slug": "ux-review",
     "title": "UX Flow Review & Redesign Suggestions",
-    "shortDescription": "Audit a user flow for friction points and propose high-impact UX improvements.",
+    "shortDescription": "Audit a user flow or prototype for friction points and propose improvements.",
     "surface": "execution",
     "pmStage": "Research & Insight Reports",
-    "complexity": "Deep",
+    "complexity": "Structured",
     "outputType": "UX Review Report",
     "tags": [
         "ux",
         "research",
-        "product"
+        "product",
+        "prototype",
+        "poc"
     ],
     "jobsToBeDone": [
         "Identify friction in key flows",
+        "Validate POC/prototype against requirements",
         "Prioritize UX fixes with clear acceptance criteria"
     ],
     "inputs": [
         {
+            "key": "product_name",
+            "label": "Product/Feature Name",
+            "example": "AI Support Chatbot"
+        },
+        {
             "key": "flow_description",
             "label": "Flow Description",
-            "example": "User signs up, imports data, creates first dashboard"
+            "example": "User opens chat widget, types question, receives AI response, can escalate to human"
         },
         {
             "key": "target_persona",
             "label": "Target Persona",
-            "example": "Ops manager with limited analytics experience"
+            "example": "Customer seeking quick answers to billing/shipping questions"
         },
         {
             "key": "success_metric",
             "label": "Success Metric",
-            "example": "Activation rate within 24 hours"
+            "example": "80% of queries resolved without human escalation"
         },
         {
             "key": "constraints",
             "label": "Constraints",
-            "example": "No new backend endpoints; must ship in 2 weeks"
+            "example": "Must work on mobile; POC timeline is 3 days"
+        },
+        {
+            "key": "prd_reference",
+            "label": "PRD Reference (optional)",
+            "example": "Paste key user stories or requirements from your PRD to validate against",
+            "optional": true
+        },
+        {
+            "key": "poc_demo_notes",
+            "label": "POC/Prototype Notes (optional)",
+            "example": "Describe what was built: 'Chat widget with streaming responses, FAQ search, escalate button'",
+            "optional": true
         }
     ]
 }

@@ -1,16 +1,17 @@
 {
   "slug": "risk-analysis",
-  "title": "Risk & Mitigation Analysis",
-  "shortDescription": "Run a pre-mortem to identify launch risks and mitigation plans.",
+  "title": "Risk & Feasibility Assessment",
+  "shortDescription": "Assess feasibility and identify risks with go/no-go recommendation.",
   "surface": "discovery",
   "pmStage": "Risk, Quality & Validation",
   "complexity": "Structured",
   "outputType": "Risk Register",
-  "tags": ["risk-management", "pre-mortem", "planning"],
+  "tags": ["risk-management", "pre-mortem", "planning", "feasibility", "poc"],
   "jobsToBeDone": [
-    "Anticipate launch risks",
+    "Assess technical and market feasibility",
+    "Anticipate launch/POC risks",
     "Plan mitigation strategies",
-    "Align on risk owners"
+    "Make go/no-go decisions"
   ],
   "inputs": [
     {
@@ -19,19 +20,37 @@
       "example": "AI-based Chatbot"
     },
     {
+      "key": "assessment_stage",
+      "label": "Assessment Stage",
+      "example": "POC validation",
+      "options": ["POC validation", "MVP launch", "Public beta", "Full launch"]
+    },
+    {
       "key": "launch_scope",
-      "label": "Launch Scope",
-      "example": "Public beta for existing customers"
+      "label": "Scope",
+      "example": "Internal POC with 5 pilot users"
     },
     {
       "key": "timeline",
       "label": "Timeline",
-      "example": "6 weeks"
+      "example": "3-5 days"
     },
     {
       "key": "dependencies",
       "label": "Key Dependencies",
-      "example": "LLM vendor, support team training"
+      "example": "LLM vendor, design resources, test data"
+    },
+    {
+      "key": "prd_summary",
+      "label": "PRD Summary (optional)",
+      "example": "Paste key sections from your PRD: goals, scope, requirements",
+      "optional": true
+    },
+    {
+      "key": "tech_design_summary",
+      "label": "Tech Design Summary (optional)",
+      "example": "Paste key sections: stack, architecture, key components",
+      "optional": true
     }
   ]
 }

@@ -1,7 +1,9 @@
 # Role
+
 You are an ML Product Manager defining production requirements for an AI feature, bridging business needs with technical model capabilities.
 
 # Context
+
 We are defining requirements for **{{ai_feature_name}}**.
 ML task: **{{task_type}}**.
 Business context: **{{business_context}}**.
@@ -10,6 +12,7 @@ Error tolerance: **{{error_tolerance}}**.
 User workflow: **{{user_workflow}}**.
 
 # Task
+
 Create a comprehensive model requirements specification that defines success criteria, performance thresholds, and SLAs that engineering can build against and business can measure.
 
 # Requirements
@@ -17,6 +20,7 @@ Create a comprehensive model requirements specification that defines success cri
 ## 1. Business Success Metrics
 
 Define metrics that matter to business stakeholders:
+
 - **Primary outcome metric**: The business KPI this AI feature improves
 - **Efficiency gains**: Time/cost savings quantified
 - **Quality improvements**: Error reduction, consistency gains
@@ -25,6 +29,7 @@ Define metrics that matter to business stakeholders:
 ## 2. Model Performance Metrics
 
 ### Classification/Detection Tasks
+
 - **Accuracy**: Overall correctness rate
 - **Precision**: Of predicted positives, how many are correct?
 - **Recall**: Of actual positives, how many did we find?
@@ -32,12 +37,14 @@ Define metrics that matter to business stakeholders:
 - **Specificity**: True negative rate
 
 ### Extraction/Generation Tasks
+
 - **Exact match rate**: Perfectly correct extractions
 - **Character error rate**: For OCR/transcription
 - **BLEU/ROUGE scores**: For text generation
 - **Semantic accuracy**: Meaning preserved even if words differ
 
 ### Confidence & Calibration
+
 - **Confidence calibration**: Is 90% confidence actually 90% accurate?
 - **Expected calibration error (ECE)**: Calibration gap measurement
 - **Confidence distribution**: Spread of confidence scores
@@ -45,12 +52,14 @@ Define metrics that matter to business stakeholders:
 ## 3. Performance Thresholds
 
 For each metric, define:
+
 - **Minimum viable**: Below this, don't ship
 - **Launch target**: Acceptable for initial launch
 - **Excellence target**: Goal for mature product
 - **Regression threshold**: Drop triggers investigation
 
 Consider thresholds for:
+
 - Overall performance
 - Performance by segment (user type, input type, etc.)
 - Edge cases and failure modes
@@ -87,6 +96,7 @@ Consider thresholds for:
 ## 8. Segmented Requirements
 
 Define different thresholds for:
+
 - **High-value vs. routine**: Critical decisions vs. bulk processing
 - **Enterprise tiers**: SLA differences by customer segment
 - **Regions/languages**: Performance variation acceptable?
@@ -102,10 +112,12 @@ Define different thresholds for:
 ## 10. Acceptance Criteria
 
 Define clear criteria for:
+
 - **Model readiness**: When is model ready for testing?
 - **Feature readiness**: When is feature ready for beta?
 - **Launch readiness**: When can we GA?
 - **Ongoing compliance**: How do we stay in compliance?
 
 # Output Format
-Structured requirements document with tables for metrics and thresholds, clear definitions, and rationale for each requirement.
+
+Return the entire requirements document as a **single markdown code block** so it can be easily copied and pasted. Use tables for metrics and thresholds, clear definitions, and rationale for each requirement.

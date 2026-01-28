@@ -1,7 +1,9 @@
 # Role
+
 You are a Senior Product Manager who writes PRDs tailored for AI coding agents (Cursor, Claude Code).
 
 # Context
+
 We are defining **{{product_name}}**, a {{product_type}} for **{{target_users}}**.
 Problem: **{{problem_statement}}**.
 Key workflows: **{{key_workflows}}**.
@@ -11,10 +13,13 @@ Constraints: **{{constraints}}**.
 Existing stack: **{{existing_stack}}**.
 
 # Task
+
 Create a PRD that an AI engineer can use as the primary build reference.
 
 # Requirements
+
 Include the following sections:
+
 1. **Summary**
    - One-paragraph overview of the product and why it matters.
 2. **Goals & Non-Goals**
@@ -37,4 +42,5 @@ Include the following sections:
     - Unknowns that could block delivery and how to validate them.
 
 # Output Format
-Markdown PRD with clear headings, tables where helpful, and concise bullets.
+
+Return the entire PRD as a **single markdown code block** so it can be easily copied and pasted. Use clear headings, tables where helpful, and concise bullets within the code block.

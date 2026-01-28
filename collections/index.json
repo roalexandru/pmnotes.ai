@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-01-27T20:46:54.152Z",
+  "generatedAt": "2026-01-28T14:00:11.785Z",
   "collections": [
     {
       "slug": "ai-feature-productization",
@@ -82,6 +82,74 @@
         "Phased rollout plan with confidence ramps and rollback procedures"
       ],
       "createdAt": "2026-01-24"
+    },
+    {
+      "slug": "data-driven-pm",
+      "title": "Data-Driven Product Management",
+      "shortDescription": "Leverage data analysis to make better product decisions.",
+      "description": "A collection focused on using data to drive product decisions. Learn to analyze metrics, run experiments, and extract insights from user behavior data.",
+      "icon": "bar-chart",
+      "category": "topic",
+      "difficulty": "Structured",
+      "estimatedTime": "Ongoing",
+      "tags": [
+        "data",
+        "analytics",
+        "metrics",
+        "experiments",
+        "insights"
+      ],
+      "prompts": [
+        {
+          "slug": "execution/metric-calculation",
+          "order": 1,
+          "note": "Define and calculate key product metrics"
+        },
+        {
+          "slug": "execution/data-cleaning",
+          "order": 2,
+          "note": "Prepare and clean data for analysis",
+          "optional": true
+        },
+        {
+          "slug": "execution/correlation-analysis",
+          "order": 3,
+          "note": "Find correlations in your data"
+        },
+        {
+          "slug": "execution/ab-test",
+          "order": 4,
+          "note": "Design and analyze A/B tests"
+        },
+        {
+          "slug": "execution/forecasting",
+          "order": 5,
+          "note": "Forecast trends and outcomes"
+        },
+        {
+          "slug": "execution/visualization",
+          "order": 6,
+          "note": "Create compelling data visualizations"
+        },
+        {
+          "slug": "execution/sentiment-analysis",
+          "order": 7,
+          "note": "Analyze sentiment in user feedback",
+          "optional": true
+        }
+      ],
+      "prerequisites": [
+        "Access to product analytics data",
+        "Basic understanding of statistics",
+        "Familiarity with data tools (spreadsheets, SQL)"
+      ],
+      "outcomes": [
+        "Key metrics dashboard",
+        "Experiment design framework",
+        "Data-backed product insights",
+        "Forecast models"
+      ],
+      "createdAt": "2026-01-23"
     },
     {
       "slug": "enterprise-pilot-to-production",
@@ -293,151 +361,6 @@
       "createdAt": "2026-01-24"
     },
     {
-      "slug": "platform-integration-strategy",
-      "title": "Platform Integration Strategy",
-      "shortDescription": "Plan and execute integrations with enterprise systems like Salesforce, SAP, and ServiceNow.",
-      "description": "A comprehensive approach to building enterprise integrations that drive platform adoption. Covers partner ecosystem analysis, integration architecture, API design, and go-to-market strategy for integrations. Critical for enterprise platforms that need to connect with existing customer tech stacks.",
-      "icon": "plug",
-      "category": "playbook",
-      "teamScale": "Enterprise",
-      "difficulty": "Deep",
-      "estimatedTime": "4-6 weeks",
-      "tags": [
-        "integration",
-        "platform",
-        "API",
-        "enterprise",
-        "ecosystem",
-        "partnerships"
-      ],
-      "prompts": [
-        {
-          "slug": "discovery/market-analysis",
-          "order": 1,
-          "note": "Analyze integration ecosystem and prioritize target platforms"
-        },
-        {
-          "slug": "discovery/user-persona",
-          "order": 2,
-          "note": "Define integration user personas: admins, developers, end users"
-        },
-        {
-          "slug": "discovery/feature-prioritization",
-          "order": 3,
-          "note": "Prioritize integration features and use cases"
-        },
-        {
-          "slug": "discovery/tech-design-doc",
-          "order": 4,
-          "note": "Document integration architecture and data flow patterns"
-        },
-        {
-          "slug": "prototyping/api-endpoint",
-          "order": 5,
-          "note": "Design integration APIs and webhook specifications"
-        },
-        {
-          "slug": "prototyping/automation-script",
-          "order": 6,
-          "note": "Create sample integration scripts and templates",
-          "optional": true
-        },
-        {
-          "slug": "execution/test-plan",
-          "order": 7,
-          "note": "Plan integration testing across partner platforms"
-        },
-        {
-          "slug": "discovery/marketing-ideation",
-          "order": 8,
-          "note": "Develop co-marketing strategy with integration partners",
-          "optional": true
-        }
-      ],
-      "prerequisites": [
-        "Platform API capabilities defined",
-        "Target integration platforms identified",
-        "Partner program or ecosystem strategy",
-        "Customer demand signals for specific integrations"
-      ],
-      "outcomes": [
-        "Integration priority roadmap",
-        "Technical architecture documentation",
-        "API specifications for integrations",
-        "Partner co-marketing plan",
-        "Integration testing framework"
-      ],
-      "createdAt": "2026-01-24"
-    },
-    {
-      "slug": "data-driven-pm",
-      "title": "Data-Driven Product Management",
-      "shortDescription": "Leverage data analysis to make better product decisions.",
-      "description": "A collection focused on using data to drive product decisions. Learn to analyze metrics, run experiments, and extract insights from user behavior data.",
-      "icon": "bar-chart",
-      "category": "topic",
-      "difficulty": "Structured",
-      "estimatedTime": "Ongoing",
-      "tags": [
-        "data",
-        "analytics",
-        "metrics",
-        "experiments",
-        "insights"
-      ],
-      "prompts": [
-        {
-          "slug": "execution/metric-calculation",
-          "order": 1,
-          "note": "Define and calculate key product metrics"
-        },
-        {
-          "slug": "execution/data-cleaning",
-          "order": 2,
-          "note": "Prepare and clean data for analysis",
-          "optional": true
-        },
-        {
-          "slug": "execution/correlation-analysis",
-          "order": 3,
-          "note": "Find correlations in your data"
-        },
-        {
-          "slug": "execution/ab-test",
-          "order": 4,
-          "note": "Design and analyze A/B tests"
-        },
-        {
-          "slug": "execution/forecasting",
-          "order": 5,
-          "note": "Forecast trends and outcomes"
-        },
-        {
-          "slug": "execution/visualization",
-          "order": 6,
-          "note": "Create compelling data visualizations"
-        },
-        {
-          "slug": "execution/sentiment-analysis",
-          "order": 7,
-          "note": "Analyze sentiment in user feedback",
-          "optional": true
-        }
-      ],
-      "prerequisites": [
-        "Access to product analytics data",
-        "Basic understanding of statistics",
-        "Familiarity with data tools (spreadsheets, SQL)"
-      ],
-      "outcomes": [
-        "Key metrics dashboard",
-        "Experiment design framework",
-        "Data-backed product insights",
-        "Forecast models"
-      ],
-      "createdAt": "2026-01-23"
-    },
-    {
       "slug": "mvp-development",
       "title": "MVP Development",
       "shortDescription": "Build a minimum viable product from concept to working prototype.",
@@ -571,6 +494,83 @@
       "createdAt": "2026-01-23"
     },
     {
+      "slug": "platform-integration-strategy",
+      "title": "Platform Integration Strategy",
+      "shortDescription": "Plan and execute integrations with enterprise systems like Salesforce, SAP, and ServiceNow.",
+      "description": "A comprehensive approach to building enterprise integrations that drive platform adoption. Covers partner ecosystem analysis, integration architecture, API design, and go-to-market strategy for integrations. Critical for enterprise platforms that need to connect with existing customer tech stacks.",
+      "icon": "plug",
+      "category": "playbook",
+      "teamScale": "Enterprise",
+      "difficulty": "Deep",
+      "estimatedTime": "4-6 weeks",
+      "tags": [
+        "integration",
+        "platform",
+        "API",
+        "enterprise",
+        "ecosystem",
+        "partnerships"
+      ],
+      "prompts": [
+        {
+          "slug": "discovery/market-analysis",
+          "order": 1,
+          "note": "Analyze integration ecosystem and prioritize target platforms"
+        },
+        {
+          "slug": "discovery/user-persona",
+          "order": 2,
+          "note": "Define integration user personas: admins, developers, end users"
+        },
+        {
+          "slug": "discovery/feature-prioritization",
+          "order": 3,
+          "note": "Prioritize integration features and use cases"
+        },
+        {
+          "slug": "discovery/tech-design-doc",
+          "order": 4,
+          "note": "Document integration architecture and data flow patterns"
+        },
+        {
+          "slug": "prototyping/api-endpoint",
+          "order": 5,
+          "note": "Design integration APIs and webhook specifications"
+        },
+        {
+          "slug": "prototyping/automation-script",
+          "order": 6,
+          "note": "Create sample integration scripts and templates",
+          "optional": true
+        },
+        {
+          "slug": "execution/test-plan",
+          "order": 7,
+          "note": "Plan integration testing across partner platforms"
+        },
+        {
+          "slug": "discovery/marketing-ideation",
+          "order": 8,
+          "note": "Develop co-marketing strategy with integration partners",
+          "optional": true
+        }
+      ],
+      "prerequisites": [
+        "Platform API capabilities defined",
+        "Target integration platforms identified",
+        "Partner program or ecosystem strategy",
+        "Customer demand signals for specific integrations"
+      ],
+      "outcomes": [
+        "Integration priority roadmap",
+        "Technical architecture documentation",
+        "API specifications for integrations",
+        "Partner co-marketing plan",
+        "Integration testing framework"
+      ],
+      "createdAt": "2026-01-24"
+    },
+    {
       "slug": "pm-beginner-toolkit",
       "title": "PM Beginner Toolkit",
       "shortDescription": "Essential prompts for product managers just getting started.",
@@ -688,6 +688,73 @@
         "Prioritized opportunity list"
       ],
       "createdAt": "2026-01-23"
+    },
+    {
+      "slug": "quick-poc",
+      "title": "Quick POC",
+      "shortDescription": "Iterate from idea to working prototype in 3-5 days.",
+      "description": "A fast-paced playbook for building proof-of-concept prototypes. Validate feasibility, UX, and technical approach before committing to full development. Includes PRD scoping, technical design, implementation planning, UX review, feasibility assessment, and legal/IP considerations.",
+      "icon": "zap",
+      "category": "playbook",
+      "teamScale": "Startup",
+      "difficulty": "Structured",
+      "estimatedTime": "3-5 days",
+      "tags": [
+        "poc",
+        "prototype",
+        "validation",
+        "rapid",
+        "feasibility",
+        "mvp"
+      ],
+      "prompts": [
+        {
+          "slug": "discovery/prd-outline",
+          "order": 1,
+          "note": "Define POC scope: problem, goals, core features, and constraints. Keep it lean - this feeds into the tech design."
+        },
+        {
+          "slug": "discovery/tech-design-doc",
+          "order": 2,
+          "note": "Design minimal architecture. Paste PRD summary into 'PRD or App Description' input. Focus on speed over perfection."
+        },
+        {
+          "slug": "prototyping/poc-implementation-guide",
+          "order": 3,
+          "note": "Generate step-by-step build plan. Paste PRD and tech design summaries as inputs. Defines what to build vs. skip."
+        },
+        {
+          "slug": "execution/ux-review",
+          "order": 4,
+          "note": "Review the built POC against requirements. Paste PRD user stories and describe what was built. Identifies quick wins."
+        },
+        {
+          "slug": "discovery/risk-analysis",
+          "order": 5,
+          "note": "Assess feasibility and risks. Set stage to 'POC validation'. Paste PRD and tech summaries. Get go/no-go recommendation."
+        },
+        {
+          "slug": "discovery/legal-ip-review",
+          "order": 6,
+          "note": "Review licensing, IP, and compliance. Paste tech stack and data sources. Identifies blockers before scaling.",
+          "optional": true
+        }
+      ],
+      "prerequisites": [
+        "A clear idea or problem to validate",
+        "Understanding of target users",
+        "3-5 days of dedicated build time",
+        "Access to necessary APIs/services for POC"
+      ],
+      "outcomes": [
+        "Scoped PRD for POC",
+        "Lightweight technical design",
+        "Day-by-day implementation plan",
+        "UX review with prioritized fixes",
+        "Feasibility assessment with go/no-go recommendation",
+        "Legal/IP checklist for scaling"
+      ],
+      "createdAt": "2026-01-28"
     },
     {
       "slug": "technical-pm-essentials",

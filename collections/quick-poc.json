@@ -1,0 +1,60 @@
+{
+  "slug": "quick-poc",
+  "title": "Quick POC",
+  "shortDescription": "Iterate from idea to working prototype in 3-5 days.",
+  "description": "A fast-paced playbook for building proof-of-concept prototypes. Validate feasibility, UX, and technical approach before committing to full development. Includes PRD scoping, technical design, implementation planning, UX review, feasibility assessment, and legal/IP considerations.",
+  "icon": "zap",
+  "category": "playbook",
+  "teamScale": "Startup",
+  "difficulty": "Structured",
+  "estimatedTime": "3-5 days",
+  "tags": ["poc", "prototype", "validation", "rapid", "feasibility", "mvp"],
+  "prompts": [
+    {
+      "slug": "discovery/prd-outline",
+      "order": 1,
+      "note": "Define POC scope: problem, goals, core features, and constraints. Keep it lean - this feeds into the tech design."
+    },
+    {
+      "slug": "discovery/tech-design-doc",
+      "order": 2,
+      "note": "Design minimal architecture. Paste PRD summary into 'PRD or App Description' input. Focus on speed over perfection."
+    },
+    {
+      "slug": "prototyping/poc-implementation-guide",
+      "order": 3,
+      "note": "Generate step-by-step build plan. Paste PRD and tech design summaries as inputs. Defines what to build vs. skip."
+    },
+    {
+      "slug": "execution/ux-review",
+      "order": 4,
+      "note": "Review the built POC against requirements. Paste PRD user stories and describe what was built. Identifies quick wins."
+    },
+    {
+      "slug": "discovery/risk-analysis",
+      "order": 5,
+      "note": "Assess feasibility and risks. Set stage to 'POC validation'. Paste PRD and tech summaries. Get go/no-go recommendation."
+    },
+    {
+      "slug": "discovery/legal-ip-review",
+      "order": 6,
+      "note": "Review licensing, IP, and compliance. Paste tech stack and data sources. Identifies blockers before scaling.",
+      "optional": true
+    }
+  ],
+  "prerequisites": [
+    "A clear idea or problem to validate",
+    "Understanding of target users",
+    "3-5 days of dedicated build time",
+    "Access to necessary APIs/services for POC"
+  ],
+  "outcomes": [
+    "Scoped PRD for POC",
+    "Lightweight technical design",
+    "Day-by-day implementation plan",
+    "UX review with prioritized fixes",
+    "Feasibility assessment with go/no-go recommendation",
+    "Legal/IP checklist for scaling"
+  ],
+  "createdAt": "2026-01-28"
+}

@@ -1,0 +1,54 @@
+{
+    "slug": "product-positioning",
+    "title": "Product Positioning & Messaging Strategy",
+    "shortDescription": "Build a strategic positioning framework with competitive framing, differentiation axes, and value narrative.",
+    "surface": "discovery",
+    "pmStage": "Strategy & Decision Artifacts",
+    "complexity": "Structured",
+    "outputType": "Positioning Framework",
+    "tags": [
+        "positioning",
+        "messaging",
+        "differentiation",
+        "strategy",
+        "go-to-market"
+    ],
+    "jobsToBeDone": [
+        "Define competitive positioning and category",
+        "Articulate differentiation axes",
+        "Craft a compelling value narrative",
+        "Align product messaging across teams"
+    ],
+    "inputs": [
+        {
+            "key": "product_name",
+            "label": "Product Name",
+            "example": "Linear"
+        },
+        {
+            "key": "product_description",
+            "label": "Product Description",
+            "example": "Project management and issue tracking tool built for software teams that prioritize speed and quality"
+        },
+        {
+            "key": "target_customer",
+            "label": "Target Customer",
+            "example": "Engineering teams at fast-moving startups and scale-ups (Series A to C)"
+        },
+        {
+            "key": "key_competitors",
+            "label": "Key Competitors",
+            "example": "Jira, Asana, Shortcut, GitHub Projects"
+        },
+        {
+            "key": "unique_strengths",
+            "label": "Unique Strengths",
+            "example": "Best-in-class UI speed, opinionated workflows, keyboard-first design, developer-loved brand"
+        },
+        {
+            "key": "positioning_goal",
+            "label": "Positioning Goal",
+            "example": "Own the 'fast and focused' category for engineering project management, differentiate from Jira's complexity"
+        }
+    ]
+}

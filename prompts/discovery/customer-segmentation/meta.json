@@ -1,0 +1,54 @@
+{
+    "slug": "customer-segmentation",
+    "title": "Customer Segmentation Analysis",
+    "shortDescription": "Identify distinct customer segments with TAM sizing, willingness-to-pay, and targeting priority.",
+    "surface": "discovery",
+    "pmStage": "Research & Insight Reports",
+    "complexity": "Deep",
+    "outputType": "Segmentation Framework",
+    "tags": [
+        "segmentation",
+        "market-research",
+        "targeting",
+        "tam",
+        "go-to-market"
+    ],
+    "jobsToBeDone": [
+        "Identify distinct customer segments",
+        "Estimate market size per segment",
+        "Compare willingness-to-pay across segments",
+        "Prioritize segments for go-to-market focus"
+    ],
+    "inputs": [
+        {
+            "key": "product_name",
+            "label": "Product Name",
+            "example": "Calendly"
+        },
+        {
+            "key": "product_description",
+            "label": "Product Description",
+            "example": "Scheduling automation platform that eliminates back-and-forth emails for booking meetings"
+        },
+        {
+            "key": "current_customers",
+            "label": "Current Customer Base Description",
+            "example": "Primarily sales teams and recruiters at mid-market SaaS companies, some individual consultants and coaches"
+        },
+        {
+            "key": "market_context",
+            "label": "Market Context",
+            "example": "Scheduling tools market growing 15% YoY, increasing competition from CRM-embedded scheduling, remote work driving demand"
+        },
+        {
+            "key": "segmentation_dimensions",
+            "label": "Segmentation Dimensions",
+            "example": "Company size, industry, use case, buyer role, tech stack maturity"
+        },
+        {
+            "key": "strategic_goal",
+            "label": "Strategic Goal",
+            "example": "Expand beyond sales use case into cross-functional enterprise scheduling"
+        }
+    ]
+}

@@ -1,0 +1,49 @@
+{
+    "slug": "okr-framework",
+    "title": "OKR & Success Metrics Framework",
+    "shortDescription": "Translate business goals into measurable OKRs with leading and lagging indicators.",
+    "surface": "discovery",
+    "pmStage": "Strategy & Decision Artifacts",
+    "complexity": "Structured",
+    "outputType": "OKR Framework",
+    "tags": [
+        "okrs",
+        "metrics",
+        "goals",
+        "strategy",
+        "kpis"
+    ],
+    "jobsToBeDone": [
+        "Define measurable objectives and key results",
+        "Choose leading and lagging indicators",
+        "Set realistic targets with baselines",
+        "Align product metrics to business goals"
+    ],
+    "inputs": [
+        {
+            "key": "product_name",
+            "label": "Product Name",
+            "example": "Loom"
+        },
+        {
+            "key": "time_horizon",
+            "label": "Time Horizon",
+            "example": "Q3 2025"
+        },
+        {
+            "key": "business_goals",
+            "label": "Business Goals",
+            "example": "Increase enterprise revenue 30%, reduce free-to-paid conversion time, expand into async collaboration market"
+        },
+        {
+            "key": "current_metrics",
+            "label": "Current Key Metrics & Baselines",
+            "example": "MAU: 18M, Free-to-paid conversion: 4.2%, Enterprise ARR: $45M, Avg time-to-convert: 38 days"
+        },
+        {
+            "key": "team_scope",
+            "label": "Team Scope",
+            "example": "Growth product team (8 engineers, 2 designers, 1 PM)"
+        }
+    ]
+}

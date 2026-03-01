@@ -1,0 +1,52 @@
+{
+    "slug": "stakeholder-update",
+    "title": "Stakeholder Update Brief",
+    "shortDescription": "Generate a concise executive update with progress, blockers, and next steps.",
+    "surface": "discovery",
+    "pmStage": "Messaging & Content",
+    "complexity": "Quick",
+    "outputType": "Status Brief",
+    "tags": [
+        "communication",
+        "stakeholder-management",
+        "executive-updates",
+        "status-reports"
+    ],
+    "jobsToBeDone": [
+        "Communicate progress to leadership",
+        "Surface blockers for executive action",
+        "Align stakeholders on next steps"
+    ],
+    "inputs": [
+        {
+            "key": "product_name",
+            "label": "Product Name",
+            "example": "Figma Slides"
+        },
+        {
+            "key": "audience",
+            "label": "Audience",
+            "example": "VP of Product and Engineering leadership"
+        },
+        {
+            "key": "time_period",
+            "label": "Time Period",
+            "example": "Sprint 14 (Feb 17 – Feb 28)"
+        },
+        {
+            "key": "accomplishments",
+            "label": "Key Accomplishments",
+            "example": "Shipped real-time collaboration on slides, closed 3 enterprise design pilots, reduced load time by 40%"
+        },
+        {
+            "key": "blockers_risks",
+            "label": "Blockers & Risks",
+            "example": "Hiring freeze delayed frontend hire, performance regression on large decks (50+ slides)"
+        },
+        {
+            "key": "upcoming_priorities",
+            "label": "Upcoming Priorities",
+            "example": "Presenter mode beta launch, enterprise SSO integration, design system templates"
+        }
+    ]
+}

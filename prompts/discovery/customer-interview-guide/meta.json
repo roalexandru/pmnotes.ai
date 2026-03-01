@@ -1,0 +1,49 @@
+{
+    "slug": "customer-interview-guide",
+    "title": "Customer Interview Guide",
+    "shortDescription": "Design a structured customer interview — screening criteria, question script, and synthesis template.",
+    "surface": "discovery",
+    "pmStage": "Research & Insight Reports",
+    "complexity": "Structured",
+    "outputType": "Interview Guide",
+    "tags": [
+        "user-research",
+        "interviews",
+        "qualitative-research",
+        "discovery",
+        "customer-insights"
+    ],
+    "jobsToBeDone": [
+        "Design a customer interview script",
+        "Define screening criteria for participants",
+        "Structure open-ended questions by theme",
+        "Create a synthesis template for findings"
+    ],
+    "inputs": [
+        {
+            "key": "product_name",
+            "label": "Product Name",
+            "example": "Notion"
+        },
+        {
+            "key": "research_objective",
+            "label": "Research Objective",
+            "example": "Understand why power users downgrade to free tier after trial"
+        },
+        {
+            "key": "target_participant",
+            "label": "Target Participant Profile",
+            "example": "Users who trialed Team plan for 14+ days but did not convert"
+        },
+        {
+            "key": "key_themes",
+            "label": "Key Themes to Explore",
+            "example": "Perceived value, collaboration friction, pricing sensitivity, alternative tools"
+        },
+        {
+            "key": "interview_duration",
+            "label": "Interview Duration",
+            "example": "30 minutes"
+        }
+    ]
+}

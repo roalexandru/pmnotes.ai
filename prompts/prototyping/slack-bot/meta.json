@@ -1,20 +1,21 @@
 {
     "slug": "slack-bot",
-    "title": "Slack Command Bot (Pseudocode)",
-    "shortDescription": "Outline secure Slack command handling with status checks.",
+    "title": "Slack Command Bot (Node.js)",
+    "shortDescription": "Build a Slack slash command bot with signature verification and status responses.",
     "surface": "prototyping",
     "pmStage": "Product & UX Prototypes",
     "complexity": "Structured",
-    "outputType": "Pseudocode",
+    "outputType": "Code (Node.js)",
     "tags": [
         "slack",
         "bot",
-        "pseudocode"
+        "node",
+        "express"
     ],
     "jobsToBeDone": [
-        "Design bot logic",
-        "Integrate with Slack API",
-        "Document request validation"
+        "Build Slack integrations",
+        "Prototype slash command handlers",
+        "Implement request signature verification"
     ],
     "inputs": [
         {

@@ -1,0 +1,42 @@
+{
+    "slug": "docker-setup",
+    "title": "Docker Development Environment",
+    "shortDescription": "Generate a multi-stage Dockerfile and Docker Compose setup for local development.",
+    "surface": "prototyping",
+    "pmStage": "Code Templates & Schemas",
+    "complexity": "Structured",
+    "outputType": "Config (Docker)",
+    "tags": [
+        "docker",
+        "devops",
+        "infrastructure",
+        "compose"
+    ],
+    "jobsToBeDone": [
+        "Standardize development environments",
+        "Onboard team members quickly",
+        "Run multi-service stacks locally"
+    ],
+    "inputs": [
+        {
+            "key": "app_name",
+            "label": "Application Name",
+            "example": "acme-app"
+        },
+        {
+            "key": "services",
+            "label": "Services",
+            "example": "Node.js API, PostgreSQL, Redis"
+        },
+        {
+            "key": "ports",
+            "label": "Port Mapping",
+            "example": "API: 3000, Postgres: 5432, Redis: 6379"
+        },
+        {
+            "key": "dev_features",
+            "label": "Dev Features",
+            "example": "hot reload, database seeding, health checks"
+        }
+    ]
+}

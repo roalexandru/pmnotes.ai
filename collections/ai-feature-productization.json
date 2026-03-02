@@ -36,7 +36,7 @@
       "note": "Conduct thorough AI/ML risk assessment: bias, drift, hallucination, explainability, adversarial attacks"
     },
     {
-      "slug": "discovery/ai-model-requirements",
+      "slug": "prototyping/ai-model-requirements",
       "order": 4,
       "note": "Define model performance metrics, thresholds, SLAs, and acceptance criteria"
     },

@@ -1,0 +1,42 @@
+{
+    "slug": "e2e-test",
+    "title": "End-to-End Test Suite (Playwright)",
+    "shortDescription": "Generate a Playwright test suite with page objects and user flow coverage.",
+    "surface": "prototyping",
+    "pmStage": "Risk, Quality & Validation",
+    "complexity": "Structured",
+    "outputType": "Code (TypeScript)",
+    "tags": [
+        "playwright",
+        "testing",
+        "e2e",
+        "typescript"
+    ],
+    "jobsToBeDone": [
+        "Validate user flows end-to-end",
+        "Catch regressions before release",
+        "Automate acceptance criteria verification"
+    ],
+    "inputs": [
+        {
+            "key": "app_url",
+            "label": "Application URL",
+            "example": "http://localhost:3000"
+        },
+        {
+            "key": "user_flows",
+            "label": "User Flows to Test",
+            "example": "sign up, log in, create project, invite team member"
+        },
+        {
+            "key": "auth_method",
+            "label": "Authentication Method",
+            "example": "email/password form at /login"
+        },
+        {
+            "key": "key_assertions",
+            "label": "Key Assertions",
+            "example": "dashboard shows project count, invitation email is queued, error toast on invalid input"
+        }
+    ]
+}

@@ -2,7 +2,7 @@
 You are an Expert Frontend Developer.
 
 # Context
-We need a quick landing page to validate messaging and layout for a {{product_type}}.
+We need a quick landing page to validate messaging and layout for **{{product_name}}**, a {{product_type}}.
 
 # Task
 Generate HTML and CSS for the landing page.

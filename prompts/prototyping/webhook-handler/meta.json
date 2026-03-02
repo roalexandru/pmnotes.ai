@@ -1,0 +1,37 @@
+{
+    "slug": "webhook-handler",
+    "title": "Webhook Event Handler (Node.js)",
+    "shortDescription": "Build a webhook receiver with signature verification and event routing.",
+    "surface": "prototyping",
+    "pmStage": "Product & UX Prototypes",
+    "complexity": "Quick",
+    "outputType": "Code (Node.js)",
+    "tags": [
+        "webhook",
+        "node",
+        "express",
+        "integration"
+    ],
+    "jobsToBeDone": [
+        "Receive third-party webhooks",
+        "Prototype event-driven integrations",
+        "Handle payment or notification callbacks"
+    ],
+    "inputs": [
+        {
+            "key": "provider",
+            "label": "Webhook Provider",
+            "example": "Stripe"
+        },
+        {
+            "key": "events",
+            "label": "Events to Handle",
+            "example": "checkout.session.completed, invoice.payment_failed, customer.subscription.deleted"
+        },
+        {
+            "key": "secret_header",
+            "label": "Signature Header",
+            "example": "Stripe-Signature"
+        }
+    ]
+}

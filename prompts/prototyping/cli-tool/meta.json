@@ -1,0 +1,37 @@
+{
+    "slug": "cli-tool",
+    "title": "CLI Tool Scaffold (Node.js)",
+    "shortDescription": "Scaffold a multi-command CLI tool with argument parsing and help text.",
+    "surface": "prototyping",
+    "pmStage": "Automation & Scripts",
+    "complexity": "Quick",
+    "outputType": "Code (Node.js)",
+    "tags": [
+        "cli",
+        "node",
+        "automation",
+        "scaffold"
+    ],
+    "jobsToBeDone": [
+        "Build internal tools quickly",
+        "Automate repetitive workflows",
+        "Create developer utilities"
+    ],
+    "inputs": [
+        {
+            "key": "tool_name",
+            "label": "Tool Name",
+            "example": "projctl"
+        },
+        {
+            "key": "commands",
+            "label": "Commands",
+            "example": "init, build, deploy"
+        },
+        {
+            "key": "description",
+            "label": "Tool Description",
+            "example": "Project scaffolding and deployment helper"
+        }
+    ]
+}

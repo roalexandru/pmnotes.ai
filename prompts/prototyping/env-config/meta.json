@@ -1,0 +1,37 @@
+{
+    "slug": "env-config",
+    "title": "Environment Configuration Scaffold",
+    "shortDescription": "Generate a typed environment config with Zod validation and .env template.",
+    "surface": "prototyping",
+    "pmStage": "Code Templates & Schemas",
+    "complexity": "Quick",
+    "outputType": "Code (TypeScript)",
+    "tags": [
+        "typescript",
+        "config",
+        "zod",
+        "environment"
+    ],
+    "jobsToBeDone": [
+        "Set up environment configuration",
+        "Validate environment variables at startup",
+        "Share config requirements across team"
+    ],
+    "inputs": [
+        {
+            "key": "app_name",
+            "label": "Application Name",
+            "example": "acme-api"
+        },
+        {
+            "key": "env_vars",
+            "label": "Environment Variables",
+            "example": "DATABASE_URL (string, required), PORT (number, default 3000), LOG_LEVEL (enum: debug|info|warn|error)"
+        },
+        {
+            "key": "environments",
+            "label": "Environments",
+            "example": "development, staging, production"
+        }
+    ]
+}

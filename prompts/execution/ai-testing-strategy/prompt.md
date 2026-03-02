@@ -203,6 +203,8 @@ For extraction tasks:
 - **Automated regression**: On every model update
 - **Scheduled testing**: Regular validation
 
+Include a CI/CD configuration snippet (GitHub Actions YAML) that runs the core test suite on every model update. Include scheduled regression testing with nightly runs and weekly bias audits.
+
 ### Test Infrastructure
 
 - **Test data management**: Versioning, access

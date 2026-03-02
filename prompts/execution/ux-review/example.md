@@ -1,6 +1,10 @@
 ```markdown
 # UX Review: AI Support Chatbot POC
 
+## Executive Summary
+
+UX review of the AI Support Chatbot POC identified 5 friction points, with 2 critical issues: the escalation button is hidden on mobile (blocking the 80% resolution target) and a 3-second typing delay creates perceived slowness. Three quick wins (AI badge, suggested questions, sticky escalation button) can be shipped in hours with high impact. Recommend fixing these before the next round of user testing.
+
 ## Product Context
 - **Product**: AI Support Chatbot
 - **Persona**: Customer seeking quick answers to billing/shipping questions
@@ -75,17 +79,22 @@ Add thumbs up/down after each AI response.
 
 ---
 
-## 5. Acceptance Criteria (Top 2)
+## 5. Acceptance Criteria (Top 3 — Given/When/Then)
 
 ### Sticky Escalation Button
-- [ ] "Talk to human" button visible without scrolling on 375px viewport
-- [ ] Button remains fixed during scroll
-- [ ] Tapping triggers escalation flow
+- **Given** a user is on a mobile viewport (375px), **When** the chat widget is open, **Then** the "Talk to human" button is visible without scrolling.
+- **Given** a user scrolls through a long conversation, **When** they reach the bottom, **Then** the escalation button remains fixed at the bottom of the viewport.
+- **Given** a user taps "Talk to human", **When** the escalation flow starts, **Then** the user sees a confirmation message and estimated wait time.
 
 ### AI Badge + Suggested Questions
-- [ ] "Powered by AI" badge visible before first message
-- [ ] 3 suggested questions shown (e.g., "Track my order", "Return policy", "Contact support")
-- [ ] Clicking suggestion auto-sends that message
+- **Given** a new user opens the chat widget for the first time, **When** the widget loads, **Then** a "Powered by AI" badge is visible in the header and 3 suggested questions are displayed.
+- **Given** suggested questions are shown, **When** the user clicks one, **Then** the question is sent as a message and the AI begins responding.
+- **Given** the user has already sent a message, **When** they return to the chat, **Then** suggested questions are no longer shown (replaced by conversation history).
+
+### Reduce Perceived Latency
+- **Given** a user sends a message, **When** the AI is processing, **Then** a typing indicator appears within 200ms.
+- **Given** the AI response takes >500ms, **When** partial content is available, **Then** streaming begins and the user sees text appearing progressively.
+- **Given** the AI fails to respond within 10 seconds, **When** the timeout occurs, **Then** a friendly error message is shown with a "Try again" button.
 
 ---
 

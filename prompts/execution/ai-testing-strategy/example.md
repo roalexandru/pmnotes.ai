@@ -637,3 +637,117 @@ jobs:
 | Load testing | Peak capacity | Pass |
 | Compliance | All audits | Pass |
 | Documentation | Model card, bias report | Complete |
+
+---
+
+## 13. CI/CD Automation Config
+
+```yaml
+# .github/workflows/ml-model-tests.yml
+name: ML Model Test Suite
+
+on:
+  push:
+    paths:
+      - 'models/**'
+      - 'ml/**'
+      - 'tests/ml/**'
+  pull_request:
+    paths:
+      - 'models/**'
+      - 'ml/**'
+  schedule:
+    - cron: '0 2 * * *'    # Nightly regression at 2am UTC
+    - cron: '0 6 * * 1'    # Weekly bias audit Monday 6am UTC
+
+env:
+  MODEL_VERSION: ${{ github.sha }}
+  TEST_DATA_VERSION: 'v2.1'
+
+jobs:
+  accuracy-tests:
+    name: Accuracy & Regression
+    runs-on: [self-hosted, gpu]
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install dependencies
+        run: pip install -r requirements-test.txt
+      - name: Download test data
+        run: dvc pull tests/data/
+      - name: Run accuracy suite
+        run: pytest tests/accuracy/ --tb=short --junitxml=reports/accuracy.xml
+      - name: Compare against baseline
+        run: python scripts/compare_baseline.py --threshold 0.005
+      - name: Upload accuracy report
+        uses: actions/upload-artifact@v4
+        with:
+          name: accuracy-report
+          path: reports/accuracy.xml
+
+  calibration-tests:
+    name: Confidence Calibration
+    runs-on: [self-hosted, gpu]
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install dependencies
+        run: pip install -r requirements-test.txt
+      - name: Run calibration suite
+        run: pytest tests/calibration/ --tb=short
+      - name: Validate ECE threshold
+        run: python scripts/check_calibration.py --max-ece 0.05
+
+  bias-audit:
+    name: Bias & Fairness Audit
+    runs-on: [self-hosted, gpu]
+    timeout-minutes: 120
+    if: github.event.schedule == '0 6 * * 1' || github.event_name == 'push'
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install dependencies
+        run: pip install -r requirements-test.txt
+      - name: Run fairness suite
+        run: pytest tests/fairness/ --tb=short
+      - name: Generate bias report
+        run: python scripts/bias_report.py --output reports/bias-report.md
+      - name: Check disparity thresholds
+        run: python scripts/check_disparity.py --max-disparity 0.05
+
+  robustness-tests:
+    name: Robustness & Adversarial
+    runs-on: [self-hosted, gpu]
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install dependencies
+        run: pip install -r requirements-test.txt
+      - name: Run robustness suite
+        run: pytest tests/robustness/ --tb=short
+      - name: Run adversarial tests
+        run: pytest tests/adversarial/ --tb=short
+
+  release-gate:
+    name: Release Gate Check
+    needs: [accuracy-tests, calibration-tests, robustness-tests]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Verify all gates pass
+        run: echo "All critical test suites passed — model is release-eligible"
+```

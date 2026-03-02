@@ -6,7 +6,7 @@
   "pmStage": "Risk, Quality & Validation",
   "teamScale": "Enterprise",
   "complexity": "Deep",
-  "outputType": "Test Strategy",
+  "outputType": "Test Strategy + Automation Config",
   "tags": ["ai", "ml", "testing", "qa", "validation", "enterprise"],
   "jobsToBeDone": [
     "Design ML model test suites",

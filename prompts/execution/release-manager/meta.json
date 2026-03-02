@@ -5,11 +5,12 @@
     "surface": "execution",
     "pmStage": "Plans & Playbooks",
     "complexity": "Deep",
-    "outputType": "Release Package",
+    "outputType": "Executed Code (Release Automation)",
     "tags": [
         "release",
         "git",
-        "automation"
+        "automation",
+        "python"
     ],
     "jobsToBeDone": [
         "Draft release notes fast",
@@ -30,6 +31,11 @@
             "key": "release_date",
             "label": "Release Date",
             "example": "2026-02-01"
+        },
+        {
+            "key": "git_log",
+            "label": "Git Log Output (paste git log --oneline)",
+            "example": "a1b2c3d feat(analytics): add cohort retention CSV export\nd4e5f6a feat(growth): introduce onboarding checklist emails\n7g8h9i0 fix(billing): handle promo code edge case for annual plans\nj1k2l3m fix(reports): resolve timezone bug in scheduled reports\nn4o5p6q chore(deps): upgrade dependencies for security patches\nr7s8t9u refactor(pipeline): reduce data pipeline latency\nv1w2x3y feat(dashboard): add churn risk widgets for PMs\nz4a5b6c fix(billing): reduce retry count from 5 to 2"
         }
     ]
 }

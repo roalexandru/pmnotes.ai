@@ -1,0 +1,45 @@
+{
+    "slug": "release-communication",
+    "title": "Customer-Facing Release Communication",
+    "shortDescription": "Transform internal release notes into customer-facing changelogs, in-app announcements, or email updates.",
+    "surface": "execution",
+    "pmStage": "Automation & Scripts",
+    "complexity": "Quick",
+    "outputType": "Multi-Format Release Copy",
+    "tags": [
+        "release",
+        "communication",
+        "changelog",
+        "customer",
+        "announcement",
+        "marketing",
+        "copy"
+    ],
+    "jobsToBeDone": [
+        "Convert internal release notes to customer language",
+        "Draft consistent release announcements quickly",
+        "Communicate product value, not implementation details"
+    ],
+    "inputs": [
+        {
+            "key": "release_version",
+            "label": "Release Version",
+            "example": "v2.4.0"
+        },
+        {
+            "key": "internal_notes",
+            "label": "Internal Release Notes",
+            "example": "Added: cohort retention CSV export, onboarding checklist emails. Fixed: promo code edge case for annual plans, timezone bug in scheduled reports. Infra: upgraded deps, refactored data pipelines."
+        },
+        {
+            "key": "audience",
+            "label": "Target Audience",
+            "example": "SaaS product managers and growth teams"
+        },
+        {
+            "key": "format",
+            "label": "Output Format",
+            "example": "changelog, in-app banner, email subject + preview, social post"
+        }
+    ]
+}

@@ -9,7 +9,8 @@
     "tags": [
         "python",
         "nlp",
-        "sentiment"
+        "sentiment",
+        "textblob"
     ],
     "jobsToBeDone": [
         "Prioritize feedback",
@@ -19,17 +20,7 @@
         {
             "key": "feedback_list",
             "label": "Feedback List",
-            "example": "['Love the new update!', 'The app crashes often.', 'Great customer service.', 'Not intuitive to use.']"
-        },
-        {
-            "key": "positive_keywords",
-            "label": "Positive Keywords",
-            "example": "love, great, fast, helpful"
-        },
-        {
-            "key": "negative_keywords",
-            "label": "Negative Keywords",
-            "example": "crash, slow, confusing, not"
+            "example": "['Love the new update!', 'The app crashes every time I open settings.', 'Great customer service, very responsive.', 'Not intuitive to use at all.', 'Fast and reliable, best tool we have used.', 'Billing page is confusing and I was charged twice.']"
         }
     ]
 }

@@ -1,0 +1,55 @@
+{
+    "slug": "metric-anomaly-triage",
+    "title": "Metric Anomaly Triage",
+    "shortDescription": "Quickly determine if a metric movement is signal or noise with statistical context, likely causes, and recommended next steps.",
+    "surface": "execution",
+    "pmStage": "Data Analysis & Visualizations",
+    "complexity": "Structured",
+    "outputType": "Executed Code (Statistical Triage)",
+    "tags": [
+        "metrics",
+        "anomaly",
+        "triage",
+        "analysis",
+        "operations",
+        "python",
+        "statistics"
+    ],
+    "jobsToBeDone": [
+        "Assess if a metric drop is real or noise",
+        "Identify likely causes quickly under time pressure",
+        "Decide whether to escalate or monitor"
+    ],
+    "inputs": [
+        {
+            "key": "metric_name",
+            "label": "Metric Name",
+            "example": "Daily Active Users (DAU)"
+        },
+        {
+            "key": "baseline_mean",
+            "label": "Baseline Mean (expected value)",
+            "example": "11210"
+        },
+        {
+            "key": "baseline_stddev",
+            "label": "Baseline Std Dev",
+            "example": "620"
+        },
+        {
+            "key": "observed_value",
+            "label": "Observed Value",
+            "example": "10170"
+        },
+        {
+            "key": "recent_changes",
+            "label": "Recent Changes or Events",
+            "example": "Deployed v2.3.1 Friday evening (auth flow update). Marketing email campaign paused last week. US holiday on Monday."
+        },
+        {
+            "key": "segments_data",
+            "label": "Segment Breakdown (segment:observed:baseline,...)",
+            "example": "mobile_web:700:1000,desktop:3200:3200,us_users:2500:3330,eu_users:1800:1800,free_tier:4000:5500,paid_tier:6170:6170"
+        }
+    ]
+}

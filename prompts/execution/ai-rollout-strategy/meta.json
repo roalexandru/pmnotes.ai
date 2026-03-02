@@ -6,7 +6,7 @@
   "pmStage": "Plans & Playbooks",
   "teamScale": "Enterprise",
   "complexity": "Deep",
-  "outputType": "Rollout Plan",
+  "outputType": "Rollout Plan + Phase Checklists",
   "tags": ["ai", "ml", "rollout", "launch", "risk", "enterprise"],
   "jobsToBeDone": [
     "Plan safe AI feature rollout",

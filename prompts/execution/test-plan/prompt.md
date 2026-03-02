@@ -16,6 +16,7 @@ Create a test plan for the feature including test cases and coverage gaps.
 - **Risk areas**: {{risk_areas}}
 - **Dependencies**: {{dependencies}}
 - **Test environment**: {{test_environment}}
+- **Test framework**: {{test_framework}}
 
 # Requirements
 
@@ -24,7 +25,8 @@ Create a test plan for the feature including test cases and coverage gaps.
 3. **Data setup**: Specify test data and fixture needs.
 4. **Exit criteria**: Define clear go/no-go conditions.
 5. **PM value**: Summarize the remaining risks after testing.
+6. **Test stubs**: For each test category (unit, integration, E2E), generate a skeleton test file with `describe`/`test` blocks, descriptive test names, setup/teardown, and TODO comments for implementation. Use Playwright for E2E and Jest for unit/integration unless the test framework input specifies otherwise.
 
 # Output Format
 
-Return the entire test plan as a **single markdown code block** so it can be easily copied and pasted. Use clear sections and bullet points.
+Markdown test plan followed by code blocks for each test skeleton file. Return the test plan inside a markdown code block so it can be easily copied and pasted. Use clear sections and bullet points.

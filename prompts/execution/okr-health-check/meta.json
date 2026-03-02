@@ -1,0 +1,43 @@
+{
+    "slug": "okr-health-check",
+    "title": "OKR Progress Health Check",
+    "shortDescription": "Assess in-flight OKR progress with on-track/at-risk/off-track scoring, confidence levels, and escalation recommendations.",
+    "surface": "execution",
+    "pmStage": "Plans & Playbooks",
+    "complexity": "Structured",
+    "outputType": "Health Check Report + Structured Data",
+    "tags": [
+        "okr",
+        "tracking",
+        "goals",
+        "planning",
+        "operations"
+    ],
+    "jobsToBeDone": [
+        "Assess OKR progress mid-quarter",
+        "Identify at-risk objectives early",
+        "Prepare data-backed escalations for leadership"
+    ],
+    "inputs": [
+        {
+            "key": "quarter",
+            "label": "Quarter & Time Elapsed",
+            "example": "Q1 2026, Week 7 of 13 (54% through quarter)"
+        },
+        {
+            "key": "okrs",
+            "label": "OKRs with Current Progress",
+            "example": "O1: Increase activation rate | KR1: 30-day activation, target: 55%, current: 47% | KR2: Onboarding drop-off, target: -20%, current: -12% | KR3: Launch guided setup flow, target: shipped, current: 70% complete"
+        },
+        {
+            "key": "blockers",
+            "label": "Known Blockers or Risks",
+            "example": "Design resource pulled to another project for 2 weeks. Analytics tracking for KR1 has a data gap in mobile app."
+        },
+        {
+            "key": "context",
+            "label": "Business Context",
+            "example": "Board review in 3 weeks. Q2 planning starts next month. Team headcount increased by 1 mid-quarter."
+        }
+    ]
+}

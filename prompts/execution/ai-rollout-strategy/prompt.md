@@ -239,7 +239,7 @@ For each segment, evaluate:
 
 ## 10. Success Criteria by Phase
 
-Define go/no-go criteria for each phase transition.
+Define go/no-go criteria for each phase transition. For each phase transition, provide a machine-readable go/no-go checklist as a JSON block with `phase`, `criteria` array (each with `metric`, `threshold`, `current_status`), and `verdict` (go/no-go/conditional).
 
 # Output Format
 

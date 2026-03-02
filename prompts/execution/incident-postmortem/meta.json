@@ -1,0 +1,53 @@
+{
+    "slug": "incident-postmortem",
+    "title": "Incident Postmortem Document",
+    "shortDescription": "Draft a blameless postmortem from incident details with timeline, root cause analysis, and prevention actions.",
+    "surface": "execution",
+    "pmStage": "Risk, Quality & Validation",
+    "complexity": "Structured",
+    "outputType": "Postmortem Report + Structured Data",
+    "tags": [
+        "incident",
+        "postmortem",
+        "reliability",
+        "risk",
+        "operations"
+    ],
+    "jobsToBeDone": [
+        "Document incidents quickly under time pressure",
+        "Identify root causes beyond surface symptoms",
+        "Define preventive actions that actually get done"
+    ],
+    "inputs": [
+        {
+            "key": "incident_title",
+            "label": "Incident Title",
+            "example": "Payment Processing Outage — Stripe Webhook Failures"
+        },
+        {
+            "key": "severity",
+            "label": "Severity Level",
+            "example": "SEV-1 (customer-facing, revenue impact)"
+        },
+        {
+            "key": "timeline",
+            "label": "Incident Timeline",
+            "example": "14:02 — alerts fire for failed webhooks. 14:15 — on-call confirms payments stuck in pending. 14:40 — root cause identified: expired API key in prod config. 14:55 — key rotated, webhooks replaying. 15:30 — all queued payments processed, incident resolved."
+        },
+        {
+            "key": "impact",
+            "label": "Customer & Business Impact",
+            "example": "~450 payments delayed 30–90 min. 12 support tickets. No data loss. Estimated revenue delay: $38K (all recovered)."
+        },
+        {
+            "key": "contributing_factors",
+            "label": "Contributing Factors",
+            "example": "API key rotation process is manual. No monitoring on key expiration. Staging uses a different auth path so this wasn't caught in testing."
+        },
+        {
+            "key": "detection_method",
+            "label": "How Was It Detected",
+            "example": "PagerDuty alert on webhook failure rate exceeding 5% threshold"
+        }
+    ]
+}

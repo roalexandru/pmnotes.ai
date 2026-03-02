@@ -1,0 +1,43 @@
+{
+    "slug": "sprint-retrospective",
+    "title": "Sprint Retrospective Report",
+    "shortDescription": "Generate a structured sprint retrospective from raw team feedback with actionable improvements.",
+    "surface": "execution",
+    "pmStage": "Automation & Scripts",
+    "complexity": "Quick",
+    "outputType": "Retrospective Report + Structured Data",
+    "tags": [
+        "agile",
+        "retrospective",
+        "sprint",
+        "team",
+        "continuous-improvement"
+    ],
+    "jobsToBeDone": [
+        "Summarize sprint outcomes quickly",
+        "Turn scattered feedback into actionable items",
+        "Track improvement trends across sprints"
+    ],
+    "inputs": [
+        {
+            "key": "sprint_name",
+            "label": "Sprint Name / Number",
+            "example": "Sprint 14 — Billing Overhaul"
+        },
+        {
+            "key": "sprint_goal",
+            "label": "Sprint Goal",
+            "example": "Migrate all billing flows to Stripe v3 and ship self-serve invoice downloads"
+        },
+        {
+            "key": "team_feedback",
+            "label": "Raw Team Feedback",
+            "example": "Liked: good collab with design. Disliked: too many scope changes mid-sprint. Wish: earlier QA involvement. Bug count was high on day 1 of release."
+        },
+        {
+            "key": "key_metrics",
+            "label": "Sprint Metrics",
+            "example": "Velocity: 34/40 points, Bugs escaped: 3, Sprint goal met: partial (invoice download slipped)"
+        }
+    ]
+}

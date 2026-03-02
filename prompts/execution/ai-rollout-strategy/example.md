@@ -526,3 +526,55 @@ A = Accountable, R = Responsible, C = Consulted, I = Informed
 - [ ] Rollback tested
 - [ ] Documentation published
 - [ ] All stakeholders signed off
+
+---
+
+## 11. Phase Transition Go/No-Go Checklists
+
+```json
+[
+  {
+    "phase": "Shadow → Dogfood",
+    "criteria": [
+      { "metric": "AI vs Human agreement rate", "threshold": ">90%", "current_status": "pending" },
+      { "metric": "Latency p95", "threshold": "<5s", "current_status": "pending" },
+      { "metric": "Error rate", "threshold": "<1%", "current_status": "pending" },
+      { "metric": "Edge case rate", "threshold": "<5% of documents", "current_status": "pending" },
+      { "metric": "Infrastructure stability", "threshold": "No incidents", "current_status": "pending" }
+    ],
+    "verdict": "pending"
+  },
+  {
+    "phase": "Dogfood → Limited Beta",
+    "criteria": [
+      { "metric": "Internal user satisfaction", "threshold": ">85% positive", "current_status": "pending" },
+      { "metric": "Critical bugs", "threshold": "0 open", "current_status": "pending" },
+      { "metric": "Documentation", "threshold": "FAQs finalized", "current_status": "pending" },
+      { "metric": "Support readiness", "threshold": "Team trained", "current_status": "pending" }
+    ],
+    "verdict": "pending"
+  },
+  {
+    "phase": "Limited Beta → Controlled Rollout",
+    "criteria": [
+      { "metric": "Accuracy across beta customers", "threshold": ">94%", "current_status": "pending" },
+      { "metric": "User satisfaction", "threshold": ">4.0/5.0", "current_status": "pending" },
+      { "metric": "Support tickets per customer", "threshold": "<5", "current_status": "pending" },
+      { "metric": "Data-affecting bugs", "threshold": "0", "current_status": "pending" },
+      { "metric": "Customer recommendation", "threshold": "All recommend continuing", "current_status": "pending" }
+    ],
+    "verdict": "pending"
+  },
+  {
+    "phase": "Controlled Rollout → GA",
+    "criteria": [
+      { "metric": "Accuracy at scale", "threshold": ">96%", "current_status": "pending" },
+      { "metric": "STP rate", "threshold": ">50%", "current_status": "pending" },
+      { "metric": "User adoption", "threshold": ">70%", "current_status": "pending" },
+      { "metric": "Rollback tested", "threshold": "Pass", "current_status": "pending" },
+      { "metric": "Stakeholder sign-off", "threshold": "All signed", "current_status": "pending" }
+    ],
+    "verdict": "pending"
+  }
+]
+```

@@ -5,11 +5,13 @@
     "surface": "execution",
     "pmStage": "Plans & Playbooks",
     "complexity": "Deep",
-    "outputType": "Test Plan",
+    "outputType": "Test Plan + Code Stubs",
     "tags": [
         "qa",
         "testing",
-        "product"
+        "product",
+        "playwright",
+        "jest"
     ],
     "jobsToBeDone": [
         "Ensure coverage for a new feature",
@@ -35,6 +37,11 @@
             "key": "test_environment",
             "label": "Test Environment",
             "example": "staging with anonymized billing data"
+        },
+        {
+            "key": "test_framework",
+            "label": "Test Framework (optional)",
+            "example": "Playwright for E2E, Jest for unit tests"
         }
     ]
 }

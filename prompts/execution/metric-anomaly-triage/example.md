@@ -52,6 +52,8 @@ driving = [s for s in segments if s["Status"] == "Down"]
 unaffected = [s for s in segments if s["Status"] == "Flat"]
 
 # --- Cause Ranking ---
+# Causes are ranked qualitatively from the recent_changes input.
+# In practice, Claude generates these rankings; hardcoded here for illustration.
 cause_ranking = [
     {
         "rank": 1,

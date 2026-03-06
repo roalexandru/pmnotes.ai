@@ -3,15 +3,17 @@ import re
 import pandas as pd
 from textblob import TextBlob
 
-# --- Inputs ---
-feedback = [
-    "Love the new update!",
-    "The app crashes every time I open settings.",
-    "Great customer service, very responsive.",
-    "Not intuitive to use at all.",
-    "Fast and reliable, best tool we have used.",
-    "Billing page is confusing and I was charged twice.",
-]
+# --- Inputs (one feedback entry per line) ---
+feedback_raw = """Love the new update!
+The app crashes every time I open settings.
+Great customer service, very responsive.
+Not intuitive to use at all.
+Fast and reliable, best tool we have used.
+Billing page is confusing and I was charged twice.
+Search is broken on mobile, never returns results.
+Onboarding was smooth, got started in minutes."""
+
+feedback = [line.strip() for line in feedback_raw.strip().splitlines() if line.strip()]
 
 STOPWORDS = {
     "the", "a", "an", "is", "are", "was", "were", "be", "been", "being",
@@ -19,6 +21,7 @@ STOPWORDS = {
     "i", "it", "my", "me", "we", "our", "you", "your", "they", "them",
     "this", "that", "not", "no", "do", "does", "did", "have", "has", "had",
     "so", "if", "all", "very", "just", "about", "up", "out", "from",
+    "use", "get", "got", "new", "every", "time", "never",
 }
 
 # --- Sentiment Classification ---
@@ -40,7 +43,7 @@ for item in feedback:
 
     if label == "negative":
         words = re.findall(r"\b[a-z]+\b", item.lower())
-        negative_words.extend(w for w in words if w not in STOPWORDS and len(w) > 2)
+        negative_words.extend(w for w in words if w not in STOPWORDS and len(w) > 3)
 
 df = pd.DataFrame(rows)
 
@@ -78,27 +81,29 @@ else:
 # Sample Output:
 # ## Feedback Sentiment Analysis
 #
-#                                            Feedback  Polarity Sentiment
-#                              Love the new update!     0.625  positive
-#  The app crashes every time I open settings.          -0.125  negative
-#       Great customer service, very responsive.         0.700  positive
-#                   Not intuitive to use at all.        -0.400  negative
-#   Fast and reliable, best tool we have used.           0.567  positive
-#  Billing page is confusing and I was charged twice.   -0.350  negative
+#                                              Feedback  Polarity Sentiment
+#                                Love the new update!     0.625  positive
+#    The app crashes every time I open settings.         -0.125  negative
+#         Great customer service, very responsive.        0.700  positive
+#                     Not intuitive to use at all.       -0.400  negative
+#     Fast and reliable, best tool we have used.          0.567  positive
+#  Billing page is confusing and I was charged twice.    -0.350  negative
+#  Search is broken on mobile, never returns results.   -0.400  negative
+#       Onboarding was smooth, got started in minutes.    0.250  positive
 #
 # ## Sentiment Distribution
 #
-#   Positive: 3 (50%)
-#   Negative: 3 (50%)
+#   Positive: 4 (50%)
+#   Negative: 4 (50%)
 #    Neutral: 0 (0%)
 #
 # ## Top Negative Themes
 #
 #   - crashes (1x)
-#   - open (1x)
-#   - settings (1x)
-#   - intuitive (1x)
-#   - use (1x)
+#   - confusing (1x)
+#   - broken (1x)
+#   - billing (1x)
+#   - search (1x)
 #
 # ## PM Recommendation
 #

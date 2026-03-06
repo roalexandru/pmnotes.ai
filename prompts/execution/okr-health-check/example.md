@@ -90,7 +90,7 @@ At 54% through the quarter, the activation objective is **At Risk**. KR1 (activa
       "key_results": [
         { "description": "30-day activation rate", "target": "55%", "current": "47%", "status": "at_risk", "gap": "-1.1pp vs pace" },
         { "description": "Reduce onboarding drop-off", "target": "-20%", "current": "-12%", "status": "on_track", "gap": "+1.2pp ahead" },
-        { "description": "Launch guided setup flow", "target": "shipped", "current": "70% complete", "status": "on_track", "gap": "none" }
+        { "description": "Launch guided setup flow", "target": "shipped", "current": "70% complete", "status": "on_track", "gap": "+15pp ahead of pace" }
       ]
     }
   ],

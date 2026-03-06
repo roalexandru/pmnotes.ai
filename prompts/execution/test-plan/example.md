@@ -100,6 +100,56 @@ describe('Invoice Download - Edge Cases', () => {
 });
 ```
 
+## Test Stubs: Integration Tests (Jest)
+
+```typescript
+// invoice-integration.test.ts
+import { describe, test, expect, beforeAll, afterAll } from '@jest/globals';
+
+describe('Invoice Download - Stripe Integration', () => {
+  beforeAll(() => {
+    // TODO: Set up Stripe test client, seed test invoices
+  });
+
+  afterAll(() => {
+    // TODO: Clean up test invoices from Stripe
+  });
+
+  test('retrieves invoice from Stripe with valid invoice ID', () => {
+    // TODO: Call Stripe API with known test invoice ID
+    // TODO: Assert response contains expected fields (amount, currency, status)
+  });
+
+  test('returns structured error for invalid invoice ID', () => {
+    // TODO: Call Stripe API with non-existent ID
+    // TODO: Assert error response with code INVOICE_NOT_FOUND
+  });
+
+  test('handles Stripe rate limit with retry and backoff', () => {
+    // TODO: Mock Stripe to return 429, assert retry logic triggers
+    // TODO: Assert successful retrieval after backoff
+  });
+});
+
+describe('Invoice Download - PDF Renderer Integration', () => {
+  test('generates valid PDF from invoice data', () => {
+    // TODO: Pass invoice fixture to PDF renderer
+    // TODO: Assert output is valid PDF (check magic bytes)
+    // TODO: Assert file size is reasonable (<5MB)
+  });
+
+  test('PDF generation completes within 2 second SLA', () => {
+    // TODO: Time the PDF generation for a standard invoice
+    // TODO: Assert duration < 2000ms
+  });
+
+  test('renderer handles missing optional fields gracefully', () => {
+    // TODO: Pass invoice with null PO number, null tax amount
+    // TODO: Assert PDF renders without errors, fields show as "N/A"
+  });
+});
+```
+
 ## Test Stubs: E2E Tests (Playwright)
 
 ```typescript

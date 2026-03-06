@@ -18,21 +18,15 @@
 
 ## In-App "What's New" Banner
 
-> **What's New in v2.4.0**
->
-> **Export your retention data.** You can now download cohort retention reports as CSV — filter by date, segment, or plan and take your data wherever you need it.
->
-> **Guided onboarding emails.** New team members get a step-by-step email sequence to get up and running faster.
->
-> Plus: reliability improvements to promo codes and scheduled report timing.
+> **v2.4.0:** Export retention cohorts as CSV and onboard new teammates with guided emails. Plus promo code and report fixes.
 
-*(148 chars — within 150 char limit)*
+*(131 chars — within 150 char limit)*
 
 ---
 
 ## Email
 
-**Subject:** What's new in v2.4.0: Export retention data + guided onboarding *(57 chars)*
+**Subject:** v2.4.0: Export retention data + guided onboarding *(53 chars)*
 
 **Preview text:** Download cohort retention as CSV and onboard your team faster.
 
@@ -56,7 +50,7 @@ Questions? Just reply to this email.
 
 ## Social Post
 
-New in v2.4.0: Export retention cohorts to CSV right from your dashboard. Plus guided onboarding emails that get new users productive on day one. *(149 chars — within 280 char limit)*
+New in v2.4.0: Export retention cohorts to CSV right from your dashboard. Plus guided onboarding emails that get new users productive on day one. *(148 chars — within 280 char limit)*
 
 ---
 

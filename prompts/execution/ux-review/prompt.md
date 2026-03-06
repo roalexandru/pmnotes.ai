@@ -58,14 +58,14 @@ For the top 3 changes, provide acceptance criteria in Given/When/Then format so 
 - Given [precondition], When [action], Then [expected result]
 - Include both happy path and edge case scenarios
 
-## 7. Executive Summary
-Provide a one-paragraph executive summary at the top of the review, suitable for a PM to paste into a Slack update.
-
 ## 6. Quick Wins vs. Post-POC
 Separate recommendations into:
 - **Quick Wins**: Can fix in hours, high impact
 - **Pre-Launch**: Should fix before GA
 - **Post-Launch**: Nice to have, can iterate
+
+## 7. Executive Summary
+Provide a one-paragraph executive summary at the top of the review, suitable for a PM to paste into a Slack update.
 
 # Output Format
 

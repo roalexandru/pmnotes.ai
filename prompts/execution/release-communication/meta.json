@@ -3,7 +3,7 @@
     "title": "Customer-Facing Release Communication",
     "shortDescription": "Transform internal release notes into customer-facing changelogs, in-app announcements, or email updates.",
     "surface": "execution",
-    "pmStage": "Automation & Scripts",
+    "pmStage": "Plans & Playbooks",
     "complexity": "Quick",
     "outputType": "Multi-Format Release Copy",
     "tags": [

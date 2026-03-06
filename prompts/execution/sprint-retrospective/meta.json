@@ -3,7 +3,7 @@
     "title": "Sprint Retrospective Report",
     "shortDescription": "Generate a structured sprint retrospective from raw team feedback with actionable improvements.",
     "surface": "execution",
-    "pmStage": "Automation & Scripts",
+    "pmStage": "Plans & Playbooks",
     "complexity": "Quick",
     "outputType": "Retrospective Report + Structured Data",
     "tags": [

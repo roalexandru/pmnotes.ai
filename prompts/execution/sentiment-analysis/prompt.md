@@ -8,7 +8,7 @@ We need a quick sentiment overview to prioritize what to fix or amplify.
 Write a Python script that classifies feedback sentiment using TextBlob polarity scoring, extracts meaningful themes from negative feedback, and produces a summary with PM recommendations.
 
 # Inputs
-- **Feedback list**: {{feedback_list}}
+- **Feedback entries** (one per line): {{feedback_list}}
 
 # Requirements
 1. **Classification**: Use TextBlob polarity scoring to classify each entry as positive (polarity > 0.1), negative (polarity < -0.1), or neutral.

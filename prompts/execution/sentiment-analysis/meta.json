@@ -1,7 +1,7 @@
 {
     "slug": "sentiment-analysis",
     "title": "User Feedback Sentiment Triage",
-    "shortDescription": "Classify feedback sentiment and surface actionable themes.",
+    "shortDescription": "Classify feedback sentiment using NLP polarity scoring and surface actionable themes from negative feedback.",
     "surface": "execution",
     "pmStage": "Research & Insight Reports",
     "complexity": "Structured",
@@ -10,17 +10,20 @@
         "python",
         "nlp",
         "sentiment",
-        "textblob"
+        "textblob",
+        "feedback",
+        "user-research"
     ],
     "jobsToBeDone": [
-        "Prioritize feedback",
-        "Spot recurring pain points"
+        "Prioritize user feedback by sentiment to focus on what hurts most",
+        "Spot recurring pain points across qualitative feedback",
+        "Produce a data-backed summary for stakeholder reviews"
     ],
     "inputs": [
         {
             "key": "feedback_list",
-            "label": "Feedback List",
-            "example": "['Love the new update!', 'The app crashes every time I open settings.', 'Great customer service, very responsive.', 'Not intuitive to use at all.', 'Fast and reliable, best tool we have used.', 'Billing page is confusing and I was charged twice.']"
+            "label": "Feedback Entries (one per line)",
+            "example": "Love the new update!\nThe app crashes every time I open settings.\nGreat customer service, very responsive.\nNot intuitive to use at all.\nFast and reliable, best tool we have used.\nBilling page is confusing and I was charged twice.\nSearch is broken on mobile, never returns results.\nOnboarding was smooth, got started in minutes."
         }
     ]
 }

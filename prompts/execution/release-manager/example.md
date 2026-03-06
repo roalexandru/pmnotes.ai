@@ -15,7 +15,11 @@ v1w2x3y feat(dashboard): add churn risk widgets for PMs
 z4a5b6c fix(billing): reduce retry count from 5 to 2"""
 
 # --- Configuration ---
-RISK_KEYWORDS = {"billing", "auth", "database", "migration", "security", "payment"}
+# Risk keywords checked against scope (not message body, to avoid false positives
+# like "security patches" which are risk-reducing, not risk-introducing)
+RISK_SCOPE_KEYWORDS = {"billing", "auth", "database", "migration", "payment"}
+# Message-level keywords that always indicate risk regardless of context
+RISK_MESSAGE_KEYWORDS = {"drop table", "force push", "rm -rf", "breaking change"}
 COMMIT_PATTERN = re.compile(
     r"^(?P<hash>[a-z0-9]+)\s+"
     r"(?P<type>feat|fix|chore|refactor|docs|test|ci)"
@@ -48,9 +52,11 @@ for line in git_log.strip().splitlines():
     else:
         categories["chores"].append(entry)
 
-    # Check for risk keywords in scope or message
-    text_lower = f"{scope} {message}".lower()
-    if any(kw in text_lower for kw in RISK_KEYWORDS):
+    # Check scope against risk keywords; check message for high-severity patterns
+    scope_lower = scope.lower()
+    message_lower = message.lower()
+    if any(kw in scope_lower for kw in RISK_SCOPE_KEYWORDS) or \
+       any(kw in message_lower for kw in RISK_MESSAGE_KEYWORDS):
         risk_items.append({"type": commit_type, "scope": scope, "message": message})
 
 # --- Generate Release Notes ---
@@ -62,7 +68,8 @@ if categories["features"]:
     print("\n## Highlights")
     for feat in categories["features"][:2]:
         scope_prefix = f"{feat['scope'].title()}: " if feat["scope"] else ""
-        print(f"- {scope_prefix}{feat['message'].capitalize()}")
+        msg = feat['message']
+        print(f"- {scope_prefix}{msg[0].upper() + msg[1:]}")
 
 # Features
 if categories["features"]:
@@ -123,7 +130,7 @@ print(f"**Stats**: {total} commits — "
 # Compare: `v1.1.0...v1.2.0`
 #
 # ## Highlights
-# - Analytics: Add cohort retention csv export
+# - Analytics: Add cohort retention CSV export
 # - Growth: Introduce onboarding checklist emails
 #
 # ## Features
@@ -142,7 +149,6 @@ print(f"**Stats**: {total} commits — "
 #
 # ## Risk Review
 # - ⚠️  [billing] handle promo code edge case for annual plans
-# - ⚠️  [deps] upgrade dependencies for security patches
 # - ⚠️  [billing] reduce retry count from 5 to 2
 #
 # ## Release Checklist
@@ -159,4 +165,4 @@ print(f"**Stats**: {total} commits — "
 # - `pyproject.toml`
 #
 # ---
-# **Stats**: 8 commits — 3 features, 3 fixes, 2 chores, 3 flagged for risk review
+# **Stats**: 8 commits — 3 features, 3 fixes, 2 chores, 2 flagged for risk review

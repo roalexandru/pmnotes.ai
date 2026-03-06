@@ -540,41 +540,7 @@ TC-EXPLAIN-002:
 
 ### 10.1 CI/CD Integration
 
-```yaml
-# .github/workflows/ml-tests.yml
-name: ML Test Suite
-
-on:
-  push:
-    paths:
-      - 'models/**'
-      - 'ml/**'
-  schedule:
-    - cron: '0 2 * * *'  # Nightly
-
-jobs:
-  accuracy-tests:
-    runs-on: gpu-runner
-    steps:
-      - name: Run accuracy suite
-        run: pytest tests/accuracy --tb=short
-      - name: Compare with baseline
-        run: python scripts/compare_baseline.py
-
-  bias-tests:
-    runs-on: gpu-runner
-    steps:
-      - name: Run fairness suite
-        run: pytest tests/fairness
-      - name: Generate bias report
-        run: python scripts/bias_report.py
-
-  robustness-tests:
-    runs-on: gpu-runner
-    steps:
-      - name: Run robustness suite
-        run: pytest tests/robustness
-```
+See **Section 13: CI/CD Automation Config** below for the full GitHub Actions workflow configuration covering accuracy, calibration, bias, and robustness test suites.
 
 ### 10.2 Automated Reporting
 

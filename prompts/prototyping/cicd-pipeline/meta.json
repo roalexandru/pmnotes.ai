@@ -1,0 +1,52 @@
+{
+    "slug": "cicd-pipeline",
+    "title": "CI/CD Pipeline Configuration",
+    "shortDescription": "Generate a production-ready CI/CD pipeline with build, test, lint, security checks, and deployment stages.",
+    "surface": "prototyping",
+    "pmStage": "Code Templates & Schemas",
+    "teamScale": "Startup",
+    "complexity": "Structured",
+    "outputType": "Config (CI/CD)",
+    "tags": [
+        "cicd",
+        "github-actions",
+        "deployment",
+        "devops",
+        "automation",
+        "pipeline"
+    ],
+    "featured": false,
+    "jobsToBeDone": [
+        "Set up automated build and test pipelines for a new project",
+        "Enforce code quality gates before merging",
+        "Automate deployment to staging and production",
+        "Add security scanning and dependency checks"
+    ],
+    "inputs": [
+        {
+            "key": "project_name",
+            "label": "Project Name",
+            "example": "InvoiceAPI"
+        },
+        {
+            "key": "stack",
+            "label": "Tech Stack",
+            "example": "Node.js 20 with TypeScript, PostgreSQL, Redis, React frontend with Vite"
+        },
+        {
+            "key": "ci_platform",
+            "label": "CI/CD Platform",
+            "example": "GitHub Actions"
+        },
+        {
+            "key": "deployment_target",
+            "label": "Deployment Target",
+            "example": "AWS ECS Fargate for backend, CloudFront + S3 for frontend, RDS for database"
+        },
+        {
+            "key": "requirements",
+            "label": "Pipeline Requirements",
+            "example": "Run tests in parallel, lint + type check, build Docker images, deploy to staging on PR merge to develop, deploy to production on release tag, Slack notifications on failure, cache node_modules and Docker layers"
+        }
+    ]
+}

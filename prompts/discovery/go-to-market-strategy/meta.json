@@ -1,0 +1,50 @@
+{
+  "slug": "go-to-market-strategy",
+  "title": "Go-to-Market Strategy",
+  "shortDescription": "Build a comprehensive go-to-market plan covering positioning, channels, timeline, enablement, and success metrics.",
+  "surface": "discovery",
+  "pmStage": "Strategy & Decision Artifacts",
+  "complexity": "Deep",
+  "teamScale": "Scaleup",
+  "outputType": "GTM Strategy Document",
+  "featured": false,
+  "tags": ["go-to-market", "launch", "strategy", "channels", "growth", "marketing"],
+  "jobsToBeDone": [
+    "Plan a coordinated market entry or product launch",
+    "Align marketing, sales, and product on launch strategy",
+    "Identify the highest-leverage channels for target audience",
+    "Define measurable launch success criteria"
+  ],
+  "inputs": [
+    {
+      "key": "product_description",
+      "label": "Product Description",
+      "example": "DataSync \u2014 a real-time data integration platform that connects SaaS tools (CRM, support, billing) into a unified customer data layer, with no-code connectors and sub-second sync"
+    },
+    {
+      "key": "target_audience",
+      "label": "Target Audience",
+      "example": "RevOps and data teams at mid-market B2B SaaS companies (100-1000 employees) who currently use manual CSV exports or fragile Zapier chains to move data between tools"
+    },
+    {
+      "key": "positioning_statement",
+      "label": "Positioning Statement",
+      "example": "Unlike Segment (too expensive) or Fivetran (too technical), DataSync gives RevOps teams real-time data unification without writing code or managing infrastructure"
+    },
+    {
+      "key": "launch_context",
+      "label": "Launch Context",
+      "example": "V1 launch \u2014 we have 12 beta customers with strong NPS (72), $0 marketing spend so far, 3-person team. Goal is first 100 paying customers in 90 days"
+    },
+    {
+      "key": "competitive_landscape",
+      "label": "Competitive Landscape",
+      "example": "Segment (enterprise, expensive), Fivetran (ETL-focused, technical), Zapier (widespread but unreliable for real-time), Census (reverse ETL only). No dominant player in the 'RevOps-first' positioning"
+    },
+    {
+      "key": "constraints",
+      "label": "Budget & Resource Constraints",
+      "example": "$15K marketing budget, no dedicated marketing hire, founders doing sales. Can invest engineering time in product-led growth features"
+    }
+  ]
+}

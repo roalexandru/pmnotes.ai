@@ -1,0 +1,50 @@
+{
+  "slug": "launch-readiness",
+  "title": "Launch Readiness Checklist",
+  "shortDescription": "Generate a comprehensive pre-launch checklist with cross-functional ownership, go/no-go criteria, and rollback procedures.",
+  "surface": "execution",
+  "pmStage": "Plans & Playbooks",
+  "complexity": "Structured",
+  "teamScale": "Scaleup",
+  "outputType": "Launch Checklist + Go/No-Go Framework",
+  "featured": false,
+  "tags": ["launch", "checklist", "release", "readiness", "coordination", "cross-functional"],
+  "jobsToBeDone": [
+    "Ensure nothing falls through the cracks before a product launch",
+    "Coordinate cross-functional teams on launch deliverables",
+    "Define clear go/no-go criteria with escalation paths",
+    "Plan rollback procedures if launch metrics disappoint"
+  ],
+  "inputs": [
+    {
+      "key": "feature_name",
+      "label": "Feature or Product Name",
+      "example": "AI Writing Assistant \u2014 suggests email drafts, subject lines, and reply tones based on conversation context"
+    },
+    {
+      "key": "launch_scope",
+      "label": "Launch Scope",
+      "example": "GA launch to all Business plan users (~8,000 accounts). Previously in closed beta with 200 accounts for 6 weeks. Rolling out via feature flag over 3 days (10% \u2192 50% \u2192 100%)"
+    },
+    {
+      "key": "launch_date",
+      "label": "Target Launch Date",
+      "example": "April 15, 2025"
+    },
+    {
+      "key": "team_roles",
+      "label": "Team & Stakeholders",
+      "example": "PM: Sarah, Eng Lead: Marcus, Design: Priya, ML Engineer: Alex, Marketing: Jordan, Support Lead: Kim, Legal: Taylor"
+    },
+    {
+      "key": "known_risks",
+      "label": "Known Risks & Open Items",
+      "example": "AI response latency P95 is 2.8s (target <2s), support team needs training on AI-specific escalation, legal review of AI disclosure language pending, no load test beyond 500 concurrent users"
+    },
+    {
+      "key": "success_criteria",
+      "label": "Launch Success Criteria",
+      "example": "60% feature adoption within 30 days, AI suggestion acceptance rate >40%, no increase in support ticket volume >10%, P95 latency <2s, no Sev1 incidents in first week"
+    }
+  ]
+}

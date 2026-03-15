@@ -1,0 +1,57 @@
+{
+    "slug": "analytics-dashboard",
+    "title": "Analytics Dashboard UI",
+    "shortDescription": "Build a responsive analytics dashboard with KPI cards, interactive charts, filters, and data tables.",
+    "surface": "prototyping",
+    "pmStage": "Product & UX Prototypes",
+    "featured": false,
+    "complexity": "Structured",
+    "teamScale": "Startup",
+    "outputType": "Code (React/TypeScript)",
+    "tags": [
+        "dashboard",
+        "analytics",
+        "charts",
+        "react",
+        "typescript",
+        "data-visualization"
+    ],
+    "jobsToBeDone": [
+        "Prototype a product analytics dashboard for stakeholder review",
+        "Visualize key metrics with interactive charts and filters",
+        "Build a reusable dashboard layout for internal tools",
+        "Create a data-driven UI that connects to real APIs"
+    ],
+    "inputs": [
+        {
+            "key": "dashboard_name",
+            "label": "Dashboard Name",
+            "example": "Revenue & Growth Dashboard"
+        },
+        {
+            "key": "metrics",
+            "label": "Key Metrics to Display",
+            "example": "MRR ($48,200), Active Users (12,847), Churn Rate (3.2%), ARPU ($3.75), Trial-to-Paid Conversion (18.4%), NPS (72)"
+        },
+        {
+            "key": "chart_types",
+            "label": "Charts & Visualizations",
+            "example": "MRR trend line (12 months), user growth area chart, churn by cohort heatmap, revenue by plan bar chart, geographic distribution map"
+        },
+        {
+            "key": "filters",
+            "label": "Filters & Controls",
+            "example": "Date range picker (7d/30d/90d/custom), plan tier filter (Free/Pro/Business), region selector, compare to previous period toggle"
+        },
+        {
+            "key": "data_source",
+            "label": "Data Source",
+            "example": "REST API at /api/analytics with endpoints: /metrics/summary, /metrics/timeseries?metric=mrr&period=30d, /metrics/breakdown?by=plan"
+        },
+        {
+            "key": "design_preferences",
+            "label": "Design Preferences",
+            "example": "Dark theme, minimal and clean, use Recharts for charts, Tailwind CSS, responsive (desktop-first but mobile-friendly)"
+        }
+    ]
+}

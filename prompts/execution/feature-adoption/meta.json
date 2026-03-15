@@ -1,0 +1,58 @@
+{
+  "slug": "feature-adoption",
+  "title": "Feature Adoption Analysis",
+  "shortDescription": "Analyze post-launch feature adoption with funnel metrics, cohort retention, segment breakdowns, and actionable recommendations.",
+  "surface": "execution",
+  "pmStage": "Data Analysis & Visualizations",
+  "teamScale": "Scaleup",
+  "featured": false,
+  "complexity": "Deep",
+  "outputType": "Executed Code (Python Analysis)",
+  "tags": [
+    "adoption",
+    "analytics",
+    "retention",
+    "cohort",
+    "python",
+    "post-launch",
+    "metrics"
+  ],
+  "jobsToBeDone": [
+    "Measure whether a launched feature is achieving adoption goals",
+    "Identify which user segments are adopting and which aren't",
+    "Analyze retention curves to detect stickiness vs. novelty drop-off",
+    "Generate data-backed recommendations to improve adoption"
+  ],
+  "inputs": [
+    {
+      "key": "feature_name",
+      "label": "Feature Name",
+      "example": "Smart Scheduling — AI-powered meeting time suggestions based on participant availability, preferences, and timezone optimization"
+    },
+    {
+      "key": "launch_date",
+      "label": "Launch Date",
+      "example": "2025-02-01"
+    },
+    {
+      "key": "analysis_period",
+      "label": "Analysis Period",
+      "example": "8 weeks post-launch (Feb 1 - Mar 28, 2025)"
+    },
+    {
+      "key": "success_metrics",
+      "label": "Success Metrics & Targets",
+      "example": "Activation rate >50% (used feature at least once), Weekly active usage >30% of activated users, Meeting scheduling time reduced by 40%, User satisfaction score >4.0/5"
+    },
+    {
+      "key": "user_data_description",
+      "label": "Available Data",
+      "example": "Event tracking: feature_viewed, suggestion_shown, suggestion_accepted, suggestion_dismissed, meeting_scheduled_with_ai. User attributes: plan_tier (Free/Pro/Business), company_size, signup_date, total_meetings_per_week, role. ~15,000 eligible users"
+    },
+    {
+      "key": "segments_of_interest",
+      "label": "Segments to Analyze",
+      "example": "Plan tier (Free vs Pro vs Business), company size (1-10, 11-50, 51-200, 200+), power users vs casual (>10 meetings/week vs <5), new users (<30 days) vs established"
+    }
+  ]
+}

@@ -1,0 +1,50 @@
+{
+  "slug": "business-case",
+  "title": "Business Case & Opportunity Sizing",
+  "shortDescription": "Build a data-driven business case with opportunity sizing, cost-benefit analysis, and investment recommendation.",
+  "surface": "discovery",
+  "pmStage": "Strategy & Decision Artifacts",
+  "teamScale": "Scaleup",
+  "complexity": "Deep",
+  "featured": false,
+  "outputType": "Business Case Document",
+  "tags": ["business-case", "opportunity-sizing", "roi", "investment", "tam", "strategy"],
+  "jobsToBeDone": [
+    "Justify a product investment to leadership with data",
+    "Size the revenue or impact opportunity realistically",
+    "Compare build vs. buy vs. partner options",
+    "Quantify risks and model different scenarios"
+  ],
+  "inputs": [
+    {
+      "key": "opportunity_description",
+      "label": "Opportunity Description",
+      "example": "Add a native analytics dashboard to our project management tool so users can visualize project health, team velocity, and resource allocation without exporting to spreadsheets"
+    },
+    {
+      "key": "target_segment",
+      "label": "Target Segment & Size",
+      "example": "Our existing 3,200 paying teams on Pro/Business plans. 68% have requested reporting features in the last 12 months. Average contract value $840/year"
+    },
+    {
+      "key": "strategic_context",
+      "label": "Strategic Context",
+      "example": "Top competitor launched analytics 6 months ago and is winning deals we used to close. Analytics is the #1 requested feature in our feedback board (420 votes). Current workaround: users export CSV to Google Sheets"
+    },
+    {
+      "key": "cost_assumptions",
+      "label": "Cost & Resource Assumptions",
+      "example": "Estimated 2 engineers + 1 designer for 4 months. Would need a data pipeline (considering Clickhouse). Could charge $10/seat/month as an add-on or include in Business plan to drive upgrades"
+    },
+    {
+      "key": "success_metrics",
+      "label": "Target Success Metrics",
+      "example": "Reduce churn in Pro tier by 15%, increase Pro→Business upgrade rate by 10%, generate $200K ARR from analytics add-on in year 1"
+    },
+    {
+      "key": "risk_factors",
+      "label": "Known Risks & Concerns",
+      "example": "Engineering team is already stretched on core platform reliability. Data infrastructure is immature. Competitor has 6-month head start. Privacy considerations for aggregated team data"
+    }
+  ]
+}

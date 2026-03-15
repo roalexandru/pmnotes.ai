@@ -1,0 +1,52 @@
+{
+  "slug": "user-journey-map",
+  "title": "User Journey Map",
+  "shortDescription": "Map the end-to-end user experience across touchpoints to identify friction, emotions, and opportunity moments.",
+  "surface": "discovery",
+  "pmStage": "Research & Insight Reports",
+  "featured": false,
+  "teamScale": "Scaleup",
+  "complexity": "Structured",
+  "outputType": "Journey Map Framework",
+  "tags": [
+    "user-research",
+    "journey-map",
+    "ux",
+    "touchpoints",
+    "experience",
+    "discovery"
+  ],
+  "jobsToBeDone": [
+    "Visualize the full user experience across stages",
+    "Identify friction points and drop-off moments",
+    "Uncover opportunity areas for product improvement",
+    "Align cross-functional teams on user pain points"
+  ],
+  "inputs": [
+    {
+      "key": "persona_description",
+      "label": "User Persona",
+      "example": "Mid-level marketing manager at a B2B SaaS company, 3-5 years experience, manages a team of 2-3, uses multiple tools for campaign management"
+    },
+    {
+      "key": "core_goal",
+      "label": "Core User Goal",
+      "example": "Launch and track a multi-channel marketing campaign from planning through performance analysis"
+    },
+    {
+      "key": "product_or_service",
+      "label": "Product or Service",
+      "example": "CampaignHub — a marketing automation platform with email, social, and analytics modules"
+    },
+    {
+      "key": "journey_scope",
+      "label": "Journey Scope",
+      "example": "End-to-end from first hearing about the product through becoming a power user (awareness → activation → retention)"
+    },
+    {
+      "key": "known_pain_points",
+      "label": "Known Pain Points (optional)",
+      "example": "Users struggle with initial template setup, report customization is confusing, onboarding emails have low open rates"
+    }
+  ]
+}

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-03-02T13:43:53.907Z",
+  "generatedAt": "2026-03-15T20:00:17.170Z",
   "items": [
     {
       "id": "ai-prd-generator",
@@ -185,6 +185,68 @@
           "key": "error_consequence",
           "label": "Consequence of AI Errors",
           "example": "Incorrect payments, audit failures, vendor disputes"
+        }
+      ]
+    },
+    {
+      "id": "business-case",
+      "title": "Business Case & Opportunity Sizing",
+      "category": "discovery",
+      "path": "discovery/business-case",
+      "tags": [
+        "business-case",
+        "opportunity-sizing",
+        "roi",
+        "investment",
+        "tam",
+        "strategy"
+      ],
+      "updatedAt": "2026-03-15T20:00:14.647Z",
+      "prompt": "# Role\n\nYou are a Senior Product Manager with MBA-level financial analysis skills, presenting an investment case to VP/C-level leadership. You combine strategic thinking with rigorous quantitative analysis.\n\n# Context\n\n**Opportunity:** {{opportunity_description}}\n\n**Target Segment:** {{target_segment}}\n\n**Strategic Context:** {{strategic_context}}\n\n**Cost & Resource Assumptions:** {{cost_assumptions}}\n\n**Target Success Metrics:** {{success_metrics}}\n\n**Known Risks:** {{risk_factors}}\n\n# Task\n\nBuild a comprehensive, decision-ready business case that a product leader can present to executive leadership to secure funding approval. The analysis must be rigorous enough to withstand CFO-level scrutiny while remaining practical and action-oriented.\n\n# Requirements\n\n## 1. Executive Summary\n\nWrite a single paragraph (4-6 sentences) that a busy executive can read in 30 seconds. Include:\n- The recommendation (invest / don't invest / invest with conditions)\n- The headline opportunity size\n- Expected ROI and payback period\n- The single strongest reason to act now\n\n## 2. Opportunity Sizing\n\nSize the opportunity using available data:\n- **Addressable base**: Calculate from the target segment data provided (users, teams, revenue base)\n- **Revenue potential**: Model three scenarios — Conservative (pessimistic adoption), Moderate (expected), and Aggressive (optimistic) — with clear assumptions for each\n- Present a scenario comparison table with adoption rates, revenue projections, and confidence levels\n- Show your math — every number should be traceable to an assumption\n\n## 3. Strategic Rationale\n\nBuild the \"why now\" case:\n- **Competitive pressure**: What happens if we don't act?\n- **User demand signals**: Quantify the evidence (feedback votes, support tickets, churn reasons)\n- **Strategic fit**: How does this align with company direction?\n- **Cost of delay**: Estimate what each quarter of inaction costs (lost deals, churn, competitive ground)\n\n## 4. Cost-Benefit Analysis\n\nProvide a detailed financial breakdown:\n- **Build cost**: One-time investment broken down by role, duration, and infrastructure\n- **Ongoing cost**: Annual maintenance, infrastructure, support burden\n- **Revenue projections**: Year 1, Year 2, Year 3 under the moderate scenario\n- **Payback period**: When cumulative revenue exceeds cumulative cost\n- **3-year NPV**: Use a 10% discount rate (or appropriate for context)\n- Present a summary P&L table covering the 3-year horizon\n\n## 5. Options Analysis\n\nCompare at least four approaches:\n- **Build in-house**: Full custom development\n- **Buy / integrate**: Third-party solution or acquisition\n- **Partner**: White-label or co-development arrangement\n- **Do nothing**: Status quo with workarounds\n\nFor each option provide: estimated cost, time to market, strategic control, ongoing complexity, and a recommendation score (1-5).\n\n## 6. Risk Assessment\n\nFor each known risk and any additional risks you identify:\n- **Likelihood**: Low / Medium / High\n- **Impact**: Low / Medium / High\n- **Mitigation**: Specific, actionable mitigation strategy\n- **Residual risk**: What remains after mitigation\n\nPresent as a risk register table. Flag any risks that could be deal-breakers.\n\n## 7. Sensitivity Analysis\n\nTest what happens when key assumptions are wrong:\n- What if adoption is 50% lower than the moderate scenario?\n- What if build costs are 2x the estimate?\n- What if time-to-market slips by one quarter?\n- What if the competitive landscape shifts (new entrant, competitor price drop)?\n\nFor each scenario, show the revised ROI and payback period. Identify the assumption that matters most (the \"swing variable\").\n\n## 8. Implementation Approach\n\nRecommend a phased rollout:\n- **Phase 1** (MVP): Scope, timeline, success criteria, investment required\n- **Phase 2** (Expansion): What gets added, trigger to proceed\n- **Phase 3** (Scale): Full vision, dependencies\n\nInclude go/no-go criteria between phases so leadership sees built-in checkpoints.\n\n## 9. Decision & Next Steps\n\nClose with:\n- A clear, unambiguous recommendation (GO / GO WITH CONDITIONS / NO-GO)\n- The specific conditions or approvals needed\n- Immediate next steps (first 2 weeks) if approved\n- The decision deadline and what triggers urgency\n\n# Output Format\n\nReturn the entire business case as a **single markdown document** so it can be easily copied into a presentation or shared doc. Use tables for financial data and comparisons. Use bold for key numbers and recommendations. Keep language executive-friendly — precise but not academic.\n",
+      "slug": "business-case",
+      "shortDescription": "Build a data-driven business case with opportunity sizing, cost-benefit analysis, and investment recommendation.",
+      "surface": "discovery",
+      "pmStage": "Strategy & Decision Artifacts",
+      "teamScale": "Scaleup",
+      "complexity": "Deep",
+      "featured": false,
+      "outputType": "Business Case Document",
+      "jobsToBeDone": [
+        "Justify a product investment to leadership with data",
+        "Size the revenue or impact opportunity realistically",
+        "Compare build vs. buy vs. partner options",
+        "Quantify risks and model different scenarios"
+      ],
+      "inputs": [
+        {
+          "key": "opportunity_description",
+          "label": "Opportunity Description",
+          "example": "Add a native analytics dashboard to our project management tool so users can visualize project health, team velocity, and resource allocation without exporting to spreadsheets"
+        },
+        {
+          "key": "target_segment",
+          "label": "Target Segment & Size",
+          "example": "Our existing 3,200 paying teams on Pro/Business plans. 68% have requested reporting features in the last 12 months. Average contract value $840/year"
+        },
+        {
+          "key": "strategic_context",
+          "label": "Strategic Context",
+          "example": "Top competitor launched analytics 6 months ago and is winning deals we used to close. Analytics is the #1 requested feature in our feedback board (420 votes). Current workaround: users export CSV to Google Sheets"
+        },
+        {
+          "key": "cost_assumptions",
+          "label": "Cost & Resource Assumptions",
+          "example": "Estimated 2 engineers + 1 designer for 4 months. Would need a data pipeline (considering Clickhouse). Could charge $10/seat/month as an add-on or include in Business plan to drive upgrades"
+        },
+        {
+          "key": "success_metrics",
+          "label": "Target Success Metrics",
+          "example": "Reduce churn in Pro tier by 15%, increase Pro→Business upgrade rate by 10%, generate $200K ARR from analytics add-on in year 1"
+        },
+        {
+          "key": "risk_factors",
+          "label": "Known Risks & Concerns",
+          "example": "Engineering team is already stretched on core platform reliability. Data infrastructure is immature. Competitor has 6-month head start. Privacy considerations for aggregated team data"
         }
       ]
     },
@@ -459,6 +521,68 @@
           "key": "feedback_text",
           "label": "Feedback Text",
           "example": "App crashes on export. Great filters but slow. Subscription is too expensive."
+        }
+      ]
+    },
+    {
+      "id": "go-to-market-strategy",
+      "title": "Go-to-Market Strategy",
+      "category": "discovery",
+      "path": "discovery/go-to-market-strategy",
+      "tags": [
+        "go-to-market",
+        "launch",
+        "strategy",
+        "channels",
+        "growth",
+        "marketing"
+      ],
+      "updatedAt": "2026-03-15T20:00:14.876Z",
+      "prompt": "# Role\n\nYou are a VP of Marketing and Growth who has led go-to-market launches at both bootstrapped startups and Series B+ scale-ups. You combine strategic rigour with scrappy, resource-aware execution. You think in terms of compounding bets, not vanity campaigns.\n\n# Context\n\n**Product:** {{product_description}}\n**Target audience:** {{target_audience}}\n**Positioning:** {{positioning_statement}}\n**Launch context:** {{launch_context}}\n**Competitive landscape:** {{competitive_landscape}}\n**Constraints:** {{constraints}}\n\n# Task\n\nBuild a comprehensive, actionable go-to-market strategy document that a product team could execute against starting this week. Every recommendation must account for the stated constraints. Avoid generic MBA frameworks — be specific to this product, audience, and competitive environment.\n\n# Requirements\n\n1. **Executive Summary & Launch Thesis**\n   - A concise summary of the GTM strategy (5-7 sentences max).\n   - Answer three questions: Why now? Why us? What is the wedge that gets us in the door?\n   - State the single most important bet this launch is making.\n\n2. **Target Audience Deep-Dive**\n   - Define the Ideal Customer Profile (ICP) with firmographic and behavioral attributes.\n   - Identify 2-3 buying triggers — specific moments when this audience actively seeks a solution.\n   - Map the decision process: who discovers, who evaluates, who approves, who blocks.\n   - List the top 3-5 objections prospects will raise and how to counter each.\n\n3. **Channel Strategy**\n   - Rank 5-7 channels from highest to lowest expected ROI for this specific audience and budget.\n   - For each channel provide: the tactic, why it fits this audience, estimated effort (hours/week), expected yield (qualitative or quantitative), and time to first results.\n   - Clearly distinguish between acquisition channels (awareness/leads) and activation channels (trial-to-paid conversion).\n   - Flag which channels are product-led growth motions vs. sales-led motions.\n\n4. **Launch Timeline**\n   - Build a phased plan with three stages: Pre-Launch (2-4 weeks before), Launch Week, and Post-Launch (first 60 days).\n   - For each phase list specific activities, owners (role, not name), and deliverables.\n   - Identify the single highest-leverage activity in each phase.\n\n5. **Messaging & Content Plan**\n   - Define 3 core messages tailored to the target audience's pain points.\n   - For each message specify the channel it maps to and the content format (e.g., LinkedIn post, case study, demo video).\n   - List the minimum viable set of content pieces needed before launch day, with estimated creation effort.\n\n6. **Sales Enablement**\n   - If the GTM involves any human-touch sales motion, provide:\n     - A one-page battlecard outline (positioning vs. each named competitor).\n     - Top 5 objection-handling scripts (objection, reframe, proof point).\n     - A demo script outline structured as: hook, pain validation, solution walkthrough, proof, close.\n   - If the motion is purely product-led, describe the self-serve activation funnel with key conversion points.\n\n7. **Pricing & Packaging Alignment**\n   - Explain how the pricing model supports the chosen GTM motion (PLG, sales-assisted, enterprise).\n   - Recommend whether to lead with free trial, freemium, or demo-gated and justify the choice.\n   - Suggest one pricing experiment to run in the first 60 days.\n\n8. **Success Metrics & Milestones**\n   - Define 3-5 leading indicators (measurable within the first 2 weeks).\n   - Define 3-5 lagging indicators (measurable at 30-90 days).\n   - Set specific 30-day, 60-day, and 90-day targets tied to the launch goal.\n   - Specify how and where each metric should be tracked.\n\n9. **Risk & Contingency**\n   - Identify the top 3-5 risks to this GTM plan (channel underperformance, messaging miss, competitive response, etc.).\n   - For each risk state the trigger that tells you it is materializing, and the specific contingency action (Plan B).\n\n# Output Format\n\nReturn the full strategy as a structured markdown document with these sections in order:\n\n1. **Executive Summary & Launch Thesis**\n2. **Target Audience Deep-Dive** (include ICP table, buying triggers, decision map, objection table)\n3. **Channel Strategy** (ranked table with columns: Rank, Channel, Tactic, Motion Type, Effort/Week, Expected Yield, Time to Results)\n4. **Launch Timeline** (three sub-sections: Pre-Launch, Launch Week, Post-Launch with activity tables)\n5. **Messaging & Content Plan** (message table + content checklist)\n6. **Sales Enablement** (battlecard, objection scripts, demo outline — or PLG funnel)\n7. **Pricing & Packaging Alignment**\n8. **Success Metrics & Milestones** (leading/lagging indicators table + 30/60/90 targets)\n9. **Risk & Contingency** (risk table with trigger and Plan B columns)\n\nUse tables where they improve scannability. Be specific — name real channels, real communities, real content formats. Every recommendation should pass the test: \"Could someone act on this tomorrow?\"\n",
+      "slug": "go-to-market-strategy",
+      "shortDescription": "Build a comprehensive go-to-market plan covering positioning, channels, timeline, enablement, and success metrics.",
+      "surface": "discovery",
+      "pmStage": "Strategy & Decision Artifacts",
+      "complexity": "Deep",
+      "teamScale": "Scaleup",
+      "outputType": "GTM Strategy Document",
+      "featured": false,
+      "jobsToBeDone": [
+        "Plan a coordinated market entry or product launch",
+        "Align marketing, sales, and product on launch strategy",
+        "Identify the highest-leverage channels for target audience",
+        "Define measurable launch success criteria"
+      ],
+      "inputs": [
+        {
+          "key": "product_description",
+          "label": "Product Description",
+          "example": "DataSync — a real-time data integration platform that connects SaaS tools (CRM, support, billing) into a unified customer data layer, with no-code connectors and sub-second sync"
+        },
+        {
+          "key": "target_audience",
+          "label": "Target Audience",
+          "example": "RevOps and data teams at mid-market B2B SaaS companies (100-1000 employees) who currently use manual CSV exports or fragile Zapier chains to move data between tools"
+        },
+        {
+          "key": "positioning_statement",
+          "label": "Positioning Statement",
+          "example": "Unlike Segment (too expensive) or Fivetran (too technical), DataSync gives RevOps teams real-time data unification without writing code or managing infrastructure"
+        },
+        {
+          "key": "launch_context",
+          "label": "Launch Context",
+          "example": "V1 launch — we have 12 beta customers with strong NPS (72), $0 marketing spend so far, 3-person team. Goal is first 100 paying customers in 90 days"
+        },
+        {
+          "key": "competitive_landscape",
+          "label": "Competitive Landscape",
+          "example": "Segment (enterprise, expensive), Fivetran (ETL-focused, technical), Zapier (widespread but unreliable for real-time), Census (reverse ETL only). No dominant player in the 'RevOps-first' positioning"
+        },
+        {
+          "key": "constraints",
+          "label": "Budget & Resource Constraints",
+          "example": "$15K marketing budget, no dedicated marketing hire, founders doing sales. Can invest engineering time in product-led growth features"
         }
       ]
     },
@@ -1141,6 +1265,63 @@
       ]
     },
     {
+      "id": "user-journey-map",
+      "title": "User Journey Map",
+      "category": "discovery",
+      "path": "discovery/user-journey-map",
+      "tags": [
+        "user-research",
+        "journey-map",
+        "ux",
+        "touchpoints",
+        "experience",
+        "discovery"
+      ],
+      "updatedAt": "2026-03-15T20:00:15.349Z",
+      "prompt": "# Role\n\nYou are a senior UX strategist and service designer with deep expertise in customer journey mapping, experience design, and product-led growth. You think in systems — connecting user behaviors, emotions, and business touchpoints into actionable frameworks.\n\n# Context\n\nWe are mapping the user journey for **{{product_or_service}}**.\n\n**User persona:** {{persona_description}}\n**Core user goal:** {{core_goal}}\n**Journey scope:** {{journey_scope}}\n**Known pain points:** {{known_pain_points}}\n\n# Task\n\nCreate a comprehensive, presentation-ready user journey map that visualizes the end-to-end experience across all relevant stages. The map should be immediately usable in stakeholder presentations, design workshops, or strategic planning sessions.\n\n# Requirements\n\n## 1. Journey Stages\n\nDefine 5–7 distinct journey stages that span the full scope described above. For each stage, provide:\n\n- **Stage name and description** — a clear label and one-sentence summary of what happens in this phase.\n- **User actions** — the specific steps the user takes (3–5 actions per stage).\n- **Touchpoints** — the channels, interfaces, or interactions involved (e.g., website, email, in-app, support chat, social media, word-of-mouth).\n- **User thoughts** — what the user is thinking or asking themselves at this stage (write as first-person internal monologue).\n- **Emotional state** — describe the user's emotional state with a sentiment indicator: 😊 Positive, 😐 Neutral, 😟 Frustrated, 😤 Angry, 🤩 Delighted. Explain why they feel this way.\n- **Pain points & friction** — specific problems, confusion, or blockers the user encounters.\n- **Opportunities** — concrete product or experience improvements that could address the pain points.\n- **Key metrics** — 1–3 measurable indicators to track success at this stage (e.g., activation rate, time-to-value, NPS at touchpoint).\n\n## 2. Moments of Truth\n\nAfter the stage-by-stage breakdown, identify 3–5 **Moments of Truth** — the critical make-or-break moments in the journey where the user decides to continue, abandon, upgrade, or advocate. For each:\n\n- Describe the moment and why it matters.\n- Identify what can go wrong.\n- Recommend how to win the moment.\n\n## 3. Journey Summary Table\n\nProvide a summary table for quick scanning with columns: Stage | Sentiment | Top Pain Point | Top Opportunity | Key Metric.\n\n## 4. Prioritized Opportunity Recommendations\n\nList the top 5–7 opportunities ranked by potential impact. For each:\n\n- Describe the opportunity.\n- Assign an **effort** level (Low / Medium / High).\n- Assign an **impact** level (Low / Medium / High).\n- Recommend the team or function best positioned to own it (Product, Design, Engineering, Marketing, Support, etc.).\n\n## 5. Emotional Arc Visualization\n\nDescribe the overall emotional arc of the journey as a narrative — where the highs and lows occur, and what the ideal emotional trajectory should look like after improvements.\n\n# Output Format\n\nStructure your response with clear markdown headings:\n\n1. **Journey Overview** — persona summary, goal, and scope in a quick-reference box\n2. **Stage-by-Stage Journey Map** — detailed breakdown per stage with all elements listed above\n3. **Moments of Truth** — critical decision points\n4. **Journey Summary Table** — scannable overview\n5. **Prioritized Opportunities** — ranked recommendations with effort/impact\n6. **Emotional Arc** — narrative description of the user's emotional trajectory\n7. **Next Steps** — suggested follow-up actions (e.g., validate with user interviews, run a workshop, prototype key improvements)\n\nUse tables, bullets, and clear formatting throughout. The output should be ready to paste into a slide deck or Notion doc with minimal reformatting.\n",
+      "slug": "user-journey-map",
+      "shortDescription": "Map the end-to-end user experience across touchpoints to identify friction, emotions, and opportunity moments.",
+      "surface": "discovery",
+      "pmStage": "Research & Insight Reports",
+      "featured": false,
+      "teamScale": "Scaleup",
+      "complexity": "Structured",
+      "outputType": "Journey Map Framework",
+      "jobsToBeDone": [
+        "Visualize the full user experience across stages",
+        "Identify friction points and drop-off moments",
+        "Uncover opportunity areas for product improvement",
+        "Align cross-functional teams on user pain points"
+      ],
+      "inputs": [
+        {
+          "key": "persona_description",
+          "label": "User Persona",
+          "example": "Mid-level marketing manager at a B2B SaaS company, 3-5 years experience, manages a team of 2-3, uses multiple tools for campaign management"
+        },
+        {
+          "key": "core_goal",
+          "label": "Core User Goal",
+          "example": "Launch and track a multi-channel marketing campaign from planning through performance analysis"
+        },
+        {
+          "key": "product_or_service",
+          "label": "Product or Service",
+          "example": "CampaignHub — a marketing automation platform with email, social, and analytics modules"
+        },
+        {
+          "key": "journey_scope",
+          "label": "Journey Scope",
+          "example": "End-to-end from first hearing about the product through becoming a power user (awareness → activation → retention)"
+        },
+        {
+          "key": "known_pain_points",
+          "label": "Known Pain Points (optional)",
+          "example": "Users struggle with initial template setup, report customization is confusing, onboarding emails have low open rates"
+        }
+      ]
+    },
+    {
       "id": "user-persona",
       "title": "User Persona Builder",
       "category": "discovery",
@@ -1301,7 +1482,7 @@
         "validation",
         "enterprise"
       ],
-      "updatedAt": "2026-03-02T09:51:24+02:00",
+      "updatedAt": "2026-03-06T16:16:07+02:00",
       "prompt": "# Role\n\nYou are an ML Quality Assurance specialist designing comprehensive testing strategies for AI/ML features, covering model performance, fairness, robustness, and production validation.\n\n# Context\n\nWe are developing a testing strategy for **{{ai_feature_name}}**.\nModel type: **{{model_type}}**.\nCritical outcomes: **{{critical_outcomes}}**.\nUser segments: **{{user_segments}}**.\nKnown edge cases: **{{edge_cases}}**.\nRegulatory requirements: **{{regulatory_requirements}}**.\n\n# Task\n\nCreate a comprehensive ML testing strategy that goes beyond traditional software testing to address the unique challenges of AI systems: probabilistic outputs, bias, data drift, and adversarial robustness.\n\n# Requirements\n\n## 1. Test Data Strategy\n\n### Training/Test Split\n\n- **Hold-out test set**: Data model has never seen\n- **Temporal split**: Recent data for validation\n- **Stratified sampling**: Representation across segments\n- **Golden test set**: Curated, high-quality examples\n\n### Test Data Requirements\n\n- **Coverage**: All document types, languages, edge cases\n- **Labeling quality**: Ground truth validation\n- **Size requirements**: Statistically significant samples\n- **Refresh cadence**: How often to update test sets\n\n### Synthetic Data\n\n- **When to use**: Edge cases, rare scenarios\n- **Generation methods**: Rules-based, generative models\n- **Validation**: Human review of synthetic samples\n\n## 2. Model Accuracy Testing\n\n### Overall Accuracy Metrics\n\n- **Accuracy**: % correct predictions\n- **Precision/Recall/F1**: Per class and weighted\n- **Mean Average Precision**: For ranking/detection\n- **Confusion matrix analysis**: Error patterns\n\n### Field-Level Testing\n\nFor extraction tasks:\n\n- **Per-field accuracy**: Individual field performance\n- **Weighted accuracy**: By field importance\n- **Full-document accuracy**: All fields correct\n\n### Regression Testing\n\n- **Baseline comparison**: New vs. previous model\n- **Regression threshold**: Acceptable degradation\n- **Sliced analysis**: By segment, by time period\n\n## 3. Confidence Calibration Testing\n\n### Calibration Metrics\n\n- **Expected Calibration Error (ECE)**: Confidence vs. accuracy gap\n- **Maximum Calibration Error (MCE)**: Worst-case calibration\n- **Reliability diagrams**: Visual calibration analysis\n\n### Threshold Testing\n\n- **Accuracy at confidence levels**: Is 90% confidence = 90% accuracy?\n- **Coverage vs. accuracy tradeoffs**: Threshold optimization\n- **Uncertainty quantification**: Error bar accuracy\n\n## 4. Bias and Fairness Testing\n\n### Fairness Metrics\n\n- **Demographic parity**: Equal positive rates across groups\n- **Equalized odds**: Equal TPR/FPR across groups\n- **Predictive parity**: Equal precision across groups\n- **Individual fairness**: Similar inputs → similar outputs\n\n### Segment Analysis\n\n- **Geographic segments**: Performance by region\n- **User segments**: Performance by customer type\n- **Input segments**: Performance by document type\n- **Language segments**: Performance by language\n\n### Bias Detection\n\n- **Proxy variable analysis**: Features correlated with protected attributes\n- **Outcome disparity**: Different error rates for different groups\n- **Representation audit**: Training data coverage\n\n## 5. Robustness Testing\n\n### Input Perturbation\n\n- **Noise injection**: Image quality degradation\n- **Format variations**: Layout changes, fonts\n- **Missing data**: Incomplete inputs\n- **Corrupted data**: Partial file corruption\n\n### Adversarial Testing\n\n- **Adversarial examples**: Crafted to fool model\n- **Prompt injection**: For LLM components\n- **Evasion attacks**: Designed to cause misclassification\n\n### Boundary Testing\n\n- **Edge cases**: Minimum/maximum valid inputs\n- **Out-of-distribution**: Inputs unlike training data\n- **Corner cases**: Combinations of edge conditions\n\n## 6. Performance Testing\n\n### Latency Testing\n\n- **Benchmarking**: p50, p95, p99 latency\n- **Load testing**: Performance under load\n- **Stress testing**: Breaking point identification\n- **Spike testing**: Response to traffic bursts\n\n### Scalability Testing\n\n- **Horizontal scaling**: Add instances\n- **Vertical scaling**: Increase resources\n- **Cost efficiency**: $/inference at scale\n\n### Resource Testing\n\n- **Memory usage**: Peak and average\n- **GPU utilization**: Inference efficiency\n- **Batch processing**: Throughput optimization\n\n## 7. Integration Testing\n\n### API Contract Testing\n\n- **Request validation**: Input schema enforcement\n- **Response validation**: Output schema compliance\n- **Error handling**: Graceful degradation\n- **Timeout behavior**: Fallback mechanisms\n\n### End-to-End Testing\n\n- **Full workflow**: Upload → inference → display\n- **User journey testing**: Critical paths\n- **Cross-system testing**: Dependencies\n\n### Fallback Testing\n\n- **Service degradation**: Partial failures\n- **Complete failure**: Model unavailable\n- **Recovery testing**: Restore from failure\n\n## 8. Production Validation\n\n### Shadow Testing\n\n- **A/B comparison**: Model vs. baseline\n- **Canary deployment**: Small traffic percentage\n- **Blue-green testing**: Parallel environments\n\n### Monitoring Validation\n\n- **Alert testing**: Verify alerts fire correctly\n- **Dashboard accuracy**: Metrics correctness\n- **Logging completeness**: Required data captured\n\n### Rollback Testing\n\n- **Rollback procedure**: Verify works correctly\n- **Data consistency**: No corruption on rollback\n- **Recovery time**: Meet RTO requirements\n\n## 9. Compliance Testing\n\n### Regulatory Requirements\n\n- **Data privacy**: PII handling verification\n- **Audit trails**: Logging completeness\n- **Explainability**: Decision reasoning available\n\n### Documentation Testing\n\n- **Model cards**: Accuracy and completeness\n- **Bias reports**: Fairness documentation\n- **Limitation disclosure**: User-facing limitations\n\n## 10. Test Automation\n\n### Continuous Testing\n\n- **CI/CD integration**: Tests in pipeline\n- **Automated regression**: On every model update\n- **Scheduled testing**: Regular validation\n\nInclude a CI/CD configuration snippet (GitHub Actions YAML) that runs the core test suite on every model update. Include scheduled regression testing with nightly runs and weekly bias audits.\n\n### Test Infrastructure\n\n- **Test data management**: Versioning, access\n- **Evaluation harness**: Standardized testing\n- **Reporting**: Automated metrics tracking\n\n# Output Format\n\nReturn the entire test strategy as a **single markdown code block** so it can be easily copied and pasted. Include:\n\n1. Test plan by category\n2. Test case templates\n3. Pass/fail criteria\n4. Automation approach\n5. Reporting requirements\n",
       "slug": "ai-testing-strategy",
       "shortDescription": "Design comprehensive testing strategy for ML models covering accuracy, bias, robustness, and production validation.",
@@ -1521,6 +1702,69 @@
       ]
     },
     {
+      "id": "feature-adoption",
+      "title": "Feature Adoption Analysis",
+      "category": "execution",
+      "path": "execution/feature-adoption",
+      "tags": [
+        "adoption",
+        "analytics",
+        "retention",
+        "cohort",
+        "python",
+        "post-launch",
+        "metrics"
+      ],
+      "updatedAt": "2026-03-15T20:00:15.694Z",
+      "prompt": "# Role\nYou are a Senior Product Analyst specializing in post-launch feature adoption and retention analysis.\n\n# Context\nWe launched a new feature and need a comprehensive adoption analysis to determine whether it is meeting goals, which user segments are engaging, and what actions we should take to improve adoption. This analysis must be data-driven, statistically rigorous, and PM-friendly — every finding should be clearly explained with business implications.\n\n# Task\nWrite a complete, runnable Python script that performs a full post-launch feature adoption analysis covering funnel metrics, activation curves, cohort retention, segment breakdowns, engagement depth, impact analysis, and an executive summary with recommendations.\n\n# Inputs\n- **Feature name**: {{feature_name}}\n- **Launch date**: {{launch_date}}\n- **Analysis period**: {{analysis_period}}\n- **Success metrics & targets**: {{success_metrics}}\n- **Available data description**: {{user_data_description}}\n- **Segments of interest**: {{segments_of_interest}}\n\n# Requirements\n\n## 1. Data Setup & Assumptions\n- Generate realistic synthetic data matching the described schema. Clearly mark the data generation section with comments indicating it should be replaced with real data queries.\n- Create a user-level DataFrame with attributes matching the available data description.\n- Create an events DataFrame with timestamped feature interaction events.\n- Ensure the synthetic data produces realistic adoption patterns (not all users adopt, adoption tapers over time, segments differ meaningfully).\n\n## 2. Adoption Funnel Analysis\n- Build the full funnel: Eligible → Exposed → Activated → Retained (used feature in 2+ distinct weeks).\n- Calculate conversion rates at each stage and stage-over-stage drop-off rates.\n- Print a formatted funnel table with counts, conversion rates, and drop-off percentages.\n- Generate a horizontal bar chart visualizing the funnel.\n\n## 3. Activation Curve\n- Plot cumulative activation rate over time (should resemble an S-curve for healthy adoption).\n- Show a histogram of days-to-activate distribution.\n- Compare current activation rate against the target and annotate the chart.\n- Print the median and mean days to activation.\n\n## 4. Retention Cohort Analysis\n- Group users into weekly activation cohorts (Week 0, Week 1, ...).\n- Build a retention matrix showing the percentage of each cohort still active in subsequent weeks.\n- Print the retention matrix as a formatted table.\n- Generate a retention heatmap using seaborn.\n- Plot retention curves for each cohort on a single chart.\n- Identify the stabilization point where retention flattens (if observable).\n\n## 5. Segment Breakdown\n- For each segment of interest, calculate adoption rate and retention rate.\n- Run chi-square tests for statistical significance of adoption differences between segments.\n- Print a comparison table with adoption rate, retention rate, p-values, and significance flags.\n- Generate grouped bar charts comparing segments.\n\n## 6. Engagement Depth\n- Analyze feature usage frequency distribution (histogram of total uses per activated user).\n- Identify power users (top 10%) and characterize their behavior patterns.\n- Plot weekly usage trends over time to determine if engagement is deepening or declining.\n- Print engagement tier breakdown (light / moderate / power users with thresholds).\n\n## 7. Impact Analysis\n- Compare core product metrics (e.g., overall retention, session frequency) between adopters and non-adopters.\n- Calculate correlation between feature adoption and key outcomes.\n- Print a before/after or adopter/non-adopter comparison table.\n- Note caveats about correlation vs. causation.\n\n## 8. Executive Summary & Recommendations\n- Print a clearly formatted executive summary with:\n  - Overall adoption health assessment (on-track / at-risk / off-track vs. targets)\n  - Top 3-5 key findings with supporting numbers\n  - Specific, actionable recommendations ranked by expected impact\n  - Risks and metrics to watch going forward\n- Use clear section headers, bullet points, and bold formatting in print output.\n\n# Output Format\n- A single, complete Python script using pandas, numpy, matplotlib, seaborn, and scipy.\n- All visualizations saved to files (PNG) and also shown with plt.show() for interactive use.\n- Well-commented code with section headers explaining the \"why\" behind each analysis step.\n- Clear print statements throughout that narrate findings as the script runs — a PM should be able to read just the printed output and understand the full story.\n- Include sample output as comments at the bottom of the script.\n",
+      "slug": "feature-adoption",
+      "shortDescription": "Analyze post-launch feature adoption with funnel metrics, cohort retention, segment breakdowns, and actionable recommendations.",
+      "surface": "execution",
+      "pmStage": "Data Analysis & Visualizations",
+      "teamScale": "Scaleup",
+      "featured": false,
+      "complexity": "Deep",
+      "outputType": "Executed Code (Python Analysis)",
+      "jobsToBeDone": [
+        "Measure whether a launched feature is achieving adoption goals",
+        "Identify which user segments are adopting and which aren't",
+        "Analyze retention curves to detect stickiness vs. novelty drop-off",
+        "Generate data-backed recommendations to improve adoption"
+      ],
+      "inputs": [
+        {
+          "key": "feature_name",
+          "label": "Feature Name",
+          "example": "Smart Scheduling — AI-powered meeting time suggestions based on participant availability, preferences, and timezone optimization"
+        },
+        {
+          "key": "launch_date",
+          "label": "Launch Date",
+          "example": "2025-02-01"
+        },
+        {
+          "key": "analysis_period",
+          "label": "Analysis Period",
+          "example": "8 weeks post-launch (Feb 1 - Mar 28, 2025)"
+        },
+        {
+          "key": "success_metrics",
+          "label": "Success Metrics & Targets",
+          "example": "Activation rate >50% (used feature at least once), Weekly active usage >30% of activated users, Meeting scheduling time reduced by 40%, User satisfaction score >4.0/5"
+        },
+        {
+          "key": "user_data_description",
+          "label": "Available Data",
+          "example": "Event tracking: feature_viewed, suggestion_shown, suggestion_accepted, suggestion_dismissed, meeting_scheduled_with_ai. User attributes: plan_tier (Free/Pro/Business), company_size, signup_date, total_meetings_per_week, role. ~15,000 eligible users"
+        },
+        {
+          "key": "segments_of_interest",
+          "label": "Segments to Analyze",
+          "example": "Plan tier (Free vs Pro vs Business), company size (1-10, 11-50, 51-200, 200+), power users vs casual (>10 meetings/week vs <5), new users (<30 days) vs established"
+        }
+      ]
+    },
+    {
       "id": "forecasting",
       "title": "User Growth Forecast (with Churn)",
       "category": "execution",
@@ -1624,6 +1868,68 @@
       ]
     },
     {
+      "id": "launch-readiness",
+      "title": "Launch Readiness Checklist",
+      "category": "execution",
+      "path": "execution/launch-readiness",
+      "tags": [
+        "launch",
+        "checklist",
+        "release",
+        "readiness",
+        "coordination",
+        "cross-functional"
+      ],
+      "updatedAt": "2026-03-15T20:00:15.814Z",
+      "prompt": "# Role\nYou are a seasoned Launch Program Manager who has shipped dozens of major product releases across engineering, design, marketing, sales, support, and legal. You bring operational rigor and cross-functional awareness to every launch.\n\n# Context\nA Product Manager is preparing a significant product launch and needs a comprehensive, actionable launch readiness document. This document will serve as the single source of truth for coordinating all teams, making the go/no-go decision, and executing launch day. It must be practical enough to use directly — not a theoretical framework, but a working checklist with owners, deadlines, and clear criteria.\n\n# Task\nProduce a complete Launch Readiness Document covering pre-launch preparation, go/no-go decision criteria, rollback planning, launch day execution, and post-launch monitoring. Every item should be specific, assignable, and verifiable.\n\n# Inputs\n- **Feature or product name**: {{feature_name}}\n- **Launch scope**: {{launch_scope}}\n- **Target launch date**: {{launch_date}}\n- **Team & stakeholders**: {{team_roles}}\n- **Known risks & open items**: {{known_risks}}\n- **Launch success criteria**: {{success_criteria}}\n\n# Requirements\n\n## 1. Launch Summary\n- Feature name, scope, and target date\n- Rollout strategy (phased, big-bang, or canary — infer from the launch scope)\n- One-paragraph risk assessment synthesizing the known risks into an honest appraisal of launch readiness. Call out the highest-risk item and recommend mitigation.\n\n## 2. Pre-Launch Checklist\nOrganize into functional areas. For each checklist item, include: task description, owner (assign from the team roles provided), target completion date (working backward from launch date), and status placeholder (Not Started / In Progress / Done). Be specific — \"set up monitoring\" is too vague; \"configure PagerDuty alerts for P95 latency >2s and error rate >1% on the feature endpoint\" is actionable.\n\n### Engineering\n- Performance and load testing (with specific thresholds from success criteria)\n- Feature flag configuration and staged rollout plan\n- Monitoring and alerting setup (dashboards, PagerDuty/OpsGenie, log queries)\n- Runbook for on-call engineers (common failure modes, mitigation steps)\n- Database migrations verified in staging\n- API versioning and backward compatibility confirmed\n- Load testing results reviewed and signed off\n\n### Design\n- Final UI polish pass complete\n- Accessibility audit (WCAG 2.1 AA minimum)\n- Empty states, error states, and loading states reviewed\n- Responsive testing across breakpoints (mobile, tablet, desktop)\n- Dark mode / theme consistency verified\n\n### Data & Analytics\n- Event tracking instrumented and validated in staging\n- Launch dashboard built (real-time metrics from success criteria)\n- Baseline metrics captured (pre-launch snapshot for comparison)\n- A/B test or experiment configured (if applicable to the rollout strategy)\n- Data pipeline verified end-to-end\n\n### Marketing & Communications\n- Launch blog post or announcement drafted and reviewed\n- In-app announcement or changelog entry prepared\n- Email campaign drafted (if applicable)\n- Social media posts scheduled\n- Product changelog updated\n- Press or analyst briefing (if applicable)\n\n### Sales Enablement\n- Demo script updated with new feature\n- FAQ document for sales team\n- Battlecard updates for competitive positioning\n- Pricing page or packaging updates (if applicable)\n- Customer-facing documentation reviewed\n\n### Customer Support\n- Support team training completed\n- Help center articles published or updated\n- Escalation paths defined for feature-specific issues\n- Canned responses / macros created\n- Known limitations documented for support reference\n- Tier-2 escalation contacts identified\n\n### Legal & Compliance\n- Terms of service updates (if applicable)\n- Privacy impact assessment complete\n- AI disclosure or transparency language reviewed (if applicable)\n- Data processing agreements updated (if applicable)\n- Regulatory requirements verified\n\n### Infrastructure & Operations\n- Auto-scaling configuration verified for expected load\n- CDN and caching rules updated\n- Rollback procedure documented and tested\n- Incident response plan reviewed\n- Backup and recovery verified\n- Third-party dependency health confirmed\n\n## 3. Go/No-Go Decision Framework\nCreate three tiers of launch criteria:\n\n### Must-Have (Launch Blockers)\nItems that absolutely must be complete before launch. If any is unmet, launch does not proceed. These should be derived from the success criteria and known risks. Typically 5-8 items covering critical functionality, performance thresholds, legal requirements, and safety.\n\n### Should-Have (Acceptable Risk)\nItems that ideally are complete but can launch without if the risk is acknowledged and a mitigation plan exists. Include the specific risk of launching without each item and the mitigation. Typically 4-6 items.\n\n### Nice-to-Have (Can Ship Without)\nItems that improve the launch but are not blocking. Can be completed post-launch. Typically 3-5 items.\n\n### Decision Meeting Agenda\nProvide a template agenda for the go/no-go meeting, including:\n- Attendees (from team roles)\n- Duration and format\n- Review of must-have criteria (status check for each)\n- Review of should-have items and risk acceptance\n- Open risks discussion\n- Escalation path if no consensus\n- Final decision and next steps\n\n## 4. Rollback Plan\n\n### Rollback Triggers\nDefine specific, measurable conditions that would trigger a rollback. Use concrete thresholds tied to the success criteria (e.g., \"Error rate exceeds 5% for 10+ minutes,\" \"P95 latency exceeds 3x target for 15+ minutes\"). Include both automated triggers and manual decision triggers.\n\n### Rollback Procedure\nStep-by-step procedure to reverse the launch. Include:\n- Who initiates the rollback (role and name)\n- Technical steps (feature flag, deployment, database)\n- Estimated time to complete rollback\n- Verification that rollback is successful\n\n### Rollback Communication Plan\n- Internal communication (Slack channels, stakeholder notification)\n- External communication (if customers noticed — status page, email, in-app)\n- Post-rollback retrospective timeline\n\n## 5. Launch Day Timeline\nHour-by-hour schedule for launch day. Include:\n- Pre-launch checks (morning of)\n- Staged rollout timing (aligned with the rollout strategy from launch scope)\n- Monitoring checkpoints between rollout stages\n- Go/no-go decision points for each stage\n- Team availability and escalation contacts\n- End-of-day status check and handoff to next timezone (if applicable)\n\n## 6. Post-Launch Monitoring Plan\nDefine what to watch, who watches it, and when to escalate for three time horizons:\n\n### First 24 Hours\n- Real-time metrics to monitor (from success criteria)\n- On-call rotation and escalation thresholds\n- Hourly check-in schedule\n\n### First Week\n- Daily metric reviews and who attends\n- User feedback channels to monitor\n- Quick-win fixes pipeline\n- Decision point: proceed to 100% or pause\n\n### First 30 Days\n- Weekly metric reviews against success criteria\n- User research or feedback synthesis\n- Feature iteration backlog\n- Launch retrospective date and format\n- Success/failure declaration criteria and timeline\n\n# Output Format\n- Use markdown with clear hierarchical headings\n- Checklists as markdown checkboxes (`- [ ]`)\n- Tables for timelines and criteria matrices\n- Bold owners and dates for scannability\n- Keep it actionable — every item should be something someone can do, verify, or decide\n- Target 1,500–2,500 words — comprehensive but not padded\n",
+      "slug": "launch-readiness",
+      "shortDescription": "Generate a comprehensive pre-launch checklist with cross-functional ownership, go/no-go criteria, and rollback procedures.",
+      "surface": "execution",
+      "pmStage": "Plans & Playbooks",
+      "complexity": "Structured",
+      "teamScale": "Scaleup",
+      "outputType": "Launch Checklist + Go/No-Go Framework",
+      "featured": false,
+      "jobsToBeDone": [
+        "Ensure nothing falls through the cracks before a product launch",
+        "Coordinate cross-functional teams on launch deliverables",
+        "Define clear go/no-go criteria with escalation paths",
+        "Plan rollback procedures if launch metrics disappoint"
+      ],
+      "inputs": [
+        {
+          "key": "feature_name",
+          "label": "Feature or Product Name",
+          "example": "AI Writing Assistant — suggests email drafts, subject lines, and reply tones based on conversation context"
+        },
+        {
+          "key": "launch_scope",
+          "label": "Launch Scope",
+          "example": "GA launch to all Business plan users (~8,000 accounts). Previously in closed beta with 200 accounts for 6 weeks. Rolling out via feature flag over 3 days (10% → 50% → 100%)"
+        },
+        {
+          "key": "launch_date",
+          "label": "Target Launch Date",
+          "example": "April 15, 2025"
+        },
+        {
+          "key": "team_roles",
+          "label": "Team & Stakeholders",
+          "example": "PM: Sarah, Eng Lead: Marcus, Design: Priya, ML Engineer: Alex, Marketing: Jordan, Support Lead: Kim, Legal: Taylor"
+        },
+        {
+          "key": "known_risks",
+          "label": "Known Risks & Open Items",
+          "example": "AI response latency P95 is 2.8s (target <2s), support team needs training on AI-specific escalation, legal review of AI disclosure language pending, no load test beyond 500 concurrent users"
+        },
+        {
+          "key": "success_criteria",
+          "label": "Launch Success Criteria",
+          "example": "60% feature adoption within 30 days, AI suggestion acceptance rate >40%, no increase in support ticket volume >10%, P95 latency <2s, no Sev1 incidents in first week"
+        }
+      ]
+    },
+    {
       "id": "metric-anomaly-triage",
       "title": "Metric Anomaly Triage",
       "category": "execution",
@@ -1637,7 +1943,7 @@
         "python",
         "statistics"
       ],
-      "updatedAt": "2026-03-02T09:51:24+02:00",
+      "updatedAt": "2026-03-06T16:16:07+02:00",
       "prompt": "# Role\nYou are a Product Analyst helping a Product Manager triage a metric anomaly that was flagged in the last 24 hours.\n\n# Context\nA key metric has moved unexpectedly. The PM needs to quickly determine whether this requires action, further investigation, or can be attributed to a known cause. Speed matters — leadership will ask about this in standup.\n\n# Task\nWrite a Python script that computes the z-score, evaluates statistical significance, runs segment-level analysis, and outputs a formatted triage report with a clear verdict and recommended actions.\n\n# Inputs\n- **Metric**: {{metric_name}}\n- **Baseline mean**: {{baseline_mean}}\n- **Baseline std dev**: {{baseline_stddev}}\n- **Observed value**: {{observed_value}}\n- **Recent changes or events**: {{recent_changes}}\n- **Segment breakdown**: {{segments_data}}\n\n# Requirements\n1. **Z-score computation**: Use `scipy.stats` to compute the z-score and two-tailed p-value from the baseline mean and standard deviation.\n2. **Severity classification**: Classify severity using standard thresholds — within 1σ (normal), 1–2σ (monitor), 2–3σ (investigate), >3σ (escalate).\n3. **Segment analysis**: Parse the segment data, compute per-segment deviation as a percentage, and display a pandas DataFrame showing which segments are driving the anomaly vs. unaffected.\n4. **Signal vs. noise verdict**: State a clear verdict — likely signal, likely noise, or inconclusive — based on the z-score and segment pattern.\n5. **Cause ranking**: Rank the most likely explanations from the recent changes input, with a fit assessment for each (strong/moderate/weak) based on segment and timing patterns.\n6. **Recommended action**: Output one of: (a) monitor — check again in 24h, (b) investigate — specify what data to pull, (c) escalate — specify to whom, or (d) no action — explain why expected.\n7. **Leadership talking points**: Print 2–3 sentences the PM can use to brief leadership.\n\n# Output Format\n- Python code using scipy and pandas\n- Script prints a formatted triage report with all sections above\n- Include sample output as comments at the bottom\n",
       "slug": "metric-anomaly-triage",
       "shortDescription": "Quickly determine if a metric movement is signal or noise with statistical context, likely causes, and recommended next steps.",
@@ -1735,7 +2041,7 @@
         "planning",
         "operations"
       ],
-      "updatedAt": "2026-03-02T09:51:24+02:00",
+      "updatedAt": "2026-03-06T16:16:07+02:00",
       "prompt": "# Role\nYou are a Strategy Operations advisor helping a Product Manager run a mid-quarter OKR health check.\n\n# Context\nThe PM tracks OKRs quarterly and needs a structured assessment of where each objective and key result stands relative to the time elapsed. This check will be used in leadership reviews and to decide where to shift resources.\n\n# Task\nAnalyze each OKR's progress against the quarter's timeline, score health status, assess confidence, and recommend actions for anything off-track.\n\n# Inputs\n- **Quarter & time elapsed**: {{quarter}}\n- **OKRs with current progress**: {{okrs}}\n- **Known blockers or risks**: {{blockers}}\n- **Business context**: {{context}}\n\n# Requirements\n1. **Health scoring**: Rate each key result as On Track, At Risk, or Off Track based on progress vs. expected pace at this point in the quarter.\n2. **Confidence assessment**: For each objective, assign a confidence level (High / Medium / Low) that the objective will be met by quarter end.\n3. **Gap analysis**: For at-risk or off-track items, quantify the gap between current trajectory and target.\n4. **Blocker impact**: Map known blockers to the specific KRs they affect and estimate the impact.\n5. **Recommendations**: For each at-risk or off-track item, propose a specific action — resource shift, scope cut, timeline adjustment, or escalation.\n6. **Executive summary**: Open with a 3–4 sentence summary suitable for a leadership audience.\n7. **Structured summary**: Append a JSON summary block (in a code fence) with machine-readable health data: `quarter`, `week`, `overall_confidence` (high/medium/low), and an `objectives` array where each entry has `objective`, `confidence`, and a `key_results` array containing `description`, `target`, `current`, `status` (on_track/at_risk/off_track), and `gap`. Also include `blockers` (array with `blocker`, `affected_krs`, `impact`) and `priority_actions` (string array).\n\n# Output Format\n- Markdown document with executive summary, per-objective sections, and a summary table\n- Health status using clear labels (On Track / At Risk / Off Track)\n- JSON summary block appended at the end\n",
       "slug": "okr-health-check",
       "shortDescription": "Assess in-flight OKR progress with on-track/at-risk/off-track scoring, confidence levels, and escalation recommendations.",
@@ -1772,6 +2078,69 @@
       ]
     },
     {
+      "id": "qbr-report",
+      "title": "Quarterly Business Review Report",
+      "category": "execution",
+      "path": "execution/qbr-report",
+      "tags": [
+        "qbr",
+        "quarterly-review",
+        "executive",
+        "metrics",
+        "okr",
+        "strategy",
+        "reporting"
+      ],
+      "updatedAt": "2026-03-15T20:00:15.960Z",
+      "prompt": "# Role\nYou are a senior Strategy & Operations advisor helping a Product Manager prepare a Quarterly Business Review (QBR) for executive leadership.\n\n# Context\nThe PM owns a product area and needs to present a comprehensive, honest review of the quarter to VP/C-suite leadership. This QBR will be used to evaluate team performance, inform resource allocation, and set next-quarter priorities. Leadership expects signal, not spin — they want to understand what actually happened, why, and what it means for the business going forward.\n\n# Task\nProduce a complete, executive-ready QBR document from the provided inputs. The document should be data-driven, narratively coherent, and forward-looking. Every claim must be backed by data. Every recommendation must trace back to a learning from this quarter.\n\n# Inputs\n- **Product area**: {{product_area}}\n- **Quarter & year**: {{quarter}}\n- **OKR results**: {{okr_results}}\n- **Key metrics performance**: {{key_metrics}}\n- **Notable events & learnings**: {{notable_events}}\n- **Next quarter context & priorities**: {{next_quarter_context}}\n\n# Requirements\n\n## 1. Executive Summary (1 page max)\n- Open with an overall quarter grade (A/B/C/D) and a one-sentence justification.\n- Headline metrics: 3-4 most important numbers with directional indicators.\n- Biggest win of the quarter (1-2 sentences, data-backed).\n- Biggest miss of the quarter (1-2 sentences, honest assessment).\n- Top recommendation for next quarter (1-2 sentences, specific and actionable).\n\n## 2. Metrics Dashboard\n- Present as a markdown table with columns: Metric, Target, Actual, Variance (%), vs Previous Quarter, Status.\n- Status indicators: use clear labels — Exceeding, On Track, Below Target, Critical.\n- Below the table, add a 2-3 sentence narrative calling out the most important trends and any metrics that warrant investigation.\n\n## 3. OKR Scorecard\n- For each objective, list every key result with:\n  - Score on 0.0-1.0 scale (where 0.7+ = strong, 0.4-0.7 = partial, <0.4 = missed).\n  - Status label: Achieved, Partially Achieved, Missed, Descoped.\n  - Brief commentary on what drove the result.\n- Calculate an overall objective score (average of key results) and overall quarter score (average of objectives).\n- Flag any key results that were descoped and explain why — descoping is a legitimate decision, but it needs justification.\n\n## 4. Quarter Narrative\n\n### What Went Well\n- 3-5 items, each backed by specific data or outcomes.\n- Distinguish between outcomes we drove (credit) vs tailwinds we benefited from (context).\n\n### What Didn't Go Well\n- 3-5 items with honest root-cause analysis, not surface-level descriptions.\n- For each miss, state: what happened, why it happened, what the impact was, and whether it was within our control.\n- Do not make excuses. Acknowledge where the team underperformed.\n\n### What We Learned\n- 2-4 non-obvious insights that change how we think about the product, users, or market.\n- Each learning should have a \"so what\" — what we will do differently because of this insight.\n\n## 5. Deep Dives (2-3 topics)\n- Select 2-3 events, experiments, or trends from the quarter that warrant detailed analysis.\n- For each deep dive: background, what happened, analysis, implications, recommended actions.\n- Choose topics that are most useful for leadership decision-making — e.g., surprising experiment results, incidents with systemic causes, emerging market signals.\n\n## 6. Customer & Market Signals\n- Deal wins and losses with reasons (patterns matter more than individual anecdotes).\n- Customer feedback themes (aggregate, not cherry-picked).\n- Competitive movements observed and their implications.\n- Churn or expansion signals.\n\n## 7. Team & Execution Health\n- Velocity trends: are we shipping faster or slower? Why?\n- Capacity: headcount, utilization, any gaps or surpluses.\n- Process issues: what's working, what's creating drag.\n- Morale signals: team sentiment, retention risks, energy level (be honest but constructive).\n\n## 8. Next Quarter Plan\n- **Proposed OKRs**: 2-3 objectives with key results. Each objective must link explicitly to a learning or gap identified in this QBR.\n- **Key bets and hypotheses**: What are we betting on, and what evidence supports the bet? State hypotheses in falsifiable form.\n- **Resource asks**: Any additional headcount, budget, or cross-functional support needed, with clear justification tied to expected impact.\n- **Risks and dependencies**: What could derail the plan? What do we need from other teams?\n- **What we're choosing NOT to do**: Explicitly list 2-3 things that didn't make the cut and why — this demonstrates strategic focus.\n\n## 9. Appendix\n- Detailed metric tables with weekly or monthly breakdowns.\n- Supporting data referenced in the narrative.\n- Structured JSON summary block (in a code fence) with machine-readable QBR data: `quarter`, `product_area`, `overall_grade`, `overall_okr_score`, and a `metrics` array where each entry has `name`, `target`, `actual`, `variance_pct`, `status`. Also include `objectives` array with `objective`, `score`, and `key_results` array containing `description`, `score`, `status`. Include `next_quarter_okrs` array with `objective` and `key_results` (string array). Include `top_risks` (string array) and `key_learnings` (string array).\n\n# Output Format\n- Markdown document with clear section headers and consistent formatting.\n- Tables for metrics and scorecards.\n- Data cited inline — every claim backed by a number.\n- Tone: confident, direct, honest. Write for a busy executive who will skim headers and dive into sections that matter.\n- No corporate filler. No \"we're excited to share.\" No hedging language. State what happened, what it means, and what to do about it.\n- JSON summary block in the appendix for structured data extraction.\n",
+      "slug": "qbr-report",
+      "shortDescription": "Generate an executive-ready QBR document with metrics performance, OKR results, learnings, and next-quarter recommendations.",
+      "surface": "execution",
+      "pmStage": "Plans & Playbooks",
+      "complexity": "Deep",
+      "teamScale": "Scaleup",
+      "outputType": "QBR Document + Structured Data",
+      "featured": false,
+      "jobsToBeDone": [
+        "Present a comprehensive quarterly performance review to leadership",
+        "Synthesize metrics, OKR outcomes, and qualitative learnings",
+        "Justify next-quarter priorities with data from the current quarter",
+        "Identify systemic issues and propose structural improvements"
+      ],
+      "inputs": [
+        {
+          "key": "product_area",
+          "label": "Product Area",
+          "example": "Growth & Activation — responsible for signup flow, onboarding, trial-to-paid conversion, and first-week engagement"
+        },
+        {
+          "key": "quarter",
+          "label": "Quarter & Year",
+          "example": "Q1 2025 (January 1 - March 31)"
+        },
+        {
+          "key": "okr_results",
+          "label": "OKR Results",
+          "example": "O1: Increase trial-to-paid conversion (KR1: 12%→18% conversion — achieved 16.2%; KR2: Reduce time-to-value from 4.2 days to 2 days — achieved 2.8 days; KR3: Launch personalized onboarding — shipped Feb 15, 72% completion rate). O2: Reduce first-week churn (KR1: 35%→25% — achieved 28%; KR2: Implement re-engagement email series — shipped, 22% reactivation rate; KR3: Add in-app guidance — descoped, pushed to Q2)"
+        },
+        {
+          "key": "key_metrics",
+          "label": "Key Metrics Performance",
+          "example": "New signups: 14,200 (target 15,000, -5%). Trial-to-paid: 16.2% (target 18%, +35% vs last Q). MRR: $52,400→$68,100 (+30%). Activation rate: 61% (target 70%). NPS: 48→54. Support tickets: +12% (concern)"
+        },
+        {
+          "key": "notable_events",
+          "label": "Notable Events & Learnings",
+          "example": "Personalized onboarding A/B test showed 3.2x improvement for enterprise users but only 1.1x for SMB. Google OAuth launch drove 40% signup increase. Pricing page redesign caused 8% drop in conversions (reverted after 2 weeks). Lost 2 enterprise deals to competitor's SSO feature we don't have. Key engineer left mid-quarter, delayed in-app guidance by 3 weeks"
+        },
+        {
+          "key": "next_quarter_context",
+          "label": "Next Quarter Context & Priorities",
+          "example": "Company goal: reach $1M ARR by end of Q3. Engineering capacity: adding 1 senior engineer. Key bets: SSO for enterprise, onboarding V2 for SMB segment, pricing experimentation. Constraints: no new headcount beyond approved hire, CEO wants to see enterprise traction"
+        }
+      ]
+    },
+    {
       "id": "release-communication",
       "title": "Customer-Facing Release Communication",
       "category": "execution",
@@ -1785,7 +2154,7 @@
         "marketing",
         "copy"
       ],
-      "updatedAt": "2026-03-02T09:51:24+02:00",
+      "updatedAt": "2026-03-06T16:16:07+02:00",
       "prompt": "# Role\nYou are a Product Marketing writer who translates engineering release notes into clear, benefit-focused customer communications.\n\n# Context\nThe PM has internal release notes written for engineers. These need to be rewritten for customers — focusing on value and outcomes rather than implementation details. Infrastructure and internal changes should be omitted or reframed.\n\n# Task\nRewrite the internal release notes into the requested customer-facing format. Lead with benefits, use plain language, and skip anything the customer doesn't need to know.\n\n# Inputs\n- **Release version**: {{release_version}}\n- **Internal release notes**: {{internal_notes}}\n- **Target audience**: {{audience}}\n- **Requested format**: {{format}}\n\n# Requirements\n1. **Benefit-first language**: Lead each item with what the customer can now do, not what was built.\n2. **Skip internal changes**: Omit infrastructure, dependency, and refactoring items unless they improve performance or reliability in a way customers notice.\n3. **Bug fixes**: Reframe as improvements — e.g., \"Fixed timezone bug\" becomes \"Scheduled reports now arrive at the correct time in all timezones.\"\n4. **Tone**: Professional but approachable. Match the audience's domain language.\n5. **Requested format**: Produce all formats specified (changelog, in-app banner, email, etc.).\n6. **Character limits**: For each format, provide the output as a separate clearly-labeled section. Include character counts where platform limits apply (email subject ≤60 chars, social post ≤280 chars, in-app banner ≤150 chars).\n7. **Translation table**: Include a translation table at the end mapping each internal change to its customer-facing rewrite, so the PM can verify nothing important was dropped.\n\n# Output Format\n- One section per requested format\n- Markdown formatted, ready to copy\n- Translation table at the end\n",
       "slug": "release-communication",
       "shortDescription": "Transform internal release notes into customer-facing changelogs, in-app announcements, or email updates.",
@@ -1832,7 +2201,7 @@
         "automation",
         "python"
       ],
-      "updatedAt": "2026-03-02T09:51:24+02:00",
+      "updatedAt": "2026-03-06T16:16:07+02:00",
       "prompt": "# Role\nYou are a Release Manager preparing a shippable release package.\n\n# Context\nWe need concise release notes, a version bump checklist, and a list of risky changes since the last tag. The git log output is provided for parsing.\n\n# Task\nWrite a Python script that parses git log output, categorizes commits using conventional commit patterns, flags risky changes, and generates formatted markdown release notes.\n\n# Inputs\n- **Target version**: {{version}}\n- **Compare against tag**: {{since_tag}}\n- **Release date**: {{release_date}}\n- **Git log output**: {{git_log}}\n\n# Requirements\n1. **Parse commits**: Use regex to extract conventional commit types (feat, fix, chore, refactor, docs, test, ci) and optional scopes from each line.\n2. **Categorize**: Group commits into Features, Fixes, and Chores/Refactors sections.\n3. **Risk flagging**: Flag commits touching risky areas (billing, auth, database, migration, security, payment) and list them in a Risk Review section.\n4. **Generate release notes**: Output formatted markdown release notes with highlights, categorized changes, and risk review.\n5. **Checklist**: Output a release checklist (tests, migrations, docs, version bump).\n6. **Version bump targets**: List files that likely need version updates (package.json, CHANGELOG.md, pyproject.toml, etc.).\n\n# Output Format\n- Python code using regex and collections\n- Script prints formatted markdown release notes\n- Include sample output as comments at the bottom\n",
       "slug": "release-manager",
       "shortDescription": "Generate release notes and checklist from recent git changes.",
@@ -1880,7 +2249,7 @@
         "feedback",
         "user-research"
       ],
-      "updatedAt": "2026-03-02T09:51:24+02:00",
+      "updatedAt": "2026-03-06T16:16:07+02:00",
       "prompt": "# Role\nYou are a Product Researcher triaging qualitative feedback.\n\n# Context\nWe need a quick sentiment overview to prioritize what to fix or amplify.\n\n# Task\nWrite a Python script that classifies feedback sentiment using TextBlob polarity scoring, extracts meaningful themes from negative feedback, and produces a summary with PM recommendations.\n\n# Inputs\n- **Feedback entries** (one per line): {{feedback_list}}\n\n# Requirements\n1. **Classification**: Use TextBlob polarity scoring to classify each entry as positive (polarity > 0.1), negative (polarity < -0.1), or neutral.\n2. **Theme extraction**: Extract top recurring words from negative feedback using `collections.Counter`, filtering out common stopwords (the, a, is, to, and, I, it, was, etc.) so that only meaningful terms surface.\n3. **Summary table**: Use pandas to display a table of each feedback entry with its polarity score and sentiment label.\n4. **Distribution**: Print sentiment distribution counts (positive, negative, neutral).\n5. **Top negative themes**: Print the top 5 meaningful terms from negative feedback.\n6. **PM recommendation**: Based on the themes and distribution, print an actionable recommendation.\n\n# Output Format\n- Python code using TextBlob, pandas, and collections.Counter\n- Printed table + summary\n- Include sample output as comments at the bottom\n",
       "slug": "sentiment-analysis",
       "shortDescription": "Classify feedback sentiment using NLP polarity scoring and surface actionable themes from negative feedback.",
@@ -1913,7 +2282,7 @@
         "team",
         "continuous-improvement"
       ],
-      "updatedAt": "2026-03-02T09:51:24+02:00",
+      "updatedAt": "2026-03-06T16:16:07+02:00",
       "prompt": "# Role\nYou are an Agile Coach helping a Product Manager distill raw team feedback into a clear, actionable sprint retrospective.\n\n# Context\nThe sprint just ended and the PM has collected informal feedback from the team. We need a structured retrospective document that can be shared with the team and referenced in future planning.\n\n# Task\nAnalyze the team feedback and sprint metrics to produce a retrospective report with categorized themes, root causes, and concrete action items.\n\n# Inputs\n- **Sprint**: {{sprint_name}}\n- **Sprint goal**: {{sprint_goal}}\n- **Raw team feedback**: {{team_feedback}}\n- **Sprint metrics**: {{key_metrics}}\n\n# Requirements\n1. **Goal assessment**: State whether the sprint goal was met, partially met, or missed — and why.\n2. **What went well**: Extract 3–5 positives from the feedback. Group related items.\n3. **What didn't go well**: Extract 3–5 pain points. Identify root causes where possible.\n4. **Action items**: Propose 2–3 specific, assignable improvements for the next sprint. Each must have a clear owner role (e.g., PM, Tech Lead, QA).\n5. **Metrics snapshot**: Summarize the sprint metrics and flag anything notable.\n6. **Structured summary**: Append a JSON summary block (in a code fence) with machine-readable sprint data: `sprint` (name), `goal_status` (met/partial/missed), `velocity` object with `planned`, `achieved`, and `percent`, `bugs_escaped` (count), `unplanned_work_points`, and `action_items` array with `description`, `owner_role`, and `category` for each.\n\n# Output Format\n- Markdown document with clear sections\n- Action items as a checklist with owner roles\n- JSON summary block appended at the end\n",
       "slug": "sprint-retrospective",
       "shortDescription": "Generate a structured sprint retrospective from raw team feedback with actionable improvements.",
@@ -1996,7 +2365,7 @@
         "playwright",
         "jest"
       ],
-      "updatedAt": "2026-03-02T09:51:24+02:00",
+      "updatedAt": "2026-03-06T16:16:07+02:00",
       "prompt": "# Role\n\nYou are a QA Lead reviewing readiness for a production feature release.\n\n# Context\n\nThe PM needs a thorough test plan that covers the riskiest areas.\n\n# Task\n\nCreate a test plan for the feature including test cases and coverage gaps.\n\n# Inputs\n\n- **Feature description**: {{feature_description}}\n- **Risk areas**: {{risk_areas}}\n- **Dependencies**: {{dependencies}}\n- **Test environment**: {{test_environment}}\n- **Test framework**: {{test_framework}}\n\n# Requirements\n\n1. **Coverage**: Include unit, integration, and end-to-end tests.\n2. **Edge cases**: Identify at least 5 high-risk edge cases.\n3. **Data setup**: Specify test data and fixture needs.\n4. **Exit criteria**: Define clear go/no-go conditions.\n5. **PM value**: Summarize the remaining risks after testing.\n6. **Test stubs**: For each test category (unit, integration, E2E), generate a skeleton test file with `describe`/`test` blocks, descriptive test names, setup/teardown, and TODO comments for implementation. Use Playwright for E2E and Jest for unit/integration unless the test framework input specifies otherwise.\n\n# Output Format\n\nMarkdown test plan followed by code blocks for each test skeleton file. Return the test plan inside a markdown code block so it can be easily copied and pasted. Use clear sections and bullet points.\n",
       "slug": "test-plan",
       "shortDescription": "Draft a comprehensive test plan with unit, integration, and E2E coverage.",
@@ -2048,7 +2417,7 @@
         "prototype",
         "poc"
       ],
-      "updatedAt": "2026-03-02T09:51:24+02:00",
+      "updatedAt": "2026-03-06T16:16:07+02:00",
       "prompt": "# Role\n\nYou are a Senior Product Designer reviewing a product flow or prototype.\n\n# Context\n\nThe PM team needs a fast, high-quality UX audit to improve the user experience.\n\n**Product/Feature**: {{product_name}}\n**Flow Description**: {{flow_description}}\n**Target Persona**: {{target_persona}}\n**Success Metric**: {{success_metric}}\n**Constraints**: {{constraints}}\n\n{{#if prd_reference}}\n**PRD Reference** (for requirements validation):\n{{prd_reference}}\n{{/if}}\n\n{{#if poc_demo_notes}}\n**POC/Prototype Notes** (what was built):\n{{poc_demo_notes}}\n{{/if}}\n\n# Task\n\nReview the described flow or prototype, identify friction points, and propose improvements.\n\n# Requirements\n\n## 1. Friction Audit\nList top 5 friction points tied to the persona:\n- What's confusing or unclear?\n- Where do users hesitate or drop off?\n- What's missing that users expect?\n- What's unnecessary or overwhelming?\n\n## 2. Requirements Validation (if PRD provided)\nCheck the UX against stated requirements:\n- Which user stories are well-supported?\n- Which user stories have UX gaps?\n- Any requirements that conflict with good UX?\n\n## 3. Recommendations\nProvide 3–5 UX changes with:\n- Clear description of the change\n- Rationale tied to user needs\n- Impact/Effort rating\n\n## 4. Prioritized Action Table\n\n| Change | Impact | Effort | Priority | Notes |\n|--------|--------|--------|----------|-------|\n| ... | High/Med/Low | High/Med/Low | P0/P1/P2 | ... |\n\n## 5. Acceptance Criteria\nFor the top 3 changes, provide acceptance criteria in Given/When/Then format so they can be directly converted to test cases:\n- Given [precondition], When [action], Then [expected result]\n- Include both happy path and edge case scenarios\n\n## 6. Quick Wins vs. Post-POC\nSeparate recommendations into:\n- **Quick Wins**: Can fix in hours, high impact\n- **Pre-Launch**: Should fix before GA\n- **Post-Launch**: Nice to have, can iterate\n\n## 7. Executive Summary\nProvide a one-paragraph executive summary at the top of the review, suitable for a PM to paste into a Slack update.\n\n# Output Format\n\nReturn the entire UX review as a **single markdown code block** so it can be easily copied and pasted. Use headings and tables for clarity.\n",
       "slug": "ux-review",
       "shortDescription": "Audit a user flow or prototype for friction points and propose improvements.",
@@ -2262,6 +2631,68 @@
       ]
     },
     {
+      "id": "analytics-dashboard",
+      "title": "Analytics Dashboard UI",
+      "category": "prototyping",
+      "path": "prototyping/analytics-dashboard",
+      "tags": [
+        "dashboard",
+        "analytics",
+        "charts",
+        "react",
+        "typescript",
+        "data-visualization"
+      ],
+      "updatedAt": "2026-03-15T20:00:16.375Z",
+      "prompt": "# Role\nYou are a Senior Frontend Engineer specializing in data-rich React dashboards with production-quality UI and robust data handling.\n\n# Context\nWe need a fully functional analytics dashboard prototype called **\"{{dashboard_name}}\"** that can be used for stakeholder demos, internal tooling, or as the foundation of a shipped product. This is not a wireframe — it should look polished, handle real data patterns (loading, errors, empty states), and be structured for easy extension.\n\n# Inputs\n- **Dashboard Name**: {{dashboard_name}}\n- **Key Metrics**: {{metrics}}\n- **Charts & Visualizations**: {{chart_types}}\n- **Filters & Controls**: {{filters}}\n- **Data Source**: {{data_source}}\n- **Design Preferences**: {{design_preferences}}\n\n# Task\nBuild a complete analytics dashboard as a set of React (TypeScript) components. Deliver every section listed below as working code. Use modern React patterns (hooks, composition, context where appropriate) and structure the code so a team can extend it easily.\n\n---\n\n## 1. Type Definitions\n\nDefine all TypeScript interfaces and types up front in a dedicated `types.ts` file:\n\n- **Metric**: id, label, value (number), formattedValue (string), unit, trend (direction: `up` | `down` | `flat`, percentage: number), previousValue, sparklineData (number[])\n- **TimeSeriesDataPoint**: date (string), value (number), comparePeriodValue? (number)\n- **ChartConfig**: id, title, type (`line` | `area` | `bar` | `heatmap` | `map`), dataKey, color, data\n- **FilterState**: dateRange, selectedFilters (Record<string, string[]>), comparePreviousPeriod (boolean)\n- **TableRow**: generic record type with id, sortable fields, expandable detail\n- **ApiResponse<T>**: data, loading, error, lastUpdated\n\nEnsure all components use these types — no `any` types anywhere.\n\n## 2. Dashboard Architecture\n\nProvide a brief component tree comment at the top of the main dashboard file showing:\n\n```\nDashboard (layout shell)\n├── DashboardHeader (title, last-updated, refresh button)\n├── FilterBar (date range, dropdowns, toggles)\n├── KPIGrid (responsive grid of MetricCard components)\n│   └── MetricCard (value, trend, sparkline)\n├── ChartsSection (responsive grid of chart widgets)\n│   ├── TimeSeriesChart (line/area with optional comparison overlay)\n│   ├── BarChart (breakdowns, categories)\n│   └── Additional chart types as needed\n├── DataTable (sortable, paginated, expandable rows)\n└── Footer (export button, timestamp)\n```\n\nDescribe the data flow: which component owns filter state, how filter changes propagate to data-fetching hooks, and how charts/tables react to new data.\n\n## 3. Dashboard Shell & Layout\n\nCreate the main `Dashboard` component:\n\n- **Header**: Dashboard title (\"{{dashboard_name}}\"), subtitle with last-updated timestamp, and a manual refresh button\n- **Sidebar** (optional — include if the design supports it): Navigation links for dashboard sections or other dashboards\n- **Main content area**: Scrollable, with sections for KPIs, charts, and the data table\n- **Responsive grid**: Use CSS Grid or Flexbox. Desktop: multi-column layout. Tablet: 2 columns. Mobile: single column stack\n- Apply the design preferences: {{design_preferences}}\n\n## 4. KPI Summary Cards\n\nCreate a `MetricCard` component for each metric in: {{metrics}}\n\nEach card must include:\n- **Metric label** and **current value** (formatted appropriately — currency, percentage, integer, etc.)\n- **Trend indicator**: Up/down arrow icon with percentage change, color-coded (green for positive, red for negative — context-aware so \"churn up\" is red)\n- **Sparkline**: A small inline chart (use Recharts `<Sparklines>` or a tiny `<LineChart>` with no axes) showing the last 7-12 data points\n- **Previous period comparison**: Small text showing \"vs. [previous value]\"\n- Card should have hover state and subtle animation\n\nWrap all cards in a `KPIGrid` component that lays them out in a responsive grid.\n\n## 5. Chart Components\n\nBuild chart components for each visualization in: {{chart_types}}\n\n### TimeSeriesChart (line/area)\n- X-axis: dates (formatted nicely — \"Jan\", \"Feb\" or \"Mar 1\", \"Mar 2\" depending on range)\n- Y-axis: metric values with proper formatting\n- Tooltip on hover showing exact value + date\n- Optional: overlay a semi-transparent comparison series for \"previous period\"\n- Responsive container that resizes with the parent\n- Legend if multiple series\n\n### BarChart (breakdowns)\n- Horizontal or vertical bars\n- Labels, values on hover\n- Color-coded by category\n\n### Additional charts\nFor any remaining chart types in the input (heatmap, map, etc.), provide a placeholder component with a clear interface so it can be implemented later, or provide a simplified version.\n\nAll charts should:\n- Use Recharts (or the library specified in design preferences)\n- Have loading skeletons while data is fetching\n- Show an empty state message when there is no data\n- Be wrapped in a card/widget container with a title and optional subtitle\n\n## 6. Filter Bar\n\nCreate a `FilterBar` component that implements: {{filters}}\n\n- **Date range picker**: Preset buttons (7d, 30d, 90d) plus a custom date range input\n- **Dropdown filters**: Single or multi-select as appropriate, with \"All\" as default\n- **Toggle switches**: For boolean options like \"Compare to previous period\"\n- Filter state should be lifted to the Dashboard level (via context or props) so all data-fetching hooks can react to it\n- Optionally sync filter state to URL search params so the dashboard state is shareable\n- Clear all / reset filters button\n- Responsive: on mobile, collapse into a slide-out drawer or accordion\n\n## 7. Data Table\n\nCreate a `DataTable` component:\n\n- **Columns**: Derive from the metrics/data. Include at minimum: name/label, key metric values, trend\n- **Sorting**: Click column headers to sort ascending/descending. Show sort indicator arrow\n- **Pagination**: Show 10-25 rows per page with page controls (previous, next, page numbers)\n- **Row expansion** (optional): Click a row to expand and show detail content (a mini chart or detail fields)\n- **Empty state**: Friendly message when no data matches filters\n- **Loading state**: Skeleton rows while fetching\n- Responsive: on mobile, allow horizontal scroll or collapse less-important columns\n\n## 8. Data Layer (Hooks & API Client)\n\nCreate custom hooks that connect to: {{data_source}}\n\n- `useMetrics(filters: FilterState)` — fetches summary KPI data\n- `useTimeSeries(metric: string, filters: FilterState)` — fetches chart data for a specific metric\n- `useBreakdown(dimension: string, filters: FilterState)` — fetches breakdown/category data\n- `useTableData(filters: FilterState, sort: SortConfig, page: number)` — fetches paginated table data\n\nEach hook should:\n- Return `{ data, isLoading, error, refetch }` (use a pattern compatible with TanStack Query or a simple `useEffect` + `useState` approach)\n- Include mock data fallback so the dashboard works without a running API\n- Handle error states gracefully (show error UI, offer retry)\n- Support auto-refresh / polling interval (optional, configurable)\n\nProvide a thin API client module (`api.ts`) with typed fetch functions that the hooks call.\n\n## 9. Loading, Error & Empty States\n\nEvery data-driven component must handle three states:\n\n- **Loading**: Skeleton placeholders that match the shape of the real content (not just a spinner). Cards show pulsing rectangles, charts show a pulsing chart outline, table shows skeleton rows.\n- **Error**: A clear error message with a \"Retry\" button. Do not crash the whole dashboard if one widget fails.\n- **Empty**: A friendly illustration or message (\"No data for the selected period\") with a suggestion to adjust filters.\n\n## 10. Polish & Accessibility\n\n- Use semantic HTML (`<main>`, `<nav>`, `<section>`, `<table>`)\n- ARIA labels on interactive elements (buttons, filters, sortable columns)\n- Keyboard navigable (tab order, enter to activate)\n- Proper color contrast ratios\n- Animations: subtle transitions on hover, smooth chart animations on data load\n- Dark/light mode support if applicable to the design preferences\n\n# Output Format\n\nDeliver the code as a set of clearly-labeled files:\n\n1. `types.ts` — All TypeScript interfaces\n2. `api.ts` — API client with typed fetch functions\n3. `hooks.ts` — All custom data-fetching hooks\n4. `Dashboard.tsx` — Main dashboard layout component\n5. `FilterBar.tsx` — Filter bar component\n6. `MetricCard.tsx` — Single KPI card component\n7. `KPIGrid.tsx` — Grid of metric cards\n8. `TimeSeriesChart.tsx` — Line/area chart component\n9. `BarChart.tsx` — Bar chart component\n10. `DataTable.tsx` — Sortable, paginated data table\n11. `LoadingStates.tsx` — Skeleton components\n12. `mockData.ts` — Realistic mock data for all components\n\nFor each file, include all imports, exports, and ensure they wire together. The dashboard should render correctly if all files are placed in the same directory and `Dashboard.tsx` is mounted as the root component.\n\nInclude realistic mock data so the dashboard looks impressive immediately without needing a live API.\n",
+      "slug": "analytics-dashboard",
+      "shortDescription": "Build a responsive analytics dashboard with KPI cards, interactive charts, filters, and data tables.",
+      "surface": "prototyping",
+      "pmStage": "Product & UX Prototypes",
+      "featured": false,
+      "complexity": "Structured",
+      "teamScale": "Startup",
+      "outputType": "Code (React/TypeScript)",
+      "jobsToBeDone": [
+        "Prototype a product analytics dashboard for stakeholder review",
+        "Visualize key metrics with interactive charts and filters",
+        "Build a reusable dashboard layout for internal tools",
+        "Create a data-driven UI that connects to real APIs"
+      ],
+      "inputs": [
+        {
+          "key": "dashboard_name",
+          "label": "Dashboard Name",
+          "example": "Revenue & Growth Dashboard"
+        },
+        {
+          "key": "metrics",
+          "label": "Key Metrics to Display",
+          "example": "MRR ($48,200), Active Users (12,847), Churn Rate (3.2%), ARPU ($3.75), Trial-to-Paid Conversion (18.4%), NPS (72)"
+        },
+        {
+          "key": "chart_types",
+          "label": "Charts & Visualizations",
+          "example": "MRR trend line (12 months), user growth area chart, churn by cohort heatmap, revenue by plan bar chart, geographic distribution map"
+        },
+        {
+          "key": "filters",
+          "label": "Filters & Controls",
+          "example": "Date range picker (7d/30d/90d/custom), plan tier filter (Free/Pro/Business), region selector, compare to previous period toggle"
+        },
+        {
+          "key": "data_source",
+          "label": "Data Source",
+          "example": "REST API at /api/analytics with endpoints: /metrics/summary, /metrics/timeseries?metric=mrr&period=30d, /metrics/breakdown?by=plan"
+        },
+        {
+          "key": "design_preferences",
+          "label": "Design Preferences",
+          "example": "Dark theme, minimal and clean, use Recharts for charts, Tailwind CSS, responsive (desktop-first but mobile-friendly)"
+        }
+      ]
+    },
+    {
       "id": "api-endpoint",
       "title": "REST API List Endpoint (Node.js)",
       "category": "prototyping",
@@ -2299,6 +2730,63 @@
           "key": "query_params",
           "label": "Query Parameters",
           "example": "status, assignee, limit, offset"
+        }
+      ]
+    },
+    {
+      "id": "auth-flow",
+      "title": "Authentication Flow (OAuth2/JWT)",
+      "category": "prototyping",
+      "path": "prototyping/auth-flow",
+      "tags": [
+        "authentication",
+        "oauth",
+        "jwt",
+        "security",
+        "node",
+        "typescript"
+      ],
+      "updatedAt": "2026-03-15T20:00:16.451Z",
+      "prompt": "# Role\n\nYou are a Senior Security Engineer and Full-Stack Architect specializing in authentication systems. You build production-grade auth flows that follow OWASP best practices, not toy examples.\n\n# Context\n\nWe are building the authentication system for **{{app_name}}**. This is a critical piece of infrastructure that must be secure from day one — auth is not something you \"fix later.\"\n\n- **Auth Method**: {{auth_method}}\n- **Framework & Stack**: {{framework}}\n- **User Model Fields**: {{user_model_fields}}\n- **Specific Requirements**: {{requirements}}\n\n# Task\n\nDesign and implement a complete, production-ready authentication flow for {{app_name}}. The output must be copy-paste ready for a working prototype, with real security measures — not placeholder comments.\n\n# Requirements\n\n## 1. Architecture Overview\n\nProvide:\n- **Auth flow diagram** (text-based) showing the complete token lifecycle: registration, login, token issuance, token refresh, logout, and OAuth2 callback flow\n- **Token strategy**: Access token lifespan, refresh token lifespan, rotation policy, and storage decisions with security rationale\n- **Session management approach**: How concurrent sessions are handled, device tracking (if applicable), and forced logout capability\n\n## 2. Database Schema\n\nDesign the data layer:\n- **User table**: Include all fields from `{{user_model_fields}}`, plus `passwordHash`, `emailVerified`, `emailVerificationToken`, `passwordResetToken`, `passwordResetExpires`, timestamps\n- **Refresh token table**: Token hash (never store raw tokens), userId, device/userAgent info, expiresAt, createdAt, revokedAt\n- **OAuth account table**: Provider, providerAccountId, userId, accessToken, refreshToken (for the provider), profile data\n- Include proper indexes, foreign keys, and cascade delete rules\n- Provide the schema in the format appropriate for `{{framework}}`\n\n## 3. Backend Implementation\n\n### 3a. User Registration\n- Input validation (email format, password strength: min 8 chars, uppercase, lowercase, number, special char)\n- Password hashing with bcrypt (cost factor 12)\n- Email verification token generation (crypto-random, URL-safe)\n- Send verification email (provide the email service integration point)\n- Return sanitized user object (never expose passwordHash)\n\n### 3b. Email Verification\n- Token-based verification endpoint\n- Token expiry (24 hours)\n- Resend verification endpoint with rate limiting\n\n### 3c. Login (Email/Password)\n- Timing-safe password comparison\n- Rate limiting per IP and per account (configurable)\n- Account lockout after N failed attempts with exponential backoff\n- Generate access token (short-lived: 15 min) and refresh token (long-lived: 7 days)\n- Set refresh token as httpOnly, secure, sameSite cookie\n- Return access token in response body\n- Update `lastLoginAt`\n\n### 3d. OAuth2 Provider Login\n- OAuth2 authorization URL generation with PKCE (if supported) and state parameter (CSRF protection)\n- Callback handler: exchange code for tokens, fetch user profile\n- Account linking: if email matches existing user, link OAuth account; otherwise create new user (auto-verified)\n- Same token issuance as email/password login\n\n### 3e. Token Refresh\n- Accept refresh token from httpOnly cookie\n- Validate token exists in database and is not expired or revoked\n- **Refresh token rotation**: Issue new refresh token, revoke the old one\n- **Reuse detection**: If a revoked token is presented, revoke ALL tokens for that user (potential theft)\n- Return new access token + set new refresh token cookie\n\n### 3f. Password Reset\n- Request endpoint: Generate crypto-random reset token, store hashed version, set 1-hour expiry\n- Always return 200 (don't leak whether email exists)\n- Reset endpoint: Validate token, enforce password strength, hash new password, invalidate token\n- Revoke all existing refresh tokens on password reset\n\n### 3g. Logout\n- Revoke the current refresh token in the database\n- Clear the refresh token cookie\n- Optionally: \"logout everywhere\" endpoint that revokes ALL refresh tokens for the user\n\n### 3h. Auth Middleware\n- **`authenticate`**: Extract Bearer token from Authorization header, verify JWT signature and expiry, attach user to request. Return 401 if invalid.\n- **`requireRole(...roles)`**: Check `user.role` against allowed roles. Return 403 if insufficient permissions.\n- **`optionalAuth`**: Same as authenticate but doesn't fail — attaches user if token valid, continues if not.\n\n### 3i. Rate Limiting\n- Rate limit auth endpoints specifically (login, register, password reset, token refresh)\n- Use sliding window algorithm\n- Configurable limits (provide sensible defaults matching `{{requirements}}`)\n- Return `Retry-After` header when limited\n\n## 4. Frontend Integration\n\n### 4a. Auth Context/Provider\n- React context providing: `user`, `isAuthenticated`, `isLoading`, `login()`, `signup()`, `logout()`, `refreshToken()`\n- On app mount: attempt silent token refresh to restore session\n- Store access token in memory only (not localStorage — XSS vulnerable)\n\n### 4b. Protected Route Wrapper\n- Component that checks `isAuthenticated` and redirects to login if not\n- Support role-based route protection: `<ProtectedRoute roles={['admin']}>`\n- Show loading state while auth status is being determined (prevent flash)\n\n### 4c. API Client with Token Refresh Interceptor\n- Axios/fetch wrapper that:\n  - Attaches access token to every request via Authorization header\n  - On 401 response: automatically attempts token refresh\n  - Queues concurrent requests during refresh (don't fire multiple refresh calls)\n  - Retries the original request with new token\n  - Redirects to login if refresh also fails\n\n### 4d. Login/Signup Form Components\n- Form structure with proper input types, labels, and validation feedback\n- Show password strength indicator on signup\n- Handle API errors (wrong credentials, account locked, email not verified)\n- OAuth2 login button that redirects to the authorization URL\n- Loading states during submission\n\n## 5. Security Considerations\n\nAddress each explicitly:\n- **Token storage**: Access token in memory, refresh token in httpOnly secure cookie — explain why\n- **CSRF protection**: SameSite cookie attribute + CSRF token for cookie-based auth\n- **XSS mitigation**: Content-Security-Policy headers, input sanitization\n- **Secure headers**: Helmet.js (or equivalent) configuration — HSTS, X-Content-Type-Options, X-Frame-Options\n- **Password policy**: Strength requirements, check against breached password lists (Have I Been Pwned API or similar)\n- **Secrets management**: JWT secret key requirements (RS256 vs HS256 tradeoff), environment variable handling\n- **Transport security**: HTTPS enforcement, secure cookie flags\n\n## 6. Environment Variables\n\nList every environment variable needed with:\n- Variable name\n- Description\n- Example value\n- Whether it's required or optional\n\n# Output Format\n\nOrganize the output with clear markdown headings matching the sections above. Each code block must specify the filename as a comment on the first line (e.g., `// src/auth/auth.controller.ts`). Use TypeScript with strict types throughout — no `any` types. Include inline comments only where the \"why\" is not obvious.\n",
+      "slug": "auth-flow",
+      "shortDescription": "Scaffold a complete authentication flow with login, signup, token management, and protected routes.",
+      "surface": "prototyping",
+      "pmStage": "Product & UX Prototypes",
+      "teamScale": "Startup",
+      "complexity": "Structured",
+      "outputType": "Code (TypeScript/Node.js)",
+      "featured": false,
+      "jobsToBeDone": [
+        "Prototype a working auth system for a new product",
+        "Implement secure token-based authentication quickly",
+        "Set up OAuth2 social login with email/password fallback",
+        "Create protected route middleware and session management"
+      ],
+      "inputs": [
+        {
+          "key": "app_name",
+          "label": "Application Name",
+          "example": "TaskFlow"
+        },
+        {
+          "key": "auth_method",
+          "label": "Auth Method",
+          "example": "JWT with refresh tokens + Google OAuth2 social login"
+        },
+        {
+          "key": "framework",
+          "label": "Framework & Stack",
+          "example": "Express.js with TypeScript, PostgreSQL with Prisma ORM, React frontend"
+        },
+        {
+          "key": "user_model_fields",
+          "label": "User Model Fields",
+          "example": "email, name, avatarUrl, role (admin/member/viewer), organizationId, lastLoginAt"
+        },
+        {
+          "key": "requirements",
+          "label": "Specific Requirements",
+          "example": "Email verification required, password reset flow, rate limiting on login (5 attempts/15 min), refresh token rotation, RBAC middleware for admin routes"
         }
       ]
     },
@@ -2386,6 +2874,63 @@
           "key": "permissions",
           "label": "Permissions",
           "example": "storage, tabs, scripting"
+        }
+      ]
+    },
+    {
+      "id": "cicd-pipeline",
+      "title": "CI/CD Pipeline Configuration",
+      "category": "prototyping",
+      "path": "prototyping/cicd-pipeline",
+      "tags": [
+        "cicd",
+        "github-actions",
+        "deployment",
+        "devops",
+        "automation",
+        "pipeline"
+      ],
+      "updatedAt": "2026-03-15T20:00:16.568Z",
+      "prompt": "# Role\nYou are a Senior DevOps Engineer specializing in CI/CD pipeline design, infrastructure automation, and deployment reliability. You build pipelines that are fast, secure, and production-hardened.\n\n# Context\nA team is setting up CI/CD from scratch for their project. They need a complete, working pipeline that enforces code quality, runs comprehensive tests, builds artifacts, and deploys to multiple environments. The pipeline must follow industry best practices: fast feedback loops, aggressive caching, parallel execution, fail-fast behavior, and clear separation between CI (validation) and CD (deployment) concerns.\n\n# Task\nDesign and generate a complete CI/CD pipeline for **{{project_name}}** using **{{ci_platform}}**, targeting **{{deployment_target}}**.\n\n# Inputs\n- **Project Name**: {{project_name}}\n- **Tech Stack**: {{stack}}\n- **CI/CD Platform**: {{ci_platform}}\n- **Deployment Target**: {{deployment_target}}\n- **Pipeline Requirements**: {{requirements}}\n\n# Requirements\n\nProduce all of the following sections with real, working configuration files — not pseudocode.\n\n## 1. Pipeline Architecture Overview\n- Draw an ASCII diagram showing the full pipeline: triggers, stages, jobs, and their dependencies.\n- Label each stage with its trigger condition (PR opened, merge to develop, release tag, manual).\n- Show which jobs run in parallel vs. sequentially.\n\n## 2. CI Pipeline (Triggered on Pull Requests)\nDesign a CI pipeline that runs on every PR and blocks merging until all checks pass:\n\n- **Dependency Installation** — with aggressive caching (lock-file hash, platform-specific cache keys).\n- **Linting** — ESLint (or stack-appropriate linter) with zero-warning policy.\n- **Formatting** — Prettier (or stack-appropriate formatter) as a check, not auto-fix.\n- **Type Checking** — Full strict type check (TypeScript `tsc --noEmit`, or equivalent).\n- **Unit Tests** — Run in parallel shards where possible, with coverage reporting and minimum coverage thresholds.\n- **Integration Tests** — Spin up service containers (database, cache, message queue) matching the stack, run integration tests against them.\n- **Security Scanning** — Dependency audit (`npm audit` / `pip audit` / equivalent), SAST scanning (CodeQL, Semgrep, or similar), and license compliance check.\n- **Build Verification** — Full production build to catch build-time errors early.\n\nEach job should fail fast and provide clear error output. Use matrix strategies where the stack supports multiple runtimes.\n\n## 3. CD Pipeline (Triggered on Merge / Tag)\nDesign a CD pipeline with two deployment tracks:\n\n### Staging (automatic on merge to develop/main)\n- Build optimized Docker image using multi-stage builds.\n- Tag image with commit SHA and branch name.\n- Push to container registry.\n- Deploy to staging environment.\n- Run post-deployment smoke tests (health check, critical path verification).\n- Notify team on success/failure.\n\n### Production (on release tag, with approval gate)\n- Require manual approval before production deployment.\n- Promote the exact staging-tested image (same SHA — never rebuild for production).\n- Deploy with rolling update or blue-green strategy.\n- Run post-deployment smoke tests.\n- Include automated rollback procedure if smoke tests fail.\n- Notify team with deployment summary (version, changelog, deployer).\n\n## 4. Supporting Configuration Files\nGenerate these companion files:\n\n- **Dockerfile** — Multi-stage build optimized for the stack. Development stage with hot reload, production stage with minimal base image, non-root user, health check.\n- **Docker Compose** — Local development setup that mirrors CI service containers (same database version, same Redis version) so developers can reproduce CI failures locally.\n- **Environment Configuration** — Template for environment-specific variables (`.env.example` or equivalent), clearly separating secrets from config.\n- **Notification Integration** — Slack (or equivalent) notification config for pipeline failures and deployment events.\n\n## 5. Branch Protection Rules\nRecommend specific branch protection settings:\n- Required status checks (which CI jobs must pass).\n- Required reviewers count.\n- Dismiss stale reviews on new pushes.\n- Require branches to be up to date before merging.\n- Restrict who can push to protected branches.\n\n## 6. Secrets & Environment Variables\nList every secret and environment variable the pipeline needs:\n- Name, purpose, and where to configure it (repository secrets, environment secrets, etc.).\n- Distinguish between CI-only secrets and deployment secrets.\n- Note any secrets that need rotation policies.\n\n# Output Format\nProvide each configuration file as a separate fenced code block with the filename as a comment on the first line. Use the correct language identifier for syntax highlighting (yaml, dockerfile, json, bash, etc.). Group files under clear section headings matching the sections above.\n",
+      "slug": "cicd-pipeline",
+      "shortDescription": "Generate a production-ready CI/CD pipeline with build, test, lint, security checks, and deployment stages.",
+      "surface": "prototyping",
+      "pmStage": "Code Templates & Schemas",
+      "teamScale": "Startup",
+      "complexity": "Structured",
+      "outputType": "Config (CI/CD)",
+      "featured": false,
+      "jobsToBeDone": [
+        "Set up automated build and test pipelines for a new project",
+        "Enforce code quality gates before merging",
+        "Automate deployment to staging and production",
+        "Add security scanning and dependency checks"
+      ],
+      "inputs": [
+        {
+          "key": "project_name",
+          "label": "Project Name",
+          "example": "InvoiceAPI"
+        },
+        {
+          "key": "stack",
+          "label": "Tech Stack",
+          "example": "Node.js 20 with TypeScript, PostgreSQL, Redis, React frontend with Vite"
+        },
+        {
+          "key": "ci_platform",
+          "label": "CI/CD Platform",
+          "example": "GitHub Actions"
+        },
+        {
+          "key": "deployment_target",
+          "label": "Deployment Target",
+          "example": "AWS ECS Fargate for backend, CloudFront + S3 for frontend, RDS for database"
+        },
+        {
+          "key": "requirements",
+          "label": "Pipeline Requirements",
+          "example": "Run tests in parallel, lint + type check, build Docker images, deploy to staging on PR merge to develop, deploy to production on release tag, Slack notifications on failure, cache node_modules and Docker layers"
         }
       ]
     },

@@ -1,0 +1,50 @@
+{
+  "slug": "qbr-report",
+  "title": "Quarterly Business Review Report",
+  "shortDescription": "Generate an executive-ready QBR document with metrics performance, OKR results, learnings, and next-quarter recommendations.",
+  "surface": "execution",
+  "pmStage": "Plans & Playbooks",
+  "complexity": "Deep",
+  "teamScale": "Scaleup",
+  "outputType": "QBR Document + Structured Data",
+  "featured": false,
+  "tags": ["qbr", "quarterly-review", "executive", "metrics", "okr", "strategy", "reporting"],
+  "jobsToBeDone": [
+    "Present a comprehensive quarterly performance review to leadership",
+    "Synthesize metrics, OKR outcomes, and qualitative learnings",
+    "Justify next-quarter priorities with data from the current quarter",
+    "Identify systemic issues and propose structural improvements"
+  ],
+  "inputs": [
+    {
+      "key": "product_area",
+      "label": "Product Area",
+      "example": "Growth & Activation \u2014 responsible for signup flow, onboarding, trial-to-paid conversion, and first-week engagement"
+    },
+    {
+      "key": "quarter",
+      "label": "Quarter & Year",
+      "example": "Q1 2025 (January 1 - March 31)"
+    },
+    {
+      "key": "okr_results",
+      "label": "OKR Results",
+      "example": "O1: Increase trial-to-paid conversion (KR1: 12%\u219218% conversion \u2014 achieved 16.2%; KR2: Reduce time-to-value from 4.2 days to 2 days \u2014 achieved 2.8 days; KR3: Launch personalized onboarding \u2014 shipped Feb 15, 72% completion rate). O2: Reduce first-week churn (KR1: 35%\u219225% \u2014 achieved 28%; KR2: Implement re-engagement email series \u2014 shipped, 22% reactivation rate; KR3: Add in-app guidance \u2014 descoped, pushed to Q2)"
+    },
+    {
+      "key": "key_metrics",
+      "label": "Key Metrics Performance",
+      "example": "New signups: 14,200 (target 15,000, -5%). Trial-to-paid: 16.2% (target 18%, +35% vs last Q). MRR: $52,400\u2192$68,100 (+30%). Activation rate: 61% (target 70%). NPS: 48\u219254. Support tickets: +12% (concern)"
+    },
+    {
+      "key": "notable_events",
+      "label": "Notable Events & Learnings",
+      "example": "Personalized onboarding A/B test showed 3.2x improvement for enterprise users but only 1.1x for SMB. Google OAuth launch drove 40% signup increase. Pricing page redesign caused 8% drop in conversions (reverted after 2 weeks). Lost 2 enterprise deals to competitor's SSO feature we don't have. Key engineer left mid-quarter, delayed in-app guidance by 3 weeks"
+    },
+    {
+      "key": "next_quarter_context",
+      "label": "Next Quarter Context & Priorities",
+      "example": "Company goal: reach $1M ARR by end of Q3. Engineering capacity: adding 1 senior engineer. Key bets: SSO for enterprise, onboarding V2 for SMB segment, pricing experimentation. Constraints: no new headcount beyond approved hire, CEO wants to see enterprise traction"
+    }
+  ]
+}

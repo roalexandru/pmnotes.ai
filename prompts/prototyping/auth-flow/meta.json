@@ -1,0 +1,45 @@
+{
+  "slug": "auth-flow",
+  "title": "Authentication Flow (OAuth2/JWT)",
+  "shortDescription": "Scaffold a complete authentication flow with login, signup, token management, and protected routes.",
+  "surface": "prototyping",
+  "pmStage": "Product & UX Prototypes",
+  "teamScale": "Startup",
+  "complexity": "Structured",
+  "outputType": "Code (TypeScript/Node.js)",
+  "tags": ["authentication", "oauth", "jwt", "security", "node", "typescript"],
+  "featured": false,
+  "jobsToBeDone": [
+    "Prototype a working auth system for a new product",
+    "Implement secure token-based authentication quickly",
+    "Set up OAuth2 social login with email/password fallback",
+    "Create protected route middleware and session management"
+  ],
+  "inputs": [
+    {
+      "key": "app_name",
+      "label": "Application Name",
+      "example": "TaskFlow"
+    },
+    {
+      "key": "auth_method",
+      "label": "Auth Method",
+      "example": "JWT with refresh tokens + Google OAuth2 social login"
+    },
+    {
+      "key": "framework",
+      "label": "Framework & Stack",
+      "example": "Express.js with TypeScript, PostgreSQL with Prisma ORM, React frontend"
+    },
+    {
+      "key": "user_model_fields",
+      "label": "User Model Fields",
+      "example": "email, name, avatarUrl, role (admin/member/viewer), organizationId, lastLoginAt"
+    },
+    {
+      "key": "requirements",
+      "label": "Specific Requirements",
+      "example": "Email verification required, password reset flow, rate limiting on login (5 attempts/15 min), refresh token rotation, RBAC middleware for admin routes"
+    }
+  ]
+}

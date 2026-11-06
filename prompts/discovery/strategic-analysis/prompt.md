@@ -26,9 +26,16 @@ Conduct a strategic analysis and recommend the best path forward.
 5. **Recommendation**
    - Choose one option and justify with risks, tradeoffs, and success metrics.
 
+# Ground Rules
+
+- Use only the facts provided above plus well-established public knowledge. Do not invent metrics, quotes, names, dates, features, customers, or citations.
+- Where you must estimate, mark it `(est.)` and state the assumption.
+- Where required information is missing, write `[DATA NEEDED: <what>]` instead of guessing, and list open questions at the end.
+- Quotes must be verbatim from the inputs. Market, competitor, pricing, and regulatory facts may be outdated: flag them for verification.
+
 # Output Format
 
-Return the entire analysis as a **single markdown code block** so it can be easily copied and pasted. Include:
+Return GitHub-flavored Markdown. Do not wrap the whole response in a code fence (in a coding agent, write it to `market-entry-strategy.md`). Include:
 
 1. **Executive Summary** (3 bullets)
 2. **Market & Customer Insights** (bullets)

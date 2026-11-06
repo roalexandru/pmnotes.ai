@@ -184,11 +184,48 @@ test('parseTemplate handles plain and conditional variables', () => {
   assert.deepEqual(problems, ['{{/if}} without a matching {{#if}}']);
 });
 
+test('parseTemplate tracks which variables are guarded by their own {{#if}}, including nested blocks', () => {
+  const { unguarded, problems } = parseTemplate('{{a}} {{#if b}}{{b}} {{#if c}}{{c}} {{b}}{{/if}}{{/if}} {{#if a}}{{d}}{{/if}}');
+  assert.deepEqual([...unguarded].sort(), ['a', 'd']);
+  assert.deepEqual(problems, []);
+});
+
+test('rejects optional inputs used outside their {{#if}} block', () => {
+  const meta = validMeta({
+    inputs: [
+      { key: 'team_name', label: 'Team' },
+      { key: 'context', label: 'Context', optional: true },
+    ],
+  });
+  assert.deepEqual(errorsFor({ meta }), []);
+  const errors = errorsFor({ meta, prompt: 'For {{team_name}}. Context: {{context}}' }).join('\n');
+  assert.match(errors, /optional input \{\{context\}\} is used outside/);
+});
+
+test('rejects "(optional)" in labels, unknown pmStage values and reserved meta keys', () => {
+  const errors = errorsFor({
+    meta: validMeta({
+      pmStage: 'Whatever',
+      id: 'other-slug',
+      inputs: [
+        { key: 'team_name', label: 'Team' },
+        { key: 'context', label: 'Context (optional)' },
+      ],
+    }),
+  }).join('\n');
+  assert.match(errors, /label says "\(optional\)"/);
+  assert.match(errors, /pmStage "Whatever" must be one of/);
+  assert.match(errors, /must not set "id"/);
+});
+
 test('index builders are deterministic and carry metadata', () => {
   const root = makeRepo();
-  const opts = { getUpdatedAt: () => '2026-01-01T00:00:00Z', now: () => 'NOW' };
+  const opts = { getUpdatedAt: () => '2026-01-01T00:00:00Z' };
   const index = buildPromptsIndex(root, opts);
-  assert.deepEqual(index, buildPromptsIndex(root, opts));
+  // No wall-clock timestamps: rebuilding unchanged content must give identical output.
+  assert.deepEqual(index, buildPromptsIndex(root, { ...opts, now: () => 'LATER' }));
+  assert.deepEqual(Object.keys(index), ['items']);
+  assert.deepEqual(Object.keys(buildCollectionsIndex(root)), ['collections']);
   assert.equal(index.items[0].id, 'okr-draft');
   assert.equal(index.items[0].path, 'discovery/okr-draft');
   assert.equal(index.items[0].teamScale, 'Scaleup');

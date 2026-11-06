@@ -6,7 +6,7 @@
     "pmStage": "Data Analysis & Visualizations",
     "featured": true,
     "complexity": "Structured",
-    "outputType": "Executed Code (Statistics)",
+    "outputType": "Code (Statistics)",
     "tags": [
         "python",
         "statistics",

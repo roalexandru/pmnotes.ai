@@ -1,4 +1,3 @@
-```markdown
 # Technical Design: FleetPulse
 
 ## 1. Executive Summary
@@ -17,14 +16,16 @@ FleetPulse is a real-time fleet monitoring dashboard designed for 5k concurrent 
 
 ## 3. System Architecture
 
+```text
 User → CloudFront → Web App → API Gateway → Core API (ECS)
 Telemetry → Kinesis → Stream Processor → Alert Engine → Redis/Postgres → Notifications
+```
 
 ## 4. Core Components
 
 - **Core API**: Auth, tenant config, fleet dashboards; scales horizontally.
 - **Stream Processor**: Normalizes incoming events and enriches with metadata.
-- **Alert Engine**: Evaluates rules every 5 seconds; caches recent state in Redis.
+- **Alert Engine**: Evaluates rules per event as the stream is consumed (not on a polling interval, which could not meet <200ms); caches recent state in Redis.
 
 ## 5. Data Model
 
@@ -32,7 +33,8 @@ Telemetry → Kinesis → Stream Processor → Alert Engine → Redis/Postgres �
 - **Vehicle** (id, fleet_id, status, last_location, last_seen_at)
 - **AlertRule** (id, fleet_id, condition, threshold)
 - **AlertEvent** (id, rule_id, vehicle_id, triggered_at, severity)
-  Retention: Raw events 14 days; aggregated metrics 13 months.
+
+Retention (proposed — confirm with SOC 2 and customer requirements): raw events 14 days; aggregated metrics 13 months.
 
 ## 6. API & Integration Contracts
 
@@ -43,7 +45,8 @@ Telemetry → Kinesis → Stream Processor → Alert Engine → Redis/Postgres �
 ## 7. Performance & Scalability
 
 - Redis used for hot alert state; RDS read replicas for analytics queries.
-- P95 API latency target: <300ms.
+- P95 API latency target: <300ms (proposed; the NFR only specifies <200ms alert latency).
+- 500k events/minute ≈ 8,300 events/second — size Kinesis shards accordingly (verify current per-shard limits).
 
 ## 8. Security & Compliance
 
@@ -59,4 +62,5 @@ Telemetry → Kinesis → Stream Processor → Alert Engine → Redis/Postgres �
 
 - **MVP (6 weeks)**: Core dashboard, live map, basic alerts.
 - **V1 (12 weeks)**: Route analytics, alert tuning, audit logs.
-```
+
+Timelines are (est.) pending team size: [DATA NEEDED: engineering capacity].

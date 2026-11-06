@@ -4,7 +4,7 @@
 
 ### Auth Flow Diagram
 
-```
+```text
 REGISTRATION FLOW
 =================
 Client                    Server                      Database              Email Service
@@ -61,8 +61,8 @@ Client              Server                Google              Database
   |<-- callback ------|<-- code + state ----|                    |
   |                   |-- exchange code --->|                    |
   |                   |<-- tokens + profile-|                    |
-  |                   |-- find/create user ---------------->|   |
-  |                   |-- link oauth account -------------->|   |
+  |                   |-- find linked user / create ------->|   |
+  |                   |-- link only if both emails verified>|   |
   |                   |-- issue JWT + refresh                |   |
   |<-- 200 + cookie --|                                      |   |
 ```
@@ -243,6 +243,14 @@ export function comparePassword(password: string, hash: string): Promise<boolean
   return bcrypt.compare(password, hash);
 }
 
+// A real, well-formed bcrypt hash (same cost factor) generated once at startup.
+// Used when no user is found so login timing doesn't reveal which emails exist.
+const DUMMY_HASH_PROMISE: Promise<string> = bcrypt.hash(crypto.randomBytes(16).toString("hex"), BCRYPT_ROUNDS);
+
+export async function compareWithDummyHash(password: string): Promise<void> {
+  await bcrypt.compare(password, await DUMMY_HASH_PROMISE);
+}
+
 export function generateAccessToken(user: User): string {
   const payload: Omit<JwtPayload, "iat" | "exp"> = {
     sub: user.id,
@@ -284,16 +292,46 @@ export function sanitizeUser(user: User): SanitizedUser {
   };
 }
 
-const PASSWORD_REGEX = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]).{8,}$/;
+// Password policy per NIST SP 800-63B: length over composition.
+// Min 12 chars, allow at least 64, no "must include uppercase/number/symbol" rules,
+// and reject passwords that appear in breach corpora.
+const MIN_PASSWORD_LENGTH = 12;
+const MAX_PASSWORD_LENGTH = 64;   // NIST: permit at least 64
+const BCRYPT_MAX_BYTES = 72;      // bcrypt ignores bytes beyond 72
 
-export function validatePasswordStrength(password: string): { valid: boolean; message: string } {
-  if (password.length < 8) {
-    return { valid: false, message: "Password must be at least 8 characters" };
+// Breached-password check via the Have I Been Pwned k-anonymity range API:
+// only the first 5 hex chars of the SHA-1 hash leave the server.
+async function isBreachedPassword(password: string): Promise<boolean> {
+  const sha1 = crypto.createHash("sha1").update(password).digest("hex").toUpperCase();
+  const prefix = sha1.slice(0, 5);
+  const suffix = sha1.slice(5);
+  try {
+    const res = await fetch(`https://api.pwnedpasswords.com/range/${prefix}`, {
+      headers: { "Add-Padding": "true" },
+      signal: AbortSignal.timeout(2000),
+    });
+    if (!res.ok) return false; // fail open, but log it in production
+    const body = await res.text();
+    return body.split("\n").some((line) => {
+      const [hashSuffix, count] = line.trim().split(":");
+      return hashSuffix === suffix && Number(count) > 0;
+    });
+  } catch {
+    return false; // fail open on network errors; rate limiting still applies
   }
-  if (!PASSWORD_REGEX.test(password)) {
+}
+
+export async function validatePassword(password: string): Promise<{ valid: boolean; message: string }> {
+  if ([...password].length < MIN_PASSWORD_LENGTH) {
+    return { valid: false, message: `Password must be at least ${MIN_PASSWORD_LENGTH} characters` };
+  }
+  if ([...password].length > MAX_PASSWORD_LENGTH || Buffer.byteLength(password, "utf8") > BCRYPT_MAX_BYTES) {
+    return { valid: false, message: `Password is too long (max ${MAX_PASSWORD_LENGTH} characters)` };
+  }
+  if (await isBreachedPassword(password)) {
     return {
       valid: false,
-      message: "Password must include uppercase, lowercase, number, and special character",
+      message: "This password has appeared in a known data breach. Please choose a different one.",
     };
   }
   return { valid: true, message: "" };
@@ -454,7 +492,8 @@ import {
   generateVerificationToken,
   getRefreshTokenExpiry,
   sanitizeUser,
-  validatePasswordStrength,
+  validatePassword,
+  compareWithDummyHash,
 } from "../lib/auth.utils";
 import { sendVerificationEmail, sendPasswordResetEmail } from "../lib/email";
 import type { RegisterInput, LoginInput, ResetPasswordInput } from "../types/auth.types";
@@ -493,8 +532,8 @@ export async function register(req: Request, res: Response): Promise<void> {
     return;
   }
 
-  // Validate password strength
-  const passwordCheck = validatePasswordStrength(password);
+  // Validate password (length + breached-password check)
+  const passwordCheck = await validatePassword(password);
   if (!passwordCheck.valid) {
     res.status(400).json({ error: passwordCheck.message });
     return;
@@ -593,7 +632,7 @@ export async function login(req: Request, res: Response): Promise<void> {
   if (!user || !user.passwordHash) {
     // Timing-safe: still run bcrypt compare against a dummy hash to prevent
     // timing attacks that reveal whether an account exists
-    await comparePassword(password, "$2b$12$dummyhashfortimingnormalization000000000000000");
+    await compareWithDummyHash(password);
     res.status(401).json({ error: "Invalid email or password" });
     return;
   }
@@ -766,7 +805,7 @@ export async function requestPasswordReset(req: Request, res: Response): Promise
 export async function resetPassword(req: Request, res: Response): Promise<void> {
   const { token, newPassword } = req.body as ResetPasswordInput;
 
-  const passwordCheck = validatePasswordStrength(newPassword);
+  const passwordCheck = await validatePassword(newPassword);
   if (!passwordCheck.valid) {
     res.status(400).json({ error: passwordCheck.message });
     return;
@@ -934,45 +973,71 @@ export async function googleAuthCallback(req: Request, res: Response): Promise<v
     id_token: string;
   };
 
-  // Fetch user profile from Google
-  const profileResponse = await fetch("https://www.googleapis.com/oauth2/v2/userinfo", {
+  // Fetch user profile from Google's OpenID Connect userinfo endpoint
+  const profileResponse = await fetch("https://openidconnect.googleapis.com/v1/userinfo", {
     headers: { Authorization: `Bearer ${tokens.access_token}` },
   });
 
+  if (!profileResponse.ok) {
+    res.redirect(`${FRONTEND_URL}/login?error=profile_fetch_failed`);
+    return;
+  }
+
   const profile = (await profileResponse.json()) as {
-    id: string;
+    sub: string;
     email: string;
+    email_verified: boolean;
     name: string;
     picture: string;
   };
 
-  // Find or create user + link OAuth account
-  let user = await prisma.user.findUnique({ where: { email: profile.email } });
+  // 1. Already linked? Sign in as the linked user.
+  const existingLink = await prisma.oAuthAccount.findUnique({
+    where: {
+      provider_providerAccountId: { provider: "google", providerAccountId: profile.sub },
+    },
+    include: { user: true },
+  });
+
+  let user = existingLink?.user ?? null;
 
   if (!user) {
-    // Create new user (auto-verified since OAuth provider verified the email)
-    user = await prisma.user.create({
-      data: {
-        email: profile.email,
-        name: profile.name,
-        avatarUrl: profile.picture,
-        emailVerified: true,
-        lastLoginAt: new Date(),
-      },
-    });
-  } else {
-    await prisma.user.update({
-      where: { id: user.id },
-      data: { lastLoginAt: new Date() },
-    });
+    const emailOwner = await prisma.user.findUnique({ where: { email: profile.email } });
+
+    if (emailOwner) {
+      // 2. Auto-link ONLY when both sides have verified the email. Otherwise an
+      //    attacker could create a provider account with the victim's (unverified)
+      //    email and take over the existing account.
+      if (!profile.email_verified || !emailOwner.emailVerified) {
+        res.redirect(`${FRONTEND_URL}/login?error=account_exists_sign_in_to_link`);
+        return;
+      }
+      user = emailOwner;
+    } else {
+      // 3. New user: verified only if the provider asserts it
+      user = await prisma.user.create({
+        data: {
+          email: profile.email,
+          name: profile.name,
+          avatarUrl: profile.picture,
+          emailVerified: profile.email_verified === true,
+          lastLoginAt: new Date(),
+        },
+      });
+    }
   }
+
+  await prisma.user.update({
+    where: { id: user.id },
+    data: { lastLoginAt: new Date() },
+  });
 
   // Upsert OAuth account link
   await prisma.oAuthAccount.upsert({
     where: {
       provider_providerAccountId: {
         provider: "google",
-        providerAccountId: profile.id,
+        providerAccountId: profile.sub,
       },
     },
     update: {
@@ -982,7 +1047,7 @@ export async function googleAuthCallback(req: Request, res: Response): Promise<v
     },
     create: {
       provider: "google",
-      providerAccountId: profile.id,
+      providerAccountId: profile.sub,
       userId: user.id,
       accessToken: tokens.access_token,
       refreshToken: tokens.refresh_token ?? null,
@@ -1609,23 +1674,18 @@ import { useState, type FormEvent } from "react";
 import { useAuth } from "../contexts/AuthContext";
 import { Link } from "react-router-dom";
 
+// Length-based feedback only (NIST SP 800-63B: no composition rules).
+// The server also rejects breached passwords.
 function getPasswordStrength(password: string): {
   score: number;
   label: string;
   color: string;
 } {
-  let score = 0;
-  if (password.length >= 8) score++;
-  if (password.length >= 12) score++;
-  if (/[a-z]/.test(password) && /[A-Z]/.test(password)) score++;
-  if (/\d/.test(password)) score++;
-  if (/[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]/.test(password)) score++;
-
-  if (score <= 1) return { score, label: "Weak", color: "bg-red-500" };
-  if (score <= 2) return { score, label: "Fair", color: "bg-orange-500" };
-  if (score <= 3) return { score, label: "Good", color: "bg-yellow-500" };
-  if (score <= 4) return { score, label: "Strong", color: "bg-green-500" };
-  return { score, label: "Very Strong", color: "bg-green-600" };
+  const length = [...password].length;
+  if (length < 12) return { score: 1, label: `Too short (${length}/12)`, color: "bg-red-500" };
+  if (length < 16) return { score: 3, label: "Good", color: "bg-yellow-500" };
+  if (length < 20) return { score: 4, label: "Strong", color: "bg-green-500" };
+  return { score: 5, label: "Very Strong", color: "bg-green-600" };
 }
 
 export function SignupForm() {
@@ -1722,7 +1782,9 @@ export function SignupForm() {
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             className="w-full rounded border border-gray-300 px-3 py-2 focus:border-blue-500 focus:outline-none"
-            placeholder="Min 8 chars, mixed case, number, symbol"
+            placeholder="At least 12 characters (a passphrase works well)"
+            minLength={12}
+            maxLength={64}
           />
           {password.length > 0 && (
             <div className="mt-2">
@@ -1771,8 +1833,9 @@ export function SignupForm() {
 | **CSRF protection** | `sameSite: strict` on refresh token cookie prevents cross-site request forgery. The cookie is only sent on same-origin requests. For additional safety, the cookie path is restricted to `/api/auth`. |
 | **XSS mitigation** | Helmet.js sets `Content-Security-Policy` to restrict script sources. React escapes output by default. Never use `dangerouslySetInnerHTML` with user content. |
 | **Secure headers** | Helmet.js configured with: HSTS (1 year, includeSubDomains, preload), `X-Content-Type-Options: nosniff`, `X-Frame-Options: DENY`, CSP. |
-| **Password security** | Bcrypt with cost factor 12 (~250ms per hash). Minimum 8 chars with uppercase, lowercase, number, and special character required. Consider integrating Have I Been Pwned API for breached password checks. |
-| **Timing attacks** | Login always runs bcrypt.compare even when user doesn't exist to prevent timing-based account enumeration. Password reset always returns 200. |
+| **Password security** | Bcrypt with cost factor 12 (~250ms per hash (est.), hardware-dependent). NIST SP 800-63B policy: minimum 12 characters, up to 64 allowed (bcrypt only uses the first 72 bytes), no composition rules, breached passwords rejected via the Have I Been Pwned k-anonymity range API. Login attempts are rate-limited. |
+| **Timing attacks** | Login always runs bcrypt.compare (against a valid dummy hash generated at startup) even when the user doesn't exist, to prevent timing-based account enumeration. Password reset always returns 200. |
+| **OAuth account linking** | Auto-link a Google identity to an existing account only when Google asserts `email_verified` and the existing account's email is verified; otherwise the user must sign in to the existing account first. Prevents account takeover via unverified provider emails. |
 | **Token rotation** | Refresh tokens are single-use. Reuse of a revoked token triggers revocation of ALL tokens for that user (theft detection). |
 | **Transport** | HTTPS enforced in production via HSTS. Cookies set with `secure: true` in production. |
 | **Rate limiting** | Auth endpoints have specific rate limits: login (5/15min per IP+email), register (3/hr per IP), password reset (3/15min per IP). Returns `Retry-After` header. |

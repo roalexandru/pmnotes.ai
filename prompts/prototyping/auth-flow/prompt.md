@@ -36,7 +36,7 @@ Design the data layer:
 ## 3. Backend Implementation
 
 ### 3a. User Registration
-- Input validation (email format, password strength: min 8 chars, uppercase, lowercase, number, special char)
+- Input validation (email format; password policy per NIST SP 800-63B: minimum 12 characters, allow up to at least 64, no composition rules such as "must include uppercase/number/symbol", reject passwords found in breached/common-password lists)
 - Password hashing with bcrypt (cost factor 12)
 - Email verification token generation (crypto-random, URL-safe)
 - Send verification email (provide the email service integration point)
@@ -48,7 +48,7 @@ Design the data layer:
 - Resend verification endpoint with rate limiting
 
 ### 3c. Login (Email/Password)
-- Timing-safe password comparison
+- Timing-safe password comparison (when the user does not exist, still run bcrypt against a valid dummy hash generated at startup so response timing does not reveal which emails are registered)
 - Rate limiting per IP and per account (configurable)
 - Account lockout after N failed attempts with exponential backoff
 - Generate access token (short-lived: 15 min) and refresh token (long-lived: 7 days)
@@ -59,7 +59,7 @@ Design the data layer:
 ### 3d. OAuth2 Provider Login
 - OAuth2 authorization URL generation with PKCE (if supported) and state parameter (CSRF protection)
 - Callback handler: exchange code for tokens, fetch user profile
-- Account linking: if email matches existing user, link OAuth account; otherwise create new user (auto-verified)
+- Account linking: auto-link to an existing user only if the provider asserts `email_verified: true` AND the existing account's email is already verified; otherwise require the user to sign in to the existing account first and link from there (prevents account takeover via unverified provider emails). If no account matches, create a new user (verified only if the provider asserts `email_verified`)
 - Same token issuance as email/password login
 
 ### 3e. Token Refresh
@@ -72,7 +72,7 @@ Design the data layer:
 ### 3f. Password Reset
 - Request endpoint: Generate crypto-random reset token, store hashed version, set 1-hour expiry
 - Always return 200 (don't leak whether email exists)
-- Reset endpoint: Validate token, enforce password strength, hash new password, invalidate token
+- Reset endpoint: Validate token, enforce the password policy, hash new password, invalidate token
 - Revoke all existing refresh tokens on password reset
 
 ### 3g. Logout
@@ -113,7 +113,7 @@ Design the data layer:
 
 ### 4d. Login/Signup Form Components
 - Form structure with proper input types, labels, and validation feedback
-- Show password strength indicator on signup
+- Show password length/strength feedback on signup (length and breached-password checks, not composition rules)
 - Handle API errors (wrong credentials, account locked, email not verified)
 - OAuth2 login button that redirects to the authorization URL
 - Loading states during submission
@@ -125,7 +125,7 @@ Address each explicitly:
 - **CSRF protection**: SameSite cookie attribute + CSRF token for cookie-based auth
 - **XSS mitigation**: Content-Security-Policy headers, input sanitization
 - **Secure headers**: Helmet.js (or equivalent) configuration — HSTS, X-Content-Type-Options, X-Frame-Options
-- **Password policy**: Strength requirements, check against breached password lists (Have I Been Pwned API or similar)
+- **Password policy**: NIST SP 800-63B — minimum 12 characters, no composition rules, no forced periodic rotation, check against breached/common password lists (e.g. Have I Been Pwned k-anonymity range API), and rate-limit attempts
 - **Secrets management**: JWT secret key requirements (RS256 vs HS256 tradeoff), environment variable handling
 - **Transport security**: HTTPS enforcement, secure cookie flags
 
@@ -136,6 +136,14 @@ List every environment variable needed with:
 - Description
 - Example value
 - Whether it's required or optional
+
+# Ground Rules
+
+- Do not invent APIs, library functions, or results; if unsure of an API, say so.
+- Where you must estimate, mark it `(est.)` and state the assumption.
+- Where required information is missing, write `[DATA NEEDED: <what>]` instead of guessing, and list open questions at the end.
+- Quotes must be verbatim from the inputs. Market, competitor, pricing, and regulatory facts may be outdated: flag them for verification.
+- If you can execute code, run it and report the real output. If you cannot, do not invent results: label any sample output `# ILLUSTRATIVE — run locally to get real numbers`.
 
 # Output Format
 

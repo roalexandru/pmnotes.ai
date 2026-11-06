@@ -6,15 +6,17 @@
 **Owner**: Product Management
 **Stakeholders**: ML Engineering, Finance Operations, Customer Success
 
+> Illustrative example: baselines, thresholds, and costs below are placeholder estimates (est.), not industry benchmarks. Replace them with your measured data before committing to SLAs.
+
 ---
 
 ## 1. Business Success Metrics
 
 | Metric | Definition | Current Baseline | Target | Timeline |
 |--------|------------|------------------|--------|----------|
-| **Processing Time** | Minutes per invoice (end-to-end) | 15 min (manual) | 2 min (AI-assisted) | Launch |
+| **Processing Time** | Minutes per invoice (end-to-end) | 15 min (manual, est.) [DATA NEEDED: measured baseline] | 2 min (AI-assisted) | Launch |
 | **Straight-Through Processing** | % invoices requiring no human intervention | 0% | 60% | Launch + 90 days |
-| **Cost per Invoice** | Fully-loaded processing cost | $4.50 | $1.20 | Launch + 180 days |
+| **Cost per Invoice** | Fully-loaded processing cost | $4.50 (est.) [DATA NEEDED: finance-validated baseline] | $1.20 | Launch + 180 days |
 | **User Adoption** | % of eligible invoices processed with AI | N/A | 80% | Launch + 60 days |
 | **User Satisfaction** | NPS for AI feature | N/A | >40 | Launch + 90 days |
 
@@ -110,10 +112,10 @@
 
 | Scenario | Requirement | Notes |
 |----------|-------------|-------|
-| **Sustained throughput** | 500 invoices/hour | Normal business hours |
-| **Peak throughput** | 2,000 invoices/hour | Month-end processing |
-| **Burst capacity** | 5,000 invoices/hour | Handle 2.5x spike for 15 min |
-| **Daily volume** | 15,000 invoices | With headroom for growth |
+| **Sustained throughput** | ~420 invoices/hour | 10,000/day spread over 24 hours |
+| **Peak throughput** | 500 invoices/hour | Stated peak (e.g. month-end processing) |
+| **Burst capacity** | 1,250 invoices/hour | Handle 2.5x peak spike for 15 min (est.) |
+| **Daily volume** | 15,000 invoices | 1.5x headroom for growth (est.) |
 
 ### 5.2 Scaling Triggers
 
@@ -165,6 +167,8 @@
 | **Total cost per invoice** | <$0.25 | All-in cost |
 
 ### 7.2 Monthly Budget Caps
+
+> Check: the effective rates for Professional ($2,000 / 10,000 = $0.20/invoice) and Enterprise ($15,000 / 100,000 = $0.15/invoice) are below the $0.25 all-in cost ceiling in 7.1. Validate margins with Finance before committing to these caps.
 
 | Tier | Volume Allowance | Budget Cap | Overage Rate |
 |------|------------------|------------|--------------|

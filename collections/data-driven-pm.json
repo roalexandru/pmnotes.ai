@@ -7,42 +7,64 @@
   "category": "topic",
   "difficulty": "Structured",
   "estimatedTime": "Ongoing",
-  "tags": ["data", "analytics", "metrics", "experiments", "insights"],
+  "tags": [
+    "data",
+    "analytics",
+    "metrics",
+    "experiments",
+    "insights"
+  ],
   "prompts": [
     {
-      "slug": "execution/metric-calculation",
-      "order": 1,
-      "note": "Define and calculate key product metrics"
-    },
-    {
       "slug": "execution/data-cleaning",
-      "order": 2,
+      "order": 1,
       "note": "Prepare and clean data for analysis",
       "optional": true
     },
     {
-      "slug": "execution/correlation-analysis",
+      "slug": "execution/metric-calculation",
+      "order": 2,
+      "note": "Define and calculate key product metrics"
+    },
+    {
+      "slug": "execution/feature-adoption",
       "order": 3,
-      "note": "Find correlations in your data"
+      "note": "Measure who adopts shipped features and where they drop off"
+    },
+    {
+      "slug": "execution/correlation-analysis",
+      "order": 4,
+      "note": "Find correlations in your data (correlation is not causation: confirm with experiments)"
     },
     {
       "slug": "execution/ab-test",
-      "order": 4,
+      "order": 5,
       "note": "Design and analyze A/B tests"
     },
     {
+      "slug": "execution/metric-anomaly-triage",
+      "order": 6,
+      "note": "Triage sudden metric moves before reacting to them"
+    },
+    {
       "slug": "execution/forecasting",
-      "order": 5,
+      "order": 7,
       "note": "Forecast trends and outcomes"
     },
     {
       "slug": "execution/visualization",
-      "order": 6,
+      "order": 8,
       "note": "Create compelling data visualizations"
     },
     {
+      "slug": "prototyping/analytics-dashboard",
+      "order": 9,
+      "note": "Turn recurring analyses into a dashboard",
+      "optional": true
+    },
+    {
       "slug": "execution/sentiment-analysis",
-      "order": 7,
+      "order": 10,
       "note": "Analyze sentiment in user feedback",
       "optional": true
     }

@@ -19,5 +19,12 @@ Create an environment configuration scaffold for **{{app_name}}** that validates
 4. **Template**: Generate a `.env.example` listing every variable with comments and example values.
 5. **Environments**: Include a `NODE_ENV` field constrained to the provided environments.
 
+# Ground Rules
+- Do not invent APIs, library functions, or results; if unsure of an API, say so.
+- Where you must estimate, mark it `(est.)` and state the assumption.
+- Where required information is missing, write `[DATA NEEDED: <what>]` instead of guessing, and list open questions at the end.
+- Quotes must be verbatim from the inputs. Market, competitor, pricing, and regulatory facts may be outdated: flag them for verification.
+- If you can execute code, run it and report the real output. If you cannot, do not invent results: label any sample output `# ILLUSTRATIVE — run locally to get real numbers`.
+
 # Output Format
 Three files: `config.ts`, `env.d.ts`, and `.env.example`.

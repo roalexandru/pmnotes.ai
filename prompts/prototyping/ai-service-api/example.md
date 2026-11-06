@@ -10,7 +10,7 @@
 
 ### Authentication
 All requests require an API key passed via header:
-```
+```http
 Authorization: Bearer <api_key>
 ```
 
@@ -91,7 +91,7 @@ For single-page documents with fast response requirements.
         }
       },
       "invoice_number": {
-        "value": "INV-2024-001234",
+        "value": "INV-2026-001234",
         "confidence": 0.98,
         "bounding_box": { "page": 1, "x": 450, "y": 150, "width": 150, "height": 25 }
       },
@@ -166,8 +166,8 @@ For large documents requiring background processing.
 {
   "job_id": "job_xyz789",
   "status": "pending",
-  "created_at": "2024-01-15T10:30:00Z",
-  "estimated_completion": "2024-01-15T10:32:00Z",
+  "created_at": "2026-01-15T10:30:00Z",
+  "estimated_completion": "2026-01-15T10:32:00Z",
   "status_url": "/extract/async/job_xyz789",
   "cancel_url": "/extract/async/job_xyz789"
 }
@@ -190,8 +190,8 @@ For large documents requiring background processing.
     "pages_processed": 23,
     "percentage": 51
   },
-  "created_at": "2024-01-15T10:30:00Z",
-  "updated_at": "2024-01-15T10:31:15Z"
+  "created_at": "2026-01-15T10:30:00Z",
+  "updated_at": "2026-01-15T10:31:15Z"
 }
 ```
 
@@ -206,10 +206,10 @@ For large documents requiring background processing.
     "pages_processed": 45,
     "percentage": 100
   },
-  "created_at": "2024-01-15T10:30:00Z",
-  "completed_at": "2024-01-15T10:33:22Z",
+  "created_at": "2026-01-15T10:30:00Z",
+  "completed_at": "2026-01-15T10:33:22Z",
   "result_url": "/extract/async/job_xyz789/result",
-  "expires_at": "2024-01-22T10:33:22Z"
+  "expires_at": "2026-01-22T10:33:22Z"
 }
 ```
 
@@ -233,7 +233,7 @@ Returns same format as synchronous extraction response.
 {
   "job_id": "job_xyz789",
   "status": "cancelled",
-  "cancelled_at": "2024-01-15T10:31:00Z",
+  "cancelled_at": "2026-01-15T10:31:00Z",
   "pages_processed_before_cancel": 12,
   "credits_refunded": 33
 }
@@ -250,7 +250,7 @@ When async job completes, the following is POSTed to your callback URL:
   "event": "extraction.completed",
   "job_id": "job_xyz789",
   "status": "completed",
-  "completed_at": "2024-01-15T10:33:22Z",
+  "completed_at": "2026-01-15T10:33:22Z",
   "result_url": "https://api.example.com/v1/document-intelligence/extract/async/job_xyz789/result",
   "summary": {
     "pages_processed": 45,
@@ -275,7 +275,7 @@ Same as synchronous extraction.
 
 #### Response (SSE Stream)
 
-```
+```text
 event: progress
 data: {"page": 1, "total_pages": 10, "status": "processing"}
 
@@ -306,7 +306,7 @@ data: {"request_id": "req_123", "aggregate_confidence": 0.91, "result_url": "/ex
     {
       "version": "v2.1.0",
       "status": "stable",
-      "released_at": "2024-01-01T00:00:00Z",
+      "released_at": "2026-01-01T00:00:00Z",
       "supported_document_types": ["invoice", "receipt", "contract", "form"],
       "accuracy_metrics": {
         "invoice_accuracy": 0.96,
@@ -316,14 +316,14 @@ data: {"request_id": "req_123", "aggregate_confidence": 0.91, "result_url": "/ex
     {
       "version": "v2.2.0-beta",
       "status": "beta",
-      "released_at": "2024-01-10T00:00:00Z",
+      "released_at": "2026-01-10T00:00:00Z",
       "improvements": ["Better handwriting recognition", "New languages: Japanese, Korean"]
     },
     {
       "version": "v2.0.0",
       "status": "deprecated",
-      "deprecated_at": "2024-01-01T00:00:00Z",
-      "sunset_at": "2024-04-01T00:00:00Z",
+      "deprecated_at": "2026-10-01T00:00:00Z",
+      "sunset_at": "2027-04-01T00:00:00Z",
       "migration_guide": "https://docs.example.com/migrate-v2.0-to-v2.1"
     }
   ],
@@ -334,15 +334,19 @@ data: {"request_id": "req_123", "aggregate_confidence": 0.91, "result_url": "/ex
 ### 4.2 Version Pinning
 
 Request with pinned version:
-```
+```http
 X-Model-Version: v2.1.0
 ```
 
 Response includes deprecation warning when using old version:
-```
+```http
 X-Model-Version: v2.0.0
-Deprecation: version="v2.0.0"; sunset="2024-04-01"; see="https://docs.example.com/migrate"
+Deprecation: @1790812800
+Sunset: Thu, 01 Apr 2027 00:00:00 GMT
+Link: <https://docs.example.com/migrate-v2.0-to-v2.1>; rel="deprecation"
 ```
+
+(`Deprecation` per RFC 9745 is a Unix timestamp, here 2026-10-01; `Sunset` per RFC 8594 is an HTTP date.)
 
 ---
 
@@ -438,7 +442,7 @@ Deprecation: version="v2.0.0"; sunset="2024-04-01"; see="https://docs.example.co
 ```
 
 Headers:
-```
+```http
 X-RateLimit-Limit: 20
 X-RateLimit-Remaining: 0
 X-RateLimit-Reset: 1705318800
@@ -450,7 +454,7 @@ Retry-After: 1
 ## 7. Debug Mode
 
 Add header for verbose debugging information:
-```
+```http
 X-Debug-Mode: true
 ```
 
@@ -469,7 +473,7 @@ X-Debug-Mode: true
     },
     "model_info": {
       "version": "v2.1.0",
-      "checkpoint": "2024-01-01-final",
+      "checkpoint": "2026-01-01-final",
       "gpu_used": "A100"
     },
     "preprocessing": {
@@ -495,7 +499,7 @@ X-Debug-Mode: true
 ## 8. OpenAPI Specification (Excerpt)
 
 ```yaml
-openapi: 3.0.3
+openapi: 3.1.0
 info:
   title: Document Intelligence API
   version: 1.0.0

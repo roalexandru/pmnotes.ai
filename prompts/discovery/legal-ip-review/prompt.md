@@ -26,6 +26,8 @@ We are building **{{product_name}}**.
 
 Create a comprehensive legal and IP review checklist that identifies potential issues and action items before development proceeds.
 
+You cannot search trademark registries, domain registrars, or current terms of service; list these as verification steps for the user rather than reporting results. This is not legal advice — flag items that need qualified counsel.
+
 # Requirements
 
 ## 1. Open Source License Compliance
@@ -49,7 +51,7 @@ For each third-party service:
 
 Evaluate data sources:
 - **Ownership**: Do we have rights to use this data?
-- **Privacy**: PII, GDPR, CCPA considerations
+- **Privacy**: PII, GDPR, CCPA/CPRA considerations (note: CPRA brought B2B and employee personal data into scope from 2023)
 - **Training Data**: Rights for ML training (if applicable)
 - **User-Generated Content**: Terms for content created by/for users
 - **Scraping/Collection**: How was data obtained?
@@ -86,9 +88,10 @@ Evaluate data sources:
 ## 6. Compliance Checklist by Region
 
 Flag relevant regulations:
-- **US**: CCPA, CAN-SPAM, COPPA, Section 230
-- **EU**: GDPR, AI Act, Digital Services Act
-- **Industry-Specific**: HIPAA, PCI-DSS, SOC 2, etc.
+- **US**: CCPA/CPRA (check applicability thresholds), CAN-SPAM, COPPA, Section 230, relevant state AI and privacy laws
+- **EU**: GDPR (including Art. 30 records of processing and DPIA screening, which are needed before processing starts), AI Act, Digital Services Act
+- **Industry-Specific**: HIPAA, PCI-DSS, etc.; customer-requested attestations such as SOC 2 (a contractual framework, not a regulation)
+- Regulatory application dates change (e.g. EU AI Act timelines); flag dates for verification.
 
 ## 7. Action Items
 
@@ -98,6 +101,13 @@ Prioritize into:
 - **Post-Launch**: Can address after initial release
 - **Legal Review Needed**: Requires actual legal counsel
 
+# Ground Rules
+
+- Use only the facts provided above plus well-established public knowledge. Do not invent metrics, quotes, names, dates, features, customers, or citations.
+- Where you must estimate, mark it `(est.)` and state the assumption.
+- Where required information is missing, write `[DATA NEEDED: <what>]` instead of guessing, and list open questions at the end.
+- Quotes must be verbatim from the inputs. Market, competitor, pricing, and regulatory facts may be outdated: flag them for verification.
+
 # Output Format
 
-Return the entire review as a **single markdown code block** so it can be easily copied and pasted. Use checklists, tables, and clear categorization. Include a summary of top risks at the beginning.
+Return GitHub-flavored Markdown. Do not wrap the whole response in a code fence (in a coding agent, write it to `legal-ip-review.md`). Use checklists, tables, and clear categorization. Include a summary of top risks at the beginning and end with the verification steps the user must complete.

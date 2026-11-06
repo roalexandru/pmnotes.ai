@@ -1,6 +1,6 @@
 # Pipeline Architecture Overview
 
-```
+```text
                          ┌─────────────────────────────────────────────────────────────┐
                          │                    InvoiceAPI CI/CD Pipeline                 │
                          └─────────────────────────────────────────────────────────────┘
@@ -65,7 +65,7 @@ concurrency:
   cancel-in-progress: true
 
 env:
-  NODE_VERSION: "20"
+  NODE_VERSION: "24"
   PNPM_VERSION: "9"
 
 jobs:
@@ -451,7 +451,7 @@ jobs:
 
       - uses: actions/setup-node@v4
         with:
-          node-version: "20"
+          node-version: "24"
           cache: pnpm
 
       - name: Install dependencies
@@ -692,7 +692,7 @@ jobs:
 
       - uses: actions/setup-node@v4
         with:
-          node-version: "20"
+          node-version: "24"
           cache: pnpm
 
       - name: Install dependencies
@@ -831,7 +831,7 @@ jobs:
 # Dockerfile
 
 # --- Base stage: shared between dev and prod ---
-FROM node:20-alpine AS base
+FROM node:24-alpine AS base
 RUN corepack enable && corepack prepare pnpm@9 --activate
 WORKDIR /app
 
@@ -860,7 +860,7 @@ RUN pnpm --filter api build
 RUN pnpm deploy --filter api --prod /app/deployed
 
 # --- Production stage: minimal image ---
-FROM node:20-alpine AS production
+FROM node:24-alpine AS production
 RUN apk add --no-cache tini curl
 RUN addgroup -S appgroup && adduser -S appuser -G appgroup
 WORKDIR /app

@@ -1,5 +1,4 @@
 {
-  "generatedAt": "2026-11-06T10:01:56.428Z",
   "collections": [
     {
       "slug": "ai-feature-productization",
@@ -101,39 +100,55 @@
       ],
       "prompts": [
         {
-          "slug": "execution/metric-calculation",
-          "order": 1,
-          "note": "Define and calculate key product metrics"
-        },
-        {
           "slug": "execution/data-cleaning",
-          "order": 2,
+          "order": 1,
           "note": "Prepare and clean data for analysis",
           "optional": true
         },
         {
-          "slug": "execution/correlation-analysis",
+          "slug": "execution/metric-calculation",
+          "order": 2,
+          "note": "Define and calculate key product metrics"
+        },
+        {
+          "slug": "execution/feature-adoption",
           "order": 3,
-          "note": "Find correlations in your data"
+          "note": "Measure who adopts shipped features and where they drop off"
+        },
+        {
+          "slug": "execution/correlation-analysis",
+          "order": 4,
+          "note": "Find correlations in your data (correlation is not causation: confirm with experiments)"
         },
         {
           "slug": "execution/ab-test",
-          "order": 4,
+          "order": 5,
           "note": "Design and analyze A/B tests"
         },
         {
+          "slug": "execution/metric-anomaly-triage",
+          "order": 6,
+          "note": "Triage sudden metric moves before reacting to them"
+        },
+        {
           "slug": "execution/forecasting",
-          "order": 5,
+          "order": 7,
           "note": "Forecast trends and outcomes"
         },
         {
           "slug": "execution/visualization",
-          "order": 6,
+          "order": 8,
           "note": "Create compelling data visualizations"
         },
         {
+          "slug": "prototyping/analytics-dashboard",
+          "order": 9,
+          "note": "Turn recurring analyses into a dashboard",
+          "optional": true
+        },
+        {
           "slug": "execution/sentiment-analysis",
-          "order": 7,
+          "order": 10,
           "note": "Analyze sentiment in user feedback",
           "optional": true
         }
@@ -179,32 +194,43 @@
         {
           "slug": "execution/metric-calculation",
           "order": 2,
-          "note": "Calculate and validate pilot success metrics and ROI"
+          "note": "Calculate pilot success metrics against the agreed success criteria"
+        },
+        {
+          "slug": "discovery/business-case",
+          "order": 3,
+          "note": "Build the ROI and business case for full rollout"
         },
         {
           "slug": "discovery/risk-analysis",
-          "order": 3,
+          "order": 4,
           "note": "Identify production scaling risks and mitigation strategies"
         },
         {
           "slug": "discovery/roadmap-planning",
-          "order": 4,
+          "order": 5,
           "note": "Plan phased rollout roadmap across departments/regions"
         },
         {
           "slug": "discovery/tech-design-doc",
-          "order": 5,
+          "order": 6,
           "note": "Document production architecture and scaling requirements"
         },
         {
           "slug": "execution/test-plan",
-          "order": 6,
+          "order": 7,
           "note": "Create comprehensive production testing and validation plan"
         },
         {
-          "slug": "execution/release-manager",
-          "order": 7,
-          "note": "Execute phased production rollout"
+          "slug": "execution/launch-readiness",
+          "order": 8,
+          "note": "Run a go/no-go readiness review before each rollout phase"
+        },
+        {
+          "slug": "execution/release-communication",
+          "order": 9,
+          "note": "Announce each rollout phase to users and stakeholders",
+          "optional": true
         }
       ],
       "prerequisites": [
@@ -226,7 +252,7 @@
       "slug": "enterprise-sales-enablement",
       "title": "Enterprise Sales Enablement",
       "shortDescription": "Create compelling sales materials for enterprise AI/automation deals.",
-      "description": "Equip your sales team with everything they need to close enterprise deals. This playbook helps PMs create ROI calculators, competitive battle cards, demo scripts, and objection handling guides. Essential for companies with long enterprise sales cycles and multiple stakeholder buy-in requirements.",
+      "description": "Equip your sales team with everything they need to close enterprise deals. This playbook helps PMs build ROI and value cases, competitive battle cards, demo scripts, and objection handling guides. Essential for companies with long enterprise sales cycles and multiple stakeholder buy-in requirements.",
       "icon": "briefcase",
       "category": "playbook",
       "teamScale": "Enterprise",
@@ -257,19 +283,19 @@
           "note": "Develop pricing strategy and packaging for enterprise tiers"
         },
         {
-          "slug": "execution/metric-calculation",
+          "slug": "discovery/business-case",
           "order": 4,
-          "note": "Build ROI calculator and value quantification framework"
+          "note": "Build an ROI and value case buyers can take to their finance team"
         },
         {
-          "slug": "discovery/marketing-ideation",
+          "slug": "discovery/product-positioning",
           "order": 5,
-          "note": "Generate messaging and positioning for enterprise buyers"
+          "note": "Define positioning and messaging for enterprise buyers"
         },
         {
-          "slug": "discovery/strategic-analysis",
+          "slug": "discovery/customer-interview-guide",
           "order": 6,
-          "note": "Analyze deal patterns and create playbook for common scenarios",
+          "note": "Run win/loss interviews with recent buyers to find deal patterns",
           "optional": true
         }
       ],
@@ -282,7 +308,7 @@
       "outcomes": [
         "Buyer persona documentation",
         "Competitive battle cards",
-        "ROI calculator and value framework",
+        "ROI and value case",
         "Pricing and packaging guide",
         "Sales messaging and objection handling"
       ],
@@ -291,8 +317,8 @@
     {
       "slug": "enterprise-security-compliance",
       "title": "Enterprise Security & Compliance Readiness",
-      "shortDescription": "Prepare your product for enterprise security requirements and compliance certifications.",
-      "description": "Navigate the complex landscape of enterprise security requirements. This playbook helps PMs work with security teams to achieve SOC 2, GDPR, HIPAA compliance, pass security reviews, and address enterprise procurement requirements. Essential for selling AI/automation solutions to regulated industries and large enterprises.",
+      "shortDescription": "Prepare your product for enterprise security requirements and compliance audits and certifications.",
+      "description": "Navigate the complex landscape of enterprise security requirements. This playbook helps PMs work with security teams to obtain a SOC 2 report, meet GDPR and HIPAA obligations, pass security reviews, and address enterprise procurement requirements. Essential for selling AI/automation solutions to regulated industries and large enterprises.",
       "icon": "shield",
       "category": "playbook",
       "teamScale": "Enterprise",
@@ -309,9 +335,9 @@
       ],
       "prompts": [
         {
-          "slug": "discovery/market-analysis",
+          "slug": "discovery/legal-ip-review",
           "order": 1,
-          "note": "Analyze target market compliance requirements (healthcare, finance, etc.)"
+          "note": "Map regulatory and contractual obligations for your target customers (e.g. GDPR, HIPAA, DPAs). Verify with counsel"
         },
         {
           "slug": "discovery/risk-analysis",
@@ -331,7 +357,7 @@
         {
           "slug": "discovery/roadmap-planning",
           "order": 5,
-          "note": "Plan compliance certification timeline and milestones"
+          "note": "Plan the compliance roadmap and milestones (e.g. SOC 2 report, ISO 27001 certification)"
         },
         {
           "slug": "execution/test-plan",
@@ -339,9 +365,9 @@
           "note": "Create security testing and penetration testing plan"
         },
         {
-          "slug": "discovery/ai-prd-generator",
+          "slug": "discovery/prd-outline",
           "order": 7,
-          "note": "Document security features PRD (SSO, audit logs, encryption, etc.)",
+          "note": "Document security feature requirements (SSO, audit logs, encryption, etc.)",
           "optional": true
         }
       ],
@@ -349,7 +375,7 @@
         "Understanding of target customer compliance requirements",
         "Access to security and legal teams",
         "Current security posture assessment",
-        "Budget for compliance certifications"
+        "Budget for compliance audits and certifications"
       ],
       "outcomes": [
         "Compliance requirements matrix",
@@ -384,7 +410,7 @@
           "note": "Ruthlessly prioritize for MVP scope"
         },
         {
-          "slug": "discovery/ai-prd-generator",
+          "slug": "discovery/prd-outline",
           "order": 2,
           "note": "Document your MVP requirements"
         },
@@ -447,19 +473,19 @@
       ],
       "prompts": [
         {
-          "slug": "discovery/feature-prioritization",
-          "order": 1,
-          "note": "Start by evaluating and prioritizing your feature ideas"
-        },
-        {
           "slug": "discovery/user-persona",
-          "order": 2,
+          "order": 1,
           "note": "Define who you're building this feature for"
         },
         {
-          "slug": "discovery/ai-prd-generator",
+          "slug": "discovery/feature-prioritization",
+          "order": 2,
+          "note": "Evaluate and prioritize feature ideas for those users"
+        },
+        {
+          "slug": "discovery/prd-outline",
           "order": 3,
-          "note": "Create a comprehensive Product Requirements Document"
+          "note": "Write the Product Requirements Document"
         },
         {
           "slug": "discovery/risk-analysis",
@@ -474,9 +500,20 @@
           "optional": true
         },
         {
-          "slug": "execution/release-manager",
+          "slug": "execution/launch-readiness",
           "order": 6,
-          "note": "Plan and execute the release"
+          "note": "Run a go/no-go launch readiness review"
+        },
+        {
+          "slug": "execution/release-communication",
+          "order": 7,
+          "note": "Announce the launch to customers and internal teams"
+        },
+        {
+          "slug": "execution/release-manager",
+          "order": 8,
+          "note": "Generate release notes from your git history",
+          "optional": true
         }
       ],
       "prerequisites": [
@@ -535,13 +572,12 @@
         {
           "slug": "prototyping/api-endpoint",
           "order": 5,
-          "note": "Design integration APIs and webhook specifications"
+          "note": "Design the integration API"
         },
         {
-          "slug": "prototyping/automation-script",
+          "slug": "prototyping/webhook-handler",
           "order": 6,
-          "note": "Create sample integration scripts and templates",
-          "optional": true
+          "note": "Prototype secure webhook delivery and handling (signatures, retries, idempotency)"
         },
         {
           "slug": "execution/test-plan",
@@ -549,9 +585,9 @@
           "note": "Plan integration testing across partner platforms"
         },
         {
-          "slug": "discovery/marketing-ideation",
+          "slug": "discovery/go-to-market-strategy",
           "order": 8,
-          "note": "Develop co-marketing strategy with integration partners",
+          "note": "Plan the go-to-market and co-marketing with integration partners",
           "optional": true
         }
       ],
@@ -654,24 +690,30 @@
           "note": "Analyze competitive positioning"
         },
         {
-          "slug": "discovery/user-persona",
+          "slug": "discovery/customer-interview-guide",
           "order": 3,
-          "note": "Define and understand your target users"
+          "note": "Plan and run customer interviews"
+        },
+        {
+          "slug": "discovery/user-persona",
+          "order": 4,
+          "note": "Turn what you learned into target user personas"
         },
         {
           "slug": "discovery/feedback-summary",
-          "order": 4,
+          "order": 5,
           "note": "Synthesize user feedback and insights",
           "optional": true
         },
         {
           "slug": "discovery/strategic-analysis",
-          "order": 5,
-          "note": "Strategic analysis and recommendations"
+          "order": 6,
+          "note": "If the opportunity means entering a new market, assess the entry strategy",
+          "optional": true
         },
         {
           "slug": "discovery/feature-prioritization",
-          "order": 6,
+          "order": 7,
           "note": "Prioritize opportunities based on findings"
         }
       ],

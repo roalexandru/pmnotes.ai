@@ -42,13 +42,13 @@
     },
     {
       "key": "prd_summary",
-      "label": "PRD Summary (optional)",
+      "label": "PRD Summary",
       "example": "Paste key sections from your PRD: goals, scope, requirements",
       "optional": true
     },
     {
       "key": "tech_design_summary",
-      "label": "Tech Design Summary (optional)",
+      "label": "Tech Design Summary",
       "example": "Paste key sections: stack, architecture, key components",
       "optional": true
     }

@@ -1,3 +1,4 @@
+```python
 import numpy as np
 
 metric_name = "daily active users"
@@ -18,14 +19,22 @@ print(f"Metric: {metric_name}")
 for key in metrics_to_calculate:
     print(f"{key.title()}: {summary[key]:.2f}")
 
-if "stddev" in metrics_to_calculate and summary["stddev"] > summary["average"] * 0.2:
-    print("Insight: Volatility looks elevated; investigate outlier days.")
+if "stddev" in metrics_to_calculate:
+    cv = summary["stddev"] / summary["average"]  # coefficient of variation
+    if cv > 0.2:
+        print(f"Insight: Volatility looks elevated (CV {cv:.1%}); investigate outlier days.")
+    else:
+        print(f"Insight: Volatility is moderate (CV {cv:.1%}); the series is trending, not spiking.")
+```
 
-# Sample Output:
-# Metric: daily active users
-# Average: 157.14
-# Median: 155.00
-# Minimum: 120.00
-# Maximum: 200.00
-# Stddev: 28.07
-# Insight: Volatility looks elevated; investigate outlier days.
+Sample output:
+
+```text
+Metric: daily active users
+Average: 157.14
+Median: 155.00
+Minimum: 120.00
+Maximum: 200.00
+Stddev: 26.75
+Insight: Volatility is moderate (CV 17.0%); the series is trending, not spiking.
+```

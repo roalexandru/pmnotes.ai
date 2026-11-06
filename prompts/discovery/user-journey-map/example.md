@@ -10,6 +10,8 @@
 | **Journey Scope** | Awareness → Evaluation → Onboarding → First Campaign → Ongoing Use → Advocacy |
 | **Known Pain Points** | Template setup struggles, confusing report customization, low onboarding email open rates |
 
+> Pain points beyond the three known ones, and all user thoughts, are hypotheses to validate in research. Figures in sample messages are illustrative.
+
 ---
 
 ## 2. Stage-by-Stage Journey Map
@@ -112,9 +114,9 @@
 - 😟 Frustrated. The template customization feels clunky, DNS verification is a blocker that requires external help, and onboarding emails feel generic. Momentum stalls.
 
 **Pain Points & Friction**
-- **Template customization is rigid.** Users can't easily adjust layouts — only swap text and images in fixed blocks. This is the most frequently cited pain point.
+- **Template customization is rigid.** Users can't easily adjust layouts — only swap text and images in fixed blocks. (Known pain point from inputs; relative frequency: [DATA NEEDED].)
 - **DNS/sender domain verification requires technical knowledge** the user doesn't have, creating a dependency on IT teams with different timelines.
-- **Onboarding emails have low open rates (18%)** because they're generic drip sequences, not triggered by actual user behavior.
+- **Onboarding emails have low open rates** ([DATA NEEDED: current open rate]) — hypothesis: they're generic drip sequences, not triggered by actual user behavior.
 - CSV import fails silently on rows with formatting issues — no clear error messages.
 
 **Opportunities**
@@ -260,7 +262,7 @@
 - In-app review prompt, referral program page, NPS survey, G2/Capterra review sites, LinkedIn (organic sharing)
 
 **User Thoughts**
-- "CampaignHub genuinely saved me 4-5 hours a week. I'd recommend it to someone in my shoes."
+- "CampaignHub genuinely saves me time every week. I'd recommend it to someone in my shoes."
 - "The referral program gives me an account credit — nice, but I'd rather get access to a premium feature for a month."
 - "I have ideas for improvement but I never know if my feedback actually goes anywhere."
 
@@ -292,7 +294,7 @@
 
 **Why it matters:** This is the highest-risk drop-off point. The user just invested effort in setup and expects momentum. An empty screen signals "you're on your own" and breaks the activation flow.
 
-**What can go wrong:** The user closes the tab, intending to come back "when they have time." Most never do. Trial engagement drops by 60% if no meaningful action happens within the first session.
+**What can go wrong:** The user closes the tab, intending to come back "when they have time," and may never return. [DATA NEEDED: trial engagement for users with vs. without a meaningful first-session action.]
 
 **How to win it:** Replace the empty dashboard with a guided "Launch Your First Campaign in 10 Minutes" flow. Pre-populate a sample campaign using the brand assets they just uploaded. Show progress — "3 of 5 steps complete."
 
@@ -306,7 +308,7 @@
 
 **What can go wrong:** Cross-channel data hasn't fully synced, so LinkedIn metrics show zeros. The user thinks the campaign failed or the integration broke. They lose confidence in data reliability.
 
-**How to win it:** Ensure data syncs within 2 hours. Send a morning-after email summary with key highlights: "Your campaign reached 2,400 people — 18% open rate, 3.2% CTR. Here's how that compares to industry benchmarks." Make the user feel successful.
+**How to win it:** Ensure data syncs within 2 hours. Send a morning-after email summary with key highlights, e.g. "Your campaign reached [N] people — [X]% open rate, [Y]% CTR. Here's how that compares to your previous campaigns." Make the user feel successful.
 
 ---
 
@@ -330,7 +332,7 @@
 
 **What can go wrong:** The custom report builder is overwhelming, the PDF export looks broken, and the user ends up manually assembling a Google Slides deck from screenshots. CampaignHub becomes "another tool that can't do reporting right."
 
-**How to win it:** Pre-built executive report templates with one-click generation. Include benchmark comparisons ("Your open rate was 22% — 4 points above industry average"). Make the user the hero in their own meeting.
+**How to win it:** Pre-built executive report templates with one-click generation. Include benchmark comparisons (e.g. "Your open rate was [X]% — [Y] points above your last campaign"; use industry benchmarks only from a cited, current source). Make the user the hero in their own meeting.
 
 ---
 

@@ -34,7 +34,7 @@
     {
       "key": "cost_assumptions",
       "label": "Cost & Resource Assumptions",
-      "example": "Estimated 2 engineers + 1 designer for 4 months. Would need a data pipeline (considering Clickhouse). Could charge $10/seat/month as an add-on or include in Business plan to drive upgrades"
+      "example": "Estimated 2 engineers + 1 designer for 4 months. Would need a data pipeline (considering ClickHouse). Could charge $10/seat/month as an add-on or include in Business plan to drive upgrades"
     },
     {
       "key": "success_metrics",

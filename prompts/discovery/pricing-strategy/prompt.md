@@ -21,6 +21,13 @@ Recommend a pricing strategy and packaging approach.
 5. **Risks & Experiments**
    - Key risks and a 60–90 day pricing experiment plan.
 
+# Ground Rules
+
+- Use only the facts provided above plus well-established public knowledge. Do not invent metrics, quotes, names, dates, features, customers, or citations.
+- Where you must estimate, mark it `(est.)` and state the assumption.
+- Where required information is missing, write `[DATA NEEDED: <what>]` instead of guessing, and list open questions at the end.
+- Quotes must be verbatim from the inputs. Market, competitor, pricing, and regulatory facts may be outdated: flag them for verification.
+
 # Output Format
 1. **Summary Recommendation** (short paragraph)
 2. **Model Comparison** (table)

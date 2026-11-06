@@ -41,7 +41,7 @@ This document outlines the rollout strategy for Intelligent Document Processing 
 - Identify edge cases not seen in training
 
 #### Implementation
-```
+```text
 Production Traffic
         │
         ▼
@@ -160,7 +160,7 @@ Production Traffic
 
 #### Rollout Schedule
 
-```
+```text
 Week 5:  [███░░░░░░░] 10%
 Week 6:  [██████░░░░] 25%
 Week 7:  [████████░░] 50%
@@ -200,7 +200,7 @@ Week 8:  [██████████] 75%
 
 #### Rollout Decision Framework
 
-```
+```text
                     Metrics OK?
                         │
            ┌────────────┴────────────┐
@@ -255,7 +255,7 @@ Week 8:  [██████████] 75%
 
 ### Threshold Strategy
 
-```
+```text
 Confidence Score
      │
      │ 0.95+ ──────► Auto-process (no human touch)
@@ -328,7 +328,7 @@ Based on shadow mode data:
 
 ### Real-Time Metrics
 
-```
+```text
 ┌─────────────────────────────────────────────────────────────┐
 │  INTELLIGENT DOCUMENT PROCESSING - LIVE METRICS             │
 ├─────────────────────────────────────────────────────────────┤
@@ -444,7 +444,7 @@ def trigger_rollback(reason):
 
 ### In-App Onboarding
 
-```
+```text
 ┌──────────────────────────────────────────────────────────┐
 │  🎉 New: AI-Powered Invoice Processing                  │
 │                                                          │
@@ -463,7 +463,7 @@ def trigger_rollback(reason):
 
 ### Feedback Collection
 
-```
+```text
 After each processed invoice:
 
 ┌────────────────────────────────────────────┐

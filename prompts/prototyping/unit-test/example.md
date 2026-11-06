@@ -1,3 +1,6 @@
+### `test_calculate_tier.py`
+
+```python
 import unittest
 
 # The function to test (normally imported from your module)
@@ -36,3 +39,4 @@ class TestSubscriptionTiers(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+```

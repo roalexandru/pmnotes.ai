@@ -21,7 +21,7 @@ Conduct a comprehensive customer segmentation analysis that identifies distinct 
    - For each segment, define: profile description, primary use case, buying behavior, and decision-maker persona.
 
 2. **Segment Sizing**
-   - Estimate TAM (Total Addressable Market) for each segment with reasoning.
+   - Estimate TAM (Total Addressable Market) for each segment with reasoning, showing the arithmetic (units × seats × price) so every figure can be checked; mark all estimates `(est.)`.
    - Estimate SAM (Serviceable Addressable Market) based on current product capabilities.
    - Note key assumptions and data gaps.
 
@@ -42,6 +42,13 @@ Conduct a comprehensive customer segmentation analysis that identifies distinct 
 6. **Segment Migration Paths**
    - Map how customers might move between segments over time (e.g., individual user to team to enterprise).
    - Identify expansion triggers and upsell signals.
+
+# Ground Rules
+
+- Use only the facts provided above plus well-established public knowledge. Do not invent metrics, quotes, names, dates, features, customers, or citations.
+- Where you must estimate, mark it `(est.)` and state the assumption.
+- Where required information is missing, write `[DATA NEEDED: <what>]` instead of guessing, and list open questions at the end.
+- Quotes must be verbatim from the inputs. Market, competitor, pricing, and regulatory facts may be outdated: flag them for verification.
 
 # Output Format
 

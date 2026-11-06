@@ -1,4 +1,4 @@
-# OKR Health Check — Q1 2026, Week 7
+# OKR Health Check — Q1 2027, Week 7
 
 ## Executive Summary
 
@@ -10,16 +10,16 @@ At 54% through the quarter, the activation objective is **At Risk**. KR1 (activa
 
 **Overall confidence: Medium**
 
-### KR1: 30-Day Activation from 40% → 55%
+### KR1: 30-Day Activation from 40% (est.) → 55%
 
 | Dimension | Status |
 |-----------|--------|
 | Target | 55% |
 | Current | 47% |
-| Expected at this point | 48.1% (linear pace) |
+| Expected at this point | 48.1% (linear pace, assuming a 40% starting baseline — est.; [DATA NEEDED: actual baseline]) |
 | Status | **At Risk** |
 
-**Analysis:** Progress is 1.1 percentage points behind linear pace. The remaining 8pp must be gained in 6 weeks — a required weekly rate of 1.33pp vs. the 1.0pp/week achieved so far. The mobile analytics data gap means we may be underreporting actual activation by 2–4pp, which could shift this to On Track once resolved.
+**Analysis:** Progress is 1.1 percentage points behind linear pace. The remaining 8pp must be gained in 6 weeks — a required weekly rate of 1.33pp vs. the 1.0pp/week achieved so far. The mobile analytics data gap means we may be underreporting actual activation (est. 2–4pp, assuming mobile is a meaningful share of users; [DATA NEEDED: mobile share of new users]), which could shift this to On Track once resolved.
 
 **Recommendation:** Fix mobile analytics tracking as a P0 this sprint. If corrected data shows actual activation at 49%+, reclassify to On Track. If not, evaluate whether KR3's guided setup flow can accelerate the rate post-launch.
 
@@ -80,7 +80,7 @@ At 54% through the quarter, the activation objective is **At Risk**. KR1 (activa
 
 ```json
 {
-  "quarter": "Q1 2026",
+  "quarter": "Q1 2027",
   "week": 7,
   "overall_confidence": "medium",
   "objectives": [

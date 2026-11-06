@@ -2,7 +2,7 @@
 
 ## 1. Executive Summary
 
-**Recommendation: GO — invest in a phased build of a native analytics dashboard.** The addressable opportunity is **$1.05M incremental ARR by Year 3** under moderate assumptions, with a **payback period of 9 months** from launch. The investment required is **$280K** (one-time build) plus $85K/year in ongoing costs. With our top competitor already shipping analytics and 68% of paying teams requesting this capability, every quarter of delay costs us an estimated **$45K in preventable churn and $60K in lost competitive deals**. The risk-adjusted 3-year NPV is **$1.12M** — this is the highest-ROI initiative on our roadmap.
+**Recommendation: GO — invest in a phased build of a native analytics dashboard.** The addressable opportunity is **$1.05M incremental revenue in Year 3** under moderate assumptions (est.), with a **payback period of ~12 months from project start** (~8 months after a Month-5 launch). The investment required is **$280K** (one-time build) plus $85K/year in ongoing costs. With our top competitor already shipping analytics and 68% of paying teams requesting this capability, every quarter of delay costs us an estimated **$45K in preventable churn and $60K in lost competitive deals** (est.). The 3-year NPV at a 10% discount rate is **~$1.26M** (est.). [DATA NEEDED: ROI of competing roadmap initiatives to claim this is the highest.]
 
 ---
 
@@ -12,31 +12,34 @@
 
 | Metric | Value | Source |
 | :--- | :--- | :--- |
-| Total paying teams | 3,200 | Internal billing data |
-| Teams requesting analytics | 2,176 (68%) | Feedback board + support tickets |
-| Average contract value | $840/year | Finance report Q4 |
-| Average team size | 12 seats | Product analytics |
-| Pro tier teams | 2,400 (75%) | Billing breakdown |
-| Business tier teams | 800 (25%) | Billing breakdown |
+| Total paying teams | 3,200 | Input |
+| Teams requesting analytics | 2,176 (68%) | Input |
+| Average contract value | $840/year | Input |
+| Average team size | 12 seats | (est.) — [DATA NEEDED: confirm from billing] |
+| Pro tier teams | 2,400 (75%) | (est.) — [DATA NEEDED: confirm split] |
+| Business tier teams | 800 (25%) | (est.) |
 
 ### Revenue Model Assumptions
 
-Two revenue levers: (A) analytics add-on at $10/seat/month for Pro teams, and (B) Pro-to-Business upgrades driven by analytics being included in Business plan (Business plan is $15/seat/month vs. Pro at $7/seat/month).
+Two revenue levers: (A) analytics add-on at $10/seat/month for Pro teams, and (B) Pro-to-Business upgrades driven by analytics being included in Business plan (assumed Business plan $15/seat/month vs. Pro $7/seat/month — (est.), [DATA NEEDED: actual plan prices]).
 
 ### Scenario Comparison
 
-| Scenario | Add-On Adoption (Pro Teams) | Upgrade Rate Lift (Pro→Business) | Churn Reduction | Year 1 Incremental ARR | Confidence |
+| Scenario | Add-On Adoption (Pro Teams) | Upgrade Rate Lift (Pro→Business) | Churn Reduction | Year 1 Incremental Revenue (ramped, first 12 months live) | Confidence |
 | :--- | :--- | :--- | :--- | :--- | :--- |
-| **Conservative** | 8% of Pro teams (192 teams) | +3% upgrade rate | 5% churn reduction | $276K | 80% |
-| **Moderate** | 15% of Pro teams (360 teams) | +7% upgrade rate | 10% churn reduction | $504K | 60% |
-| **Aggressive** | 25% of Pro teams (600 teams) | +12% upgrade rate | 15% churn reduction | $852K | 30% |
+| **Conservative** | 8% of Pro teams (192 teams) | +3% upgrade rate | 5% churn reduction | $260K | 80% |
+| **Moderate** | 15% of Pro teams (360 teams) | +7% upgrade rate | 10% churn reduction | $507K | 60% |
+| **Aggressive** | 25% of Pro teams (600 teams) | +12% upgrade rate | 15% churn reduction | $846K | 30% |
 
 ### Moderate Scenario Math
 
 - **Add-on revenue**: 360 teams x 12 seats x $10/seat/month x 12 months = **$518K** (discounted to $389K assuming mid-year ramp: 50% adopt in H1, 50% in H2)
 - **Upgrade revenue lift**: 2,400 Pro teams x 7% incremental upgrade rate = 168 teams upgrading. 168 teams x 12 seats x ($15 - $7) x 12 = **$193K** (discounted to $97K for mid-year ramp)
-- **Churn save**: 3,200 teams x current 8% annual churn x 10% reduction = 26 teams saved. 26 x $840 = **$22K**
-- **Total Year 1 (ramped)**: ~$504K incremental ARR run-rate, ~$380K recognized in Year 1
+- **Churn save**: 3,200 teams x assumed 8% annual churn (est.; [DATA NEEDED: actual churn]) x 10% reduction = 26 teams saved. 26 x $840 = **$22K**
+- **Total first 12 months live (ramped)**: $389K + $97K + $22K ≈ **$507K**
+- **Project Year 1**: the 4-month build means only 8 months of Year 1 are live, so we plan on **~$380K** recognized in Year 1 (est., ≈ 75% of the 12-month figure, allowing for ramp and billing lag)
+
+Scenario rows use the same method: ramped add-on (75% of full-year), ramped upgrades (50%), plus churn save.
 
 ---
 
@@ -46,22 +49,22 @@ Two revenue levers: (A) analytics add-on at $10/seat/month for Pro teams, and (B
 
 | Signal | Evidence | Urgency |
 | :--- | :--- | :--- |
-| **Competitive threat** | CompetitorX launched analytics 6 months ago; cited in 12 of last 40 lost deals | High — gap widens every quarter |
-| **User demand** | #1 feature request: 420 votes on feedback board, 180 support tickets in 6 months | High — users are vocal and frustrated |
-| **Churn driver** | "Lack of reporting" cited in 23% of churn exit surveys last quarter | High — directly impacts retention |
-| **Workaround friction** | 45% of active teams export CSV weekly (product analytics data) | Medium — workaround exists but is painful |
+| **Competitive threat** | Top competitor launched analytics 6 months ago and is winning deals we used to close ([DATA NEEDED: # lost deals citing analytics]) | High — gap widens every quarter |
+| **User demand** | #1 feature request: 420 votes on feedback board; 68% of paying teams requested reporting | High — users are vocal and frustrated |
+| **Churn driver** | [DATA NEEDED: share of churn exit surveys citing reporting] | To confirm |
+| **Workaround friction** | Users export CSV to Google Sheets ([DATA NEEDED: % of teams exporting weekly]) | Medium — workaround exists but is painful |
 
 ### Cost of Delay
 
 Each quarter we delay:
-- **Churn loss**: ~$45K (based on reporting-related churn trajectory)
-- **Lost competitive deals**: ~$60K (based on win/loss analysis, 3 deals/month at $20K ACV)
-- **Eroding differentiation**: CompetitorX is building switching cost with each month of analytics usage
+- **Churn loss**: ~$45K (est. — [DATA NEEDED: reporting-related churn])
+- **Lost competitive deals**: ~$60K (est. — assumes ~1 lost deal/month at ~$20K ACV; [DATA NEEDED: win/loss data])
+- **Eroding differentiation**: The top competitor is building switching cost with each month of analytics usage
 - **Estimated quarterly cost of inaction: $105K**
 
 ### Strategic Fit
 
-Analytics directly supports our stated FY26 strategy of "making ProjectFlow the command center for project teams." It creates a data moat — once teams build dashboards and track trends, switching costs increase significantly. This aligns with the board's mandate to improve net revenue retention from 105% to 115%.
+Analytics supports a "command center for project teams" direction ([DATA NEEDED: link to stated company strategy]). It creates a data moat — once teams build dashboards and track trends, switching costs increase. It should also lift net revenue retention ([DATA NEEDED: current NRR and target]).
 
 ---
 
@@ -92,7 +95,7 @@ Analytics directly supports our stated FY26 strategy of "making ProjectFlow the 
 
 | | Year 1 | Year 2 | Year 3 | Total |
 | :--- | :--- | :--- | :--- | :--- |
-| **Revenue (incremental)** | $380K | $720K | $1,050K | $2,150K |
+| **Revenue (incremental, est.)** | $380K | $720K | $1,050K | $2,150K |
 | Build cost | ($280K) | — | — | ($280K) |
 | Ongoing cost | ($85K) | ($85K) | ($85K) | ($255K) |
 | **Net contribution** | **$15K** | **$635K** | **$965K** | **$1,615K** |
@@ -100,9 +103,9 @@ Analytics directly supports our stated FY26 strategy of "making ProjectFlow the 
 
 ### Key Financial Metrics
 
-- **Payback period**: 9 months from launch (Month 5 of Year 1 at moderate ramp)
+- **Payback period**: ~12 months from project start (~8 months after launch). Cumulative cost by Month 12 is $365K ($280K build + $85K ongoing) against $380K revenue, so cumulative net only turns positive at the end of Year 1 (+$15K).
 - **3-year ROI**: 302% ($1,615K net / $535K total cost)
-- **3-year NPV (10% discount)**: $1,120K
+- **3-year NPV (10% discount, year-end cash flows)**: ~$1,263K ($15K/1.1 + $635K/1.1² + $965K/1.1³)
 - **Break-even adoption**: Only 5% add-on adoption needed to cover ongoing costs — well below even the conservative scenario
 
 ---
@@ -142,13 +145,15 @@ Analytics directly supports our stated FY26 strategy of "making ProjectFlow the 
 
 ## 7. Sensitivity Analysis
 
+Paybacks are months from project start (base: 12); revenue in later years is scaled by the same factor as Year 1.
+
 | Assumption Change | Impact on Year 1 Revenue | Revised Payback | Revised 3-Year NPV | Verdict |
 | :--- | :--- | :--- | :--- | :--- |
-| **Adoption 50% lower** (7.5% vs. 15%) | $190K (vs. $380K) | 16 months | $480K | Still positive; still worth doing |
-| **Build cost 2x** ($560K) | No revenue impact | 14 months | $840K | Payback extends but ROI remains strong |
-| **1 quarter delay** (ship Q3 vs. Q2) | $285K (3 quarters of ramp) | 12 months from launch | $920K | Acceptable; avoid further delay |
-| **Competitor drops price 20%** | $340K (10% lower adoption due to price pressure) | 10 months | $980K | Minimal impact — our value prop is integration, not price |
-| **All pessimistic combined** | $140K | 22 months | $180K | Marginal; would trigger Phase 1 gate review |
+| **Adoption 50% lower** (7.5% vs. 15%) | $190K (vs. $380K) | 20 months | ~$400K | Still positive; still worth doing |
+| **Build cost 2x** ($560K) | No revenue impact | 18 months | ~$1,009K | Payback extends but ROI remains strong |
+| **1 quarter delay** (ship Q3 vs. Q2) | $285K (5 live months) | 14 months | ~$1,177K | Acceptable; avoid further delay |
+| **Competitor drops price 20%** | $340K (~10% lower adoption due to price pressure) | 13 months | ~$1,081K | Modest impact — our value prop is integration, not price |
+| **All pessimistic combined** | $140K | Not within 3 years | ~−$83K | Negative; the Phase 1 gate should stop or rescope the project |
 
 ### Swing Variable
 
@@ -214,4 +219,4 @@ This is a de-risked, phased approach. We commit $140K to validate the opportunit
 
 ### Decision Timeline
 
-**Request decision by end of this week.** Each week of delay pushes launch further into Q3 and costs approximately $25K in combined churn and lost deals. The Phase 1 go/no-go checkpoint at Month 2 provides a natural off-ramp if the investment thesis doesn't hold.
+**Request decision by end of this week.** Each week of delay pushes launch further into Q3 and costs approximately $8K in combined churn and lost deals (est.; $105K per quarter ÷ 13 weeks). The Phase 1 go/no-go checkpoint at Month 2 provides a natural off-ramp if the investment thesis doesn't hold.

@@ -7,7 +7,8 @@
     "start": "node server.js"
   },
   "dependencies": {
-    "express": "^4.18.0"
+    "express": "^5.3.0",
+    "stripe": "^23.0.0"
   }
 }
 ```
@@ -15,67 +16,52 @@
 ```js
 // server.js
 const express = require('express');
-const crypto = require('crypto');
+const Stripe = require('stripe');
 
 const app = express();
 const port = process.env.PORT || 3000;
 
+const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
 const WEBHOOK_SECRET = process.env.STRIPE_WEBHOOK_SECRET;
+const TOLERANCE_SECONDS = 300; // reject events signed more than 5 minutes ago (replay protection)
 
 // Raw body is required for signature verification
 app.post('/webhooks/stripe', express.raw({ type: 'application/json' }), (req, res) => {
-  // Always respond 200 quickly to prevent retries
-  res.status(200).json({ received: true });
-
-  // Verify signature
-  const signature = req.headers['stripe-signature'];
-  if (!verifySignature(req.body, signature)) {
-    console.error('Invalid webhook signature');
-    return;
+  // 1. Verify the signature FIRST, before acknowledging anything.
+  //    constructEvent checks the HMAC-SHA256 signature (timing-safe) and the
+  //    signed timestamp against the tolerance window.
+  let event;
+  try {
+    event = stripe.webhooks.constructEvent(
+      req.body, // raw Buffer, not parsed JSON
+      req.headers['stripe-signature'],
+      WEBHOOK_SECRET,
+      TOLERANCE_SECONDS
+    );
+  } catch (err) {
+    console.error(`Webhook signature verification failed: ${err.message}`);
+    return res.status(400).send('Invalid signature');
   }
 
-  const event = JSON.parse(req.body.toString());
-
-  // Idempotency check
+  // 2. Dedupe by event ID (providers retry and may deliver duplicates)
   if (processedEvents.has(event.id)) {
     console.log(`Skipping duplicate event: ${event.id}`);
-    return;
+    return res.status(200).json({ received: true, duplicate: true });
   }
   processedEvents.add(event.id);
 
-  // Route to handler
-  handleEvent(event).catch((err) => {
-    console.error(`Error handling ${event.type} (${event.id}):`, err.message);
+  // 3. Acknowledge immediately, then process asynchronously
+  res.status(200).json({ received: true });
+
+  setImmediate(() => {
+    handleEvent(event).catch((err) => {
+      // Already acknowledged: log for retry/reconciliation (e.g. push to a job queue or dead-letter log)
+      console.error(`Error handling ${event.type} (${event.id}):`, err.message);
+    });
   });
 });
 
-// --- Signature Verification ---
-
-function verifySignature(payload, header) {
-  if (!header || !WEBHOOK_SECRET) return false;
-
-  const parts = header.split(',').reduce((acc, part) => {
-    const [key, value] = part.split('=');
-    acc[key] = value;
-    return acc;
-  }, {});
-
-  const timestamp = parts['t'];
-  const expectedSig = parts['v1'];
-
-  const signedPayload = `${timestamp}.${payload.toString()}`;
-  const computedSig = crypto
-    .createHmac('sha256', WEBHOOK_SECRET)
-    .update(signedPayload)
-    .digest('hex');
-
-  return crypto.timingSafeEqual(
-    Buffer.from(computedSig),
-    Buffer.from(expectedSig)
-  );
-}
-
-// --- Idempotency Store (in-memory stub) ---
+// --- Idempotency Store (in-memory stub; use a durable store such as a DB table in production) ---
 
 const processedEvents = new Set();
 

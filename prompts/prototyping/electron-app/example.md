@@ -1,4 +1,6 @@
-# File Tree
+### File tree
+
+```text
 focusflow/
 ├── package.json
 ├── main.js
@@ -7,13 +9,17 @@ focusflow/
     ├── index.html
     ├── renderer.js
     └── styles.css
+```
 
-# Workflow Notes
+### Workflow Notes
+
 - **Create a task**: User clicks "Add Task" → renderer sends updated list via IPC → main persists JSON → list re-renders.
 - **Start a focus session**: User clicks the timer card → renderer starts local countdown and updates UI.
 - **Review daily summary**: Renderer computes totals from stored tasks and renders a simple summary row.
 
-# package.json
+### `package.json`
+
+```json
 {
   "name": "focusflow",
   "version": "0.1.0",
@@ -24,8 +30,8 @@ focusflow/
     "dist": "electron-builder"
   },
   "devDependencies": {
-    "electron": "^28.2.0",
-    "electron-builder": "^24.13.2"
+    "electron": "^45.0.0",
+    "electron-builder": "^26.0.0"
   },
   "build": {
     "appId": "com.focusflow.app",
@@ -36,8 +42,11 @@ focusflow/
     "linux": { "target": "AppImage" }
   }
 }
+```
 
-# main.js
+### `main.js`
+
+```js
 const { app, BrowserWindow, ipcMain } = require('electron');
 const path = require('path');
 const fs = require('fs');
@@ -63,6 +72,7 @@ function createWindow() {
     webPreferences: {
       preload: path.join(__dirname, 'preload.js'),
       contextIsolation: true,
+      sandbox: true,
       nodeIntegration: false
     }
   });
@@ -72,26 +82,56 @@ function createWindow() {
 
 app.whenReady().then(createWindow);
 
-ipcMain.handle('tasks:load', () => readData());
-ipcMain.handle('tasks:save', (event, payload) => {
-  writeData(payload);
-  return { ok: true };
+// Validate everything that crosses the IPC boundary: treat the renderer as untrusted
+function isValidPayload(payload) {
+  return (
+    payload !== null &&
+    typeof payload === 'object' &&
+    Array.isArray(payload.tasks) &&
+    payload.tasks.length <= 1000 &&
+    payload.tasks.every(
+      (task) => task && typeof task.title === 'string' && task.title.length > 0 && task.title.length <= 200
+    )
+  );
+}
+
+function isTrustedSender(event) {
+  return event.senderFrame?.url.startsWith('file://');
+}
+
+ipcMain.handle('tasks:load', (event) => {
+  if (!isTrustedSender(event)) throw new Error('Untrusted sender');
+  return readData();
 });
 
-# preload.js
+ipcMain.handle('tasks:save', (event, payload) => {
+  if (!isTrustedSender(event)) throw new Error('Untrusted sender');
+  if (!isValidPayload(payload)) return { ok: false, error: 'Invalid payload' };
+  writeData({ tasks: payload.tasks.map((task) => ({ title: task.title })) });
+  return { ok: true };
+});
+```
+
+### `preload.js`
+
+```js
 const { contextBridge, ipcRenderer } = require('electron');
 
 contextBridge.exposeInMainWorld('focusflowAPI', {
   loadTasks: () => ipcRenderer.invoke('tasks:load'),
   saveTasks: (payload) => ipcRenderer.invoke('tasks:save', payload)
 });
+```
 
-# renderer/index.html
+### `renderer/index.html`
+
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; object-src 'none'; base-uri 'none'" />
   <title>FocusFlow</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
@@ -117,8 +157,11 @@ contextBridge.exposeInMainWorld('focusflowAPI', {
   <script src="renderer.js"></script>
 </body>
 </html>
+```
 
-# renderer/styles.css
+### `renderer/styles.css`
+
+```css
 :root {
   --bg: #0f172a;
   --panel: #1e293b;
@@ -175,8 +218,11 @@ main {
   font-size: 14px;
   color: rgba(226, 232, 240, 0.8);
 }
+```
 
-# renderer/renderer.js
+### `renderer/renderer.js`
+
+```js
 const taskList = document.getElementById('taskList');
 const emptyState = document.getElementById('emptyState');
 const addTask = document.getElementById('addTask');
@@ -239,8 +285,13 @@ startTimer.addEventListener('click', startSession);
 
 renderTimer();
 load();
+```
 
-# Packaging Notes
+### Packaging Notes
+
 - Run `npm install` then `npm run start` for local dev.
 - Use `npm run dist` to create installers for macOS, Windows, and Linux.
 - Update `build` targets in package.json per platform requirements.
+- Pin `electron` to the current stable major when you start (check the Electron releases page); only the latest three majors receive security fixes.
+- Security defaults used here: `contextIsolation: true`, `sandbox: true`, `nodeIntegration: false`, a strict Content-Security-Policy, and validation of every IPC message in the main process.
+- Code-signing (macOS notarization, Windows Authenticode) is required for distributable builds; add credentials via environment variables, not package.json.

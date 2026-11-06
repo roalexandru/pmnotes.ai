@@ -1,4 +1,3 @@
-```markdown
 # POC Implementation Guide: AI Support Chatbot
 
 ## 1. POC Scope Definition
@@ -32,7 +31,7 @@
 |-----------|----------|-----------|
 | Frontend | Next.js + shadcn/ui | Fast setup, good defaults, team knows React |
 | Backend | Next.js API routes | No separate server needed |
-| LLM | OpenAI API (gpt-4o-mini) | Fast, cheap, good enough for POC |
+| LLM | Hosted LLM API (a small, fast model) | Fast, cheap, good enough for POC |
 | Vector DB | None - keyword search | RAG adds complexity; simple search validates core UX |
 | Data | JSON file with FAQs | Zero setup, easy to edit |
 | Hosting | Vercel (free tier) | One-click deploy from GitHub |
@@ -46,7 +45,7 @@
 - [ ] Initialize Next.js project with TypeScript
 - [ ] Install and configure shadcn/ui
 - [ ] Create basic chat UI layout (input + message list)
-- [ ] Set up OpenAI API integration
+- [ ] Set up LLM API integration
 - [ ] Create FAQ JSON file with 10 sample entries
 - [ ] Basic API route that echoes input
 
@@ -82,9 +81,9 @@
 |------|--------|-------|--------------|---------------------|
 | Project setup | 1h | FE Dev | None | Next.js running locally |
 | Chat UI shell | 2h | FE Dev | Project setup | Input + message list renders |
-| OpenAI integration | 2h | BE Dev | Project setup | API key works, test call succeeds |
+| LLM API integration | 2h | BE Dev | Project setup | API key works, test call succeeds |
 | FAQ data file | 1h | PM | None | 10 FAQs in JSON format |
-| API route | 2h | BE Dev | OpenAI integration | POST /api/chat returns response |
+| API route | 2h | BE Dev | LLM API integration | POST /api/chat returns response |
 | FAQ search | 3h | BE Dev | FAQ data file | Returns top 3 matches |
 | Prompt engineering | 2h | BE Dev | FAQ search | LLM uses FAQ context |
 | Streaming UI | 3h | FE Dev | API route | Responses stream in real-time |
@@ -95,13 +94,13 @@
 | Deployment | 1h | FE Dev | All above | Live on Vercel |
 | Demo prep | 2h | PM | Deployment | Script + talking points |
 
-**Total: ~29 hours across 5 days**
+**Total: ~29 hours of task effort (est.) across 5 days** (the 36 hours of phase time blocks above leave ~7 hours of buffer)
 
 ## 5. Risk Mitigation
 
 | Risk | Likelihood | Fallback Plan |
 |------|------------|---------------|
-| OpenAI API rate limits | Low | Use gpt-4o-mini; implement basic caching |
+| LLM API rate limits | Low | Use a small, fast hosted LLM; implement basic caching |
 | LLM responses too slow | Medium | Add streaming; show typing indicator |
 | FAQ search returns bad matches | Medium | Increase context window; add "rephrase" prompt |
 | Designer unavailable | Medium | Use shadcn defaults; skip custom styling |
@@ -140,7 +139,6 @@
 - English only
 
 ### Stakeholder Talking Points
-- "This validates that LLM + simple search can handle 80% of support queries"
+- "This tests whether LLM + simple search can answer our top FAQ categories accurately within the <3s latency goal" — report the measured answer accuracy and p95 latency from POC testing: [DATA NEEDED: POC test results]
 - "Full build would add auth, persistence, and admin tools"
 - "Next step: pilot with 5 real support agents for 1 week"
-```

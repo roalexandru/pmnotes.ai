@@ -29,7 +29,7 @@
     {
       "key": "positioning_statement",
       "label": "Positioning Statement",
-      "example": "Unlike Segment (too expensive) or Fivetran (too technical), DataSync gives RevOps teams real-time data unification without writing code or managing infrastructure"
+      "example": "Unlike enterprise CDPs or engineer-oriented ETL tools, DataSync gives RevOps teams real-time data unification without writing code or managing infrastructure"
     },
     {
       "key": "launch_context",
@@ -39,7 +39,7 @@
     {
       "key": "competitive_landscape",
       "label": "Competitive Landscape",
-      "example": "Segment (enterprise, expensive), Fivetran (ETL-focused, technical), Zapier (widespread but unreliable for real-time), Census (reverse ETL only). No dominant player in the 'RevOps-first' positioning"
+      "example": "Segment (enterprise, expensive), Fivetran (ETL-focused, technical), Zapier (widespread, polling-based, not built for real-time sync), Census (reverse ETL only). No dominant player in the 'RevOps-first' positioning"
     },
     {
       "key": "constraints",

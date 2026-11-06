@@ -1,7 +1,10 @@
+```python
 import requests
 
 api_url = "https://jsonplaceholder.typicode.com/todos"
-query_params = {"userId": 1, "completed": False}
+# Send booleans as lowercase strings: requests would encode Python False as "False",
+# which this API does not match.
+query_params = {"userId": 1, "completed": "false"}
 fields = ["id", "title", "completed"]
 limit = 5
 
@@ -30,18 +33,22 @@ print(f"Records fetched: {len(items)}")
 print(f"Records shown: {len(subset)}")
 print(f"Missing fields: {', '.join(sorted(missing_fields)) or 'None'}")
 print("Verdict: Data shape is sufficient for the demo.")
+```
 
-# Sample Output:
-# | id | title | completed |
-# |---:|:------|:---------:|
-# | 1 | delectus aut autem | False |
-# | 2 | quis ut nam facilis et officia qui | False |
-# | 3 | fugiat veniam minus | False |
-# | 4 | et porro tempora | True |
-# | 5 | laboriosam mollitia et enim quasi adipisci quia provident illum | False |
-#
-# Summary
-# Records fetched: 20
-# Records shown: 5
-# Missing fields: None
-# Verdict: Data shape is sufficient for the demo.
+Sample output:
+
+```text
+| id | title | completed |
+|---:|:------|:---------:|
+| 1 | delectus aut autem | False |
+| 2 | quis ut nam facilis et officia qui | False |
+| 3 | fugiat veniam minus | False |
+| 5 | laboriosam mollitia et enim quasi adipisci quia provident illum | False |
+| 6 | qui ullam ratione quibusdam voluptatem quia omnis | False |
+
+Summary
+Records fetched: 9
+Records shown: 5
+Missing fields: None
+Verdict: Data shape is sufficient for the demo.
+```

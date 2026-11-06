@@ -1,3 +1,4 @@
+```python
 import pandas as pd
 from scipy import stats
 
@@ -39,7 +40,7 @@ for seg in segments_raw.split(","):
     deviation_pct = ((obs - base) / base * 100) if base else 0
     status = "Flat" if abs(deviation_pct) < 5 else ("Down" if deviation_pct < 0 else "Up")
     segments.append({
-        "Segment": name.replace("_", " ").title(),
+        "Segment": " ".join(w.upper() if w in {"us", "eu"} else w.title() for w in name.split("_")),
         "Observed": int(obs),
         "Baseline": int(base),
         "Deviation": f"{deviation_pct:+.1f}%",
@@ -57,11 +58,11 @@ unaffected = [s for s in segments if s["Status"] == "Flat"]
 cause_ranking = [
     {
         "rank": 1,
-        "cause": "US holiday (Presidents' Day)",
+        "cause": "US holiday (Monday)",
         "fit": "Strong",
         "rationale": (
-            "Free-tier, US, mobile-web users are the most casual segment. "
-            "Holiday behavior explains why paid and EU users are unaffected."
+            "The drop is concentrated in US, free-tier, and mobile-web users. "
+            "A US holiday would explain why paid and EU users are flat."
         ),
     },
     {
@@ -80,32 +81,45 @@ cause_ranking = [
         "fit": "Weak",
         "rationale": (
             "Email drives re-engagement for lapsed users, but effect is gradual (days), "
-            "not a sudden single-day drop. Email primarily drives desktop, which is flat."
+            "not a sudden single-day drop."
         ),
     },
 ]
 
 # --- Verdict ---
+# The action starts from the z-score band. A concentrated segment pattern
+# (some segments down, others flat) raises the action by one band, as the prompt allows.
 segment_pattern = len(driving) > 0 and len(unaffected) > 0
-if abs_z >= 2 or (abs_z >= 1.5 and segment_pattern):
-    verdict = "Likely Signal — Investigate"
-elif abs_z < 1:
-    verdict = "Likely Noise — Monitor"
+bands = ["No action", "Monitor", "Investigate", "Escalate"]
+action_level = bands.index(severity_action)
+raised = False
+if segment_pattern and action_level < len(bands) - 1 and abs_z >= 1:
+    action_level += 1
+    raised = True
+final_action = bands[action_level]
+
+if abs_z >= 2:
+    verdict = f"Likely Signal — {final_action}"
+elif abs_z < 1 and not segment_pattern:
+    verdict = f"Likely Noise — {final_action}"
 else:
-    verdict = "Borderline — Investigate to Confirm"
+    verdict = f"Inconclusive — {final_action}"
 
 # --- Recommended Action ---
-if "Investigate" in verdict or "Signal" in verdict:
+if final_action == "Escalate":
+    action = "Escalate to the on-call engineering lead and the metric owner now."
+elif final_action == "Investigate":
     action = (
         "Investigate (2 hours):\n"
         "  1. Pull mobile-web auth error logs since Friday's deployment.\n"
         "  2. Compare today's drop against last 3 US holidays.\n"
-        "  3. Re-check tomorrow — if Tuesday DAU recovers to 11,800+, confirm holiday-driven."
+        f"  3. Re-check tomorrow — if DAU is back within 1σ of baseline "
+        f"(≥ {baseline_mean - baseline_stddev:,}), treat it as holiday-driven."
     )
-elif "Noise" in verdict:
-    action = "Monitor — re-check in 24h. No escalation needed."
+elif final_action == "Monitor":
+    action = "Monitor — re-check in 24h."
 else:
-    action = "Monitor closely — re-assess with tomorrow's data."
+    action = "No action — the movement is within normal variation."
 
 # --- Print Report ---
 print(f"{'=' * 60}")
@@ -122,12 +136,14 @@ print(f"  P-Value:         {p_value:.4f}")
 print(f"  Severity:        {severity}")
 
 print(f"\n## Verdict: {verdict}\n")
+if raised:
+    print(f"  Action raised from {severity_action} to {final_action}: the drop is concentrated in specific segments.")
 if segment_pattern:
     down_names = ", ".join(s["Segment"] for s in driving)
     flat_names = ", ".join(s["Segment"] for s in unaffected)
     print(f"  Affected segments: {down_names}")
     print(f"  Unaffected segments: {flat_names}")
-    print(f"  Segment-specific pattern rules out random noise.")
+    print(f"  A segment-concentrated pattern makes random noise less likely, but z < 2 is not conclusive.")
 
 print(f"\n## Segment Analysis\n")
 print(df_segments.to_string(index=False))
@@ -142,62 +158,67 @@ print(f"  {action}")
 
 print(f"\n## Leadership Talking Points\n")
 print(f"  DAU dropped {(baseline_mean - observed_value) / baseline_mean * 100:.0f}% from expected baseline.")
-print(f"  The drop is isolated to US free-tier users on mobile — our most casual segment.")
+print(f"  The drop is concentrated in US, free-tier, and mobile-web users (segments overlap).")
 print(f"  Most likely explanation is the US holiday; we are also checking Friday's auth")
 print(f"  deployment for mobile regressions. Definitive answer by tomorrow's standup.")
+```
 
-# Sample Output:
-# ============================================================
-# METRIC ANOMALY TRIAGE: Daily Active Users (DAU)
-# ============================================================
-#
-# ## Severity Assessment
-#
-#   Observed:       10,170
-#   Expected (mean): 11,210
-#   Std Dev:         620
-#   Deviation:       -1,040 (-9.3%)
-#   Z-Score:         -1.68
-#   P-Value:         0.0934
-#   Severity:        Elevated (1–2σ)
-#
-# ## Verdict: Likely Signal — Investigate
-#
-#   Affected segments: Mobile Web, Us Users, Free Tier
-#   Unaffected segments: Desktop, Eu Users, Paid Tier
-#   Segment-specific pattern rules out random noise.
-#
-# ## Segment Analysis
-#
-#      Segment  Observed  Baseline Deviation Status
-#   Mobile Web       700      1000    -30.0%   Down
-#      Desktop      3200      3200     +0.0%   Flat
-#     Us Users      2500      3330    -24.9%   Down
-#     Eu Users      1800      1800     +0.0%   Flat
-#    Free Tier      4000      5500    -27.3%   Down
-#    Paid Tier      6170      6170     +0.0%   Flat
-#
-# ## Cause Ranking
-#
-#   1. US holiday (Presidents' Day) — Strong fit
-#      Free-tier, US, mobile-web users are the most casual segment. ...
-#
-#   2. Auth flow deployment (v2.3.1, Friday) — Moderate fit
-#      Timing aligns (deployed Friday, drop Monday). ...
-#
-#   3. Marketing email campaign paused — Weak fit
-#      Email drives re-engagement for lapsed users, but effect is gradual ...
-#
-# ## Recommended Action
-#
-#   Investigate (2 hours):
-#     1. Pull mobile-web auth error logs since Friday's deployment.
-#     2. Compare today's drop against last 3 US holidays.
-#     3. Re-check tomorrow — if Tuesday DAU recovers to 11,800+, confirm holiday-driven.
-#
-# ## Leadership Talking Points
-#
-#   DAU dropped 9% from expected baseline.
-#   The drop is isolated to US free-tier users on mobile — our most casual segment.
-#   Most likely explanation is the US holiday; we are also checking Friday's auth
-#   deployment for mobile regressions. Definitive answer by tomorrow's standup.
+Sample output (from running the script above):
+
+```text
+============================================================
+METRIC ANOMALY TRIAGE: Daily Active Users (DAU)
+============================================================
+
+## Severity Assessment
+
+  Observed:       10,170
+  Expected (mean): 11,210
+  Std Dev:         620
+  Deviation:       -1,040 (-9.3%)
+  Z-Score:         -1.68
+  P-Value:         0.0935
+  Severity:        Elevated (1–2σ)
+
+## Verdict: Inconclusive — Investigate
+
+  Action raised from Monitor to Investigate: the drop is concentrated in specific segments.
+  Affected segments: Mobile Web, US Users, Free Tier
+  Unaffected segments: Desktop, EU Users, Paid Tier
+  A segment-concentrated pattern makes random noise less likely, but z < 2 is not conclusive.
+
+## Segment Analysis
+
+     Segment  Observed  Baseline Deviation Status
+  Mobile Web       700      1000    -30.0%   Down
+     Desktop      3200      3200     +0.0%   Flat
+    US Users      2500      3330    -24.9%   Down
+    EU Users      1800      1800     +0.0%   Flat
+   Free Tier      4000      5500    -27.3%   Down
+   Paid Tier      6170      6170     +0.0%   Flat
+
+## Cause Ranking
+
+  1. US holiday (Monday) — Strong fit
+     The drop is concentrated in US, free-tier, and mobile-web users. A US holiday would explain why paid and EU users are flat.
+
+  2. Auth flow deployment (v2.3.1, Friday) — Moderate fit
+     Timing aligns (deployed Friday, drop Monday). Mobile web disproportionately affected could indicate responsive regression. But paid users share the same auth flow and are flat — weakens this hypothesis.
+
+  3. Marketing email campaign paused — Weak fit
+     Email drives re-engagement for lapsed users, but effect is gradual (days), not a sudden single-day drop.
+
+## Recommended Action
+
+  Investigate (2 hours):
+  1. Pull mobile-web auth error logs since Friday's deployment.
+  2. Compare today's drop against last 3 US holidays.
+  3. Re-check tomorrow — if DAU is back within 1σ of baseline (≥ 10,590), treat it as holiday-driven.
+
+## Leadership Talking Points
+
+  DAU dropped 9% from expected baseline.
+  The drop is concentrated in US, free-tier, and mobile-web users (segments overlap).
+  Most likely explanation is the US holiday; we are also checking Friday's auth
+  deployment for mobile regressions. Definitive answer by tomorrow's standup.
+```

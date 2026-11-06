@@ -1,110 +1,43 @@
-from collections import Counter
-import re
-import pandas as pd
-from textblob import TextBlob
+## Per-entry classification
 
-# --- Inputs (one feedback entry per line) ---
-feedback_raw = """Love the new update!
-The app crashes every time I open settings.
-Great customer service, very responsive.
-Not intuitive to use at all.
-Fast and reliable, best tool we have used.
-Billing page is confusing and I was charged twice.
-Search is broken on mobile, never returns results.
-Onboarding was smooth, got started in minutes."""
+```json
+[
+  {"id": 1, "label": "positive", "confidence": "high", "rationale": "Explicit enthusiasm for the latest release.", "quote": "Love the new update!"},
+  {"id": 2, "label": "negative", "confidence": "high", "rationale": "Reports a reproducible crash in a core screen.", "quote": "The app crashes every time I open settings."},
+  {"id": 3, "label": "positive", "confidence": "high", "rationale": "Praises support quality and speed.", "quote": "Great customer service, very responsive."},
+  {"id": 4, "label": "negative", "confidence": "medium", "rationale": "General usability complaint with no specific feature named.", "quote": "Not intuitive to use at all."},
+  {"id": 5, "label": "positive", "confidence": "high", "rationale": "Praises speed and reliability relative to other tools.", "quote": "Fast and reliable, best tool we have used."},
+  {"id": 6, "label": "negative", "confidence": "high", "rationale": "Confusing billing UI plus a duplicate charge.", "quote": "I was charged twice"},
+  {"id": 7, "label": "negative", "confidence": "high", "rationale": "Core search feature fails on mobile.", "quote": "Search is broken on mobile, never returns results."},
+  {"id": 8, "label": "positive", "confidence": "high", "rationale": "Fast, low-friction onboarding.", "quote": "Onboarding was smooth, got started in minutes."}
+]
+```
 
-feedback = [line.strip() for line in feedback_raw.strip().splitlines() if line.strip()]
+## Sentiment distribution (n = 8)
 
-STOPWORDS = {
-    "the", "a", "an", "is", "are", "was", "were", "be", "been", "being",
-    "to", "and", "or", "but", "in", "on", "at", "for", "of", "with",
-    "i", "it", "my", "me", "we", "our", "you", "your", "they", "them",
-    "this", "that", "not", "no", "do", "does", "did", "have", "has", "had",
-    "so", "if", "all", "very", "just", "about", "up", "out", "from",
-    "use", "get", "got", "new", "every", "time", "never",
-}
+| Label | Count | Share |
+|:--|--:|--:|
+| Positive | 4 | 50% |
+| Negative | 4 | 50% |
+| Neutral | 0 | 0% |
+| Mixed | 0 | 0% |
 
-# --- Sentiment Classification ---
-rows = []
-negative_words = []
+## Negative themes
 
-for item in feedback:
-    blob = TextBlob(item)
-    polarity = blob.sentiment.polarity
+| Theme | Entry ids | Severity note |
+|:--|:--|:--|
+| Billing errors | 6 | Highest: a duplicate charge costs the customer money and creates refund and churn risk. |
+| Stability / broken core flows | 2, 7 | High: a crash in settings and mobile search returning no results block core tasks. |
+| Usability | 4 | Medium: real friction, but no specific screen or task named, so follow-up is needed. |
 
-    if polarity > 0.1:
-        label = "positive"
-    elif polarity < -0.1:
-        label = "negative"
-    else:
-        label = "neutral"
+## PM recommendations
 
-    rows.append({"Feedback": item, "Polarity": round(polarity, 3), "Sentiment": label})
+1. **Investigate the double charge now (entry 6).** Check payment logs for duplicate transactions, refund affected users, and review the billing page copy that the user called "confusing".
+2. **Triage the two reliability bugs (entries 2, 7) for the next sprint.** Reproduce the settings crash and the mobile search failure; both are specific enough to file as bugs today.
+3. **Follow up on "Not intuitive" (entry 4) before acting.** The entry names no feature; ask the user or check session recordings for where they got stuck.
 
-    if label == "negative":
-        words = re.findall(r"\b[a-z]+\b", item.lower())
-        negative_words.extend(w for w in words if w not in STOPWORDS and len(w) > 3)
+Caveat: with only 8 entries, the 50/50 split is not a reliable signal of overall sentiment. Use it to pick issues to investigate, not to report a satisfaction trend.
 
-df = pd.DataFrame(rows)
-
-# --- Sentiment Distribution ---
-counts = df["Sentiment"].value_counts()
-total = len(df)
-
-# --- Theme Extraction ---
-top_themes = Counter(negative_words).most_common(5)
-
-# --- Print Report ---
-print("## Feedback Sentiment Analysis\n")
-print(df.to_string(index=False))
-
-print("\n## Sentiment Distribution\n")
-for label in ["positive", "negative", "neutral"]:
-    count = counts.get(label, 0)
-    print(f"  {label.capitalize():>8}: {count} ({count / total * 100:.0f}%)")
-
-print(f"\n## Top Negative Themes\n")
-for word, count in top_themes:
-    print(f"  - {word} ({count}x)")
-
-neg_pct = counts.get("negative", 0) / total * 100
-print(f"\n## PM Recommendation\n")
-if neg_pct >= 50:
-    print("  High negative sentiment. Prioritize stability and usability fixes immediately.")
-elif neg_pct >= 25:
-    theme_str = ", ".join(w for w, _ in top_themes[:3])
-    print(f"  Notable negative feedback around: {theme_str}.")
-    print("  Recommend investigating these areas in the next sprint.")
-else:
-    print("  Sentiment is mostly positive. Continue monitoring for emerging issues.")
-
-# Sample Output:
-# ## Feedback Sentiment Analysis
-#
-#                                              Feedback  Polarity Sentiment
-#                                Love the new update!     0.625  positive
-#    The app crashes every time I open settings.         -0.125  negative
-#         Great customer service, very responsive.        0.700  positive
-#                     Not intuitive to use at all.       -0.400  negative
-#     Fast and reliable, best tool we have used.          0.567  positive
-#  Billing page is confusing and I was charged twice.    -0.350  negative
-#  Search is broken on mobile, never returns results.   -0.400  negative
-#       Onboarding was smooth, got started in minutes.    0.250  positive
-#
-# ## Sentiment Distribution
-#
-#   Positive: 4 (50%)
-#   Negative: 4 (50%)
-#    Neutral: 0 (0%)
-#
-# ## Top Negative Themes
-#
-#   - crashes (1x)
-#   - confusing (1x)
-#   - broken (1x)
-#   - billing (1x)
-#   - search (1x)
-#
-# ## PM Recommendation
-#
-#   High negative sentiment. Prioritize stability and usability fixes immediately.
+Open questions:
+- [DATA NEEDED: how many users hit the duplicate charge, from billing/payment logs]
+- [DATA NEEDED: device and OS for the mobile search failure]

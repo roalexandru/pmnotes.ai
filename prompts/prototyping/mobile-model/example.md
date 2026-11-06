@@ -1,3 +1,6 @@
+### `UserProfile.swift`
+
+```swift
 import Foundation
 
 struct UserProfile: Codable, Identifiable, Equatable {
@@ -24,7 +27,7 @@ struct UserProfile: Codable, Identifiable, Equatable {
 
 // Example Usage
 let json = """
-{ "id": "u_123", "name": "Alex", "email": "alex@example.com", "signup_date": "2024-01-15T10:00:00Z", "avatar_url": null }
+{ "id": "u_123", "name": "Alex", "email": "alex@example.com", "signup_date": "2026-01-15T10:00:00Z", "avatar_url": null }
 """
 
 if let data = json.data(using: .utf8) {
@@ -35,3 +38,4 @@ if let data = json.data(using: .utf8) {
         print("Failed to decode: \(error)")
     }
 }
+```

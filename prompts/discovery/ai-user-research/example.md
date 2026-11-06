@@ -41,7 +41,7 @@
 ## 3. AI-Specific User Journey Map
 
 ### Phase 1: First Encounter (Week 1)
-```
+```text
 Discovery → "What is this AI thing?" → Demo/Tutorial → Initial Skepticism
 ```
 - Users see AI feature in navigation
@@ -49,7 +49,7 @@ Discovery → "What is this AI thing?" → Demo/Tutorial → Initial Skepticism
 - Need: Clear value proposition + safety messaging
 
 ### Phase 2: Trust Building (Weeks 2-4)
-```
+```text
 Side-by-side comparison → AI processes, human verifies → Build confidence
 ```
 - Shadow mode: AI suggests, human does actual work
@@ -57,7 +57,7 @@ Side-by-side comparison → AI processes, human verifies → Build confidence
 - Need: Accuracy metrics, explainability, easy corrections
 
 ### Phase 3: Graduated Autonomy (Weeks 5-8)
-```
+```text
 Low-risk automation → Expand scope → Handle exceptions
 ```
 - Start with high-confidence, low-value invoices
@@ -65,7 +65,7 @@ Low-risk automation → Expand scope → Handle exceptions
 - Need: Configurable confidence thresholds, exception workflows
 
 ### Phase 4: Confident Automation (Weeks 9+)
-```
+```text
 Routine automation → Exception handling → Continuous improvement
 ```
 - AI handles routine, human handles exceptions
@@ -73,7 +73,7 @@ Routine automation → Exception handling → Continuous improvement
 - Need: Performance dashboards, feedback loops, override controls
 
 ### Phase 5: Error Experience (Ongoing)
-```
+```text
 AI error occurs → User discovers → Correction workflow → Trust recalibration
 ```
 - How users find out about errors (proactive vs. downstream)
@@ -122,7 +122,7 @@ AI error occurs → User discovers → Correction workflow → Trust recalibrati
 | **Confidence Score** | Know when to trust vs. verify | Visual indicator (green/yellow/red) per field |
 | **Extraction Highlight** | See exactly what AI read | Overlay on source document |
 | **Reasoning Explanation** | Understand AI decision | "Matched vendor name to existing record" |
-| **Historical Accuracy** | Trust based on track record | "This AI is 98.5% accurate on similar invoices" |
+| **Historical Accuracy** | Trust based on track record | e.g. "This AI is [X]% accurate on similar invoices" (use measured accuracy only) |
 | **Comparison View** | Verify against source | Side-by-side document and extracted data |
 | **Audit Trail** | Prove what happened | Timestamped log of AI decisions and human overrides |
 
@@ -183,8 +183,8 @@ AI error occurs → User discovers → Correction workflow → Trust recalibrati
 ### Efficiency Metrics
 | Metric | Definition | Target |
 |--------|------------|--------|
-| **Processing Time** | Time per invoice (AI-assisted vs. manual) | >50% reduction |
-| **Throughput** | Invoices per hour per user | >3x improvement |
+| **Processing Time** | Time per invoice (AI-assisted vs. manual; baseline 15 min) | >50% reduction (<7.5 min) |
+| **Throughput** | Invoices per hour per user | >2x improvement (consistent with >50% time reduction) |
 | **Exception Rate** | % requiring human intervention | <15% |
 
 ### Satisfaction Metrics

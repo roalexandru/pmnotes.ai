@@ -41,7 +41,7 @@
         {
             "key": "framework_preference",
             "label": "Framework Preference",
-            "example": "RICE (if unknown, choose best fit)"
+            "example": "RICE"
         }
     ]
 }

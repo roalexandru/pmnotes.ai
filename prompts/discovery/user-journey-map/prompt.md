@@ -9,7 +9,9 @@ We are mapping the user journey for **{{product_or_service}}**.
 **User persona:** {{persona_description}}
 **Core user goal:** {{core_goal}}
 **Journey scope:** {{journey_scope}}
+{{#if known_pain_points}}
 **Known pain points:** {{known_pain_points}}
+{{/if}}
 
 # Task
 
@@ -26,7 +28,7 @@ Define 5–7 distinct journey stages that span the full scope described above. F
 - **Touchpoints** — the channels, interfaces, or interactions involved (e.g., website, email, in-app, support chat, social media, word-of-mouth).
 - **User thoughts** — what the user is thinking or asking themselves at this stage (write as first-person internal monologue).
 - **Emotional state** — describe the user's emotional state with a sentiment indicator: 😊 Positive, 😐 Neutral, 😟 Frustrated, 😤 Angry, 🤩 Delighted. Explain why they feel this way.
-- **Pain points & friction** — specific problems, confusion, or blockers the user encounters.
+- **Pain points & friction** — specific problems, confusion, or blockers the user encounters. Distinguish known pain points from the inputs from hypotheses you propose (label these "hypothesis — validate").
 - **Opportunities** — concrete product or experience improvements that could address the pain points.
 - **Key metrics** — 1–3 measurable indicators to track success at this stage (e.g., activation rate, time-to-value, NPS at touchpoint).
 
@@ -54,6 +56,13 @@ List the top 5–7 opportunities ranked by potential impact. For each:
 ## 5. Emotional Arc Visualization
 
 Describe the overall emotional arc of the journey as a narrative — where the highs and lows occur, and what the ideal emotional trajectory should look like after improvements.
+
+# Ground Rules
+
+- Use only the facts provided above plus well-established public knowledge. Do not invent metrics, quotes, names, dates, features, customers, or citations.
+- Where you must estimate, mark it `(est.)` and state the assumption.
+- Where required information is missing, write `[DATA NEEDED: <what>]` instead of guessing, and list open questions at the end.
+- Quotes must be verbatim from the inputs. Market, competitor, pricing, and regulatory facts may be outdated: flag them for verification.
 
 # Output Format
 

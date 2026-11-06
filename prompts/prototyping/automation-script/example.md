@@ -1,17 +1,22 @@
+### `reminders.py`
+
+```python
 from __future__ import annotations
 
 from datetime import datetime, timedelta
 from zoneinfo import ZoneInfo
 
-# Sample Data
-TASKS = [
-    {"task_name": "Submit Q3 report", "due_date": "2024-11-21T17:00:00", "owner": "Ava"},
-    {"task_name": "Renew SSL certificate", "due_date": "2024-11-23T09:00:00", "owner": "Jules"},
-    {"task_name": "Prepare weekly demo", "due_date": "2024-11-22T10:30:00", "owner": "Riley"},
-]
-
 TIMEZONE = "America/Los_Angeles"
 LEAD_TIME_HOURS = 24
+
+# Sample Data (due dates relative to now so the demo always produces output;
+# replace with ISO strings like "2026-11-20T17:00:00" from your real task source)
+_now = datetime.now(ZoneInfo(TIMEZONE)).replace(second=0, microsecond=0)
+TASKS = [
+    {"task_name": "Submit Q4 report", "due_date": (_now + timedelta(hours=6)).isoformat(), "owner": "Ava"},
+    {"task_name": "Renew SSL certificate", "due_date": (_now + timedelta(hours=72)).isoformat(), "owner": "Jules"},
+    {"task_name": "Prepare weekly demo", "due_date": (_now + timedelta(hours=20)).isoformat(), "owner": "Riley"},
+]
 
 
 def parse_due_date(raw_date: str, tz: ZoneInfo) -> datetime:
@@ -44,3 +49,4 @@ def check_due_soon(tasks: list[dict], lead_hours: int, timezone: str) -> int:
 
 if __name__ == "__main__":
     check_due_soon(TASKS, LEAD_TIME_HOURS, TIMEZONE)
+```

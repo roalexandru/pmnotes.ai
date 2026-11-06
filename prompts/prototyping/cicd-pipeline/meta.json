@@ -31,7 +31,7 @@
         {
             "key": "stack",
             "label": "Tech Stack",
-            "example": "Node.js 20 with TypeScript, PostgreSQL, Redis, React frontend with Vite"
+            "example": "Node.js 24 with TypeScript, PostgreSQL, Redis, React frontend with Vite"
         },
         {
             "key": "ci_platform",

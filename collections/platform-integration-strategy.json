@@ -40,13 +40,12 @@
     {
       "slug": "prototyping/api-endpoint",
       "order": 5,
-      "note": "Design integration APIs and webhook specifications"
+      "note": "Design the integration API"
     },
     {
-      "slug": "prototyping/automation-script",
+      "slug": "prototyping/webhook-handler",
       "order": 6,
-      "note": "Create sample integration scripts and templates",
-      "optional": true
+      "note": "Prototype secure webhook delivery and handling (signatures, retries, idempotency)"
     },
     {
       "slug": "execution/test-plan",
@@ -54,9 +53,9 @@
       "note": "Plan integration testing across partner platforms"
     },
     {
-      "slug": "discovery/marketing-ideation",
+      "slug": "discovery/go-to-market-strategy",
       "order": 8,
-      "note": "Develop co-marketing strategy with integration partners",
+      "note": "Plan the go-to-market and co-marketing with integration partners",
       "optional": true
     }
   ],

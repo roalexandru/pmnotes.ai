@@ -33,6 +33,13 @@ Include the following sections:
 8. **Open Questions**
    - What remains to be validated.
 
+# Ground Rules
+
+- Use only the facts provided above plus well-established public knowledge. Do not invent metrics, quotes, names, dates, features, customers, or citations.
+- Where you must estimate, mark it `(est.)` and state the assumption.
+- Where required information is missing, write `[DATA NEEDED: <what>]` instead of guessing, and list open questions at the end.
+- Quotes must be verbatim from the inputs. Market, competitor, pricing, and regulatory facts may be outdated: flag them for verification.
+
 # Output Format
 
-Return the entire PRD outline as a **single markdown code block** so it can be easily copied and pasted. Use clear headings and bullets within the code block.
+Return GitHub-flavored Markdown. Do not wrap the whole response in a code fence (in a coding agent, write it to `prd-outline.md`). Use clear headings and bullets.

@@ -6,7 +6,7 @@
     "pmStage": "Data Analysis & Visualizations",
     "featured": true,
     "complexity": "Structured",
-    "outputType": "Executed Code (Simulation)",
+    "outputType": "Code (Simulation)",
     "tags": [
         "python",
         "simulation",

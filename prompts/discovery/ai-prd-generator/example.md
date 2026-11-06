@@ -1,4 +1,3 @@
-```markdown
 # PRD: SupportOps Assistant
 
 ## 1. Summary
@@ -9,9 +8,9 @@ SupportOps Assistant is an internal AI co-pilot for Tier-1 support agents that r
 
 **Goals**
 
-- Reduce average handle time by 25% within 60 days of launch.
+- Reduce average handle time by 25% (measurement window: [DATA NEEDED: e.g. 60 days post-launch]; baseline AHT: [DATA NEEDED]).
 - Achieve 90% agent acceptance of AI drafts.
-- Increase policy citation accuracy to 95%+.
+- Increase policy citation accuracy to [DATA NEEDED: target, e.g. 95% (est.)] — baseline not yet measured.
 
 **Non-Goals**
 
@@ -47,14 +46,14 @@ SupportOps Assistant is an internal AI co-pilot for Tier-1 support agents that r
 
 ## 7. Data & Integrations
 
-- Inputs: Zendesk ticket history, customer profile, policy docs (Confluence).
-- APIs: Zendesk, Confluence search, internal auth (SSO).
+- Inputs: Zendesk ticket history, customer profile, policy docs (source system: [DATA NEEDED: where policies live]).
+- APIs: Zendesk, policy-doc search, internal auth (SSO).
 - Permissions: Read-only access to tickets; write access for draft notes only.
 
 ## 8. Non-Functional Requirements
 
-- P95 response time < 3s for summaries.
-- No PII leaves VPC; audit logs retained 12 months.
+- P95 response time < 3s for summaries (est. — validate against agent expectations).
+- No PII leaves VPC (implies a VPC-hosted or private-endpoint model); audit-log retention: [DATA NEEDED: policy, e.g. 12 months].
 
 ## 9. Metrics & Instrumentation
 
@@ -65,4 +64,4 @@ SupportOps Assistant is an internal AI co-pilot for Tier-1 support agents that r
 
 - Risk: Policy docs out of date → validate with weekly sync.
 - Open question: Which prompt templates maximize acceptance?
-```
+- Open question: Which LLM deployment satisfies "No PII leaves VPC" on the AWS stack?

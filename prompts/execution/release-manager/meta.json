@@ -4,8 +4,8 @@
     "shortDescription": "Generate release notes and checklist from recent git changes.",
     "surface": "execution",
     "pmStage": "Plans & Playbooks",
-    "complexity": "Deep",
-    "outputType": "Executed Code (Release Automation)",
+    "complexity": "Structured",
+    "outputType": "Code (Release Automation)",
     "tags": [
         "release",
         "git",

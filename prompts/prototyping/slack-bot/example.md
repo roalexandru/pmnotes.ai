@@ -7,7 +7,7 @@
     "start": "node server.js"
   },
   "dependencies": {
-    "express": "^4.18.0"
+    "express": "^5.1.0"
   }
 }
 ```
@@ -21,7 +21,7 @@ const app = express();
 const port = process.env.PORT || 3000;
 
 const SIGNING_SECRET = process.env.SLACK_SIGNING_SECRET;
-const BOT_TOKEN = process.env.SLACK_BOT_TOKEN;
+const BOT_TOKEN = process.env.SLACK_BOT_TOKEN; // for Web API calls (e.g. chat.postMessage) if you extend the bot
 
 // Raw body is required for signature verification
 app.use('/slack', express.raw({ type: 'application/x-www-form-urlencoded' }));
@@ -30,10 +30,12 @@ app.use(express.urlencoded({ extended: true }));
 function verifySlackSignature(req) {
   const timestamp = req.headers['x-slack-request-timestamp'];
   const slackSignature = req.headers['x-slack-signature'];
+  if (!SIGNING_SECRET || !timestamp || !slackSignature) return false;
 
-  // Reject requests older than 5 minutes
-  const fiveMinutesAgo = Math.floor(Date.now() / 1000) - 300;
-  if (Number(timestamp) < fiveMinutesAgo) {
+  // Reject missing/non-numeric timestamps and anything more than 5 minutes from now (replay protection)
+  const ts = Number(timestamp);
+  const now = Math.floor(Date.now() / 1000);
+  if (!Number.isInteger(ts) || Math.abs(now - ts) > 300) {
     return false;
   }
 
@@ -43,10 +45,11 @@ function verifySlackSignature(req) {
     .update(sigBaseString)
     .digest('hex');
 
-  return crypto.timingSafeEqual(
-    Buffer.from(mySignature),
-    Buffer.from(slackSignature)
-  );
+  const expected = Buffer.from(mySignature);
+  const received = Buffer.from(slackSignature);
+  // timingSafeEqual throws if lengths differ, so check first
+  if (expected.length !== received.length) return false;
+  return crypto.timingSafeEqual(expected, received);
 }
 
 async function checkHealth() {
@@ -58,7 +61,7 @@ async function checkHealth() {
     return { ok: false, message: 'Degraded performance', details: `Health endpoint returned ${res.status}` };
   }
 
-  return { ok: true, message: 'All systems operational', details: `Uptime: 99.95% | Latency: ${latency}ms` };
+  return { ok: true, message: 'All systems operational', details: `Health endpoint returned ${res.status} | Latency: ${latency}ms` };
 }
 
 app.post('/slack/commands', async (req, res) => {
@@ -82,7 +85,7 @@ app.post('/slack/commands', async (req, res) => {
 
     await fetch(responseUrl, {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${BOT_TOKEN}` },
+      headers: { 'Content-Type': 'application/json' }, // response_url needs no token
       body: JSON.stringify({
         response_type: 'ephemeral',
         text: health.message,

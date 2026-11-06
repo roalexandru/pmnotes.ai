@@ -72,15 +72,17 @@ Defines the structure and properties of the prompt.
 
 Allowed values (enforced by `npm run validate`, defined in `scripts/taxonomy.js`):
 
+- `pmStage`: one of the artifact types in `PM_STAGES` (e.g. `Strategy & Decision Artifacts`, `Requirements & Specifications`, `Data Analysis & Visualizations`)
 - `complexity`: `Quick` | `Structured` | `Deep`
 - `teamScale` (optional): `Startup / SMB` | `Scaleup` | `Enterprise`
 - `inputs[].key`: snake_case, and each key must be used in `prompt.md`
-- `inputs[].optional` (optional boolean): the input may be left empty; wrap its text in `{{#if key}}...{{/if}}`
+- `inputs[].optional` (optional boolean): the input may be left empty; every use of `{{key}}` must sit inside `{{#if key}}...{{/if}}`. Don't write "(optional)" in the label; the site shows it.
+- `id`, `category`, `path`, `prompt` and `updatedAt` are computed by the index builder and must not appear in `meta.json`
 - `inputs[].options` (optional string array): suggested values shown in the input
 
 ### 2. `prompt.md`
 
-The prompt template itself. It uses Handlebars-style syntax `{{variable_name}}` for dynamic inputs defined in `meta.json`. Optional sections can be wrapped in `{{#if variable_name}} ... {{/if}}`; they are dropped when that input is left empty.
+The prompt template itself. It uses Handlebars-style syntax `{{variable_name}}` for dynamic inputs defined in `meta.json`. Optional sections can be wrapped in `{{#if variable_name}} ... {{/if}}` (blocks may nest); they are dropped when that input is left empty.
 
 ```markdown
 # Role
@@ -95,7 +97,7 @@ Prioritize the following features: {{feature_list}}
 
 ### 3. `example.md`
 
-A static example of what the Large Language Model (LLM) should generate, used for preview and validation.
+A static example of what the model should generate, shown on the prompt page. It must be consistent with the example inputs: correct numbers, no invented facts, fictional companies, and code in fenced blocks with a language tag. Examples that start with an HTML tag are previewed in a sandboxed frame.
 
 ## Contributing
 

@@ -211,9 +211,17 @@ Include a CI/CD configuration snippet (GitHub Actions YAML) that runs the core t
 - **Evaluation harness**: Standardized testing
 - **Reporting**: Automated metrics tracking
 
+# Ground Rules
+
+- Use only the facts provided above plus well-established public knowledge. Do not invent metrics, quotes, names, dates, features, customers, or citations.
+- Where you must estimate, mark it `(est.)` and state the assumption.
+- Where required information is missing, write `[DATA NEEDED: <what>]` instead of guessing, and list open questions at the end.
+- Quotes must be verbatim from the inputs. Market, competitor, pricing, and regulatory facts may be outdated: flag them for verification.
+- If you can execute code, run it and report the real output. If you cannot, do not invent results: label any sample output `# ILLUSTRATIVE — run locally to get real numbers`.
+
 # Output Format
 
-Return the entire test strategy as a **single markdown code block** so it can be easily copied and pasted. Include:
+Return GitHub-flavored Markdown. Do not wrap the whole response in a code fence (in a coding agent, write it to `ai-testing-strategy.md`). Put any config or code in its own fenced block with a language tag. Include:
 
 1. Test plan by category
 2. Test case templates

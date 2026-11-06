@@ -6,13 +6,13 @@
 |-------|--------|
 | **Feature** | AI Writing Assistant — suggests email drafts, subject lines, and reply tones based on conversation context |
 | **Scope** | GA launch to all Business plan users (~8,000 accounts) |
-| **Target Date** | April 15, 2025 |
+| **Target Date** | April 13, 2027 |
 | **Rollout Strategy** | Phased via feature flag: 10% (Day 1) → 50% (Day 2) → 100% (Day 3) |
 | **Beta History** | 6-week closed beta with 200 accounts |
 
 ### Risk Assessment
 
-This launch carries **moderate-to-high risk** driven primarily by two factors: the P95 latency gap (2.8s current vs. 2s target) and the absence of load testing beyond 500 concurrent users. Scaling from 200 beta accounts to 8,000 GA accounts represents a 40x increase in potential concurrent usage. The latency issue compounds under load — if the AI inference service degrades at scale, users will experience unacceptable delays, driving poor first impressions and low adoption. **Highest-risk item: load testing gap.** Mitigation: complete load testing to 2,000 concurrent users by April 10, and configure the phased rollout with automatic pause if P95 latency exceeds 3s at any stage. The pending legal review of AI disclosure language is a hard blocker that must close by April 11 at the latest.
+This launch carries **moderate-to-high risk** driven primarily by two factors: the P95 latency gap (2.8s current vs. 2s target) and the absence of load testing beyond 500 concurrent users. Scaling from 200 beta accounts to 8,000 GA accounts represents a 40x increase in potential concurrent usage. The latency issue compounds under load — if the AI inference service degrades at scale, users will experience unacceptable delays, driving poor first impressions and low adoption. **Highest-risk item: load testing gap.** Mitigation: complete load testing to 2,000 concurrent users by April 8, and configure the phased rollout with automatic pause if P95 latency exceeds 3s at any stage. The pending legal review of AI disclosure language is a hard blocker that must close by April 9 at the latest.
 
 ---
 
@@ -22,83 +22,83 @@ This launch carries **moderate-to-high risk** driven primarily by two factors: t
 
 | # | Task | Owner | Due Date | Status |
 |---|------|-------|----------|--------|
-| E1 | Run load test simulating 2,000 concurrent users; verify P95 latency <2s | **Marcus** | Apr 8 | Not Started |
-| E2 | Optimize AI inference pipeline to reduce P95 from 2.8s to <2s (model caching, request batching) | **Alex** | Apr 9 | In Progress |
-| E3 | Configure feature flag for 3-stage rollout (10%/50%/100%) with kill switch | **Marcus** | Apr 10 | Not Started |
-| E4 | Set up PagerDuty alerts: P95 latency >2.5s, error rate >1%, AI service 5xx rate >0.5% | **Marcus** | Apr 10 | Not Started |
-| E5 | Build Grafana dashboard: latency percentiles, throughput, error rates, AI model response times, feature flag status | **Alex** | Apr 11 | Not Started |
-| E6 | Write on-call runbook: common failure modes (model timeout, rate limiting, context window overflow), mitigation steps, escalation contacts | **Marcus** | Apr 12 | Not Started |
-| E7 | Verify database migrations in staging — suggestion history tables, user preference schema | **Marcus** | Apr 8 | Not Started |
-| E8 | Confirm API backward compatibility — existing email endpoints unchanged, new AI endpoints versioned as v2 | **Marcus** | Apr 9 | Not Started |
-| E9 | Review and sign off load test results with Alex and Sarah | **Marcus** | Apr 10 | Not Started |
+| E1 | Run load test simulating 2,000 concurrent users; verify P95 latency <2s | **Marcus** | Apr 6 | Not Started |
+| E2 | Optimize AI inference pipeline to reduce P95 from 2.8s to <2s (model caching, request batching) | **Alex** | Apr 7 | In Progress |
+| E3 | Configure feature flag for 3-stage rollout (10%/50%/100%) with kill switch | **Marcus** | Apr 8 | Not Started |
+| E4 | Set up PagerDuty alerts: P95 latency >2.5s, error rate >1%, AI service 5xx rate >0.5% | **Marcus** | Apr 8 | Not Started |
+| E5 | Build Grafana dashboard: latency percentiles, throughput, error rates, AI model response times, feature flag status | **Alex** | Apr 9 | Not Started |
+| E6 | Write on-call runbook: common failure modes (model timeout, rate limiting, context window overflow), mitigation steps, escalation contacts | **Marcus** | Apr 10 | Not Started |
+| E7 | Verify database migrations in staging — suggestion history tables, user preference schema | **Marcus** | Apr 6 | Not Started |
+| E8 | Confirm API backward compatibility — existing email endpoints unchanged, new AI endpoints versioned as v2 | **Marcus** | Apr 7 | Not Started |
+| E9 | Review and sign off load test results with Alex and Sarah | **Marcus** | Apr 8 | Not Started |
 
 ### Design
 
 | # | Task | Owner | Due Date | Status |
 |---|------|-------|----------|--------|
-| D1 | Final UI polish: suggestion cards, tone selector, acceptance/rejection animations | **Priya** | Apr 9 | In Progress |
-| D2 | Accessibility audit — screen reader compatibility for suggestion cards, keyboard navigation for tone selector, WCAG 2.1 AA | **Priya** | Apr 10 | Not Started |
-| D3 | Review empty states (no suggestions available, AI service unavailable) and error states (timeout, rate limit reached) | **Priya** | Apr 10 | Not Started |
-| D4 | Responsive testing: verify suggestion panel behavior on mobile (375px), tablet (768px), and desktop (1280px+) | **Priya** | Apr 11 | Not Started |
-| D5 | Dark mode consistency check for all new AI Writing Assistant components | **Priya** | Apr 11 | Not Started |
+| D1 | Final UI polish: suggestion cards, tone selector, acceptance/rejection animations | **Priya** | Apr 7 | In Progress |
+| D2 | Accessibility audit — screen reader compatibility for suggestion cards, keyboard navigation for tone selector, WCAG 2.2 AA | **Priya** | Apr 8 | Not Started |
+| D3 | Review empty states (no suggestions available, AI service unavailable) and error states (timeout, rate limit reached) | **Priya** | Apr 8 | Not Started |
+| D4 | Responsive testing: verify suggestion panel behavior on mobile (375px), tablet (768px), and desktop (1280px+) | **Priya** | Apr 9 | Not Started |
+| D5 | Dark mode consistency check for all new AI Writing Assistant components | **Priya** | Apr 9 | Not Started |
 
 ### Data & Analytics
 
 | # | Task | Owner | Due Date | Status |
 |---|------|-------|----------|--------|
-| A1 | Instrument events: `ai_suggestion_shown`, `ai_suggestion_accepted`, `ai_suggestion_rejected`, `ai_suggestion_edited`, `ai_tone_selected`, `ai_draft_copied` | **Alex** | Apr 9 | In Progress |
-| A2 | Validate event tracking end-to-end in staging (trigger each event, verify in analytics pipeline) | **Alex** | Apr 11 | Not Started |
-| A3 | Build real-time launch dashboard: adoption rate, acceptance rate, latency, error rate, suggestions per user per day | **Alex** | Apr 11 | Not Started |
-| A4 | Capture baseline metrics: current email composition time, reply rate, support ticket volume for email-related issues | **Sarah** | Apr 8 | Not Started |
-| A5 | Configure phased rollout as observable experiment — ensure 10%/50%/100% cohorts are trackable for comparison | **Alex** | Apr 10 | Not Started |
+| A1 | Instrument events: `ai_suggestion_shown`, `ai_suggestion_accepted`, `ai_suggestion_rejected`, `ai_suggestion_edited`, `ai_tone_selected`, `ai_draft_copied` | **Alex** | Apr 7 | In Progress |
+| A2 | Validate event tracking end-to-end in staging (trigger each event, verify in analytics pipeline) | **Alex** | Apr 9 | Not Started |
+| A3 | Build real-time launch dashboard: adoption rate, acceptance rate, latency, error rate, suggestions per user per day | **Alex** | Apr 9 | Not Started |
+| A4 | Capture baseline metrics: current email composition time, reply rate, support ticket volume for email-related issues | **Sarah** | Apr 6 | Not Started |
+| A5 | Configure phased rollout as observable experiment — ensure 10%/50%/100% cohorts are trackable for comparison | **Alex** | Apr 8 | Not Started |
 
 ### Marketing & Communications
 
 | # | Task | Owner | Due Date | Status |
 |---|------|-------|----------|--------|
-| M1 | Draft launch blog post: "Introducing AI Writing Assistant — Draft Smarter Emails in Seconds" | **Jordan** | Apr 9 | In Progress |
-| M2 | Prepare in-app announcement banner for Business plan users (triggered on first visit after flag is enabled) | **Jordan + Priya** | Apr 11 | Not Started |
-| M3 | Draft email campaign for Business plan accounts: feature announcement + getting started guide | **Jordan** | Apr 10 | Not Started |
-| M4 | Schedule social media posts (Twitter/LinkedIn) for Apr 15 launch | **Jordan** | Apr 12 | Not Started |
-| M5 | Update product changelog with AI Writing Assistant entry | **Jordan** | Apr 13 | Not Started |
+| M1 | Draft launch blog post: "Introducing AI Writing Assistant — Draft Smarter Emails in Seconds" | **Jordan** | Apr 7 | In Progress |
+| M2 | Prepare in-app announcement banner for Business plan users (triggered on first visit after flag is enabled) | **Jordan + Priya** | Apr 9 | Not Started |
+| M3 | Draft email campaign for Business plan accounts: feature announcement + getting started guide | **Jordan** | Apr 8 | Not Started |
+| M4 | Schedule social media posts (Twitter/LinkedIn) for Apr 13 launch | **Jordan** | Apr 10 | Not Started |
+| M5 | Update product changelog with AI Writing Assistant entry | **Jordan** | Apr 11 | Not Started |
 
 ### Sales Enablement
 
 | # | Task | Owner | Due Date | Status |
 |---|------|-------|----------|--------|
-| S1 | Update demo script to include AI Writing Assistant walkthrough (2-minute segment) | **Sarah** | Apr 10 | Not Started |
-| S2 | Create FAQ document: pricing (included in Business plan), data privacy, AI model details, limitations | **Sarah** | Apr 11 | Not Started |
-| S3 | Update competitive battlecard: differentiation vs. competitors with AI email features | **Sarah** | Apr 11 | Not Started |
-| S4 | Verify pricing page reflects AI Writing Assistant as Business plan feature | **Jordan** | Apr 12 | Not Started |
+| S1 | Update demo script to include AI Writing Assistant walkthrough (2-minute segment) | **Sarah** | Apr 8 | Not Started |
+| S2 | Create FAQ document: pricing (included in Business plan), data privacy, AI model details, limitations | **Sarah** | Apr 9 | Not Started |
+| S3 | Update competitive battlecard: differentiation vs. competitors with AI email features | **Sarah** | Apr 9 | Not Started |
+| S4 | Verify pricing page reflects AI Writing Assistant as Business plan feature | **Jordan** | Apr 10 | Not Started |
 
 ### Customer Support
 
 | # | Task | Owner | Due Date | Status |
 |---|------|-------|----------|--------|
-| CS1 | Complete support team training on AI Writing Assistant: functionality, known limitations, common issues | **Kim** | Apr 11 | Not Started |
-| CS2 | Publish help center articles: "Getting Started with AI Writing Assistant," "AI Suggestions FAQ," "Adjusting AI Tone Settings" | **Kim** | Apr 12 | Not Started |
-| CS3 | Define escalation path: Tier-1 (Kim's team) → Tier-2 AI issues (Alex) → Tier-2 general (Marcus) | **Kim** | Apr 10 | Not Started |
-| CS4 | Create canned responses for expected queries: "How does AI use my data?", "Why is the suggestion slow?", "How do I disable AI suggestions?" | **Kim** | Apr 12 | Not Started |
-| CS5 | Document known limitations for support reference: max context window (last 10 messages), English-only at launch, no attachment analysis | **Kim + Alex** | Apr 11 | Not Started |
+| CS1 | Complete support team training on AI Writing Assistant: functionality, known limitations, common issues | **Kim** | Apr 9 | Not Started |
+| CS2 | Publish help center articles: "Getting Started with AI Writing Assistant," "AI Suggestions FAQ," "Adjusting AI Tone Settings" | **Kim** | Apr 10 | Not Started |
+| CS3 | Define escalation path: Tier-1 (Kim's team) → Tier-2 AI issues (Alex) → Tier-2 general (Marcus) | **Kim** | Apr 8 | Not Started |
+| CS4 | Create canned responses for expected queries: "How does AI use my data?", "Why is the suggestion slow?", "How do I disable AI suggestions?" | **Kim** | Apr 10 | Not Started |
+| CS5 | Document known limitations for support reference: max context window (last 10 messages), English-only at launch, no attachment analysis | **Kim + Alex** | Apr 9 | Not Started |
 
 ### Legal & Compliance
 
 | # | Task | Owner | Due Date | Status |
 |---|------|-------|----------|--------|
-| L1 | Complete legal review of AI disclosure language (in-product "AI-generated" labels) | **Taylor** | Apr 11 | In Progress |
-| L2 | Update Terms of Service with AI feature addendum (data usage, limitations of AI output) | **Taylor** | Apr 10 | Not Started |
-| L3 | Complete privacy impact assessment for AI model — confirm no PII used in training, user data not retained beyond session | **Taylor** | Apr 9 | Not Started |
-| L4 | Review and approve customer-facing AI transparency page | **Taylor** | Apr 12 | Not Started |
+| L1 | Complete legal review of AI disclosure language (in-product "AI-generated" labels) | **Taylor** | Apr 9 | In Progress |
+| L2 | Update Terms of Service with AI feature addendum (data usage, limitations of AI output) | **Taylor** | Apr 8 | Not Started |
+| L3 | Complete privacy impact assessment for AI model — confirm no PII used in training, user data not retained beyond session | **Taylor** | Apr 7 | Not Started |
+| L4 | Review and approve customer-facing AI transparency page | **Taylor** | Apr 10 | Not Started |
 
 ### Infrastructure & Operations
 
 | # | Task | Owner | Due Date | Status |
 |---|------|-------|----------|--------|
-| I1 | Configure auto-scaling for AI inference service: min 4 pods, max 20 pods, scale trigger at 70% CPU | **Marcus** | Apr 10 | Not Started |
-| I2 | Verify CDN caching rules — static assets for AI UI components cached, API responses not cached | **Marcus** | Apr 11 | Not Started |
-| I3 | Test rollback procedure end-to-end in staging: disable feature flag, verify clean state, confirm no data loss | **Marcus** | Apr 12 | Not Started |
-| I4 | Review incident response plan: on-call rotation for launch week (Marcus primary, Alex secondary) | **Marcus** | Apr 11 | Not Started |
-| I5 | Confirm AI model provider SLA and rate limits can sustain projected 8,000-account load | **Alex** | Apr 9 | Not Started |
+| I1 | Configure auto-scaling for AI inference service: min 4 pods, max 20 pods, scale trigger at 70% CPU | **Marcus** | Apr 8 | Not Started |
+| I2 | Verify CDN caching rules — static assets for AI UI components cached, API responses not cached | **Marcus** | Apr 9 | Not Started |
+| I3 | Test rollback procedure end-to-end in staging: disable feature flag, verify clean state, confirm no data loss | **Marcus** | Apr 10 | Not Started |
+| I4 | Review incident response plan: on-call rotation for launch week (Marcus primary, Alex secondary) | **Marcus** | Apr 9 | Not Started |
+| I5 | Confirm AI model provider SLA and rate limits can sustain projected 8,000-account load | **Alex** | Apr 7 | Not Started |
 
 ---
 
@@ -141,7 +141,7 @@ Can launch without these if risk is acknowledged and mitigated.
 
 ### Decision Meeting Agenda
 
-**Go/No-Go Meeting — April 14, 2025, 2:00 PM (1 hour)**
+**Go/No-Go Meeting — April 12, 2027, 2:00 PM (1 hour)**
 
 | Time | Item | Lead |
 |------|------|------|
@@ -199,7 +199,7 @@ Can launch without these if risk is acknowledged and mitigated.
 
 ---
 
-## 5. Launch Day Timeline — April 15, 2025
+## 5. Launch Day Timeline — April 13, 2027
 
 | Time (ET) | Action | Owner | Go/No-Go Gate |
 |-----------|--------|-------|---------------|
@@ -224,7 +224,7 @@ Can launch without these if risk is acknowledged and mitigated.
 
 ## 6. Post-Launch Monitoring Plan
 
-### First 24 Hours (April 15–16)
+### First 24 Hours (April 13–14)
 
 | Metric | Target | Alert Threshold | Owner |
 |--------|--------|-----------------|-------|
@@ -238,7 +238,7 @@ Can launch without these if risk is acknowledged and mitigated.
 - **Hourly check-ins:** Post in #launch-war-room at :00 every hour during business hours
 - **Escalation:** Any metric hitting alert threshold → DM Sarah + Marcus immediately
 
-### First Week (April 15–22)
+### First Week (April 13–20)
 
 - **Daily 15-minute stand-up** at 9:30 AM: Sarah, Marcus, Alex, Kim review metrics dashboard
 - **Monitor channels:** #launch-war-room, Zendesk AI Writing Assistant tag, Twitter mentions, G2 reviews
@@ -246,14 +246,14 @@ Can launch without these if risk is acknowledged and mitigated.
 - **Day 3 decision point:** If at 100% rollout and all metrics are healthy, confirm GA is stable. If any metric is degraded, discuss rollback to 50% or pause.
 - **Day 7 report:** Sarah compiles 1-week launch report: adoption, acceptance rate, latency performance, support impact, qualitative feedback highlights.
 
-### First 30 Days (April 15 — May 15)
+### First 30 Days (April 13 — May 13)
 
 - **Weekly metric review** (Tuesdays 10 AM): Sarah, Marcus, Alex, Jordan review adoption trends, retention, and feedback
 - **User research:** Sarah schedules 5 user interviews (Week 2–3) with early adopters and non-adopters
-- **Feedback synthesis:** Sarah publishes feedback summary and iteration backlog by April 30
-- **Feature iteration:** Top 3 user-requested improvements scoped and prioritized for next sprint by May 1
-- **Launch retrospective:** May 2, 2025 — 1 hour, full team. Format: What went well / What didn't / Action items.
-- **Success declaration:** May 15 — Sarah presents launch results vs. success criteria to leadership. Criteria for success:
+- **Feedback synthesis:** Sarah publishes feedback summary and iteration backlog by April 28
+- **Feature iteration:** Top 3 user-requested improvements scoped and prioritized for next sprint by April 29
+- **Launch retrospective:** April 30, 2027 — 1 hour, full team. Format: What went well / What didn't / Action items.
+- **Success declaration:** May 13 — Sarah presents launch results vs. success criteria to leadership. Criteria for success:
   - 60% adoption within 30 days
   - AI suggestion acceptance rate >40%
   - Support ticket volume increase <10%

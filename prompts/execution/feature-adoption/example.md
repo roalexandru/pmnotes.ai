@@ -9,8 +9,8 @@ from datetime import datetime, timedelta
 # =============================================================================
 # FEATURE ADOPTION ANALYSIS
 # Feature: Smart Scheduling — AI-powered meeting time suggestions
-# Launch Date: 2025-02-01
-# Analysis Period: 8 weeks (Feb 1 - Mar 28, 2025)
+# Launch Date: 2027-02-01
+# Analysis Period: 8 weeks (Feb 1 - Mar 28, 2027)
 # =============================================================================
 
 np.random.seed(42)
@@ -23,8 +23,8 @@ np.random.seed(42)
 # =============================================================================
 
 N_USERS = 15000
-LAUNCH_DATE = datetime(2025, 2, 1)
-END_DATE = datetime(2025, 3, 28)
+LAUNCH_DATE = datetime(2027, 2, 1)
+END_DATE = datetime(2027, 3, 28)
 ANALYSIS_WEEKS = 8
 
 # --- User attributes ---
@@ -106,7 +106,7 @@ events_df["event_week"] = (events_df["event_date"] - LAUNCH_DATE).dt.days // 7
 
 print("=" * 72)
 print("  FEATURE ADOPTION ANALYSIS: Smart Scheduling")
-print("  Launch: 2025-02-01 | Period: 8 weeks | Eligible users: 15,000")
+print("  Launch: 2027-02-01 | Period: 8 weeks | Eligible users: 15,000")
 print("=" * 72)
 
 # =============================================================================
@@ -579,12 +579,13 @@ print(f"\n  NEXT REVIEW: Week 12 (reassess with larger retention window)")
 print("=" * 72)
 ```
 
-# Sample Output
+## Sample output
 
-```
+```text
+# ILLUSTRATIVE — run locally to get real numbers (synthetic data; exact values depend on library versions)
 ========================================================================
   FEATURE ADOPTION ANALYSIS: Smart Scheduling
-  Launch: 2025-02-01 | Period: 8 weeks | Eligible users: 15,000
+  Launch: 2027-02-01 | Period: 8 weeks | Eligible users: 15,000
 ========================================================================
 
 ========================================================================

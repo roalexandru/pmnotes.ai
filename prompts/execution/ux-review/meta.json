@@ -46,13 +46,13 @@
         },
         {
             "key": "prd_reference",
-            "label": "PRD Reference (optional)",
+            "label": "PRD Reference",
             "example": "Paste key user stories or requirements from your PRD to validate against",
             "optional": true
         },
         {
             "key": "poc_demo_notes",
-            "label": "POC/Prototype Notes (optional)",
+            "label": "POC/Prototype Notes",
             "example": "Describe what was built: 'Chat widget with streaming responses, FAQ search, escalate button'",
             "optional": true
         }

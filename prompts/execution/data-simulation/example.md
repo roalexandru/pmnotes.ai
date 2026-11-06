@@ -1,3 +1,4 @@
+```python
 import numpy as np
 
 np.random.seed(42)
@@ -17,10 +18,14 @@ print(f"Mean sign-ups: {signups.mean():.1f}")
 print(f"Min/Max sign-ups: {signups.min():.1f} / {signups.max():.1f}")
 print(f"Latest {window}-day moving average: {moving_avg[-1]:.1f}")
 print("Insight: The moving average smooths daily noise to reveal the underlying growth trend.")
+```
 
-# Sample Output:
-# Days simulated: 30
-# Mean sign-ups: 119.8
-# Min/Max sign-ups: 90.9 / 150.1
-# Latest 7-day moving average: 118.5
-# Insight: The moving average smooths daily noise to reveal the underlying growth trend.
+Sample output:
+
+```text
+Days simulated: 30
+Mean sign-ups: 117.2
+Min/Max sign-ups: 91.3 / 143.7
+Latest 7-day moving average: 112.4
+Insight: The moving average smooths daily noise to reveal the underlying growth trend.
+```

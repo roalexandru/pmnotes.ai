@@ -11,7 +11,8 @@ permissions:
 
 concurrency:
   group: ci-${{ github.ref }}
-  cancel-in-progress: true
+  # Never cancel validation of pushes to main: that's what the live site reads.
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
 
 jobs:
   validate:
@@ -37,11 +38,15 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add prompts/index.json collections/index.json
+          # The indexes are a pure function of the content, so this only commits when a
+          # contributor forgot `npm run index`. Note: a push made with GITHUB_TOKEN does
+          # not start a new run, so the bot commit itself shows no checks.
           if git diff --staged --quiet; then
             echo "Indexes already up to date"
           else
             git commit -m "chore: regenerate prompt and collection indexes"
             git push
+            echo "::notice::Indexes were out of date and have been regenerated in a bot commit. Pull before pushing again."
           fi
 
       - name: Validate content and indexes

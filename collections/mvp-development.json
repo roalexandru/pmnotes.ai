@@ -8,7 +8,13 @@
   "teamScale": "Startup / SMB",
   "difficulty": "Structured",
   "estimatedTime": "2-3 weeks",
-  "tags": ["mvp", "startup", "prototype", "validation", "lean"],
+  "tags": [
+    "mvp",
+    "startup",
+    "prototype",
+    "validation",
+    "lean"
+  ],
   "prompts": [
     {
       "slug": "discovery/feature-prioritization",
@@ -16,7 +22,7 @@
       "note": "Ruthlessly prioritize for MVP scope"
     },
     {
-      "slug": "discovery/ai-prd-generator",
+      "slug": "discovery/prd-outline",
       "order": 2,
       "note": "Document your MVP requirements"
     },

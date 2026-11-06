@@ -3,7 +3,7 @@
     "title": "Technical Design Doc Generator",
     "shortDescription": "Turn a PRD or high-level concept into an end-to-end technical design.",
     "surface": "discovery",
-    "pmStage": "Code Templates & Schemas",
+    "pmStage": "Requirements & Specifications",
     "featured": true,
     "complexity": "Deep",
     "outputType": "Technical Design Document",
@@ -46,8 +46,9 @@
         },
         {
             "key": "existing_stack",
-            "label": "Existing Stack (if any)",
-            "example": "React, Node.js, Postgres"
+            "label": "Existing Stack",
+            "example": "React, Node.js, Postgres",
+            "optional": true
         }
     ]
 }

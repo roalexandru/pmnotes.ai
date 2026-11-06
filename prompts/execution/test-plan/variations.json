@@ -1,0 +1,22 @@
+[
+  {
+    "name": "Risk-based, time-boxed",
+    "description": "When there isn't time to test everything: rank cases by risk and decide explicitly what to skip.",
+    "promptDelta": "Assume testing time is limited.\n- Rate each test case by likelihood and impact (High / Medium / Low), based on the risk areas given, and rank by the combination.\n- Split the cases into three groups: must run before release, run if time allows, and accept the risk.\n- For each accepted risk, say what production monitoring, alert or feature-flag rollback would catch or contain a failure."
+  },
+  {
+    "name": "Audit-ready (regulated)",
+    "description": "Adds IDs, traceability, evidence and sign-off for regulated or audited environments.",
+    "promptDelta": "Make the plan audit-ready:\n- Give every test case an ID and expected result.\n- Add a traceability matrix (Requirement | Test IDs | Status) linking each requirement in the feature description to its tests.\n- State the evidence to capture for each case (logs, screenshots, signed-off results).\n- Define entry and exit criteria and the sign-off roles.\nDo not name a specific regulation unless the inputs mention one."
+  },
+  {
+    "name": "Non-functional focus",
+    "description": "Adds performance, accessibility, security and resilience testing to the functional plan.",
+    "promptDelta": "Add a non-functional testing section:\n- **Performance**: load and latency targets (use `[DATA NEEDED: ...]` if none are given) and the scenarios to run.\n- **Accessibility**: keyboard navigation, focus order, screen-reader labels and color contrast against the current WCAG AA level.\n- **Security**: authorization checks, input validation and rate limits.\n- **Resilience**: timeouts, retries and degraded behavior for each dependency listed.\nInclude test stubs for the performance and accessibility checks, using tools that fit the test framework given (or common open-source tools if none is given)."
+  },
+  {
+    "name": "Exploratory testing charters",
+    "description": "Complements scripted cases with time-boxed exploratory sessions aimed at the riskiest areas.",
+    "promptDelta": "Add 4–6 exploratory testing charters focused on the risk areas given.\n- Format each as \"Explore <area> with <resources or data> to discover <information>\".\n- Time-box each (for example 60 minutes) and list what to look for.\n- Add a short session report template: charter, tester role, duration, bugs found, questions raised, areas not covered."
+  }
+]

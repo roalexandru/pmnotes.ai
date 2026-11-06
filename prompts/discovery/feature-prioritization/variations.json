@@ -1,0 +1,22 @@
+[
+  {
+    "name": "RICE scoring",
+    "description": "Score each feature on Reach, Impact, Confidence and Effort. Best when you have rough usage data and want comparable numbers.",
+    "promptDelta": "Use RICE as the framework (this replaces any framework named above).\n- Score Reach (people or accounts affected per quarter), Impact (3 = massive, 2 = high, 1 = medium, 0.5 = low, 0.25 = minimal), Confidence (100%, 80% or 50%) and Effort (person-months).\n- Compute RICE = Reach × Impact × Confidence ÷ Effort and show the arithmetic in the scoring table.\n- Reach or Effort values not given in the inputs must be marked `(est.)` with the assumption, or written as `[DATA NEEDED: ...]`. Do not make numbers up to fill the table.\n- Add a column saying which evidence would most change each score.\n- After ranking, call out any feature whose low Confidence means its rank shouldn't be trusted yet."
+  },
+  {
+    "name": "MoSCoW for a fixed release",
+    "description": "Sort features into Must / Should / Could / Won't for one release with a fixed date or budget.",
+    "promptDelta": "Use MoSCoW (Must have / Should have / Could have / Won't have this time) for a single fixed-scope release instead of a numeric score (this replaces any framework named above).\n- Must = the release fails its objective or breaks a constraint without it. Keep Musts to about 60% of the available effort so there is contingency.\n- For each feature, give its category and the one-sentence test it passed or failed.\n- Make the Won't list explicit, with what would have to change to bring each item back.\n- If the inputs don't state capacity or the release date, write `[DATA NEEDED: team capacity]` or `[DATA NEEDED: release date]` rather than assuming them."
+  },
+  {
+    "name": "Kano model",
+    "description": "Classify features by how they affect satisfaction: basic expectations, performance features and delighters.",
+    "promptDelta": "Classify the features with the Kano model (this replaces any framework named above): Must-be (basic expectation), Performance (more is better), Attractive (delighter), Indifferent or Reverse.\n- Base each classification only on evidence in the inputs. Where there is none, label it a hypothesis and give the Kano survey question pair (functional: \"How would you feel if the product had X?\" / dysfunctional: \"How would you feel if it did not?\") that would confirm it.\n- Rank unmet Must-be items first, then Performance items tied to the objective, then at most one or two Attractive items.\n- Delighters tend to become expected over time: flag which Attractive items are likely to become Must-be."
+  },
+  {
+    "name": "WSJF / Cost of Delay",
+    "description": "Weighted Shortest Job First: favor items whose delay is costly and whose size is small. Common in SAFe and flow-based teams.",
+    "promptDelta": "Use Weighted Shortest Job First (this replaces any framework named above).\n- Score User/Business Value, Time Criticality and Risk Reduction/Opportunity Enablement on a relative scale (1, 2, 3, 5, 8, 13, 20), setting the smallest item in each column to 1.\n- Cost of Delay = the sum of the three. WSJF = Cost of Delay ÷ Job Size (same relative scale). Show both in the scoring table.\n- Justify Time Criticality only with deadlines, contracts or market windows stated in the inputs. If there are none, say so instead of inventing urgency."
+  }
+]

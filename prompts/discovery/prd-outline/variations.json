@@ -1,0 +1,17 @@
+[
+  {
+    "name": "Lean one-pager",
+    "description": "A one-page, assumption-driven PRD for a startup or a new bet where speed of learning matters more than completeness.",
+    "promptDelta": "Compress the outline into a one-page lean PRD (about 400 words) instead of the full section list.\n- Use only these sections: Problem, Who it's for, Riskiest assumption, Smallest test (the MVP or experiment that tests it), Success signal (a metric and threshold that decides continue / pivot / stop), Non-goals, Open questions.\n- Drop user stories and detailed requirements.\n- Prefer a measurable learning goal over a feature list.\n- Leave any threshold you can't derive from the inputs as `[DATA NEEDED: ...]`."
+  },
+  {
+    "name": "Enterprise with compliance & sign-off",
+    "description": "Adds stakeholders, compliance, security review, rollout controls and a sign-off table for organizations with formal approval gates.",
+    "promptDelta": "Expand the outline for an enterprise setting with formal review. Add these sections:\n- **Stakeholders & RACI**: roles, not invented names. Who approves scope, security, legal/privacy and launch.\n- **Compliance & Regulatory Considerations**: data classification, privacy, retention, accessibility and audit logging. Name regulations or standards only as \"to be confirmed with legal/compliance\"; do not assert that they apply.\n- **Security Review**: what the security team will need to assess.\n- **Non-Functional Requirements**: availability, performance, data residency. Use `[DATA NEEDED: ...]` where targets aren't given.\n- **Rollout & Change Management**: pilot group, admin controls, feature flags, migration, training and documentation.\n- **Sign-off**: a table (Area | Approver role | Status | Date) with Status set to Pending and Date left blank. Do not invent approvers or dates."
+  },
+  {
+    "name": "Engineering handoff",
+    "description": "Makes the PRD build-ready: acceptance criteria, numbered requirements, edge cases and analytics events.",
+    "promptDelta": "Write the PRD for engineering handoff:\n- Give every user story acceptance criteria in Given / When / Then form.\n- Number functional requirements (FR-1, FR-2, ...) and link each to the goal it serves.\n- List edge cases and error states for each core flow.\n- Add an analytics table (Event | Trigger | Properties) that measures the primary KPIs.\n- Mark anything engineering should decide as an open design decision, not a requirement."
+  }
+]

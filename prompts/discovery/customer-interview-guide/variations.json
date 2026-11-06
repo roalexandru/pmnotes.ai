@@ -1,0 +1,22 @@
+[
+  {
+    "name": "JTBD switch interview",
+    "description": "Reconstruct a real purchase or switch decision on a timeline to learn what actually drives adoption.",
+    "promptDelta": "Restructure the script as a Jobs-to-be-Done switch interview about a recent purchase or switch the participant actually made.\n- Screen for people who bought or switched within the last 3–6 months.\n- Walk the timeline: first thought, passive looking, active looking, deciding, first use, ongoing use.\n- At each step, probe the four forces: push of the old situation, pull of the new solution, anxiety about switching, habit of the present.\n- Ask about specific moments (\"Tell me about the last time ...\"), not opinions or hypotheticals.\n- Add a timeline and forces diagram to the synthesis template."
+  },
+  {
+    "name": "Problem discovery (no pitching)",
+    "description": "Validate that the problem is real and costly before showing any solution, using past behavior rather than opinions.",
+    "promptDelta": "Run this as problem-discovery interviewing:\n- Do not describe or pitch our product or any solution idea during the interview.\n- Ask about past behavior and specifics, not future intentions. Avoid \"Would you ...?\" and \"Do you think ...?\".\n- For each theme, ask how they handle it today, what it costs them (time, money, workarounds) and what they have already tried.\n- Add a \"commitment signals\" row to the synthesis template (for example an intro to a colleague, agreeing to a pilot, sharing data) to separate real interest from compliments."
+  },
+  {
+    "name": "Concept & usability test",
+    "description": "Pair a short discovery warm-up with task-based testing of a prototype or concept.",
+    "promptDelta": "Turn the session into a concept and usability test.\n- Keep discovery questions to about the first quarter of the session, then show the prototype or concept.\n- Write 3–5 task scenarios tied to the key themes, each with a success criterion.\n- Use think-aloud and neutral probes (\"What would you expect to happen?\"), never \"Do you like it?\".\n- Add a task table (Task | Success criterion | Observed | Severity) to the synthesis template, and a preparation checklist (prototype link, recording consent, test data)."
+  },
+  {
+    "name": "B2B multi-stakeholder",
+    "description": "For B2B products where users, buyers and admins are different people with different concerns.",
+    "promptDelta": "Adapt the guide for B2B interviews where users, buyers and admins may be different people.\n- Add screener questions that identify the participant's role in purchasing and in day-to-day use.\n- Give each role its own question track: workflow pain for users; business case, budget and procurement for buyers; setup, security and integrations for admins.\n- Add questions about how a tool like this gets approved in their organization.\n- Remind the interviewer not to ask for confidential data and to check whether the participant needs their company's permission to take part."
+  }
+]

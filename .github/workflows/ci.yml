@@ -21,8 +21,6 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v7
         with:
-          # Full history: index updatedAt timestamps come from git log.
-          fetch-depth: 0
           # On same-repo PRs, check out the branch itself so regenerated indexes can be pushed back.
           ref: ${{ github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name == github.repository && github.head_ref || '' }}
 
@@ -37,7 +35,7 @@ jobs:
           npm run index
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add prompts/index.json collections/index.json
+          git add prompts/index.json prompts/search.json collections/index.json
           # The indexes are a pure function of the content, so this only commits when a
           # contributor forgot `npm run index`. Note: a push made with GITHUB_TOKEN does
           # not start a new run, so the bot commit itself shows no checks.
@@ -54,3 +52,25 @@ jobs:
 
       - name: Run tests
         run: npm test
+
+  # Rebuilds the website on Cloudflare Pages so prerendered pages and the sitemap pick
+  # up new or renamed prompts. (Prompt content is read live, so it doesn't wait for this.)
+  # Setup: Cloudflare Pages > project > Settings > Builds > Deploy hooks, then add the
+  # hook URL as the repository secret CF_PAGES_DEPLOY_HOOK. See README > Deploy hook.
+  deploy-website:
+    needs: validate
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    permissions: {}
+    steps:
+      - name: Trigger Cloudflare Pages deploy hook
+        env:
+          HOOK: ${{ secrets.CF_PAGES_DEPLOY_HOOK }}
+        run: |
+          if [ -z "$HOOK" ]; then
+            echo "::notice::CF_PAGES_DEPLOY_HOOK is not set, so the website was not rebuilt. See README > Deploy hook."
+            exit 0
+          fi
+          # The hook URL is the secret: never echo it. The response is discarded too.
+          curl -fsS -X POST -o /dev/null "$HOOK"
+          echo "Website rebuild triggered."

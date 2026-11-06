@@ -22,7 +22,7 @@ const PM_STAGES = [
   'Messaging & Content',
 ];
 // Fields the index builder computes; meta.json must not set them.
-const RESERVED_META_KEYS = ['id', 'category', 'path', 'prompt', 'updatedAt'];
+const RESERVED_META_KEYS = ['id', 'category', 'path', 'prompt', 'contentHash'];
 
 const SLUG_PATTERN = /^[a-z0-9]+(?:-[a-z0-9]+)*$/;
 const INPUT_KEY_PATTERN = /^[a-z][a-z0-9_]*$/;

@@ -6,7 +6,13 @@ const fs = require('fs');
 const os = require('os');
 const path = require('path');
 const { validate, parseTemplate } = require('../scripts/validate_prompts');
-const { buildPromptsIndex, buildCollectionsIndex, writeIndexes } = require('../scripts/build_indexes');
+const {
+  buildPromptsIndex,
+  buildSearchIndex,
+  buildCollectionsIndex,
+  writeIndexes,
+  contentHash,
+} = require('../scripts/build_indexes');
 
 const tempRoots = [];
 test.after(() => {
@@ -220,15 +226,144 @@ test('rejects "(optional)" in labels, unknown pmStage values and reserved meta k
 
 test('index builders are deterministic and carry metadata', () => {
   const root = makeRepo();
-  const opts = { getUpdatedAt: () => '2026-01-01T00:00:00Z' };
-  const index = buildPromptsIndex(root, opts);
-  // No wall-clock timestamps: rebuilding unchanged content must give identical output.
-  assert.deepEqual(index, buildPromptsIndex(root, { ...opts, now: () => 'LATER' }));
+  const index = buildPromptsIndex(root);
   assert.deepEqual(Object.keys(index), ['items']);
   assert.deepEqual(Object.keys(buildCollectionsIndex(root)), ['collections']);
   assert.equal(index.items[0].id, 'okr-draft');
   assert.equal(index.items[0].path, 'discovery/okr-draft');
   assert.equal(index.items[0].teamScale, 'Scaleup');
-  assert.match(index.items[0].prompt, /\{\{team_name\}\}/);
-  assert.equal(buildCollectionsIndex(root, opts).collections[0].slug, 'starter');
+  assert.equal(index.items[0].updatedAt, undefined);
+  assert.equal(buildCollectionsIndex(root).collections[0].slug, 'starter');
+});
+
+test('rebuilding is a pure function of the files', () => {
+  const root = makeRepo();
+  writeIndexes(root);
+  const files = ['prompts/index.json', 'prompts/search.json', 'collections/index.json'];
+  const first = files.map(file => fs.readFileSync(path.join(root, file), 'utf8'));
+  writeIndexes(root);
+  assert.deepEqual(files.map(file => fs.readFileSync(path.join(root, file), 'utf8')), first);
+
+  // An identical copy elsewhere (different path, mtime, no git) builds identical indexes.
+  const copy = fs.mkdtempSync(path.join(os.tmpdir(), 'pmnotes-test-'));
+  tempRoots.push(copy);
+  fs.cpSync(root, copy, { recursive: true });
+  assert.deepEqual(buildPromptsIndex(copy), buildPromptsIndex(root));
+  assert.deepEqual(buildSearchIndex(copy), buildSearchIndex(root));
+});
+
+test('contentHash is sha256(meta.json + "\\n" + prompt.md), first 12 hex chars', () => {
+  const root = makeRepo();
+  const dir = path.join(root, 'prompts', 'discovery', 'okr-draft');
+  const meta = fs.readFileSync(path.join(dir, 'meta.json'));
+  const prompt = fs.readFileSync(path.join(dir, 'prompt.md'));
+  const expected = require('crypto')
+    .createHash('sha256')
+    .update(Buffer.concat([meta, Buffer.from('\n'), prompt]))
+    .digest('hex')
+    .slice(0, 12);
+  const { contentHash: hash } = buildPromptsIndex(root).items[0];
+  assert.match(hash, /^[0-9a-f]{12}$/);
+  assert.equal(hash, expected);
+  assert.equal(contentHash(meta, prompt), expected);
+
+  fs.appendFileSync(path.join(dir, 'prompt.md'), 'One more line.\n');
+  const afterPrompt = buildPromptsIndex(root).items[0].contentHash;
+  assert.notEqual(afterPrompt, hash);
+
+  writeJson(path.join(dir, 'meta.json'), validMeta({ title: 'Renamed' }));
+  assert.notEqual(buildPromptsIndex(root).items[0].contentHash, afterPrompt);
+
+  // example.md and variations.json don't affect it.
+  const before = buildPromptsIndex(root).items[0].contentHash;
+  fs.writeFileSync(path.join(dir, 'example.md'), '# Different example\n');
+  assert.equal(buildPromptsIndex(root).items[0].contentHash, before);
+});
+
+test('prompts/index.json has no bodies; search.json has them without Ground Rules', () => {
+  const prompt = [
+    '# Task',
+    'Write OKRs for {{team_name}}.',
+    '{{#if context}}Context: {{context}}{{/if}}',
+    '',
+    '# Ground Rules',
+    '',
+    '- Do not invent metrics.',
+    '',
+    '# Output Format',
+    'A table.',
+    '',
+  ].join('\n');
+  const root = makeRepo({ prompt });
+  const index = buildPromptsIndex(root);
+  assert.equal('prompt' in index.items[0], false);
+
+  const search = buildSearchIndex(root);
+  assert.deepEqual(Object.keys(search), ['items']);
+  assert.deepEqual(search.items.map(item => item.id), index.items.map(item => item.id));
+  assert.deepEqual(Object.keys(search.items[0]), ['id', 'prompt']);
+  const body = search.items[0].prompt;
+  assert.match(body, /Write OKRs for \{\{team_name\}\}/);
+  assert.match(body, /# Output Format\nA table\./);
+  assert.doesNotMatch(body, /Ground Rules|invent metrics/);
+
+  // Ground Rules as the last section is stripped to the end of the file.
+  const tail = makeRepo({ prompt: 'Hi {{team_name}} {{#if context}}{{context}}{{/if}}\n## Ground Rules\n- rule\n' });
+  assert.equal(buildSearchIndex(tail).items[0].prompt, 'Hi {{team_name}} {{#if context}}{{context}}{{/if}}\n');
+});
+
+test('detects a stale search.json', () => {
+  const root = makeRepo();
+  writeIndexes(root);
+  fs.rmSync(path.join(root, 'prompts', 'search.json'));
+  assert.match(validate(root).join('\n'), /prompts\/search.json is missing/);
+  writeIndexes(root);
+  fs.appendFileSync(path.join(root, 'prompts', 'discovery', 'okr-draft', 'prompt.md'), 'Extra.\n');
+  const errors = validate(root).join('\n');
+  assert.match(errors, /prompts\/search.json is out of date/);
+  assert.match(errors, /prompts\/index.json is out of date/); // contentHash changed too
+});
+
+test('rejects contentHash in meta.json', () => {
+  assert.match(errorsFor({ meta: validMeta({ contentHash: 'abc' }) }).join('\n'), /must not set "contentHash"/);
+});
+
+function variationsErrors(variations) {
+  const root = makeRepo();
+  const file = path.join(root, 'prompts', 'discovery', 'okr-draft', 'variations.json');
+  if (typeof variations === 'string') fs.writeFileSync(file, variations);
+  else writeJson(file, variations);
+  return validate(root, { checkIndexes: false }).join('\n');
+}
+
+const variation = (name, promptDelta = 'Use a quarterly cadence.') => ({ name, description: `${name} style.`, promptDelta });
+
+test('accepts valid variations.json', () => {
+  assert.equal(variationsErrors([variation('Lean'), variation('Enterprise', 'Mention {{team_name}} by name.')]), '');
+});
+
+test('rejects malformed variations.json', () => {
+  assert.match(variationsErrors('[{'), /variations.json is not valid JSON/);
+  assert.match(variationsErrors({ name: 'x' }), /variations.json must be an array/);
+  assert.match(variationsErrors([variation('Only one')]), /must have 2-4 entries \(has 1\)/);
+  assert.match(variationsErrors(['A', 'B', 'C', 'D', 'E'].map(n => variation(n))), /must have 2-4 entries \(has 5\)/);
+  const errors = variationsErrors([
+    { name: 'Lean', description: '', promptDelta: 'x', extra: 1 },
+    variation('lean'),
+    'not an object',
+  ]);
+  assert.match(errors, /\[0\] description must be a non-empty string/);
+  assert.match(errors, /\[0\] unknown field "extra"/);
+  assert.match(errors, /\[1\] duplicate name "lean"/);
+  assert.match(errors, /\[2\] must be an object/);
+});
+
+test('rejects unknown placeholders and template blocks in promptDelta', () => {
+  const errors = variationsErrors([
+    variation('A', 'Focus on {{unknown_key}}.'),
+    variation('B', '{{#if context}}Use {{context}}.{{/if}}'),
+  ]);
+  assert.match(errors, /\[0\] promptDelta uses \{\{unknown_key\}\} but meta.json has no input/);
+  assert.match(errors, /\[1\] promptDelta uses \{\{#if context\}\}.*not supported/);
+  assert.match(errors, /\[1\] promptDelta uses \{\{\/if\}\}/);
 });

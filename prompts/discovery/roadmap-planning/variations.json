@@ -1,0 +1,22 @@
+[
+  {
+    "name": "Now / Next / Later",
+    "description": "A date-free roadmap grouped by outcome and confidence, for teams that want flexibility over fixed quarters.",
+    "promptDelta": "Use a Now / Next / Later roadmap instead of fixed quarters.\n- Group initiatives by outcome (the problem solved or metric moved), not by feature.\n- Now: committed and in progress, in the most detail. Next: shaped but not committed. Later: directional bets, each with the open question that must be answered first.\n- Replace the Roadmap Table with Horizon | Outcome | Initiatives | Metric | Confidence (High / Medium / Low).\n- Leave out dates."
+  },
+  {
+    "name": "OKR-aligned",
+    "description": "Frames each quarter as an objective with measurable key results, with initiatives as bets underneath.",
+    "promptDelta": "Frame each quarter as an objective with 2–3 measurable key results drawn from the key metrics given.\n- Write `[DATA NEEDED: baseline]` or `[DATA NEEDED: target]` instead of a number the inputs don't provide.\n- List initiatives as bets under the key result they should move.\n- For each key result, add a leading indicator that shows within weeks whether the bet is working."
+  },
+  {
+    "name": "Executive / board version",
+    "description": "A one-page narrative for leadership: direction, investment mix, top risks and asks.",
+    "promptDelta": "Write the roadmap for an executive or board audience, on one page:\n- Open with a three-sentence narrative of where the product is going and why.\n- One-line theme per quarter.\n- Investment split across new bets, core improvements and tech debt as percentages, marked `(est.)`.\n- The top 3 risks and what is needed from leadership.\nLeave out ticket-level detail and internal jargon."
+  },
+  {
+    "name": "Capacity-constrained",
+    "description": "Makes trade-offs explicit by sizing initiatives against team capacity, with a buffer and a cut line.",
+    "promptDelta": "Make capacity explicit.\n- Size each initiative in team-weeks, marked `(est.)`, and compare the total with the capacity implied by the constraints. If capacity isn't given, write `[DATA NEEDED: team capacity]`.\n- Keep a 20–30% buffer for unplanned work and support.\n- Draw a cut line: what is dropped or delayed first if capacity shrinks, and what would be added with one more team."
+  }
+]

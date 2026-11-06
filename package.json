@@ -10,7 +10,7 @@
   "scripts": {
     "index": "node scripts/build_indexes.js",
     "validate": "node scripts/validate_prompts.js",
-    "test": "node --test test/",
+    "test": "node --test \"test/**/*.test.js\"",
     "check": "npm run validate && npm test"
   }
 }

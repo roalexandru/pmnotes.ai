@@ -4,7 +4,7 @@
     "shortDescription": "Generate a production-ready CI/CD pipeline with build, test, lint, security checks, and deployment stages.",
     "surface": "prototyping",
     "pmStage": "Code Templates & Schemas",
-    "teamScale": "Startup",
+    "teamScale": "Startup / SMB",
     "complexity": "Structured",
     "outputType": "Config (CI/CD)",
     "tags": [

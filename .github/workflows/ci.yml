@@ -1,0 +1,51 @@
+name: Validate prompts
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+  push:
+    branches: [main]
+
+permissions:
+  contents: write
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+        with:
+          # Full history: index updatedAt timestamps come from git log.
+          fetch-depth: 0
+          # On same-repo PRs, check out the branch itself so regenerated indexes can be pushed back.
+          ref: ${{ github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name == github.repository && github.head_ref || '' }}
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v7
+        with:
+          node-version-file: .nvmrc
+
+      - name: Regenerate indexes (same-repo PRs only)
+        if: github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name == github.repository
+        run: |
+          npm run index
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add prompts/index.json collections/index.json
+          if git diff --staged --quiet; then
+            echo "Indexes already up to date"
+          else
+            git commit -m "chore: regenerate prompt and collection indexes"
+            git push
+          fi
+
+      - name: Validate content and indexes
+        run: npm run validate
+
+      - name: Run tests
+        run: npm test

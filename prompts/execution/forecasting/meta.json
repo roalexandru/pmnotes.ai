@@ -3,9 +3,9 @@
     "title": "User Growth Forecast (with Churn)",
     "shortDescription": "Project user base over time using growth and churn assumptions.",
     "surface": "execution",
-    "pmStage": "Plans & Playbooks",
-    "complexity": "Deep",
-    "outputType": "Executed Code (Projection)",
+    "pmStage": "Data Analysis & Visualizations",
+    "complexity": "Structured",
+    "outputType": "Code (Projection)",
     "tags": [
         "python",
         "forecasting",

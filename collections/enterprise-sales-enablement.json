@@ -2,13 +2,20 @@
   "slug": "enterprise-sales-enablement",
   "title": "Enterprise Sales Enablement",
   "shortDescription": "Create compelling sales materials for enterprise AI/automation deals.",
-  "description": "Equip your sales team with everything they need to close enterprise deals. This playbook helps PMs create ROI calculators, competitive battle cards, demo scripts, and objection handling guides. Essential for companies with long enterprise sales cycles and multiple stakeholder buy-in requirements.",
+  "description": "Equip your sales team with everything they need to close enterprise deals. This playbook helps PMs build ROI and value cases, competitive battle cards, demo scripts, and objection handling guides. Essential for companies with long enterprise sales cycles and multiple stakeholder buy-in requirements.",
   "icon": "briefcase",
   "category": "playbook",
   "teamScale": "Enterprise",
   "difficulty": "Structured",
   "estimatedTime": "2-3 weeks",
-  "tags": ["sales", "enterprise", "enablement", "ROI", "competitive", "B2B"],
+  "tags": [
+    "sales",
+    "enterprise",
+    "enablement",
+    "ROI",
+    "competitive",
+    "B2B"
+  ],
   "prompts": [
     {
       "slug": "discovery/user-persona",
@@ -26,19 +33,19 @@
       "note": "Develop pricing strategy and packaging for enterprise tiers"
     },
     {
-      "slug": "execution/metric-calculation",
+      "slug": "discovery/business-case",
       "order": 4,
-      "note": "Build ROI calculator and value quantification framework"
+      "note": "Build an ROI and value case buyers can take to their finance team"
     },
     {
-      "slug": "discovery/marketing-ideation",
+      "slug": "discovery/product-positioning",
       "order": 5,
-      "note": "Generate messaging and positioning for enterprise buyers"
+      "note": "Define positioning and messaging for enterprise buyers"
     },
     {
-      "slug": "discovery/strategic-analysis",
+      "slug": "discovery/customer-interview-guide",
       "order": 6,
-      "note": "Analyze deal patterns and create playbook for common scenarios",
+      "note": "Run win/loss interviews with recent buyers to find deal patterns",
       "optional": true
     }
   ],
@@ -51,7 +58,7 @@
   "outcomes": [
     "Buyer persona documentation",
     "Competitive battle cards",
-    "ROI calculator and value framework",
+    "ROI and value case",
     "Pricing and packaging guide",
     "Sales messaging and objection handling"
   ],

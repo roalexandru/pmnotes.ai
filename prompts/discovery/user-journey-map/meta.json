@@ -45,8 +45,9 @@
     },
     {
       "key": "known_pain_points",
-      "label": "Known Pain Points (optional)",
-      "example": "Users struggle with initial template setup, report customization is confusing, onboarding emails have low open rates"
+      "label": "Known Pain Points",
+      "example": "Users struggle with initial template setup, report customization is confusing, onboarding emails have low open rates",
+      "optional": true
     }
   ]
 }

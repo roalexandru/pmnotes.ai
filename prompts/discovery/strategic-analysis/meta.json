@@ -1,6 +1,6 @@
 {
     "slug": "strategic-analysis",
-    "title": "Strategic Market Analysis",
+    "title": "Market Entry Strategy",
     "shortDescription": "Assess market dynamics and recommend a strategic entry or growth plan.",
     "surface": "discovery",
     "pmStage": "Research & Insight Reports",
@@ -30,7 +30,7 @@
         {
             "key": "competitors",
             "label": "Main Competitors",
-            "example": "LexisNexis, Casetext"
+            "example": "Globex Legal Research (incumbent research suite), Initech Counsel AI (AI-native startup)"
         },
         {
             "key": "entry_goal",

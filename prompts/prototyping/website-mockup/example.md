@@ -82,15 +82,16 @@
 
     <section class="section" id="testimonials">
         <div class="container">
-            <h2>Trusted by fast-growing teams</h2>
+            <h2>What customers say</h2>
+            <!-- Placeholder testimonials: replace with real, attributed quotes (with permission) before launch. Never publish invented reviews or results. -->
             <div class="grid" style="margin-top: 24px;">
                 <div class="testimonial">
-                    <p>“CRMify helped us increase pipeline visibility by 40% in one quarter.”</p>
-                    <strong>— Jordan P., Sales Ops</strong>
+                    <p>[Placeholder testimonial — replace with a real, attributed quote]</p>
+                    <strong>— Customer Name, Role, Company (placeholder)</strong>
                 </div>
                 <div class="testimonial">
-                    <p>“We closed more deals by automating follow-ups and staying organized.”</p>
-                    <strong>— Priya K., Account Executive</strong>
+                    <p>[Placeholder testimonial — replace with a real, attributed quote]</p>
+                    <strong>— Customer Name, Role, Company (placeholder)</strong>
                 </div>
             </div>
         </div>
@@ -99,6 +100,7 @@
     <section class="section pricing" id="pricing">
         <div class="container">
             <h2>Simple pricing</h2>
+            <p>Placeholder prices for layout testing — replace with your actual pricing.</p>
             <div class="grid" style="margin-top: 24px;">
                 <div class="card">
                     <h3>Starter</h3>
@@ -118,7 +120,7 @@
 
     <footer id="contact">
         <div class="container">
-            <p>Questions? Contact sales@crmify.com</p>
+            <p>Questions? Contact sales@example.com</p>
         </div>
     </footer>
 </body>

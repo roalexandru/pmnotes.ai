@@ -1,13 +1,12 @@
-```markdown
 # Risk & Feasibility Assessment: AI-based Chatbot (POC Validation)
 
 ## Feasibility Scorecard
 
 | Dimension              | Rating | Notes                                                    |
 | :--------------------- | :----- | :------------------------------------------------------- |
-| Technical Feasibility  | Green  | LLM APIs available; team has NLP experience              |
-| Resource Feasibility   | Yellow | Tight 5-day timeline; need dedicated designer            |
-| Market Feasibility     | Green  | Strong demand signal from support ticket analysis        |
+| Technical Feasibility  | Green  | LLM APIs available; team experience: [DATA NEEDED]       |
+| Resource Feasibility   | Yellow | Tight 3–5 day timeline; design resources are a dependency |
+| Market Feasibility     | Yellow | No demand evidence provided — [DATA NEEDED: ticket volume or user requests] |
 | Operational Feasibility| Yellow | Support team needs training before pilot expansion       |
 
 ## Risk Register
@@ -39,5 +38,6 @@ Proceed with POC under these conditions:
 - [ ] Designer confirms 4 hours available for UX review
 - [ ] Support lead signs off on escalation workflow
 
-Rationale: Technical feasibility is strong, market demand is validated, and the tight timeline is manageable with reduced scope. Key risks have clear mitigations.
-```
+Rationale: Technical feasibility looks strong and the tight timeline is manageable with reduced scope. Market demand is not yet evidenced, which is acceptable for an internal 5-user POC but must be validated before MVP. Key risks have clear mitigations.
+
+**Open questions**: Which LLM vendor and data-processing terms apply? Is test data free of real customer PII? What demand evidence exists?

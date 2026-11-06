@@ -241,6 +241,13 @@ For each segment, evaluate:
 
 Define go/no-go criteria for each phase transition. For each phase transition, provide a machine-readable go/no-go checklist as a JSON block with `phase`, `criteria` array (each with `metric`, `threshold`, `current_status`), and `verdict` (go/no-go/conditional).
 
+# Ground Rules
+
+- Use only the facts provided above plus well-established public knowledge. Do not invent metrics, quotes, names, dates, features, customers, or citations.
+- Where you must estimate, mark it `(est.)` and state the assumption.
+- Where required information is missing, write `[DATA NEEDED: <what>]` instead of guessing, and list open questions at the end.
+- Quotes must be verbatim from the inputs. Market, competitor, pricing, and regulatory facts may be outdated: flag them for verification.
+
 # Output Format
 
-Return the entire rollout strategy as a **single markdown code block** so it can be easily copied and pasted. Use tables, checklists, and clear headings.
+Return GitHub-flavored Markdown. Do not wrap the whole response in a code fence (in a coding agent, write it to `ai-rollout-strategy.md`). Use tables, checklists, and clear headings.

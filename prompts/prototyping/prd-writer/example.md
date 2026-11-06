@@ -1,4 +1,3 @@
-```markdown
 # Product Requirements Document: User Authentication
 
 ## Overview
@@ -29,7 +28,7 @@ User Authentication enables secure access to the platform with email + password 
 
 1. **Registration API**
    - `POST /api/auth/register` with `email`, `password`.
-   - Validate email format and password strength (min 8 chars, 1 number).
+   - Validate email format and password policy (min 12 chars, allow up to 64, no composition rules, reject breached/common passwords).
 2. **Email Verification**
    - `GET /api/auth/verify?token=...`.
    - Tokens expire in 24 hours.
@@ -44,20 +43,20 @@ User Authentication enables secure access to the platform with email + password 
 
 ## Non-Functional Requirements
 
-- **Performance**: Auth endpoints respond in < 300ms p95.
+- **Performance**: Auth endpoints respond in < 300ms p95, excluding the deliberate bcrypt hashing cost (est.; validate against current baseline).
 - **Security**: Store passwords with bcrypt; rate limit auth endpoints.
 - **Accessibility**: Forms must be keyboard navigable with clear error messaging.
 - **Observability**: Log auth failures with reason codes.
 
 ## UX Notes
 
-- Provide clear guidance on password requirements.
+- Provide clear guidance on password requirements (length, not character classes); show a length counter.
 - Use a single "Continue" CTA and contextual helper text.
 
 ## Data & Analytics
 
 - Track events: `auth_signup_started`, `auth_signup_success`, `auth_login_failed`, `auth_password_reset_requested`.
-- Success metric targets: 70% signup completion within 10 minutes; <2% login failure due to validation errors.
+- Success metric targets (est.; proposed, to be set against baseline): 70% signup completion within 10 minutes; <2% login failure due to validation errors. Current baselines: [DATA NEEDED: signup conversion rate, login success rate, auth-related support ticket volume].
 
 ## Dependencies
 
@@ -74,4 +73,3 @@ User Authentication enables secure access to the platform with email + password 
 
 - Do we require email verification before first login in MVP?
 - Should password reset tokens be single-use or reusable within expiry window?
-```

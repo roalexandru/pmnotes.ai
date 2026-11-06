@@ -1,3 +1,4 @@
+```python
 import re
 from collections import defaultdict
 
@@ -123,46 +124,50 @@ print(f"**Stats**: {total} commits — "
       f"{len(categories['fixes'])} fixes, "
       f"{len(categories['chores'])} chores, "
       f"{len(risk_items)} flagged for risk review")
+```
 
-# Sample Output:
-# # Release v1.2.0 (2026-02-01)
-#
-# Compare: `v1.1.0...v1.2.0`
-#
-# ## Highlights
-# - Analytics: Add cohort retention CSV export
-# - Growth: Introduce onboarding checklist emails
-#
-# ## Features
-# - **analytics**: add cohort retention CSV export (`a1b2c3d`)
-# - **growth**: introduce onboarding checklist emails (`d4e5f6a`)
-# - **dashboard**: add churn risk widgets for PMs (`v1w2x3y`)
-#
-# ## Fixes
-# - **billing**: handle promo code edge case for annual plans (`7g8h9i0`)
-# - **reports**: resolve timezone bug in scheduled reports (`j1k2l3m`)
-# - **billing**: reduce retry count from 5 to 2 (`z4a5b6c`)
-#
-# ## Chores & Refactors
-# - **deps**: upgrade dependencies for security patches (`n4o5p6q`)
-# - **pipeline**: reduce data pipeline latency (`r7s8t9u`)
-#
-# ## Risk Review
-# - ⚠️  [billing] handle promo code edge case for annual plans
-# - ⚠️  [billing] reduce retry count from 5 to 2
-#
-# ## Release Checklist
-# - [ ] Tests run (unit + integration)
-# - [ ] DB migrations applied (if any)
-# - [ ] Documentation updated
-# - [ ] Version bumped in target files
-# - [ ] Changelog updated
-# - [ ] Stakeholders notified
-#
-# ## Version Bump Targets
-# - `package.json`
-# - `CHANGELOG.md`
-# - `pyproject.toml`
-#
-# ---
-# **Stats**: 8 commits — 3 features, 3 fixes, 2 chores, 2 flagged for risk review
+Sample output (from running the script above):
+
+```markdown
+# Release v1.2.0 (2026-02-01)
+
+Compare: `v1.1.0...v1.2.0`
+
+## Highlights
+- Analytics: Add cohort retention CSV export
+- Growth: Introduce onboarding checklist emails
+
+## Features
+- **analytics**: add cohort retention CSV export (`a1b2c3d`)
+- **growth**: introduce onboarding checklist emails (`d4e5f6a`)
+- **dashboard**: add churn risk widgets for PMs (`v1w2x3y`)
+
+## Fixes
+- **billing**: handle promo code edge case for annual plans (`7g8h9i0`)
+- **reports**: resolve timezone bug in scheduled reports (`j1k2l3m`)
+- **billing**: reduce retry count from 5 to 2 (`z4a5b6c`)
+
+## Chores & Refactors
+- **deps**: upgrade dependencies for security patches (`n4o5p6q`)
+- **pipeline**: reduce data pipeline latency (`r7s8t9u`)
+
+## Risk Review
+- ⚠️  [billing] handle promo code edge case for annual plans
+- ⚠️  [billing] reduce retry count from 5 to 2
+
+## Release Checklist
+- [ ] Tests run (unit + integration)
+- [ ] DB migrations applied (if any)
+- [ ] Documentation updated
+- [ ] Version bumped in target files
+- [ ] Changelog updated
+- [ ] Stakeholders notified
+
+## Version Bump Targets
+- `package.json`
+- `CHANGELOG.md`
+- `pyproject.toml`
+
+---
+**Stats**: 8 commits — 3 features, 3 fixes, 2 chores, 2 flagged for risk review
+```

@@ -19,6 +19,13 @@ Generate messaging options that communicate value quickly and memorably.
 4. **Rationale**
    - Briefly explain why each option should resonate.
 
+# Ground Rules
+
+- Use only the facts provided above plus well-established public knowledge. Do not invent metrics, quotes, names, dates, features, customers, or citations.
+- Where you must estimate, mark it `(est.)` and state the assumption.
+- Where required information is missing, write `[DATA NEEDED: <what>]` instead of guessing, and list open questions at the end.
+- Quotes must be verbatim from the inputs. Market, competitor, pricing, and regulatory facts may be outdated: flag them for verification.
+
 # Output Format
 1. **Value Proposition Statements** (numbered list)
 2. **Taglines** (bullets)

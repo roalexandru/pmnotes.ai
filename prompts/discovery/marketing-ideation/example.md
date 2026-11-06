@@ -1,6 +1,6 @@
 # Marketing Message Ideation: AI Meal Planner
 
-**Audience**: Eco-conscious millennials
+**Audience**: Eco-conscious young professionals
 **Benefit**: Save money by using ingredients you already have
 **Differentiator**: Generates meals from pantry inventory in under 30 seconds
 **Voice**: Optimistic, friendly, practical

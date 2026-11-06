@@ -1,3 +1,4 @@
+```python
 import matplotlib.pyplot as plt
 
 chart_type = "line"
@@ -36,7 +37,11 @@ plt.tight_layout()
 plt.savefig("kpi_chart.png")
 
 print(f"Highlighted {highlight} as a key movement in the trend.")
+```
 
-# Sample Output:
-# Highlighted Feb as a key movement in the trend.
-# (Chart saved to kpi_chart.png)
+Sample output:
+
+```text
+Highlighted Feb as a key movement in the trend.
+(Chart saved to kpi_chart.png)
+```

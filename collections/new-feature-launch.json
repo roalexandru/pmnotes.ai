@@ -7,22 +7,28 @@
   "category": "playbook",
   "difficulty": "Structured",
   "estimatedTime": "2-4 weeks",
-  "tags": ["workflow", "feature", "launch", "end-to-end", "prd"],
+  "tags": [
+    "workflow",
+    "feature",
+    "launch",
+    "end-to-end",
+    "prd"
+  ],
   "prompts": [
     {
-      "slug": "discovery/feature-prioritization",
-      "order": 1,
-      "note": "Start by evaluating and prioritizing your feature ideas"
-    },
-    {
       "slug": "discovery/user-persona",
-      "order": 2,
+      "order": 1,
       "note": "Define who you're building this feature for"
     },
     {
-      "slug": "discovery/ai-prd-generator",
+      "slug": "discovery/feature-prioritization",
+      "order": 2,
+      "note": "Evaluate and prioritize feature ideas for those users"
+    },
+    {
+      "slug": "discovery/prd-outline",
       "order": 3,
-      "note": "Create a comprehensive Product Requirements Document"
+      "note": "Write the Product Requirements Document"
     },
     {
       "slug": "discovery/risk-analysis",
@@ -37,9 +43,20 @@
       "optional": true
     },
     {
-      "slug": "execution/release-manager",
+      "slug": "execution/launch-readiness",
       "order": 6,
-      "note": "Plan and execute the release"
+      "note": "Run a go/no-go launch readiness review"
+    },
+    {
+      "slug": "execution/release-communication",
+      "order": 7,
+      "note": "Announce the launch to customers and internal teams"
+    },
+    {
+      "slug": "execution/release-manager",
+      "order": 8,
+      "note": "Generate release notes from your git history",
+      "optional": true
     }
   ],
   "prerequisites": [

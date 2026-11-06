@@ -1,3 +1,6 @@
+### `FeatureList.tsx`
+
+```tsx
 import React from 'react';
 
 type Feature = {
@@ -56,3 +59,4 @@ export const FeatureList: React.FC<FeatureListProps> = ({ features, isLoading = 
     </section>
   );
 };
+```

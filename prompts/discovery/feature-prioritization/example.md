@@ -1,14 +1,14 @@
 # Feature Prioritization: TaskFlow Activation Push
 
 ## Framework Choice
-I will use **RICE** because the objective is activation growth and we need a balanced view of reach, impact, confidence, and effort within a 6-week window.
+I will use **RICE** because the objective is activation growth and we need a balanced view of reach, impact, confidence, and effort within a 6-week window. Scores are (est.) team judgments, not measured data; RICE = Reach × Impact × Confidence (as a whole number, e.g. 90) ÷ Effort.
 
 ## Scoring Table
 
 | Rank | Feature | Reach (1-10) | Impact (1-3) | Confidence (0-100%) | Effort (1-5) | RICE Score |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
 | 1 | Social login | 9 | 2 | 90% | 1 | 1620 |
-| 2 | In-app checklist onboarding | 8 | 2 | 85% | 2 | 680 |
+| 2 | In-app checklist onboarding *(suggested addition — not in the input list)* | 8 | 2 | 85% | 2 | 680 |
 | 3 | Dark mode | 7 | 1 | 80% | 2 | 280 |
 | 4 | Offline support | 4 | 2 | 60% | 4 | 120 |
 | 5 | Export to PDF | 3 | 1 | 70% | 3 | 70 |
@@ -25,5 +25,5 @@ I will use **RICE** because the objective is activation growth and we need a bal
 * **Big-Bet**: Offline support (high effort, potential long-term retention impact).
 
 ## Risks & Dependencies
-* Social login depends on Auth0 configuration and compliance review.
+* Social login depends on identity-provider configuration ([DATA NEEDED: current auth stack]) and compliance review.
 * Offline support requires data model changes and sync conflict resolution.

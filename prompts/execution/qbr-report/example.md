@@ -1,9 +1,11 @@
 # Quarterly Business Review: Growth & Activation
 
-**Quarter:** Q1 2025 (January 1 - March 31)
+**Quarter:** Q1 2027 (January 1 - March 31)
 **Product Area:** Growth & Activation
 **Author:** Product Manager, Growth & Activation
-**Date:** April 4, 2025
+**Date:** April 2, 2027
+
+> **Illustrative example.** Figures beyond the sample inputs (segment splits, interview counts, deal values, competitor details, team metrics) stand in for data a real PM would attach. In your own QBR, anything not in your inputs should appear as `[DATA NEEDED: ...]`.
 
 ---
 
@@ -27,7 +29,7 @@
 
 ## 2. Metrics Dashboard
 
-| Metric | Target | Actual | Variance | vs Q4 2024 | Status |
+| Metric | Target | Actual | Variance | vs Q4 2026 | Status |
 |--------|--------|--------|----------|------------|--------|
 | New signups | 15,000 | 14,200 | -5.3% | +22% | Below Target |
 | Trial-to-paid conversion | 18.0% | 16.2% | -10.0% | +35% | Below Target |
@@ -135,7 +137,7 @@
 
 **Background:** SSO (SAML/OIDC) has been requested by enterprise prospects for three quarters. It has appeared in the lost-deal analysis each quarter but has not been prioritized due to competing growth initiatives.
 
-**What Happened:** In Q1, we lost two enterprise prospects (combined potential: ~$48K ARR, 110 seats) who cited SSO as a hard requirement. Both went to CompetitorX, which shipped SSO in November 2024. Additionally, three existing customers with expansion potential flagged SSO as a blocker for rolling out to their wider organizations.
+**What Happened:** In Q1, we lost two enterprise prospects (combined potential: ~$48K ARR, 110 seats) who cited SSO as a hard requirement. Both went to CompetitorX, which shipped SSO in November 2026. Additionally, three existing customers with expansion potential flagged SSO as a blocker for rolling out to their wider organizations.
 
 **Analysis:** The pattern is no longer anecdotal. Across the last three quarters, SSO has appeared in 7 of 12 enterprise lost-deal reports. The average deal size where SSO was cited: $22K ARR. Enterprise represents 34% of our MRR but 58% of our growth — the segment where SSO matters is also the segment driving our trajectory toward $1M ARR.
 
@@ -164,7 +166,7 @@
 - Expansion blockers: 3 existing customers paused rollout plans pending SSO.
 
 **Competitive Movements:**
-- CompetitorX shipped SSO (November 2024) and is now marketing "enterprise-ready" positioning.
+- CompetitorX shipped SSO (November 2026) and is now marketing "enterprise-ready" positioning.
 - CompetitorY launched a free tier — we've seen a 15% increase in prospects mentioning them in discovery calls, but no measurable impact on our conversion yet.
 - Industry trend: AI-assisted features becoming table stakes. Two competitors announced AI capabilities in Q1.
 
@@ -192,9 +194,8 @@
 - Retro action from Q4 (implement feature flags for all user-facing changes): 80% adopted, and it saved us during the pricing page revert.
 
 **Team Health:**
-- Morale is moderate. The team is proud of the onboarding work and MRR results, but frustrated by the engineer departure and the feeling that we're under-resourced for the ambition level.
-- Retention risk: One mid-level engineer has expressed interest in transferring to the Platform team. Direct conversation scheduled for Week 1 of Q2.
-- Energy is focused but there's fatigue from running lean. The Q2 hire is important for both capacity and morale.
+- Morale and retention risk: [DATA NEEDED: team sentiment (e.g., latest pulse survey or retro themes) and any known retention risks. The inputs only confirm one mid-quarter engineer departure.]
+- Capacity pressure is visible in the data: losing one of four engineers forced the in-app guidance descope. The approved Q2 hire addresses capacity; whether it also addresses morale is an open question for the team's manager.
 
 ---
 
@@ -300,7 +301,7 @@
 
 ```json
 {
-  "quarter": "Q1 2025",
+  "quarter": "Q1 2027",
   "product_area": "Growth & Activation",
   "overall_grade": "B",
   "overall_okr_score": 0.59,

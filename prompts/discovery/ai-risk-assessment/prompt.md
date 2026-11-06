@@ -103,9 +103,18 @@ Create a comprehensive AI/ML risk assessment covering all dimensions of AI risk,
 ## 7. Regulatory & Compliance Risks
 
 ### Current Regulations
-- GDPR implications (automated decision-making)
+- GDPR implications (automated decision-making under Art. 22 — check whether decisions concern individuals and have legal or similarly significant effects)
 - Industry-specific regulations
-- AI-specific regulations (EU AI Act)
+- Distinguish laws and regulations from contractual attestation frameworks (e.g. SOC 2) and voluntary standards
+
+### EU AI Act Classification
+- Classify the feature into a risk tier: **prohibited**, **high-risk** (Annex I products or Annex III use cases), **limited-risk / transparency obligations**, or **minimal-risk**, with reasoning.
+- Note obligations for **general-purpose AI (GPAI) models** (on the model provider) and when a deployer that fine-tunes or substantially modifies a model may take on provider duties.
+- Application dates are phased and may shift (e.g. the Digital Omnibus proposals); state dates as "verify current timeline".
+
+### Risk-Management Frameworks
+- Map key controls to the **NIST AI RMF** functions (Govern, Map, Measure, Manage).
+- Note whether an **ISO/IEC 42001** AI management system is expected by customers or worth pursuing.
 
 ### Documentation Requirements
 - Model cards and documentation needs
@@ -133,6 +142,14 @@ For each identified risk, provide:
 3. Mitigation roadmap with priorities
 4. Monitoring dashboard requirements
 5. Escalation procedures
+6. Regulatory classification summary (EU AI Act tier with reasoning, GDPR applicability, NIST AI RMF / ISO/IEC 42001 mapping) and items to verify with counsel
+
+# Ground Rules
+
+- Use only the facts provided above plus well-established public knowledge. Do not invent metrics, quotes, names, dates, features, customers, or citations.
+- Where you must estimate, mark it `(est.)` and state the assumption.
+- Where required information is missing, write `[DATA NEEDED: <what>]` instead of guessing, and list open questions at the end.
+- Quotes must be verbatim from the inputs. Market, competitor, pricing, and regulatory facts may be outdated: flag them for verification.
 
 # Output Format
 Structured risk assessment with tables, clear categories, and actionable mitigations.

@@ -1,4 +1,3 @@
-```markdown
 # Feature Test Plan: Self-Serve Invoice Download
 
 ## Scope
@@ -15,7 +14,7 @@ Billing admins can download invoices as PDFs from the Billing page.
 ### Integration Tests
 
 - Stripe invoice retrieval with valid/invalid invoice IDs.
-- PDF renderer returns a file within 2 seconds.
+- PDF renderer returns a file within 2 seconds (est. target; confirm the real SLA).
 
 ### End-to-End Tests
 
@@ -45,9 +44,10 @@ Billing admins can download invoices as PDFs from the Billing page.
 ## Residual Risks
 
 - Stripe downtime remains a dependency; mitigate with cached invoice PDFs.
-```
 
 ## Test Stubs: Unit Tests (Jest)
+
+### `invoice-download.test.ts`
 
 ```typescript
 // invoice-download.test.ts
@@ -102,6 +102,8 @@ describe('Invoice Download - Edge Cases', () => {
 
 ## Test Stubs: Integration Tests (Jest)
 
+### `invoice-integration.test.ts`
+
 ```typescript
 // invoice-integration.test.ts
 import { describe, test, expect, beforeAll, afterAll } from '@jest/globals';
@@ -151,6 +153,8 @@ describe('Invoice Download - PDF Renderer Integration', () => {
 ```
 
 ## Test Stubs: E2E Tests (Playwright)
+
+### `billing-e2e.spec.ts`
 
 ```typescript
 // billing-e2e.spec.ts

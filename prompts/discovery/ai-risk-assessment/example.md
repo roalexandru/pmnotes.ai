@@ -12,7 +12,7 @@
 | 1 | **Missed critical clauses** (false negatives) | Performance | High | Mandatory human review for high-stakes contracts |
 | 2 | **Training data bias** toward US contract formats | Bias | High | Expand training data, regional model variants |
 | 3 | **LLM hallucination** in clause interpretation | Performance | High | Confidence thresholds, citation requirements |
-| 4 | **GDPR Article 22** automated decision compliance | Regulatory | Medium-High | Human-in-the-loop, explanation capabilities |
+| 4 | **Regulatory classification** (GDPR Art. 22 applicability, EU AI Act tier) | Regulatory | Medium | Documented classification, human-in-the-loop, explanation capabilities |
 | 5 | **Adversarial prompt injection** via contract text | Security | Medium | Input sanitization, model hardening |
 
 ---
@@ -77,10 +77,20 @@
 
 | ID | Risk | Likelihood | Impact | Score | Mitigation | Detection | Owner |
 |----|------|------------|--------|-------|------------|-----------|-------|
-| R-01 | **GDPR Art. 22**: Right to human review of automated decisions | High | High | High | Human-in-the-loop, opt-out option, explanation capabilities | Compliance audit | Legal |
-| R-02 | **EU AI Act**: High-risk AI system classification | Medium | High | High | Risk assessment documentation, conformity assessment preparation | Regulatory monitoring | Legal |
-| R-03 | **SOC 2 requirements**: Logging and access controls | Medium | Medium | Medium | Audit logging, access controls, security certifications | SOC 2 audits | Security |
+| R-01 | **GDPR Art. 22**: Applies only to solely automated decisions about individuals with legal or similarly significant effects. Clause flags route to human legal review, so applicability is likely limited — confirm with DPO | Low | High | Medium | Keep human-in-the-loop, document that flags are not final decisions, explanation capabilities | Compliance audit | Legal |
+| R-02 | **EU AI Act classification**: Contract clause flagging for enterprise legal teams is not a listed Annex III use case, so likely **minimal-risk** (limited-risk transparency duties apply if users interact with a chatbot). Risk: scope creep into high-risk uses (e.g. employment contracts used for HR decisions) | Medium | High | High | Documented classification, use-case restrictions in terms, re-classify on scope changes; verify current application dates (Digital Omnibus proposals may shift them) | Regulatory monitoring | Legal |
+| R-03 | **SOC 2 attestation scope** (customer contractual requirement, not a regulation): AI pipeline logging and access controls must fall within audited controls | Medium | Medium | Medium | Add model pipeline to SOC 2 scope, audit logging, access controls | SOC 2 Type II audit findings | Security |
 | R-04 | **Industry regulations**: Legal industry-specific requirements | Low | Medium | Low-Medium | Legal advisor consultation, jurisdiction-specific compliance | Legal review | Legal |
+| R-05 | **GPAI model obligations**: Upstream LLM provider must meet EU AI Act GPAI duties; fine-tuning may shift some provider duties to us | Low | Medium | Low-Medium | Obtain provider documentation, assess whether fine-tuning crosses the modification threshold | Vendor review | Legal |
+
+---
+
+### Framework Alignment
+
+| Framework | Use |
+|-----------|-----|
+| **NIST AI RMF** | Govern: risk owners and sign-off (below); Map: this register; Measure: monitoring dashboard; Manage: escalation procedures |
+| **ISO/IEC 42001** | Consider certification if Fortune 500 customers request an AI management system in procurement ([DATA NEEDED: customer requirements]) |
 
 ---
 
@@ -135,7 +145,7 @@
 - Cost per analysis
 - Top misclassification patterns
 
-### Alerting Thresholds
+### Alerting Thresholds (proposed — calibrate against measured baseline)
 | Metric | Warning | Critical | Action |
 |--------|---------|----------|--------|
 | Accuracy | <92% | <88% | Pause rollout, investigate |

@@ -4,7 +4,7 @@
     "shortDescription": "Draft a normalized schema with constraints and indexes.",
     "surface": "prototyping",
     "pmStage": "Code Templates & Schemas",
-    "complexity": "Deep",
+    "complexity": "Structured",
     "outputType": "Code (SQL)",
     "tags": [
         "sql",

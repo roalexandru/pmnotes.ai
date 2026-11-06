@@ -18,7 +18,7 @@ Create a comprehensive OKR framework that translates the business goals into mea
 1. **Objectives & Key Results**
    - Define 2–3 Objectives aligned to the business goals.
    - Each Objective should have 3–4 Key Results that are specific, measurable, and time-bound.
-   - Key Results must include a baseline (current state) and target value.
+   - Key Results must include a baseline (current state) and target value. Use only baselines given in the inputs; otherwise write `[DATA NEEDED: baseline]`.
 
 2. **Metrics Hierarchy**
    - For each Objective, identify the North Star metric.
@@ -34,6 +34,13 @@ Create a comprehensive OKR framework that translates the business goals into mea
 
 5. **Review Cadence**
    - Recommend weekly, monthly, and quarterly check-in structures.
+
+# Ground Rules
+
+- Use only the facts provided above plus well-established public knowledge. Do not invent metrics, quotes, names, dates, features, customers, or citations.
+- Where you must estimate, mark it `(est.)` and state the assumption.
+- Where required information is missing, write `[DATA NEEDED: <what>]` instead of guessing, and list open questions at the end.
+- Quotes must be verbatim from the inputs. Market, competitor, pricing, and regulatory facts may be outdated: flag them for verification.
 
 # Output Format
 

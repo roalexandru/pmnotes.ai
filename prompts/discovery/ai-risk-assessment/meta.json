@@ -3,7 +3,7 @@
   "title": "AI/ML Risk Assessment Framework",
   "shortDescription": "Identify and mitigate AI-specific risks including bias, drift, hallucination, and explainability.",
   "surface": "discovery",
-  "pmStage": "Strategy & Decision Artifacts",
+  "pmStage": "Risk, Quality & Validation",
   "teamScale": "Enterprise",
   "complexity": "Deep",
   "outputType": "Risk Register",
@@ -42,7 +42,7 @@
     {
       "key": "regulatory_context",
       "label": "Regulatory Context",
-      "example": "GDPR, SOC 2, potential AI Act implications"
+      "example": "GDPR, potential EU AI Act implications; enterprise customers require a SOC 2 Type II report"
     }
   ]
 }

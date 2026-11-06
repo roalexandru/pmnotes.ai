@@ -1,9 +1,8 @@
-```markdown
-# Strategic Analysis: Generative AI for Legal Tech
+# Market Entry Strategy: Generative AI for Legal Tech
 
 ## Executive Summary
 
-- Demand is rising for time-saving legal research and contract review tools, especially in mid-market firms.
+- Demand appears to be rising for time-saving legal research and contract review tools, especially in mid-market firms ([DATA NEEDED: adoption survey or pipeline data to confirm]).
 - Incumbents have trust and distribution; startups lead on UX and innovation speed.
 - The best wedge is a verticalized solution for mid-sized firms focused on compliance-safe workflows.
 
@@ -17,8 +16,8 @@
 
 | Competitor | Positioning                     | Strengths                         | Weaknesses                        |
 | :--------- | :------------------------------ | :-------------------------------- | :-------------------------------- |
-| LexisNexis | Enterprise research suite       | Trust, proprietary data           | Legacy UX, high cost              |
-| Casetext   | AI assistant for legal research | Innovation speed, strong AI brand | Integration gaps post-acquisition |
+| Globex Legal Research | Enterprise research suite       | Trust, proprietary data           | Perceived legacy UX, high cost (verify via win/loss) |
+| Initech Counsel AI    | AI assistant for legal research | Innovation speed, strong AI brand | Limited DMS integrations (verify)  |
 
 ## Strategic Options
 
@@ -30,5 +29,5 @@
 
 - **Recommendation**: Vertical wedge with compliance-first positioning.
 - **Success Metrics**: Pilot conversion rate, median time saved per review, 90-day retention.
-- **Key Risks**: Data privacy audits, slow procurement cycles.
-```
+- **Key Risks**: Data privacy audits, slow procurement cycles, incumbents adding generative AI to existing suites.
+- **Open Questions**: Mid-market firm count and budget in target geography [DATA NEEDED]; current competitor pricing (verify).

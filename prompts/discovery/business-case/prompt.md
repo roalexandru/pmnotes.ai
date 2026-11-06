@@ -103,6 +103,13 @@ Close with:
 - Immediate next steps (first 2 weeks) if approved
 - The decision deadline and what triggers urgency
 
+# Ground Rules
+
+- Use only the facts provided above plus well-established public knowledge. Do not invent metrics, quotes, names, dates, features, customers, or citations.
+- Where you must estimate, mark it `(est.)` and state the assumption.
+- Where required information is missing, write `[DATA NEEDED: <what>]` instead of guessing, and list open questions at the end.
+- Quotes must be verbatim from the inputs. Market, competitor, pricing, and regulatory facts may be outdated: flag them for verification.
+
 # Output Format
 
 Return the entire business case as a **single markdown document** so it can be easily copied into a presentation or shared doc. Use tables for financial data and comparisons. Use bold for key numbers and recommendations. Keep language executive-friendly — precise but not academic.

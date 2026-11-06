@@ -23,12 +23,12 @@
         {
             "key": "product_name",
             "label": "Product Name",
-            "example": "Loom"
+            "example": "Northwind Clips"
         },
         {
             "key": "time_horizon",
             "label": "Time Horizon",
-            "example": "Q3 2025"
+            "example": "Q1 2027"
         },
         {
             "key": "business_goals",

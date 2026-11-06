@@ -118,6 +118,13 @@ Define clear criteria for:
 - **Launch readiness**: When can we GA?
 - **Ongoing compliance**: How do we stay in compliance?
 
+# Ground Rules
+
+- Use only the facts provided above plus well-established public knowledge. Do not invent metrics, quotes, names, dates, features, customers, or citations.
+- Where you must estimate, mark it `(est.)` and state the assumption.
+- Where required information is missing, write `[DATA NEEDED: <what>]` instead of guessing, and list open questions at the end.
+- Quotes must be verbatim from the inputs. Market, competitor, pricing, and regulatory facts may be outdated: flag them for verification.
+
 # Output Format
 
-Return the entire requirements document as a **single markdown code block** so it can be easily copied and pasted. Use tables for metrics and thresholds, clear definitions, and rationale for each requirement.
+Return GitHub-flavored Markdown. Do not wrap the whole response in a code fence (in a coding agent, write it to `model-requirements.md`). Use tables for metrics and thresholds, clear definitions, and rationale for each requirement.

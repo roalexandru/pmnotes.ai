@@ -1,3 +1,6 @@
+### `summarize_tickets.py`
+
+```python
 import csv
 import math
 from collections import defaultdict
@@ -25,7 +28,7 @@ def load_metrics(file_path):
     grouped = defaultdict(list)
     with open(file_path, mode="r", encoding="utf-8") as csvfile:
         reader = csv.DictReader(csvfile)
-        if GROUP_BY not in reader.fieldnames or METRIC not in reader.fieldnames:
+        if not reader.fieldnames or GROUP_BY not in reader.fieldnames or METRIC not in reader.fieldnames:
             raise ValueError("Required columns are missing.")
 
         for row in reader:
@@ -71,3 +74,4 @@ if __name__ == "__main__":
         print(f"Error: File '{INPUT_CSV}' not found.")
     except ValueError as exc:
         print(f"Error: {exc}")
+```

@@ -26,32 +26,43 @@
     {
       "slug": "execution/metric-calculation",
       "order": 2,
-      "note": "Calculate and validate pilot success metrics and ROI"
+      "note": "Calculate pilot success metrics against the agreed success criteria"
+    },
+    {
+      "slug": "discovery/business-case",
+      "order": 3,
+      "note": "Build the ROI and business case for full rollout"
     },
     {
       "slug": "discovery/risk-analysis",
-      "order": 3,
+      "order": 4,
       "note": "Identify production scaling risks and mitigation strategies"
     },
     {
       "slug": "discovery/roadmap-planning",
-      "order": 4,
+      "order": 5,
       "note": "Plan phased rollout roadmap across departments/regions"
     },
     {
       "slug": "discovery/tech-design-doc",
-      "order": 5,
+      "order": 6,
       "note": "Document production architecture and scaling requirements"
     },
     {
       "slug": "execution/test-plan",
-      "order": 6,
+      "order": 7,
       "note": "Create comprehensive production testing and validation plan"
     },
     {
-      "slug": "execution/release-manager",
-      "order": 7,
-      "note": "Execute phased production rollout"
+      "slug": "execution/launch-readiness",
+      "order": 8,
+      "note": "Run a go/no-go readiness review before each rollout phase"
+    },
+    {
+      "slug": "execution/release-communication",
+      "order": 9,
+      "note": "Announce each rollout phase to users and stakeholders",
+      "optional": true
     }
   ],
   "prerequisites": [

@@ -67,7 +67,7 @@ Create a `MetricCard` component for each metric in: {{metrics}}
 Each card must include:
 - **Metric label** and **current value** (formatted appropriately — currency, percentage, integer, etc.)
 - **Trend indicator**: Up/down arrow icon with percentage change, color-coded (green for positive, red for negative — context-aware so "churn up" is red)
-- **Sparkline**: A small inline chart (use Recharts `<Sparklines>` or a tiny `<LineChart>` with no axes) showing the last 7-12 data points
+- **Sparkline**: A small inline chart (a tiny Recharts `<LineChart>` or `<AreaChart>` with no axes, grid, or tooltip) showing the last 7-12 data points
 - **Previous period comparison**: Small text showing "vs. [previous value]"
 - Card should have hover state and subtle animation
 
@@ -156,6 +156,13 @@ Every data-driven component must handle three states:
 - Proper color contrast ratios
 - Animations: subtle transitions on hover, smooth chart animations on data load
 - Dark/light mode support if applicable to the design preferences
+
+# Ground Rules
+- Do not invent APIs, library functions, or results; if unsure of an API, say so.
+- Where you must estimate, mark it `(est.)` and state the assumption.
+- Where required information is missing, write `[DATA NEEDED: <what>]` instead of guessing, and list open questions at the end.
+- Quotes must be verbatim from the inputs. Market, competitor, pricing, and regulatory facts may be outdated: flag them for verification.
+- If you can execute code, run it and report the real output. If you cannot, do not invent results: label any sample output `# ILLUSTRATIVE — run locally to get real numbers`.
 
 # Output Format
 

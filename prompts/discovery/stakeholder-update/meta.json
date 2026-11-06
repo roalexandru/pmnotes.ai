@@ -21,7 +21,7 @@
         {
             "key": "product_name",
             "label": "Product Name",
-            "example": "Figma Slides"
+            "example": "Northwind Slides"
         },
         {
             "key": "audience",

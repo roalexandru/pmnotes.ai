@@ -1,9 +1,8 @@
-```markdown
 # UX Review: AI Support Chatbot POC
 
 ## Executive Summary
 
-UX review of the AI Support Chatbot POC identified 5 friction points, with 2 critical issues: the escalation button is hidden on mobile (blocking the 80% resolution target) and a 3-second typing delay creates perceived slowness. Three quick wins (AI badge, suggested questions, sticky escalation button) can be shipped in hours with high impact. Recommend fixing these before the next round of user testing.
+This review is based on the flow description and POC notes only; the prototype itself was not observed, so the friction points below are hypotheses to verify in a 30-minute walkthrough. The two highest-risk areas for the 80% self-resolution target are escalation discoverability on mobile (a stated constraint) and time-to-first-response. Three quick wins (AI badge, suggested questions, sticky escalation button) fit the 3-day POC timeline. Recommend verifying the top risks before the next round of user testing.
 
 ## Product Context
 - **Product**: AI Support Chatbot
@@ -11,30 +10,31 @@ UX review of the AI Support Chatbot POC identified 5 friction points, with 2 cri
 - **Success Metric**: 80% of queries resolved without human escalation
 
 ## POC Notes
-Chat widget with streaming responses, FAQ-based answers, and escalate-to-human button.
+Chat widget with streaming responses, FAQ search, and escalate button. (No PRD reference was provided.)
 
 ---
 
 ## 1. Friction Audit
 
-| # | Friction Point | Severity | Persona Impact |
-|---|----------------|----------|----------------|
-| 1 | No indication bot is AI-powered until response | Medium | Users surprised by AI, may distrust |
-| 2 | Typing indicator shows for full 3s before streaming starts | High | Feels slow, users may abandon |
-| 3 | "Escalate to human" button hidden below fold on mobile | High | Users can't find help when bot fails |
-| 4 | No suggested questions or prompts for new users | Medium | Cold start problem, users unsure what to ask |
-| 5 | Error messages show technical jargon ("API timeout") | Medium | Confusing, doesn't suggest retry |
+| # | Likely Friction Point (verify) | Severity | Persona Impact | Evidence |
+|---|----------------|----------|----------------|----------|
+| 1 | Users may not know the bot is AI-powered before the first answer | Medium | Users surprised by AI, may distrust | Not in notes; check widget header |
+| 2 | Delay before streaming starts may feel slow | High | Users may abandon | Streaming is noted; [DATA NEEDED: time to first token] |
+| 3 | Escalate button may be hard to find on small screens | High | Users can't find help when bot fails | Mobile is a stated constraint; check placement at 375px |
+| 4 | No suggested questions or prompts are mentioned for new users | Medium | Cold start, users unsure what to ask | Absent from notes |
+| 5 | Error states are not described | Medium | Failures may be confusing, with no retry path | [DATA NEEDED: actual error copy] |
 
 ---
 
 ## 2. Requirements Validation
 
-| PRD User Story | UX Status | Gap |
+No PRD was provided, so this checks the flow against the stated success metric and constraints only. [DATA NEEDED: PRD user stories for a full requirements check]
+
+| Stated Requirement | UX Status | Gap |
 |----------------|-----------|-----|
-| "User can ask a question and get instant answer" | Partial | Streaming helps but 3s delay feels slow |
-| "User can escalate to human if unsatisfied" | Gap | Button not visible on mobile |
-| "User knows they're talking to AI" | Gap | No AI indicator shown upfront |
-| "User can see conversation history" | OK | History maintained in session |
+| 80% of queries resolved without human escalation | Unknown | Needs a way to measure resolution (e.g., feedback after each answer) |
+| Must work on mobile | Verify | Escalate button placement and widget sizing at mobile widths not described |
+| User can escalate to a human (from flow description) | Partial | Button exists; discoverability and handoff experience not described |
 
 ---
 
@@ -56,7 +56,7 @@ Pin "Talk to human" button at bottom of chat on mobile viewports.
 - **Impact**: High | **Effort**: Low
 
 ### 3.4 Friendly Error Messages
-Replace "API timeout" with "I'm having trouble thinking. Try again?"
+Make sure error states use plain language with a retry, e.g., "I'm having trouble answering right now. Try again?"
 - **Rationale**: Human-friendly errors maintain trust
 - **Impact**: Medium | **Effort**: Low
 
@@ -115,4 +115,3 @@ Add thumbs up/down after each AI response.
 - Feedback thumbs with analytics
 - Smart suggested questions based on context
 - Conversation satisfaction survey
-```

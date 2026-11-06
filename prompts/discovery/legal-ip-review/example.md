@@ -1,13 +1,15 @@
-```markdown
 # Legal & IP Review: AI Support Chatbot
+
+> Not legal advice. Registry, domain, and terms-of-service checks below are steps for you to run; they have not been performed.
 
 ## Executive Summary
 
 | Risk Level | Category | Issue |
 |------------|----------|-------|
 | High | AI/LLM | OpenAI output ownership terms need review |
-| Medium | Data | Customer ticket data may contain PII |
-| Medium | Trademark | "SupportBot" name conflicts with existing product |
+| High | Privacy | Support tickets contain personal data — GDPR and CCPA/CPRA obligations likely apply |
+| Medium | Data | "Anonymized" tickets may still be re-identifiable (pseudonymized data remains personal data) |
+| Unknown | Trademark | Product name not yet cleared — registry and domain searches pending (user to run) |
 | Low | Licensing | All dependencies are permissive (MIT/Apache) |
 
 **Recommendation**: Proceed with POC but resolve High/Medium items before production launch.
@@ -40,24 +42,31 @@
 
 | Aspect | Status | Notes |
 |--------|--------|-------|
-| Terms of Service | Review Required | API usage terms updated Jan 2026 |
-| Data Processing | US/EU | Data may be processed outside user's region |
-| Output Ownership | Clarify | OpenAI assigns output rights to user, but terms have nuances |
-| Rate Limits | OK | Tier 1 sufficient for POC |
-| Data Retention | Action Needed | Opt out of training data usage |
+| Terms of Service | Review Required | Check the current version and effective date (user to verify) |
+| Data Processing | Verify | Confirm processing regions and whether EU data residency is available on your plan |
+| Output Ownership | Clarify | Terms have historically assigned output rights to the customer — verify current wording |
+| Rate Limits | Verify | Check your account's usage tier against expected POC volume |
+| Data Retention | Action Needed | Confirm API data is excluded from training and whether zero data retention is available to you |
 
 **Action Items**:
 - [ ] Confirm output ownership for commercial use
-- [ ] Enable zero data retention mode
-- [ ] Review updated ToS (Jan 2026 version)
+- [ ] Confirm zero data retention eligibility and enable it if available
+- [ ] Review the current ToS and DPA (record the version/date reviewed)
 
 ### Vercel Hosting
 
 | Aspect | Status | Notes |
 |--------|--------|-------|
-| Data Residency | OK | Can select US/EU region |
-| GDPR DPA | OK | Standard DPA available |
-| SOC 2 | OK | SOC 2 Type II certified |
+| Data Residency | Verify | Confirm region configuration for EU customers' data |
+| GDPR DPA | Verify | Confirm a DPA is in place |
+| SOC 2 | Verify | Request the current SOC 2 Type II report (an attestation, not a certification) |
+
+### Sentry Error Tracking
+
+| Aspect | Status | Notes |
+|--------|--------|-------|
+| PII in error payloads | Action Needed | Chat messages can leak into error events — configure data scrubbing |
+| GDPR DPA | Verify | Confirm a DPA is in place and note processing region |
 
 ---
 
@@ -68,34 +77,30 @@
 | Data Source | Ownership | PII Risk | Action |
 |-------------|-----------|----------|--------|
 | Internal FAQ database | Owned | Low | OK to use |
-| Customer support tickets | Owned | High | Must anonymize |
+| Customer support tickets (stated as anonymized) | Owned — confirm customer contracts permit this use | High | Verify anonymization is irreversible; otherwise treat as personal data |
 | Product documentation | Owned | None | OK to use |
 
 ### Privacy Checklist
 - [ ] Implement PII detection before sending to LLM
 - [ ] Add privacy notice for chatbot users
-- [ ] Document data flow for GDPR compliance
-- [ ] Establish data retention policy (suggest 30 days)
+- [ ] Create the GDPR Art. 30 record of processing and complete DPIA screening — required before processing starts, not after launch
+- [ ] Establish data retention policy (e.g. 30 days, est.)
 
 ---
 
 ## 4. Intellectual Property
 
-### Trademark Search: "SupportBot"
+### Trademark Clearance (not yet performed — user to verify)
 
-| Registry | Status | Conflict |
-|----------|--------|----------|
-| USPTO | Conflict Found | "SupportBot Pro" - Class 42 |
-| EUIPO | Clear | No conflicts |
-| Domain | Unavailable | supportbot.com taken |
+"AI Support Chatbot" is descriptive and unlikely to be registrable; choose a distinctive name before launch.
 
-**Recommendation**: Choose alternative name. Suggestions:
-- HelpDesk AI
-- AssistIQ
-- SupportPilot (check availability)
+- [ ] Search the USPTO Trademark Search system and EUIPO eSearch for the candidate name in Classes 9 and 42
+- [ ] Check name similarity against similar products (e.g. Intercom, Zendesk Answer Bot, Drift)
+- [ ] Check domain and social handle availability
+- [ ] Have counsel review any close matches
 
 ### Copyright Considerations
-- [x] FAQ content is original/owned
+- [ ] Confirm FAQ content is original/owned (stated as internal)
 - [ ] Verify no copyrighted content in training data
 - [ ] Add copyright notice to chatbot responses
 
@@ -127,13 +132,13 @@
 ## 6. Regional Compliance
 
 ### US Requirements
-- [x] CCPA: Not applicable (B2B, no consumer data sale)
+- [ ] CCPA/CPRA: Likely applicable if the business meets a threshold — since 2023, B2B contact data and employee data are in scope, and support tickets contain personal information of business users. Verify thresholds with counsel.
 - [x] CAN-SPAM: N/A (no email marketing)
 - [ ] Section 230: Review liability for AI outputs
 
 ### EU Requirements
-- [ ] GDPR: Privacy notice required, DPA with vendors
-- [ ] AI Act: Likely "limited risk" - transparency obligations only
+- [ ] GDPR: Privacy notice, DPAs with OpenAI, Vercel, and Sentry, Art. 30 record of processing, DPIA screening, and transfer mechanism for any non-EU processing
+- [ ] AI Act: Likely limited-risk (transparency) — users must be told they are interacting with AI. Verify the application date; proposals such as the Digital Omnibus may shift timelines
 - [ ] Document AI system per EU AI Act requirements
 
 ---
@@ -141,10 +146,11 @@
 ## 7. Action Items Summary
 
 ### Blockers (Must resolve before any launch)
-- [ ] Rename product (trademark conflict)
 - [ ] Implement PII redaction for customer ticket data
+- [ ] GDPR Art. 30 record of processing, DPIA screening, and executed DPAs with all processors
 
 ### Pre-Launch (Before GA)
+- [ ] Trademark and domain clearance for the final product name
 - [ ] OpenAI ToS review with legal counsel
 - [ ] Create LICENSES.md attribution file
 - [ ] Add AI disclosure to UI
@@ -152,12 +158,17 @@
 - [ ] Configure zero data retention with OpenAI
 
 ### Post-Launch (Within 90 days)
-- [ ] GDPR documentation and record of processing
-- [ ] EU AI Act system documentation
+- [ ] Keep the record of processing current as features change
+- [ ] EU AI Act system documentation once application dates are confirmed
 - [ ] Full legal review of AI output liability
 
 ### Legal Review Needed
 - [ ] OpenAI output ownership for commercial product
 - [ ] Liability framework for AI errors/hallucinations
 - [ ] Customer contract updates for AI features
-```
+
+### Verification Steps for You
+- [ ] Trademark registry and domain searches (not performed here)
+- [ ] Current OpenAI, Vercel, and Sentry terms, DPAs, and data-residency options
+- [ ] CCPA/CPRA applicability thresholds
+- [ ] Current EU AI Act application dates

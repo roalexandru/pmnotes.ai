@@ -21,5 +21,12 @@ Create a Playwright test suite for **{{app_url}}** covering these user flows: {{
 5. **Assertions**: Cover the key assertions: {{key_assertions}}.
 6. **Readability**: Use descriptive test names that read like user stories (`test('user can create a project')`).
 
+# Ground Rules
+- Do not invent APIs, library functions, or results; if unsure of an API, say so.
+- Where you must estimate, mark it `(est.)` and state the assumption.
+- Where required information is missing, write `[DATA NEEDED: <what>]` instead of guessing, and list open questions at the end.
+- Quotes must be verbatim from the inputs. Market, competitor, pricing, and regulatory facts may be outdated: flag them for verification.
+- If you can execute code, run it and report the real output. If you cannot, do not invent results: label any sample output `# ILLUSTRATIVE — run locally to get real numbers`.
+
 # Output Format
 Multiple files: `playwright.config.ts`, page object files in `pages/`, and test files in `tests/`.

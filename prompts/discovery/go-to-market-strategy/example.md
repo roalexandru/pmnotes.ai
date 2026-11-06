@@ -2,9 +2,9 @@
 
 ## 1. Executive Summary & Launch Thesis
 
-DataSync is entering the data integration market with a RevOps-first positioning that no incumbent owns. The timing is right: RevOps is now a recognized function at mid-market SaaS companies, yet existing tools (Segment, Fivetran, Census) are built for data engineers, not operators. Our wedge is the no-code, real-time angle — we solve the same problem as a $120K/year Segment contract but for the RevOps lead who has budget authority under $20K. With 12 beta customers at NPS 72 and zero marketing spend, the product has organic pull. This GTM plan prioritizes community-led and product-led growth to reach 100 paying customers in 90 days on a $15K budget. The single biggest bet: RevOps practitioners will champion DataSync bottom-up once they experience the "connect two tools in 5 minutes" moment.
+DataSync is entering the data integration market with a RevOps-first positioning that no incumbent owns. The timing is right: RevOps is now a recognized function at mid-market SaaS companies, yet existing tools (Segment, Fivetran, Census) are built for data engineers, not operators. Our wedge is the no-code, real-time angle — we solve a similar problem to enterprise CDP contracts ([DATA NEEDED: verified competitor pricing]) for the RevOps lead with a smaller budget ([DATA NEEDED: typical approval limit]). With 12 beta customers at NPS 72 and zero marketing spend, the product has organic pull. This GTM plan prioritizes community-led and product-led growth to reach 100 paying customers in 90 days on a $15K budget. The single biggest bet: RevOps practitioners will champion DataSync bottom-up once they experience the "connect two tools in 5 minutes" moment.
 
-**Why now:** RevOps headcount at mid-market SaaS grew 3x in two years, but tooling hasn't caught up. Teams are duct-taping Zapier and CSV exports.
+**Why now:** RevOps is now a recognized function at mid-market SaaS companies ([DATA NEEDED: cited headcount-growth source]), but tooling hasn't caught up. Teams are duct-taping Zapier and CSV exports.
 **Why us:** No-code connectors with sub-second sync — no other tool delivers both simplicity and real-time at this price point.
 **The wedge:** Replace one painful Zapier chain in the first session. Once the first integration works, expansion to the full stack follows naturally.
 
@@ -41,19 +41,19 @@ DataSync is entering the data integration market with a RevOps-first positioning
 
 | Objection | Counter |
 | :--- | :--- |
-| "We'll just have engineering build it" | Engineering has a 6-month backlog. DataSync ships in 5 minutes. Show them the queue — ask when their integration request will realistically be prioritized. |
-| "Zapier works fine for us" | It works until it doesn't. Zapier polls on intervals (5-15 min), drops records silently, and costs more than DataSync at scale. Share the reliability comparison. |
-| "We need enterprise-grade security" | DataSync is SOC 2 Type II compliant, encrypts data in transit and at rest, and never stores customer PII. Provide the security whitepaper. |
+| "We'll just have engineering build it" | Engineering backlogs are often long. DataSync connects tools in minutes. Show them the queue — ask when their integration request will realistically be prioritized. |
+| "Zapier works fine for us" | It works well for simple automations. For revenue-critical sync, ask how they detect failed or delayed runs today; polling-based triggers add delay (verify current Zapier intervals for their plan). Offer a side-by-side trial. |
+| "We need enterprise-grade security" | Share DataSync's actual security posture: [DATA NEEDED: SOC 2 status, encryption, data-retention policy]. Provide the security whitepaper if one exists. |
 | "What if you shut down? You're a small startup." | Fair concern. Data flows through DataSync but is never locked in — configurations are exportable. Offer a 90-day data portability guarantee in the contract. |
-| "Segment/Fivetran already does this" | They do — for 5-10x the cost and requiring a data engineer to configure. If you have a $120K budget and a data team, those are great options. DataSync is for teams who need it now without that overhead. |
+| "Segment/Fivetran already does this" | They are strong options for teams with a data engineer and a larger budget ([DATA NEEDED: verified pricing comparison]). DataSync is for RevOps teams who need it now without that overhead. |
 
 ## 3. Channel Strategy
 
-| Rank | Channel | Tactic | Motion | Effort/Week | Expected Yield | Time to Results |
+| Rank | Channel | Tactic | Motion | Effort/Week | Expected Yield (est.) | Time to Results |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
 | 1 | **RevOps communities** (RevGenius, Pavilion, WizOps Slack) | Share genuinely helpful content about data integration patterns. Engage in threads about Zapier frustration. Soft-link to DataSync when relevant. | PLG | 5 hrs | 10-15 qualified signups/week once established | 2-4 weeks |
 | 2 | **LinkedIn organic** (founder accounts) | Founders post 3x/week: pain-point stories, beta customer wins, "how we built this" transparency content. Target RevOps hashtags and commenters. | PLG | 4 hrs | 5-10 qualified signups/week; compounds over time | 2-3 weeks |
-| 3 | **Product-led onboarding flow** | "Connect your first two tools in 5 minutes" guided activation. In-app prompts to invite teammates after first successful sync. | PLG | 8 hrs (eng) | 2-3x activation rate improvement; viral coefficient of 1.2+ | 1-2 weeks |
+| 3 | **Product-led onboarding flow** | "Connect your first two tools in 5 minutes" guided activation. In-app prompts to invite teammates after first successful sync. | PLG | 8 hrs (eng) | Activation lift (est.; baseline [DATA NEEDED]); more teammate invites | 1-2 weeks |
 | 4 | **Beta customer referrals** | Ask 12 beta customers to refer 2-3 peers. Offer 3 months free for successful referrals. Provide them a pre-written referral email. | Sales-assisted | 2 hrs | 15-25 warm intros over 30 days | 1-2 weeks |
 | 5 | **SEO content (comparison pages)** | Publish "DataSync vs. Segment," "DataSync vs. Zapier for RevOps," and "How to unify customer data without engineering" pages. | PLG | 6 hrs initially, 2 hrs/week ongoing | 20-40 organic visits/week by month 2; long-term compounding | 6-8 weeks |
 | 6 | **Targeted cold outreach** | Founders send 20-30 hyper-personalized emails/week to RevOps leads at companies matching ICP. Reference their specific tech stack (visible via job postings, BuiltWith). | Sales-led | 5 hrs | 3-5 demo requests/week at 15-20% reply rate | 1-2 weeks |
@@ -113,7 +113,7 @@ DataSync is entering the data integration market with a RevOps-first positioning
 | :--- | :--- | :--- | :--- |
 | "Your customer data is scattered across 8 tools. DataSync unifies it in minutes, not months." | Data fragmentation causing bad decisions and manual work | LinkedIn, RevOps communities | Short-form posts with before/after screenshots |
 | "Zapier breaks. Engineering is backlogged. Your RevOps team deserves a real-time data layer they can own." | Dependency on unreliable tools and unavailable engineering resources | Cold outreach, comparison pages | Personalized emails, long-form SEO content |
-| "DataSync replaces your $120K/year Segment contract with a tool your RevOps team can set up today." | Enterprise tools too expensive and complex for mid-market | Webinar, case study, demo script | Live demo, customer testimonial, ROI calculator |
+| "Get real-time customer data unification without an enterprise CDP contract — set up by your RevOps team today." | Enterprise tools too expensive and complex for mid-market | Webinar, case study, demo script | Live demo, customer testimonial, ROI calculator |
 
 ### Minimum Viable Content Checklist (Before Launch Day)
 
@@ -136,34 +136,34 @@ DataSync is entering the data integration market with a RevOps-first positioning
 | :--- | :--- | :--- | :--- | :--- | :--- |
 | **Target user** | RevOps / non-technical ops | Data engineers | Data engineers | Anyone (generic) | Data engineers |
 | **Setup time** | 5 minutes, no code | Weeks, requires engineering | Days, requires SQL | Minutes, but limited | Days, requires warehouse |
-| **Real-time sync** | Yes, sub-second | Yes | Batch (minutes-hours) | Polling (5-15 min) | Batch (minutes-hours) |
-| **Price (mid-market)** | $500-1500/mo | $10K+/mo | $2K+/mo | $500-2K/mo (at scale) | $1K+/mo |
-| **Key weakness** | New/small company, fewer connectors | Expensive, complex | Not designed for ops teams | Unreliable at scale, not real-time | Reverse ETL only, requires warehouse |
+| **Real-time sync** | Yes, sub-second | Yes (verify) | Batch (verify intervals) | Polling (verify intervals) | Batch (verify) |
+| **Price (mid-market)** | $299–799/mo (proposed) | [DATA NEEDED: verify] | [DATA NEEDED: verify] | [DATA NEEDED: verify] | [DATA NEEDED: verify] |
+| **Perceived gap for this ICP (verify)** | New/small company, fewer connectors | Enterprise pricing and setup | Built for data teams | Polling-based, not real-time | Reverse ETL, requires warehouse; reportedly acquired by Fivetran in 2025 (verify) |
 | **When to use this** | RevOps team needs real-time unification without engineering | Enterprise with data eng team and budget | Heavy ETL workloads | Simple, low-stakes automations | Already have a data warehouse |
 
 ### Objection-Handling Scripts
 
 **1. "We're already using Zapier and it works."**
-> "That makes sense — Zapier is great for simple automations. The challenge we hear from RevOps teams at your stage is that Zapier polls every 5-15 minutes, silently drops records when it hits rate limits, and gets expensive fast when you're moving real volume. One of our beta customers was paying $1,800/month for Zapier and still missing 3-5% of records. They switched to DataSync and got real-time sync at a lower cost. Would it be worth a 15-minute look to see if you have the same gaps?"
+> "That makes sense — Zapier is great for simple automations. The challenge we hear from RevOps teams at your stage is that polling-based workflows add delay and failed runs can be hard to spot when you're moving real volume. [DATA NEEDED: a beta customer's before/after metrics, with permission.] Would it be worth a 15-minute look to see if you have the same gaps?"
 
 **2. "We'll have our data engineer build this."**
 > "Totally fair. How long has the request been in the engineering queue? What we typically see is that even when engineering builds a custom integration, it takes 4-8 weeks, and then the RevOps team can't modify it without filing another ticket. DataSync gives your ops team direct control — they can add a new connector or change a mapping in minutes without waiting on engineering. Most of our customers use DataSync to free up engineering for product work."
 
 **3. "I've never heard of DataSync. How do I know you'll be around?"**
-> "Healthy skepticism — I'd ask the same thing. Two things to consider: first, your data flows through DataSync but is never locked in. Configurations are exportable and we offer a 90-day data portability guarantee. Second, we already have 12 paying customers, we're growing, and we're backed by [investors if applicable]. But the real answer is: try it for free and see the value in the first 5 minutes. The switching cost is near zero."
+> "Healthy skepticism — I'd ask the same thing. Two things to consider: first, your data flows through DataSync but is never locked in. Configurations are exportable and we offer a 90-day data portability guarantee. Second, 12 beta customers rely on us today (NPS 72), and we're backed by [investors if applicable]. But the real answer is: try it for free and see the value in the first 5 minutes. The switching cost is near zero."
 
 **4. "Segment does everything you do and more."**
-> "Segment is an excellent product — if you have the budget and a data engineering team to implement it. Their mid-market contract starts around $10K/month and typically takes 6-8 weeks to deploy. DataSync is purpose-built for RevOps teams who need real-time unification without that overhead. If you have $120K/year in budget and a dedicated data engineer, Segment might be the right choice. If you need this working by Friday, DataSync is."
+> "Segment is an excellent product — if you have the budget and a data engineering team to implement it. DataSync is purpose-built for RevOps teams who need real-time unification without that overhead. If you have a large budget and a dedicated data engineer, Segment might be the right choice. If you need this working by Friday, DataSync is." (Do not quote competitor prices or deployment times unless verified.)
 
 **5. "We need to involve our security team."**
-> "Absolutely — security review is standard and we welcome it. Here's our SOC 2 Type II report and security whitepaper. We encrypt all data in transit (TLS 1.3) and at rest (AES-256). We never store PII — data flows through in real-time. We also support SSO and role-based access controls on our Team plan. Happy to do a security call with your team."
+> "Absolutely — security review is standard and we welcome it. Here's our security documentation: [DATA NEEDED: SOC 2 status, encryption standards, PII storage policy — state only what is true]. We also support SSO and role-based access controls on our Team plan. Happy to do a security call with your team."
 
 ### Demo Script Outline
 
 1. **Hook (30 seconds):** "Let me show you what it looks like to unify your customer data across CRM, support, and billing — in under 5 minutes, with zero code."
 2. **Pain validation (60 seconds):** "Right now, your team probably has customer data in Salesforce, Intercom, and Stripe that doesn't talk to each other. When a CSM opens a support ticket, they can't see the billing status. When sales wants to prioritize renewals, they're exporting CSVs. Sound familiar?"
 3. **Solution walkthrough (3 minutes):** Connect Salesforce and Stripe live. Show real-time sync of a customer record update. Show the unified customer view. Emphasize: "Your RevOps team did this — no engineering ticket needed."
-4. **Proof (60 seconds):** Show a beta customer quote and metrics. "Acme Corp reduced their data reconciliation time from 8 hours/week to zero."
+4. **Proof (60 seconds):** Show a beta customer quote and metrics, e.g. "[Beta customer] reduced data reconciliation time from [X] to [Y] hours/week" ([DATA NEEDED: real, approved figures]).
 5. **Close (30 seconds):** "You can try this right now — free plan includes 2 connectors. Want me to send you an invite link, or should we do a trial with your actual tools?"
 
 ## 7. Pricing & Packaging Alignment

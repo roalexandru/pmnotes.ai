@@ -11,6 +11,8 @@ const {
   COMPLEXITIES,
   TEAM_SCALES,
   COLLECTION_CATEGORIES,
+  PM_STAGES,
+  RESERVED_META_KEYS,
   SLUG_PATTERN,
   INPUT_KEY_PATTERN,
   PLACEHOLDER_PATTERN,
@@ -51,32 +53,35 @@ function checkEnum(errors, label, field, value, allowed) {
   }
 }
 
-/** Returns template variable names, handling {{key}}, {{#if key}} and {{/if}}. */
+/**
+ * Returns template variable names, handling {{key}}, {{#if key}} and {{/if}}
+ * (blocks may nest), plus `guarded`: for each key, whether every {{key}} occurrence
+ * sits inside an {{#if key}} block.
+ */
 function parseTemplate(template) {
   const variables = new Set();
+  const unguarded = new Set();
   const problems = [];
-  let openIfs = 0;
+  const openIfs = [];
 
   for (const match of template.matchAll(PLACEHOLDER_PATTERN)) {
     const expr = match[1];
     const ifMatch = expr.match(/^#if\s+([^\s]+)$/);
     if (ifMatch) {
       variables.add(ifMatch[1]);
-      openIfs += 1;
+      openIfs.push(ifMatch[1]);
     } else if (expr === '/if') {
-      openIfs -= 1;
-      if (openIfs < 0) {
-        problems.push('{{/if}} without a matching {{#if}}');
-        openIfs = 0;
-      }
+      if (openIfs.length === 0) problems.push('{{/if}} without a matching {{#if}}');
+      else openIfs.pop();
     } else if (/^[A-Za-z_][\w-]*$/.test(expr)) {
       variables.add(expr);
+      if (!openIfs.includes(expr)) unguarded.add(expr);
     } else {
       problems.push(`unsupported template expression {{${expr}}}`);
     }
   }
-  if (openIfs > 0) problems.push(`${openIfs} {{#if}} block(s) not closed with {{/if}}`);
-  return { variables, problems };
+  if (openIfs.length > 0) problems.push(`${openIfs.length} {{#if}} block(s) not closed with {{/if}}`);
+  return { variables, unguarded, problems };
 }
 
 function validatePromptMeta(meta, { label, slug, surface }, errors) {
@@ -88,6 +93,10 @@ function validatePromptMeta(meta, { label, slug, surface }, errors) {
     errors.push(`${label}: meta.json surface "${meta.surface}" must equal parent folder "${surface}"`);
   }
   checkEnum(errors, label, 'complexity', meta.complexity, COMPLEXITIES);
+  checkEnum(errors, label, 'pmStage', meta.pmStage, PM_STAGES);
+  for (const key of RESERVED_META_KEYS) {
+    if (key in meta) errors.push(`${label}: meta.json must not set "${key}" (computed by the index builder)`);
+  }
   checkEnum(errors, label, 'teamScale', meta.teamScale, TEAM_SCALES);
   if (meta.featured !== undefined && typeof meta.featured !== 'boolean') {
     errors.push(`${label}: featured must be a boolean`);
@@ -96,9 +105,10 @@ function validatePromptMeta(meta, { label, slug, surface }, errors) {
   if (!isStringArray(meta.jobsToBeDone)) errors.push(`${label}: jobsToBeDone must be an array of strings`);
 
   const keys = new Set();
+  const optionalKeys = new Set();
   if (!Array.isArray(meta.inputs)) {
     errors.push(`${label}: inputs must be an array`);
-    return keys;
+    return { keys, optionalKeys };
   }
   meta.inputs.forEach((input, i) => {
     if (!input || typeof input !== 'object') {
@@ -119,11 +129,15 @@ function validatePromptMeta(meta, { label, slug, surface }, errors) {
     if (input.optional !== undefined && typeof input.optional !== 'boolean') {
       errors.push(`${label}: inputs[${i}].optional must be a boolean`);
     }
+    if (input.optional === true && isNonEmptyString(input.key)) optionalKeys.add(input.key);
+    if (isNonEmptyString(input.label) && /\(optional\)/i.test(input.label)) {
+      errors.push(`${label}: inputs[${i}].label says "(optional)"; set "optional": true instead`);
+    }
     if (input.options !== undefined && !isStringArray(input.options)) {
       errors.push(`${label}: inputs[${i}].options must be an array of strings`);
     }
   });
-  return keys;
+  return { keys, optionalKeys };
 }
 
 function validatePrompts(root, errors) {
@@ -163,10 +177,15 @@ function validatePrompts(root, errors) {
 
       const meta = readJson(path.join(dir, 'meta.json'), errors, `${label}/meta.json`);
       if (!meta) continue;
-      const inputKeys = validatePromptMeta(meta, { label, slug, surface }, errors);
+      const { keys: inputKeys, optionalKeys } = validatePromptMeta(meta, { label, slug, surface }, errors);
 
       if (template) {
-        const { variables, problems } = parseTemplate(template);
+        const { variables, unguarded, problems } = parseTemplate(template);
+        for (const key of optionalKeys) {
+          if (unguarded.has(key)) {
+            errors.push(`${label}: optional input {{${key}}} is used outside {{#if ${key}}}...{{/if}}, so it would stay as literal text when left empty`);
+          }
+        }
         problems.forEach(problem => errors.push(`${label}: prompt.md ${problem}`));
         for (const variable of variables) {
           if (!inputKeys.has(variable)) errors.push(`${label}: prompt.md uses {{${variable}}} but meta.json has no input with that key`);
@@ -245,7 +264,6 @@ function stripVolatile(promptsIndex) {
 function validateIndexes(root, errors) {
   const promptsIndex = readJson(path.join(root, 'prompts', 'index.json'), errors, 'prompts/index.json');
   if (promptsIndex) {
-    if (!isNonEmptyString(promptsIndex.generatedAt)) errors.push('prompts/index.json: missing generatedAt');
     const expected = buildPromptsIndex(root, { getUpdatedAt: () => 'x' });
     if (!isDeepStrictEqual(stripVolatile(promptsIndex), stripVolatile(expected))) {
       errors.push('prompts/index.json is out of date: run `npm run index` and commit the result');

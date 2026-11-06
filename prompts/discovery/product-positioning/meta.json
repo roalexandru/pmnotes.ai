@@ -23,7 +23,7 @@
         {
             "key": "product_name",
             "label": "Product Name",
-            "example": "Linear"
+            "example": "Northwind Tracker"
         },
         {
             "key": "product_description",

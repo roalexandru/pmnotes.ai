@@ -41,7 +41,7 @@
         {
             "key": "time_horizon",
             "label": "Time Horizon",
-            "example": "Next 24 months"
+            "example": "24 months"
         }
     ]
 }

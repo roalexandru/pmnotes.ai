@@ -35,8 +35,9 @@
         },
         {
             "key": "context_files",
-            "label": "Context Files",
-            "example": "@package.json @README.md"
+            "label": "Repo Context (files or excerpts)",
+            "example": "@package.json @README.md (@-references work only in coding agents such as Claude Code or Cursor; elsewhere, paste the relevant file contents)",
+            "optional": true
         }
     ]
 }

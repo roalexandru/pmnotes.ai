@@ -143,9 +143,16 @@ Design a comprehensive API specification for an AI inference service that handle
 - **Code samples**: Examples in major languages
 - **Sandbox environment**: Testing without production impact
 
+# Ground Rules
+- Use only the facts provided above plus well-established public knowledge. Do not invent metrics, quotes, names, dates, features, customers, or citations.
+- Where you must estimate, mark it `(est.)` and state the assumption.
+- Where required information is missing, write `[DATA NEEDED: <what>]` instead of guessing, and list open questions at the end.
+- Quotes must be verbatim from the inputs. Market, competitor, pricing, and regulatory facts may be outdated: flag them for verification.
+- If you can execute code, run it and report the real output. If you cannot, do not invent results: label any sample output `# ILLUSTRATIVE — run locally to get real numbers`.
+
 # Output Format
 Complete API specification with:
-1. OpenAPI 3.0 schema for all endpoints
+1. OpenAPI 3.1 schema for all endpoints
 2. Request/response examples
 3. Error code reference
 4. Rate limiting documentation

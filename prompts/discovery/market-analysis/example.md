@@ -6,9 +6,9 @@
 * Differentiation is shifting to integrations, workflow flexibility, and time-to-value.
 
 ## Market Size & Growth
-* **TAM**: ~$18–22B global; **SAM**: ~$6–8B in North America + UK mid-market.
-* **SOM (24 months)**: ~$60–120M based on 1–2% share of SAM.
-* **Assumptions**: $12–18 per user/month, 200–2,000 employee firms, 30–50% tool adoption.
+* **TAM**: ~$18–22B global (est. — verify against a current analyst report); **SAM**: ~$6–8B in North America + UK mid-market (est.).
+* **SOM (24 months)**: ~$60–160M based on 1–2% share of SAM (1% × $6B to 2% × $8B).
+* **Assumptions**: $12–18 per user/month, 200–2,000 employee firms, 30–50% tool adoption. **Confidence**: Low–Medium — top-down estimates, not primary data.
 
 ## Key Trends
 * **AI-assisted project planning** to reduce manual status updates.
@@ -17,7 +17,7 @@
 
 ## Competitive Landscape
 
-| Competitor | Primary Segment | Differentiation | Pricing Signal |
+| Competitor | Primary Segment | Differentiation | Pricing Signal (verify current list prices) |
 | :--- | :--- | :--- | :--- |
 | Asana | Enterprise + mid-market | Workflow clarity, enterprise controls | $10–30/user/mo |
 | Monday.com | Mid-market | Visual customization, templates | $8–24/user/mo |

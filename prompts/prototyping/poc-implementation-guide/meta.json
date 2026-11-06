@@ -3,7 +3,7 @@
   "title": "POC Implementation Guide",
   "shortDescription": "Generate a step-by-step implementation plan for building a POC quickly.",
   "surface": "prototyping",
-  "pmStage": "Code Templates & Schemas",
+  "pmStage": "Requirements & Specifications",
   "complexity": "Structured",
   "outputType": "Implementation Plan",
   "tags": ["poc", "prototype", "implementation", "planning", "rapid"],

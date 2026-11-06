@@ -1,3 +1,4 @@
+```python
 from datetime import datetime
 
 tasks = [
@@ -35,17 +36,21 @@ if percent_overdue > 20:
     print("Recommendation: Escalate in the weekly PM sync.")
 else:
     print("Recommendation: Send automated reminders only.")
+```
 
-# Sample Output:
-# | Task | Owner | Due Date | Status |
-# |:-----|:------|:---------|:-------|
-# | Update pricing | Ava | 2026-01-20 | open |
-#
-# Reminders
-# Reminder: Ava, 'Update pricing' is overdue since 2026-01-20.
-#
-# Summary
-# Total tasks: 3
-# Overdue tasks: 1
-# % overdue: 33.3%
-# Recommendation: Escalate in the weekly PM sync.
+Sample output:
+
+```text
+| Task | Owner | Due Date | Status |
+|:-----|:------|:---------|:-------|
+| Update pricing | Ava | 2026-01-20 | open |
+
+Reminders
+Reminder: Ava, 'Update pricing' is overdue since 2026-01-20.
+
+Summary
+Total tasks: 3
+Overdue tasks: 1
+% overdue: 33.3%
+Recommendation: Escalate in the weekly PM sync.
+```

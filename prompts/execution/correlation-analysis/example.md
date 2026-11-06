@@ -1,3 +1,4 @@
+```python
 import numpy as np
 from scipy import stats
 
@@ -24,10 +25,14 @@ print(f"Correlation: {coeff:.3f}")
 print(f"P-value: {p_value:.4f}")
 print(f"Interpretation: {strength} { 'positive' if coeff > 0 else 'negative' } relationship.")
 print("Caveat: Correlation does not prove causation.")
+```
 
-# Sample Output:
-# Method: pearson
-# Correlation: 0.981
-# P-value: 0.0031
-# Interpretation: strong positive relationship.
-# Caveat: Correlation does not prove causation.
+Sample output:
+
+```text
+Method: pearson
+Correlation: 0.994
+P-value: 0.0005
+Interpretation: strong positive relationship.
+Caveat: Correlation does not prove causation.
+```

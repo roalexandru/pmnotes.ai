@@ -4,8 +4,8 @@
     "shortDescription": "Quantify conversion uplift and statistical significance for a two-variant test.",
     "surface": "execution",
     "pmStage": "Data Analysis & Visualizations",
-    "complexity": "Deep",
-    "outputType": "Executed Code (Statistics)",
+    "complexity": "Structured",
+    "outputType": "Code (Statistics)",
     "tags": [
         "python",
         "statistics",

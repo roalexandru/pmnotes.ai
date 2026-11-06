@@ -1,16 +1,16 @@
 {
     "slug": "sentiment-analysis",
     "title": "User Feedback Sentiment Triage",
-    "shortDescription": "Classify feedback sentiment using NLP polarity scoring and surface actionable themes from negative feedback.",
+    "shortDescription": "Classify feedback sentiment with an LLM, return structured JSON with rationale and quotes, and surface actionable themes from negative feedback.",
     "surface": "execution",
     "pmStage": "Research & Insight Reports",
     "complexity": "Structured",
-    "outputType": "Executed Code (NLP)",
+    "outputType": "JSON Classification + Summary",
     "tags": [
-        "python",
+        "llm",
         "nlp",
         "sentiment",
-        "textblob",
+        "json",
         "feedback",
         "user-research"
     ],

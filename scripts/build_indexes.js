@@ -58,7 +58,9 @@ function buildPromptsIndex(root = REPO_ROOT, options = {}) {
 
       const prompt = fs.existsSync(promptPath) ? fs.readFileSync(promptPath, 'utf8') : '';
 
+      // Computed fields go last so meta.json can't override them (the validator also rejects that).
       items.push({
+        ...meta,
         id: slug,
         title: meta.title || slug,
         category,
@@ -66,20 +68,19 @@ function buildPromptsIndex(root = REPO_ROOT, options = {}) {
         tags: meta.tags || [],
         updatedAt: getUpdatedAt(slugPath) || now(),
         prompt,
-        ...meta,
       });
     }
   }
 
-  return { generatedAt: now(), items };
+  // No generatedAt timestamp: the output must be a pure function of the content, so
+  // rebuilding unchanged content is a no-op and parallel PRs don't conflict on it.
+  return { items };
 }
 
 /**
  * @param {string} root repo root
- * @param {{ now?: () => string }} [options]
  */
-function buildCollectionsIndex(root = REPO_ROOT, options = {}) {
-  const now = options.now || (() => new Date().toISOString());
+function buildCollectionsIndex(root = REPO_ROOT) {
   const collectionsDir = path.join(root, 'collections');
   const files = fs.existsSync(collectionsDir)
     ? fs
@@ -97,8 +98,9 @@ function buildCollectionsIndex(root = REPO_ROOT, options = {}) {
     }
   }
 
-  collections.sort((a, b) => String(a.title).localeCompare(String(b.title)));
-  return { generatedAt: now(), collections };
+  // Fixed locale so every machine and CI sorts the same way.
+  collections.sort((a, b) => String(a.title).localeCompare(String(b.title), 'en'));
+  return { collections };
 }
 
 function writeJson(filePath, data) {

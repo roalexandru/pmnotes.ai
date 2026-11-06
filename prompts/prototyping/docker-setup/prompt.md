@@ -21,5 +21,12 @@ Create a Docker development environment for **{{app_name}}** with these services
 5. **Dev Features**: Include the requested features: {{dev_features}}.
 6. **Database Init**: If a database is included, provide an init script that creates the schema and seeds sample data.
 
+# Ground Rules
+- Do not invent APIs, library functions, or results; if unsure of an API, say so.
+- Where you must estimate, mark it `(est.)` and state the assumption.
+- Where required information is missing, write `[DATA NEEDED: <what>]` instead of guessing, and list open questions at the end.
+- Quotes must be verbatim from the inputs. Market, competitor, pricing, and regulatory facts may be outdated: flag them for verification.
+- If you can execute code, run it and report the real output. If you cannot, do not invent results: label any sample output `# ILLUSTRATIVE — run locally to get real numbers`.
+
 # Output Format
 Multiple files: `Dockerfile`, `docker-compose.yml`, `.env.example`, and `init.sql` if a database is included.

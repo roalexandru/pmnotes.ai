@@ -2,7 +2,7 @@
 # Dockerfile
 
 # --- Development stage ---
-FROM node:20-alpine AS development
+FROM node:24-alpine AS development
 
 WORKDIR /app
 
@@ -15,18 +15,29 @@ EXPOSE 3000
 
 CMD ["npm", "run", "dev"]
 
-# --- Production stage ---
-FROM node:20-alpine AS production
+# --- Build stage (needs dev dependencies, e.g. TypeScript) ---
+FROM node:24-alpine AS build
 
 WORKDIR /app
 
 COPY package.json package-lock.json ./
-RUN npm ci --omit=dev
+RUN npm ci
 
 COPY . .
-
 RUN npm run build
 
+# --- Production stage ---
+FROM node:24-alpine AS production
+
+WORKDIR /app
+ENV NODE_ENV=production
+
+COPY package.json package-lock.json ./
+RUN npm ci --omit=dev
+
+COPY --from=build /app/dist ./dist
+
+USER node
 EXPOSE 3000
 
 CMD ["node", "dist/server.js"]

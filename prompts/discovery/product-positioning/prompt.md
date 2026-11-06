@@ -28,7 +28,7 @@ Develop a comprehensive product positioning and messaging strategy that defines 
 
 3. **Differentiation Axes**
    - Identify 3–4 key differentiation dimensions.
-   - For each: state the attribute, why it matters to the target customer, and your proof point.
+   - For each: state the attribute, why it matters to the target customer, and your proof point. Use only proof points from the inputs; otherwise write `[DATA NEEDED: <evidence>]`. Never name real customers or cite benchmarks that were not provided.
 
 4. **Value Narrative**
    - Write a positioning statement following: "For [target], {{product_name}} is the [category] that [key benefit] unlike [alternatives] because [reason to believe]."
@@ -40,6 +40,13 @@ Develop a comprehensive product positioning and messaging strategy that defines 
 
 6. **Proof Points & Social Proof**
    - Recommend specific evidence types needed to support the positioning (metrics, case studies, quotes, certifications).
+
+# Ground Rules
+
+- Use only the facts provided above plus well-established public knowledge. Do not invent metrics, quotes, names, dates, features, customers, or citations.
+- Where you must estimate, mark it `(est.)` and state the assumption.
+- Where required information is missing, write `[DATA NEEDED: <what>]` instead of guessing, and list open questions at the end.
+- Quotes must be verbatim from the inputs. Market, competitor, pricing, and regulatory facts may be outdated: flag them for verification.
 
 # Output Format
 

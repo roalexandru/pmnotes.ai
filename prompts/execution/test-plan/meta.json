@@ -40,8 +40,9 @@
         },
         {
             "key": "test_framework",
-            "label": "Test Framework (optional)",
-            "example": "Playwright for E2E, Jest for unit tests"
+            "label": "Test Framework",
+            "example": "Playwright for E2E, Jest for unit tests",
+            "optional": true
         }
     ]
 }

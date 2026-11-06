@@ -1,33 +1,33 @@
 # Feedback Synthesis: PhotoEditor Pro (Last 60 Days)
 
 ## Executive Summary
-* Sentiment is **mixed-negative** due to export crashes and perceived slow performance.
-* Pro users value filters and presets but feel the price is high relative to stability.
-* Immediate reliability fixes will likely reduce churn more than new features.
+* Sentiment is **mixed-negative** due to export crashes and perceived slow performance (small sample: 3 comments — treat frequencies as directional).
+* Users value the filters but feel the subscription is too expensive; whether this is tied to stability is a hypothesis to test.
+* Fixing the export crash is the clearest action; impact on churn is unknown ([DATA NEEDED: churn reasons for Pro annual users]).
 
 ## Theme Table
 
 | Theme | Frequency | Example Quote |
 | :--- | :--- | :--- |
-| Export reliability | High | “The app crashes every time I export a 4K file.” |
-| Performance | Medium | “Great filters but it takes forever to load my library.” |
-| Pricing value | Medium | “It’s too expensive for something that still crashes.” |
-| UI/Workflow | Low | “I wish batch editing didn’t take so many clicks.” |
+| Export reliability | 1 of 3 comments | “App crashes on export.” |
+| Performance | 1 of 3 comments | “Great filters but slow.” |
+| Pricing value | 1 of 3 comments | “Subscription is too expensive.” |
 
 ## Critical Issues
-* **[P0] Export crash on 4K files** — core workflow is blocked for power users.
-* **[P1] Slow library loading** — impacts editing flow and time-to-value.
+* **[P0] Crash on export** — blocks the core output workflow. [DATA NEEDED: affected file types, OS/app versions, crash rate]
+* **[P1] Slowness** — feedback does not say where (launch, filters, export); [DATA NEEDED: which workflow is slow].
 
 ## Feature Requests
-**Must-Have**
-* Batch export presets for consistent outputs.
-* Cloud backup for project files.
+No explicit feature requests appear in this feedback. Inferred from the complaints (validate before roadmapping):
+
+**Must-Have (inferred)**
+* Reliable export (fix, not a new feature).
+* Faster performance in the slow workflow once identified.
 
 **Nice-to-Have**
-* AI auto-enhance toggle.
-* Customizable keyboard shortcuts.
+* [DATA NEEDED: collect explicit requests — none in this sample]
 
 ## Recommended Next Steps
-* **Quick Fix**: Hotfix export crash and add crash telemetry for affected file types.
+* **Quick Fix**: Reproduce and hotfix the export crash; add crash telemetry to capture affected file types.
 * **Research**: Conduct 5 user interviews on perceived pricing vs. stability tradeoffs.
-* **Roadmap Candidate**: Batch export presets to reduce time-to-complete for pro workflows.
+* **Roadmap Candidate**: Performance work on the slowest workflow, once telemetry identifies it.

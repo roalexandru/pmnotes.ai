@@ -16,8 +16,16 @@ Forecast the user base over the specified number of months using the provided gr
 # Requirements
 1. **Model**: Each month, apply growth then churn to the current base.
 2. **Output**: Print a month-by-month table and final total users.
-3. **Sensitivity**: Highlight the net growth rate (growth - churn).
+3. **Sensitivity**: Highlight the effective net monthly growth rate, (1 + growth) × (1 − churn) − 1, since growth and churn compound.
 4. **PM insight**: Call out whether the trajectory is accelerating or flattening.
+
+# Ground Rules
+
+- Use only the data provided above. Do not invent data, APIs, library functions, or results; if unsure of an API, say so.
+- Where you must estimate, mark it `(est.)` and state the assumption.
+- Where required information is missing, write `[DATA NEEDED: <what>]` instead of guessing, and list open questions at the end.
+- Quotes must be verbatim from the inputs. Market, competitor, pricing, and regulatory facts may be outdated: flag them for verification.
+- If you can execute code, run it and report the real output. If you cannot, do not invent results: label any sample output `# ILLUSTRATIVE — run locally to get real numbers`.
 
 # Output Format
 - Python code

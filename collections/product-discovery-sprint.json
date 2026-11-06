@@ -7,7 +7,13 @@
   "category": "playbook",
   "difficulty": "Structured",
   "estimatedTime": "1-2 weeks",
-  "tags": ["discovery", "research", "strategy", "validation", "sprint"],
+  "tags": [
+    "discovery",
+    "research",
+    "strategy",
+    "validation",
+    "sprint"
+  ],
   "prompts": [
     {
       "slug": "discovery/market-analysis",
@@ -20,24 +26,30 @@
       "note": "Analyze competitive positioning"
     },
     {
-      "slug": "discovery/user-persona",
+      "slug": "discovery/customer-interview-guide",
       "order": 3,
-      "note": "Define and understand your target users"
+      "note": "Plan and run customer interviews"
+    },
+    {
+      "slug": "discovery/user-persona",
+      "order": 4,
+      "note": "Turn what you learned into target user personas"
     },
     {
       "slug": "discovery/feedback-summary",
-      "order": 4,
+      "order": 5,
       "note": "Synthesize user feedback and insights",
       "optional": true
     },
     {
       "slug": "discovery/strategic-analysis",
-      "order": 5,
-      "note": "Strategic analysis and recommendations"
+      "order": 6,
+      "note": "If the opportunity means entering a new market, assess the entry strategy",
+      "optional": true
     },
     {
       "slug": "discovery/feature-prioritization",
-      "order": 6,
+      "order": 7,
       "note": "Prioritize opportunities based on findings"
     }
   ],

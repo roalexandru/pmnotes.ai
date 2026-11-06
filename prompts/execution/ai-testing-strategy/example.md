@@ -144,7 +144,7 @@ TC-ACC-004:
 
 ### 3.2 Reliability Diagram Test
 
-```
+```text
 Confidence vs. Accuracy by Bucket
      │
  100%│                              ●
@@ -442,7 +442,7 @@ TC-E2E-003:
 
 ### 8.2 Canary Testing
 
-```
+```text
 Production Traffic
        │
        ▼

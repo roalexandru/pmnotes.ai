@@ -1,8 +1,8 @@
 {
   "slug": "enterprise-security-compliance",
   "title": "Enterprise Security & Compliance Readiness",
-  "shortDescription": "Prepare your product for enterprise security requirements and compliance certifications.",
-  "description": "Navigate the complex landscape of enterprise security requirements. This playbook helps PMs work with security teams to achieve SOC 2, GDPR, HIPAA compliance, pass security reviews, and address enterprise procurement requirements. Essential for selling AI/automation solutions to regulated industries and large enterprises.",
+  "shortDescription": "Prepare your product for enterprise security requirements and compliance audits and certifications.",
+  "description": "Navigate the complex landscape of enterprise security requirements. This playbook helps PMs work with security teams to obtain a SOC 2 report, meet GDPR and HIPAA obligations, pass security reviews, and address enterprise procurement requirements. Essential for selling AI/automation solutions to regulated industries and large enterprises.",
   "icon": "shield",
   "category": "playbook",
   "teamScale": "Enterprise",
@@ -19,9 +19,9 @@
   ],
   "prompts": [
     {
-      "slug": "discovery/market-analysis",
+      "slug": "discovery/legal-ip-review",
       "order": 1,
-      "note": "Analyze target market compliance requirements (healthcare, finance, etc.)"
+      "note": "Map regulatory and contractual obligations for your target customers (e.g. GDPR, HIPAA, DPAs). Verify with counsel"
     },
     {
       "slug": "discovery/risk-analysis",
@@ -41,7 +41,7 @@
     {
       "slug": "discovery/roadmap-planning",
       "order": 5,
-      "note": "Plan compliance certification timeline and milestones"
+      "note": "Plan the compliance roadmap and milestones (e.g. SOC 2 report, ISO 27001 certification)"
     },
     {
       "slug": "execution/test-plan",
@@ -49,9 +49,9 @@
       "note": "Create security testing and penetration testing plan"
     },
     {
-      "slug": "discovery/ai-prd-generator",
+      "slug": "discovery/prd-outline",
       "order": 7,
-      "note": "Document security features PRD (SSO, audit logs, encryption, etc.)",
+      "note": "Document security feature requirements (SSO, audit logs, encryption, etc.)",
       "optional": true
     }
   ],
@@ -59,7 +59,7 @@
     "Understanding of target customer compliance requirements",
     "Access to security and legal teams",
     "Current security posture assessment",
-    "Budget for compliance certifications"
+    "Budget for compliance audits and certifications"
   ],
   "outcomes": [
     "Compliance requirements matrix",

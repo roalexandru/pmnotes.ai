@@ -1,3 +1,6 @@
+### `schema.sql`
+
+```sql
 -- Users Table
 CREATE TABLE users (
     id SERIAL PRIMARY KEY,
@@ -45,4 +48,10 @@ CREATE TABLE comments (
 CREATE INDEX idx_bugs_project ON bugs(project_id);
 CREATE INDEX idx_bugs_status ON bugs(status);
 CREATE INDEX idx_bugs_assignee ON bugs(assignee_id);
+CREATE INDEX idx_bugs_reporter ON bugs(reporter_id);
 CREATE INDEX idx_comments_bug ON comments(bug_id);
+CREATE INDEX idx_comments_commenter ON comments(commenter_id);
+
+-- Note: updated_at only defaults on insert. Keep it current with an
+-- application-level update or a BEFORE UPDATE trigger.
+```

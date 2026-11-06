@@ -1,10 +1,9 @@
-```markdown
 # PRD Outline: PulseFit (Mobile Fitness App)
 
 ## 1. Problem & Opportunity
 
 - Busy professionals have short breaks between meetings and struggle to fit workouts into their day.
-- Existing apps are either too complex or require long sessions.
+- Hypothesis (validate): existing apps are either too complex or require long sessions.
 
 ## 2. Goals & Success Metrics
 
@@ -14,7 +13,7 @@
 
 ## 3. Target Users & Jobs-to-be-Done
 
-- **Persona**: Remote professionals (30–45) with 15–30 minute gaps.
+- **Persona**: Busy professionals working from home with short gaps between meetings ([DATA NEEDED: typical gap length]).
 - **JTBD**: "Help me stay fit without disrupting my workday."
 - **Key Use Cases**: Time-boxed workout, quick progress check-in.
 
@@ -33,7 +32,7 @@
 
 ## 6. Requirements & Constraints
 
-- **Platforms**: iOS + Android (React Native).
+- **Platforms**: iOS + Android (framework: [DATA NEEDED: team skills], e.g. React Native).
 - **Constraints**: MVP in 8 weeks; no wearables at launch.
 
 ## 7. Dependencies & Risks
@@ -45,4 +44,4 @@
 
 - What is the minimum workout library needed for perceived value?
 - Do users prefer HIIT vs. low-impact routines?
-```
+- What is the current 7-day activation baseline? [DATA NEEDED]

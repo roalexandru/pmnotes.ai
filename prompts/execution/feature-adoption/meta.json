@@ -7,7 +7,7 @@
   "teamScale": "Scaleup",
   "featured": false,
   "complexity": "Deep",
-  "outputType": "Executed Code (Python Analysis)",
+  "outputType": "Code (Python Analysis)",
   "tags": [
     "adoption",
     "analytics",
@@ -32,12 +32,12 @@
     {
       "key": "launch_date",
       "label": "Launch Date",
-      "example": "2025-02-01"
+      "example": "2027-02-01"
     },
     {
       "key": "analysis_period",
       "label": "Analysis Period",
-      "example": "8 weeks post-launch (Feb 1 - Mar 28, 2025)"
+      "example": "8 weeks post-launch (Feb 1 - Mar 28, 2027)"
     },
     {
       "key": "success_metrics",

@@ -1,0 +1,48 @@
+name: Prompt or collection feedback
+description: Report wrong or outdated info, a broken template, or suggest an improvement to an existing prompt or collection.
+title: "[prompt] "
+labels: ["feedback"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for helping improve pmnotes.ai. Links from a prompt or collection page fill in the slug for you.
+        Please don't paste confidential data (customer names, internal metrics) into public issues.
+  - type: input
+    id: prompt
+    attributes:
+      label: Prompt slug
+      description: The part after /p/ in the page URL, e.g. `feature-prioritization`. Leave empty if this is about a collection.
+      placeholder: feature-prioritization
+    validations:
+      required: false
+  - type: input
+    id: collection
+    attributes:
+      label: Collection slug
+      description: The part after /collections/ in the page URL. Leave empty if this is about a prompt.
+      placeholder: product-discovery-sprint
+    validations:
+      required: false
+  - type: dropdown
+    id: kind
+    attributes:
+      label: What kind of feedback is this?
+      options:
+        - Wrong or outdated info
+        - Hallucination-prone output
+        - Bug in the prompt template
+        - Improvement idea
+        - Other
+      default: 3
+    validations:
+      required: true
+  - type: textarea
+    id: details
+    attributes:
+      label: Details
+      description: What happened, and what you expected instead. For output problems, mention the model or tool you used and paste the relevant part of the output.
+      placeholder: |
+        The scoring table invents Reach numbers even though none were given in the inputs...
+    validations:
+      required: true

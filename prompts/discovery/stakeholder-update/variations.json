@@ -1,0 +1,22 @@
+[
+  {
+    "name": "Executive (C-suite)",
+    "description": "A two-minute read for executives: bottom line first, business outcomes, and the decisions you need.",
+    "promptDelta": "Write for executives who will spend two minutes on this.\n- Open with a three-line BLUF (bottom line up front): status, the one thing they need to know, and the decision or help needed.\n- Keep accomplishments to the top 3, tied to business outcomes (revenue, retention, cost, risk), using only figures from the inputs.\n- Give each risk one line and a clear ask with a decision deadline, or `[DATA NEEDED: decision date]`.\n- No technical detail; expand every acronym. Under 250 words."
+  },
+  {
+    "name": "Engineering team",
+    "description": "For the people building it: specifics on what shipped, technical blockers, dependencies and decisions.",
+    "promptDelta": "Write for the engineering and design team instead of senior leaders (this replaces the audience guidance in the Output Format).\n- Be specific about what shipped, including known limitations and follow-ups.\n- List technical blockers with the owning role, and cross-team dependencies with what is needed from whom.\n- Record decisions made and their rationale, and explain any change in priorities.\n- Recognize contributions without inventing names. Plain, direct tone; more detail is fine, but keep it scannable."
+  },
+  {
+    "name": "Customer-facing",
+    "description": "An external update for customers: what changed for them, what's planned, and how to give feedback.",
+    "promptDelta": "Rewrite this as an external update for customers (this replaces the audience guidance in the Output Format).\n- Focus on what changed for them and how it helps.\n- Describe what's coming as plans, not commitments. Give no dates unless the inputs include them and they are confirmed.\n- Leave out internal blockers, staffing, internal metrics and code names. Mention a risk only if customers will notice it, with a workaround.\n- End with how to give feedback or get help.\n- Warm, plain language. Don't invent customer quotes or results."
+  },
+  {
+    "name": "Go-to-market teams",
+    "description": "For Sales, Customer Success, Marketing and Support: what they can talk about now and what not to promise yet.",
+    "promptDelta": "Write for go-to-market teams (Sales, Customer Success, Marketing, Support) instead of senior leaders (this replaces the audience guidance in the Output Format).\n- **Available now**: what they can talk about, with talking points.\n- **Not ready yet**: what not to promise, so nobody oversells.\n- **Likely customer questions** with answers drawn only from the inputs; write `[DATA NEEDED: ...]` where the inputs don't answer them.\n- **Known issues** and workarounds.\n- **Upcoming dates** to plan enablement around, marked as tentative unless confirmed in the inputs."
+  }
+]

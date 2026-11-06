@@ -1,0 +1,22 @@
+[
+  {
+    "name": "Lightweight RFC",
+    "description": "A 2–3 page proposal for a small team: simplest viable design, alternatives and open questions.",
+    "promptDelta": "Shorten the document into a lightweight RFC (2–3 pages) instead of the full section list.\n- Sections: Context, Proposal, Alternatives considered (at least two, including \"do nothing\" or \"buy instead of build\", with trade-offs), Risks, Rollout, Open questions.\n- Prefer the simplest architecture that meets the stated requirements, and justify every extra service, queue or datastore.\n- Say which sections of a full design doc you skipped and why."
+  },
+  {
+    "name": "Architecture Decision Records",
+    "description": "Also capture the key decisions as ADRs so the reasoning survives after the doc goes stale.",
+    "promptDelta": "In addition to the design doc, capture the 3–5 most consequential decisions as Architecture Decision Records. For each:\n- Title, Status (Proposed), Context, Decision, Alternatives considered, Consequences (positive and negative).\n- Reference the requirement or constraint above that drives the decision.\nPut the ADRs in an appendix, one heading per record (in a coding agent, write each to `docs/adr/NNNN-title.md`)."
+  },
+  {
+    "name": "Security & threat model",
+    "description": "Expands security into a STRIDE threat model for products handling sensitive data or facing a security review.",
+    "promptDelta": "Expand the Security & Compliance section into a threat model:\n- List the assets and trust boundaries, and mark them on the architecture diagram.\n- For each boundary, walk through STRIDE (Spoofing, Tampering, Repudiation, Information disclosure, Denial of service, Elevation of privilege) with a mitigation for each relevant threat.\n- Cover data classification, encryption in transit and at rest, secrets management, tenant isolation (if multi-tenant) and audit logging.\n- Name compliance frameworks only if the inputs mention them; otherwise list the questions to settle with security and legal."
+  },
+  {
+    "name": "Migration from an existing system",
+    "description": "For replacing or re-platforming something that already runs in production.",
+    "promptDelta": "Assume this design replaces or extends a system already in production. Add a Migration Plan:\n- Current-state and target-state diagrams.\n- Data migration approach (backfill, dual writes or change data capture) and how to verify the data matches.\n- An incremental (strangler-style) cutover sequence, with a rollback plan for each phase.\n- Compatibility requirements for existing clients and integrations.\nIf the current architecture isn't described above, write `[DATA NEEDED: current architecture]` instead of assuming it."
+  }
+]

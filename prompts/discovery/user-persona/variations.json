@@ -1,0 +1,22 @@
+[
+  {
+    "name": "Proto-persona (assumptions to validate)",
+    "description": "For teams without research yet: a persona built from what you believe, with each assumption labelled and a plan to test it.",
+    "promptDelta": "Treat this as a proto-persona: a hypothesis to validate, not a research finding.\n- Label every attribute as **Known** (stated in the inputs) or **Assumption**.\n- Replace the realistic quote with a \"What we think they'd say\" line, clearly marked as hypothetical.\n- End with a validation plan: the 3–5 riskiest assumptions, how to test each (interview question, survey item or analytics check), and what result would change the persona."
+  },
+  {
+    "name": "B2B buying committee",
+    "description": "For B2B products where the user, the buyer and the evaluator are different people.",
+    "promptDelta": "Model the B2B buying context instead of a single user.\n- Separate the end user, the economic buyer, and any technical or security evaluator or internal champion the inputs suggest.\n- For each role: goals, the success metrics they are judged on, likely objections, and the evidence that wins them over.\n- Add a short buying journey (trigger, evaluation, approval, rollout) showing where each role has influence.\n- Do not invent company names, deal sizes or job titles beyond what the inputs imply; use `[DATA NEEDED: ...]` for unknowns."
+  },
+  {
+    "name": "Jobs-to-be-Done profile",
+    "description": "Swap demographics for the situation, motivations and forces that drive someone to switch solutions.",
+    "promptDelta": "Replace the demographic profile with a Jobs-to-be-Done profile. Drop the name, age and location.\n- **Trigger**: the situation in which the job comes up.\n- **Job dimensions**: functional, emotional and social.\n- **Current solutions**: tools, workarounds and \"do nothing\".\n- **Forces of progress**: push of the current situation, pull of the new solution, anxiety about switching, habit of the present.\n- **Desired outcomes**: phrased as \"minimize the time / likelihood of ...\".\nKeep the Product Fit section, tied to these outcomes."
+  },
+  {
+    "name": "Add an anti-persona",
+    "description": "Also describe who the product is deliberately not for, to keep scope and messaging focused.",
+    "promptDelta": "After the persona, add an anti-persona: a type of user the product should deliberately not design for.\n- Who they are and what they want that conflicts with the primary persona.\n- Why serving them would dilute the product.\n- Signals (in sign-up, sales conversations or usage) that someone fits the anti-persona.\nBase it on the inputs; label anything inferred as an assumption."
+  }
+]

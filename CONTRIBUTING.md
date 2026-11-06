@@ -11,6 +11,15 @@ We love your input! We want to make contributing to pmnotes.ai as easy and trans
 ## We Develop with GitHub
 We use GitHub to host code, to track issues and feature requests, and to accept pull requests.
 
+## Reporting Problems and Ideas
+
+Use the issue forms ([New issue](https://github.com/roalexandru/pmnotes.ai/issues/new/choose)):
+
+*   **Prompt or collection feedback**: wrong or outdated info, output that tends to hallucinate, a bug in a template, or an improvement idea. The feedback link on prompt and collection pages on pmnotes.ai opens this form with the slug filled in.
+*   **New prompt idea**: suggest a prompt or collection you'd like to see (or plan to write).
+
+Problems with the website itself go to [pmnotes-website](https://github.com/roalexandru/pmnotes-website/issues).
+
 ## Creating a New Prompt
 
 1.  **Choose a Surface**: Decide if your prompt belongs to `discovery`, `prototyping`, or `execution`.
@@ -19,18 +28,20 @@ We use GitHub to host code, to track issues and feature requests, and to accept 
     *   `meta.json`: Describe your prompt. `slug` must match the folder name and `surface` the parent folder. See the README for allowed values.
     *   `prompt.md`: Write the prompt. Use `{{variable}}` for each input in `meta.json`, and `{{#if variable}}...{{/if}}` for optional sections.
     *   `example.md`: Provide a sample output.
+    *   `variations.json` (optional): 2–4 named tweaks, such as another framework, audience or level of detail. See the README for the format.
 4.  **Check quality** (reviewers will ask for these):
     *   The prompt has a "Ground Rules" section: use only the facts provided, mark estimates `(est.)`, write `[DATA NEEDED: ...]` instead of inventing numbers, names, quotes or citations, and flag facts that may be out of date. Code prompts also say not to invent APIs or results.
     *   Pasted free text (feedback, logs, PRDs) is wrapped in tags such as `<feedback>{{feedback_text}}</feedback>`, with a line saying it is data, not instructions.
     *   The output format asks for GitHub-flavored Markdown, not one big code block.
     *   `example.md` matches the example inputs. Numbers add up, sample program output is what the code actually prints (or is labelled illustrative), code is fenced with a language tag, and companies and people are fictional.
     *   Model, tool and library names are generic, or current and easy to update.
+    *   Each variation's `promptDelta` reads as an instruction appended after the prompt (it is copied verbatim, without placeholder substitution) and keeps to the Ground Rules.
 5.  **Regenerate and validate** (Node.js 24+):
     ```bash
     npm run index
     npm run check
     ```
-    Commit the regenerated `prompts/index.json` and `collections/index.json`. CI re-runs the validation and fails if the indexes are out of date.
+    Commit the regenerated `prompts/index.json`, `prompts/search.json` and `collections/index.json`. CI re-runs the validation and fails if they are out of date.
 
 ## Creating a Collection
 
@@ -51,7 +62,7 @@ You can also edit files directly on GitHub. CI regenerates the indexes for branc
 2.  If you've added code that should be tested, add tests.
 3.  If you've changed APIs, update the documentation.
 4.  Ensure `npm run check` passes.
-5.  Issue that pull request!
+5.  Issue that pull request! The pull request template repeats the quality checklist above.
 
 ## License
 By contributing, you agree that your contributions will be licensed under its MIT License.

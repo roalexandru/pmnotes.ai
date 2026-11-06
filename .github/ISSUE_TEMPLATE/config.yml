@@ -1,0 +1,5 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Website bug (pmnotes.ai)
+    url: https://github.com/roalexandru/pmnotes-website/issues
+    about: Problems with the site itself (layout, search, copying), not the prompt content.

@@ -1,7 +1,7 @@
 'use strict';
 
-// Validates prompt folders, collections, and that both generated indexes are
-// up to date. Run: npm run validate
+// Validates prompt folders (including optional variations.json), collections, and
+// that the generated indexes are up to date. Run: npm run validate
 
 const fs = require('fs');
 const path = require('path');
@@ -17,9 +17,12 @@ const {
   INPUT_KEY_PATTERN,
   PLACEHOLDER_PATTERN,
 } = require('./taxonomy');
-const { buildPromptsIndex, buildCollectionsIndex, REPO_ROOT } = require('./build_indexes');
+const { buildPromptsIndex, buildSearchIndex, buildCollectionsIndex, REPO_ROOT } = require('./build_indexes');
 
 const REQUIRED_META_STRINGS = ['slug', 'title', 'shortDescription', 'surface', 'pmStage', 'complexity', 'outputType'];
+const VARIATION_FIELDS = ['name', 'description', 'promptDelta'];
+const MIN_VARIATIONS = 2;
+const MAX_VARIATIONS = 4;
 const REQUIRED_COLLECTION_STRINGS = ['slug', 'title', 'shortDescription', 'description', 'category', 'difficulty'];
 
 const isNonEmptyString = value => typeof value === 'string' && value.trim().length > 0;
@@ -140,6 +143,51 @@ function validatePromptMeta(meta, { label, slug, surface }, errors) {
   return { keys, optionalKeys };
 }
 
+/**
+ * variations.json: an array of 2-4 `{ name, description, promptDelta }` objects.
+ * The website appends promptDelta verbatim to the user's filled-in draft ("Copy with
+ * variation"), so it is not run through the template engine: {{#if}} blocks would
+ * show up as literal text, and a {{key}} must at least name a real input.
+ */
+function validateVariations(variations, { label, inputKeys }, errors) {
+  const where = `${label}/variations.json`;
+  if (!Array.isArray(variations)) {
+    errors.push(`${where} must be an array`);
+    return;
+  }
+  if (variations.length < MIN_VARIATIONS || variations.length > MAX_VARIATIONS) {
+    errors.push(`${where} must have ${MIN_VARIATIONS}-${MAX_VARIATIONS} entries (has ${variations.length})`);
+  }
+  const names = new Set();
+  variations.forEach((variation, i) => {
+    const item = `${where}: [${i}]`;
+    if (!variation || typeof variation !== 'object' || Array.isArray(variation)) {
+      errors.push(`${item} must be an object`);
+      return;
+    }
+    for (const field of VARIATION_FIELDS) {
+      if (!isNonEmptyString(variation[field])) errors.push(`${item} ${field} must be a non-empty string`);
+    }
+    for (const key of Object.keys(variation)) {
+      if (!VARIATION_FIELDS.includes(key)) errors.push(`${item} unknown field "${key}"`);
+    }
+    if (isNonEmptyString(variation.name)) {
+      const name = variation.name.trim().toLowerCase();
+      if (names.has(name)) errors.push(`${item} duplicate name "${variation.name}"`);
+      names.add(name);
+    }
+    if (typeof variation.promptDelta !== 'string') return;
+    for (const match of variation.promptDelta.matchAll(PLACEHOLDER_PATTERN)) {
+      const expr = match[1];
+      if (/^[#/]/.test(expr)) {
+        errors.push(`${item} promptDelta uses {{${expr}}}, but deltas are appended verbatim; template blocks are not supported`);
+      } else if (!inputKeys.has(expr)) {
+        errors.push(`${item} promptDelta uses {{${expr}}} but meta.json has no input with that key`);
+      }
+    }
+  });
+}
+
 function validatePrompts(root, errors) {
   const promptsRoot = path.join(root, 'prompts');
   const promptPaths = new Set();
@@ -193,6 +241,12 @@ function validatePrompts(root, errors) {
         for (const key of inputKeys) {
           if (!variables.has(key)) errors.push(`${label}: input "${key}" is never used in prompt.md`);
         }
+      }
+
+      const variationsFile = path.join(dir, 'variations.json');
+      if (fs.existsSync(variationsFile)) {
+        const variations = readJson(variationsFile, errors, `${label}/variations.json`);
+        if (variations !== null) validateVariations(variations, { label, inputKeys }, errors);
       }
     }
   }
@@ -251,25 +305,16 @@ function validateCollections(root, promptPaths, errors) {
   }
 }
 
-function stripVolatile(promptsIndex) {
-  return {
-    items: (promptsIndex.items || []).map(item => {
-      const rest = { ...item };
-      delete rest.updatedAt;
-      return rest;
-    }),
-  };
-}
-
 function validateIndexes(root, errors) {
-  const promptsIndex = readJson(path.join(root, 'prompts', 'index.json'), errors, 'prompts/index.json');
-  if (promptsIndex) {
-    const expected = buildPromptsIndex(root, { getUpdatedAt: () => 'x' });
-    if (!isDeepStrictEqual(stripVolatile(promptsIndex), stripVolatile(expected))) {
-      errors.push('prompts/index.json is out of date: run `npm run index` and commit the result');
-    }
-    for (const item of promptsIndex.items || []) {
-      if (!isNonEmptyString(item.updatedAt)) errors.push(`prompts/index.json: ${item.path} missing updatedAt`);
+  // Both files are pure functions of the content, so freshness is a plain comparison.
+  const generated = [
+    ['prompts/index.json', buildPromptsIndex],
+    ['prompts/search.json', buildSearchIndex],
+  ];
+  for (const [file, build] of generated) {
+    const actual = readJson(path.join(root, file), errors, file);
+    if (actual && !isDeepStrictEqual(actual, build(root))) {
+      errors.push(`${file} is out of date: run \`npm run index\` and commit the result`);
     }
   }
 
@@ -291,7 +336,7 @@ function validate(root = REPO_ROOT, { checkIndexes = true } = {}) {
   return errors;
 }
 
-module.exports = { validate, parseTemplate };
+module.exports = { validate, parseTemplate, validateVariations };
 
 if (require.main === module) {
   const errors = validate();

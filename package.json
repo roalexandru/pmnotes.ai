@@ -1,0 +1,16 @@
+{
+  "name": "pmnotes-prompts",
+  "private": true,
+  "description": "Open-source Product Management prompts and playbooks for pmnotes.ai",
+  "license": "MIT",
+  "type": "commonjs",
+  "engines": {
+    "node": ">=24"
+  },
+  "scripts": {
+    "index": "node scripts/build_indexes.js",
+    "validate": "node scripts/validate_prompts.js",
+    "test": "node --test test/",
+    "check": "npm run validate && npm test"
+  }
+}

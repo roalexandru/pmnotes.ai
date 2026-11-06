@@ -4,7 +4,7 @@
   "shortDescription": "Scaffold a complete authentication flow with login, signup, token management, and protected routes.",
   "surface": "prototyping",
   "pmStage": "Product & UX Prototypes",
-  "teamScale": "Startup",
+  "teamScale": "Startup / SMB",
   "complexity": "Structured",
   "outputType": "Code (TypeScript/Node.js)",
   "tags": ["authentication", "oauth", "jwt", "security", "node", "typescript"],

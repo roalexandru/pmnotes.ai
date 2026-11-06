@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-01-28T14:24:34.362Z",
+  "generatedAt": "2026-11-06T09:27:59.624Z",
   "collections": [
     {
       "slug": "ai-feature-productization",
@@ -39,7 +39,7 @@
           "note": "Conduct thorough AI/ML risk assessment: bias, drift, hallucination, explainability, adversarial attacks"
         },
         {
-          "slug": "discovery/ai-model-requirements",
+          "slug": "prototyping/ai-model-requirements",
           "order": 4,
           "note": "Define model performance metrics, thresholds, SLAs, and acceptance criteria"
         },
